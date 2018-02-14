@@ -1,0 +1,85 @@
+<hr>
+<p>title: ‘javascript学习之json常用方法’<br>date: 2018/02/15 21:30:40<br>tags: [javascript,json,js,js基础]</p>
+<h2 id="categories-js学习"><a href="#categories-js学习" class="headerlink" title="categories: js学习"></a>categories: js学习</h2><h2 id="javascript中JSON语法有三种表示方法："><a href="#javascript中JSON语法有三种表示方法：" class="headerlink" title="javascript中JSON语法有三种表示方法："></a>javascript中JSON语法有三种表示方法：</h2><h3 id="简单值-“hello-json”"><a href="#简单值-“hello-json”" class="headerlink" title="* 简单值     “hello json”"></a>* 简单值     “hello json”</h3><h3 id="对象-“name”-”jack”"><a href="#对象-“name”-”jack”" class="headerlink" title="* 对象        {“name”:”jack”}"></a>* 对象        {“name”:”jack”}</h3><h3 id="数组-“aaa”-”bbb”-“ccc”-”ddd”"><a href="#数组-“aaa”-”bbb”-“ccc”-”ddd”" class="headerlink" title="* 数组        [{“aaa”:”bbb”},{“ccc”:”ddd”}]"></a>* 数组        [{“aaa”:”bbb”},{“ccc”:”ddd”}]</h3><h2 id="JSON常用的两个方法："><a href="#JSON常用的两个方法：" class="headerlink" title="JSON常用的两个方法："></a>JSON常用的两个方法：</h2><h2 id="1-stringify"><a href="#1-stringify" class="headerlink" title="1.stringify()"></a>1.stringify()</h2><h2 id="2-parse"><a href="#2-parse" class="headerlink" title="2.parse()"></a>2.parse()</h2><h2 id="stringify用法："><a href="#stringify用法：" class="headerlink" title="*stringify用法："></a>*stringify用法：</h2><h4 id="用法一：-把javascript对象转化成JSON格式"><a href="#用法一：-把javascript对象转化成JSON格式" class="headerlink" title="用法一： 把javascript对象转化成JSON格式:"></a>用法一： 把javascript对象转化成JSON格式:</h4><pre><code class="bash">var demo = {
+  <span class="string">"name"</span>:<span class="string">"aaa"</span>,
+  <span class="string">"type"</span>:<span class="string">"bbb"</span> 
+}
+var jsonDemo = JSON.stringify(demo);
+console.log(jsonDemo);
+</code></pre>
+<ul>
+<li>得到结果：<pre><code class="bash">{<span class="string">"name"</span>:<span class="string">"aaa"</span>,<span class="string">"type"</span>:<span class="string">"bbb"</span>}
+</code></pre>
+</li>
+</ul>
+<h4 id="用法二：把javascript对象转化成JSON格式，增加过滤，只留想要的数据"><a href="#用法二：把javascript对象转化成JSON格式，增加过滤，只留想要的数据" class="headerlink" title="用法二：把javascript对象转化成JSON格式，增加过滤，只留想要的数据"></a>用法二：把javascript对象转化成JSON格式，增加过滤，只留想要的数据</h4><pre><code class="bash">var demo = {
+    <span class="string">"name"</span>:<span class="string">"aaa"</span>,
+    <span class="string">"sex"</span>:<span class="string">"boy"</span>,
+    <span class="string">"age"</span>: 20
+}
+var jsonDemo = JSON.stringify(demo,[<span class="string">"name"</span>]);
+console.log(jsonDemo);
+</code></pre>
+<ul>
+<li>得到结果：<pre><code class="bash">{<span class="string">"name"</span>:<span class="string">"aaa"</span>}
+</code></pre>
+</li>
+</ul>
+<h4 id="用法三：把javascript对象转化成JSON格式，并改变原有的值"><a href="#用法三：把javascript对象转化成JSON格式，并改变原有的值" class="headerlink" title="用法三：把javascript对象转化成JSON格式，并改变原有的值"></a>用法三：把javascript对象转化成JSON格式，并改变原有的值</h4><pre><code class="bash">var demo = {
+    <span class="string">"name"</span>:<span class="string">"aaa"</span>,
+    <span class="string">"sex"</span>:<span class="string">"bbb"</span>,
+    <span class="string">"type"</span>:<span class="string">"ccc"</span>
+}
+var jsonDemo = JSON.stringify(demo,<span class="keyword">function</span> (key, value) {
+    switch(key){
+        <span class="keyword">case</span> <span class="string">"name"</span>: <span class="built_in">return</span> <span class="string">"a"</span>;
+        <span class="keyword">case</span> <span class="string">"sex"</span>: <span class="built_in">return</span> <span class="string">"b"</span>;
+        default: <span class="built_in">return</span> value;
+    }
+});
+console.log(jsonDemo);
+</code></pre>
+<ul>
+<li>得到结果：<pre><code class="bash">{<span class="string">"name"</span>:<span class="string">"a"</span>,<span class="string">"sex"</span>:<span class="string">"b"</span>,<span class="string">"type"</span>:<span class="string">"ccc"</span>}
+</code></pre>
+</li>
+</ul>
+<h4 id="用法四：把javascript对象转化成JSON格式，并控制缩进和空白符"><a href="#用法四：把javascript对象转化成JSON格式，并控制缩进和空白符" class="headerlink" title="用法四：把javascript对象转化成JSON格式，并控制缩进和空白符"></a>用法四：把javascript对象转化成JSON格式，并控制缩进和空白符</h4><pre><code class="bash">var book = {
+    <span class="string">"title"</span>: <span class="string">"aaa"</span>,
+    <span class="string">"type"</span>: <span class="string">"bbb"</span>,
+    <span class="string">"page"</span>: 50
+}
+var jsonBook = JSON.stringify(book,null,<span class="string">"$$"</span>);
+console.log(jsonBook)
+</code></pre>
+<ul>
+<li>得到结果：<pre><code class="bash">{
+$$<span class="string">"title"</span>: <span class="string">"aaa"</span>,
+$$<span class="string">"type"</span>: <span class="string">"bbb"</span>,
+$$<span class="string">"page"</span>: 50
+}
+</code></pre>
+－该方法第三个参数如果为数字，那么就是每个属性前面缩进的字符数。<h2 id="parse-方法"><a href="#parse-方法" class="headerlink" title="*parse()方法"></a>*parse()方法</h2></li>
+</ul>
+<h4 id="用法一：把JSON转化成javascript格式-用来解析JSON字符串，构造由字符串描述的JavaScript值或对象。"><a href="#用法一：把JSON转化成javascript格式-用来解析JSON字符串，构造由字符串描述的JavaScript值或对象。" class="headerlink" title="用法一：把JSON转化成javascript格式, 用来解析JSON字符串，构造由字符串描述的JavaScript值或对象。"></a>用法一：把JSON转化成javascript格式, 用来解析JSON字符串，构造由字符串描述的JavaScript值或对象。</h4><pre><code class="bash">var book = <span class="string">'{"title":"aaa", "type":"bbb", "page":"50"}'</span>;
+      var demo = JSON.parse(book);
+      console.log(demo);
+</code></pre>
+<ul>
+<li>得到结果：<br><code>demo.html:11 {title: &quot;aaa&quot;, type: &quot;bbb&quot;, page: &quot;50&quot;}</code></li>
+</ul>
+<h4 id="用法二：把JSON转化为javascript过程中，改变原有的值"><a href="#用法二：把JSON转化为javascript过程中，改变原有的值" class="headerlink" title="用法二：把JSON转化为javascript过程中，改变原有的值"></a>用法二：把JSON转化为javascript过程中，改变原有的值</h4><pre><code class="bash">var book = <span class="string">'{"title":"aaa", "type":"bbb", "page":50}'</span>;
+      var demo = JSON.stringify(book);
+      var javascriptDemo = JSON.parse(demo, <span class="keyword">function</span> (key, value) {
+         switch (key) {
+            <span class="keyword">case</span> <span class="string">"title"</span>: <span class="built_in">return</span> <span class="string">"bbbbbb"</span>;
+            default: <span class="built_in">return</span> value;
+         }
+      });
+      console.log(javascriptDemo);
+</code></pre>
+<ul>
+<li>得到结果：<pre><code class="bash">{<span class="string">"title"</span>:<span class="string">"aaa"</span>, <span class="string">"type"</span>:<span class="string">"bbb"</span>, <span class="string">"page"</span>:50}
+</code></pre>
+</li>
+</ul>
