@@ -1146,6 +1146,258 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/todo/2018/02/10/CSSlayout-01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="王立超">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/652285661303743555.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="勇往直前">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/10/CSSlayout-01/" itemprop="url">CSS布局之水平居中和垂直居中</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-10T21:30:40+08:00">
+                2018-02-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端布局/" itemprop="url" rel="index">
+                    <span itemprop="name">前端布局</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li>前端布局非常重要的一环就是页面框架的搭建，也是最基础的一环。在页面框架搭建之中，又有居中布局/多列布局/全局布局。今天介绍一下居中布局的一些技巧。</li>
+</ul>
+<h1 id="居中布局"><a href="#居中布局" class="headerlink" title="居中布局"></a>居中布局</h1><h2 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h2><h4 id="1-使用inline-block-text-align："><a href="#1-使用inline-block-text-align：" class="headerlink" title="1.使用inline-block + text-align："></a>1.使用inline-block + text-align：</h4><ul>
+<li>原理：先将子框由块级元素改变为行内块元素，再通过设置行内块元素居中以达到水平居中的目的。#####</li>
+<li>用法：对子框设置display:inline-block,对父框设置text-align:center。</li>
+<li>示例：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.child &#123;</span><br><span class="line">	display: inline-block;</span><br><span class="line">&#125;</span><br><span class="line">.parent &#123;</span><br><span class="line">	text-align: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>优点:兼容性好。</li>
+<li>缺点:.child里的文字也会水平居中。(可以在.child里添加text-align:left还原)</li>
+</ul>
+<h4 id="2-使用table-margin"><a href="#2-使用table-margin" class="headerlink" title="2.使用table + margin"></a>2.使用table + margin</h4><ul>
+<li>原理:先将子框设置为块级表格来显示,再设置子框居中以达到居中水平.</li>
+<li>用法:对子框设置display:table,再设置margin:0 auto;</li>
+<li>示例:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.child &#123;</span><br><span class="line">	display: table;</span><br><span class="line">	margin: 0 auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>优点:只设置了child,IE8以上都支持;</li>
+<li>缺点:不支持IE6/IE7,将div换成了table;</li>
+</ul>
+<h4 id="3-使用absolute-transform"><a href="#3-使用absolute-transform" class="headerlink" title="3.使用absolute + transform"></a>3.使用absolute + transform</h4><ul>
+<li>原理:将子框设置为绝对定位,移动子框,使子框左侧距离相对框左侧边框的距离为相对框宽度的一半,再通过向左移动子框的一半宽度以达到水平居中。父框需要设置为相对定位(或者绝对定位),使父框成为子框的相对框。</li>
+<li>用法:对父框设置position:relative(absolute);对子框设置position:absolute;left:50%;transform:translateX(-50%);</li>
+<li>示例:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">	position: relative;</span><br><span class="line">&#125;</span><br><span class="line">.child &#123;</span><br><span class="line">	position: absolute;</span><br><span class="line">	left: 50%;</span><br><span class="line">	transform: translateX(-50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>优点:居中元素不会对其它元素产生影响;</li>
+<li>缺点:transform属于CSS3内容,兼容性存在一定问题;</li>
+</ul>
+<h4 id="4-使用flex-margin"><a href="#4-使用flex-margin" class="headerlink" title="4.使用flex + margin"></a>4.使用flex + margin</h4><ul>
+<li>原理:通过CSS3中的布局利器flex将子框转换为flex item,再设置子框居中以达到居中目的。</li>
+<li>用法:先将父框设置为display:flex;再设置子框margin:0 auto;</li>
+<li>示例:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">	display:flex;</span><br><span class="line">&#125;</span><br><span class="line">.child &#123;</span><br><span class="line">	margin:0 auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>缺点:IE6/7/8等低版本浏览器不支持;</li>
+</ul>
+<h4 id="5-使用flex-justify-content"><a href="#5-使用flex-justify-content" class="headerlink" title="5.使用flex + justify-content"></a>5.使用flex + justify-content</h4><ul>
+<li>原理:通过CSS3中的布局利器flex中的justify-content属性来达到居中目的;</li>
+<li>用法:先将父框设置为display:flex;再设置justify-content:center;</li>
+<li>示例:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">	display:flex;</span><br><span class="line">	justify-content: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>优点:只设置parent即可;</li>
+<li>缺点:IE6/7/8等低版本浏览器不支持;</li>
+</ul>
+<h2 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h2><h4 id="1-使用table-cell-vertical-align"><a href="#1-使用table-cell-vertical-align" class="headerlink" title="1.使用table-cell + vertical-align"></a>1.使用table-cell + vertical-align</h4><ul>
+<li>原理:通过将父框转化为一个表格单元格显示,在通过设置属性,使表格单元格内容垂直居中;</li>
+<li>用法:先将父框设置为display:table-cell;再设置vertical-align:middle;</li>
+<li>实例:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">	display:table-cell;</span><br><span class="line">	vertical-align: middle;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>优点: 兼容性较好,IE8以上都支持;</li>
+<li>缺点: 将div元素转化为了table元素;</li>
+</ul>
+<h4 id="2-使用absolute-transform"><a href="#2-使用absolute-transform" class="headerlink" title="2.使用absolute + transform"></a>2.使用absolute + transform</h4><ul>
+<li>原理:类似于上面说过的水平居中的原理，将子框设置为绝对定位，移动子框，使子框上边距离相对框上边边框的距离为相对框高度的一半，再通过向上移动子框的高度的一半以达到垂直居中;父框需设置为相对定位或者绝对定位，使其成为子框的相对框；</li>
+<li>用法:先将父框设置为position:relative(absolute);再设置子框position:absolute;top:50%;transform:translateY(-50%);</li>
+<li>实例:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">	position:relative;</span><br><span class="line">&#125;</span><br><span class="line">.child &#123;</span><br><span class="line">	position: absolute;</span><br><span class="line">	top: 50%;</span><br><span class="line">	transform: translateY(-50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>优点: 居中元素不会对其它元素产生影响;</li>
+<li>缺点: transform属于CSS3内容,兼容性存在一定问题;</li>
+</ul>
+<h4 id="３-使用flex-align-items"><a href="#３-使用flex-align-items" class="headerlink" title="３.使用flex + align-items"></a>３.使用flex + align-items</h4><ul>
+<li>原理:通过CSS3中的布局利器flex中的align-items属性来达到居中目的;</li>
+<li>用法:先将父框设置为display:flex;再设置align-items:center;</li>
+<li>示例:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">	display:flex;</span><br><span class="line">	align-items: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>优点:只设置parent即可;</li>
+<li>缺点:IE6/7/8等低版本浏览器不支持;</li>
+</ul>
+<h2 id="水平-垂直-居中"><a href="#水平-垂直-居中" class="headerlink" title="水平 + 垂直　居中"></a>水平 + 垂直　居中</h2><p>####　1.使用absolute + transform</p>
+<ul>
+<li>原理:将水平居中和垂直居中相结合;</li>
+<li>用法:先将父框设置为position:relative(absolute);再设置子框position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);</li>
+<li>实例:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">	position:relative;</span><br><span class="line">&#125;</span><br><span class="line">.child &#123;</span><br><span class="line">	position: absolute;</span><br><span class="line">	left: 50%;</span><br><span class="line">	top: 50%;</span><br><span class="line">	transform: translate(-50%,-50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>优点: 居中元素不会对其它元素产生影响;</li>
+<li>缺点: transform属于CSS3内容,兼容性存在一定问题;</li>
+</ul>
+<h4 id="2-使用inline-block-text-align-table-cell-vertical-align"><a href="#2-使用inline-block-text-align-table-cell-vertical-align" class="headerlink" title="2.使用inline-block + text-align + table-cell + vertical-align"></a>2.使用inline-block + text-align + table-cell + vertical-align</h4><ul>
+<li>原理:使用inline-block+text-align水平居中;再用table-cell+vertical-align垂直居中;将二者结合起来;</li>
+<li>实例:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">	text-align:center;</span><br><span class="line">	display:table-cell;</span><br><span class="line">	vertical-align:middle;</span><br><span class="line">&#125;</span><br><span class="line">.child &#123;</span><br><span class="line">	display: inline-block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>优点: 兼容性较好;</li>
+<li>缺点: 使用起来比较麻烦;</li>
+</ul>
+<h4 id="2-使用flex-justify-content-align-items"><a href="#2-使用flex-justify-content-align-items" class="headerlink" title="2.使用flex + justify-content + align-items"></a>2.使用flex + justify-content + align-items</h4><ul>
+<li>原理:通过设置flex中的justify-content和align-items,从而达到水平垂直居中;</li>
+<li>实例:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">	display:flex;</span><br><span class="line">	justify-content:center;</span><br><span class="line">	align-items:center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>优点: 只设置parent元素;</li>
+<li>缺点: 兼容性存在一些问题;</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -1196,7 +1448,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1207,7 +1459,7 @@
               
               <div class="site-state-item site-state-categories">
                 
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 
               </div>
@@ -1218,7 +1470,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
