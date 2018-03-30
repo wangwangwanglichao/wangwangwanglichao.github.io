@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="前端,CSS,CSS基础," />
 
 
 
@@ -79,13 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="勇往直前">
-<meta property="og:url" content="http://www.wanglichao.top/todo/index.html">
+<meta name="description" content="前端布局非常重要的一环就是页面框架的搭建，也是最基础的一环。在页面框架搭建之中，又有居中布局/多列布局/全局布局。本文介绍一下多列布局的一些技巧。  多列布局定宽 + 自适应1.使用float + overflow： 原理: 通过将左边子元素脱离文档流,设置右边子元素规定当内容溢出元素框时发生的事情以达到多列布局; 用法：先将左边子元素设置为float:left;再设置右边子元素为overflo">
+<meta name="keywords" content="前端,CSS,CSS基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS布局之多列布局">
+<meta property="og:url" content="http://www.wanglichao.top/todo/2018/02/10/CSSlayout-02/index.html">
 <meta property="og:site_name" content="勇往直前">
+<meta property="og:description" content="前端布局非常重要的一环就是页面框架的搭建，也是最基础的一环。在页面框架搭建之中，又有居中布局/多列布局/全局布局。本文介绍一下多列布局的一些技巧。  多列布局定宽 + 自适应1.使用float + overflow： 原理: 通过将左边子元素脱离文档流,设置右边子元素规定当内容溢出元素框时发生的事情以达到多列布局; 用法：先将左边子元素设置为float:left;再设置右边子元素为overflo">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-30T17:46:28.998Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="勇往直前">
+<meta name="twitter:title" content="CSS布局之多列布局">
+<meta name="twitter:description" content="前端布局非常重要的一环就是页面框架的搭建，也是最基础的一环。在页面框架搭建之中，又有居中布局/多列布局/全局布局。本文介绍一下多列布局的一些技巧。  多列布局定宽 + 自适应1.使用float + overflow： 原理: 通过将左边子元素脱离文档流,设置右边子元素规定当内容溢出元素框时发生的事情以达到多列布局; 用法：先将左边子元素设置为float:left;再设置右边子元素为overflo">
 
 
 
@@ -115,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://www.wanglichao.top/todo/"/>
+  <link rel="canonical" href="http://www.wanglichao.top/todo/2018/02/10/CSSlayout-02/"/>
 
 
 
 
 
-  <title>勇往直前</title>
+  <title>CSS布局之多列布局 | 勇往直前</title>
   
 
 
@@ -140,8 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     <a href="https://github.com/wangwangwanglichao"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"></a>
 
@@ -225,1180 +229,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/todo/2018/02/15/page/javascript-json/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王立超">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/652285661303743555.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="勇往直前">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/15/page/javascript-json/" itemprop="url">javascript学习之json常用方法</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-15T21:30:40+08:00">
-                2018-02-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/js学习/" itemprop="url" rel="index">
-                    <span itemprop="name">js学习</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="javascript中JSON语法有三种表示方法："><a href="#javascript中JSON语法有三种表示方法：" class="headerlink" title="javascript中JSON语法有三种表示方法："></a>javascript中JSON语法有三种表示方法：</h2><h3 id="简单值-“hello-json”"><a href="#简单值-“hello-json”" class="headerlink" title="* 简单值     “hello json”"></a>* 简单值     “hello json”</h3><h3 id="对象-“name”-”jack”"><a href="#对象-“name”-”jack”" class="headerlink" title="* 对象        {“name”:”jack”}"></a>* 对象        {“name”:”jack”}</h3><h3 id="数组-“aaa”-”bbb”-“ccc”-”ddd”"><a href="#数组-“aaa”-”bbb”-“ccc”-”ddd”" class="headerlink" title="* 数组        [{“aaa”:”bbb”},{“ccc”:”ddd”}]"></a>* 数组        [{“aaa”:”bbb”},{“ccc”:”ddd”}]</h3><h2 id="JSON常用的两个方法："><a href="#JSON常用的两个方法：" class="headerlink" title="JSON常用的两个方法："></a>JSON常用的两个方法：</h2><h2 id="1-stringify"><a href="#1-stringify" class="headerlink" title="1.stringify()"></a>1.stringify()</h2><h2 id="2-parse"><a href="#2-parse" class="headerlink" title="2.parse()"></a>2.parse()</h2><h2 id="stringify用法："><a href="#stringify用法：" class="headerlink" title="*stringify用法："></a>*stringify用法：</h2><h4 id="用法一：-把javascript对象转化成JSON格式"><a href="#用法一：-把javascript对象转化成JSON格式" class="headerlink" title="用法一： 把javascript对象转化成JSON格式:"></a>用法一： 把javascript对象转化成JSON格式:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var demo = &#123;</span><br><span class="line">  <span class="string">"name"</span>:<span class="string">"aaa"</span>,</span><br><span class="line">  <span class="string">"type"</span>:<span class="string">"bbb"</span> </span><br><span class="line">&#125;</span><br><span class="line">var jsonDemo = JSON.stringify(demo);</span><br><span class="line">console.log(jsonDemo);</span><br></pre></td></tr></table></figure>
-<ul>
-<li>得到结果：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">"name"</span>:<span class="string">"aaa"</span>,<span class="string">"type"</span>:<span class="string">"bbb"</span>&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="用法二：把javascript对象转化成JSON格式，增加过滤，只留想要的数据"><a href="#用法二：把javascript对象转化成JSON格式，增加过滤，只留想要的数据" class="headerlink" title="用法二：把javascript对象转化成JSON格式，增加过滤，只留想要的数据"></a>用法二：把javascript对象转化成JSON格式，增加过滤，只留想要的数据</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var demo = &#123;</span><br><span class="line">	<span class="string">"name"</span>:<span class="string">"aaa"</span>,</span><br><span class="line">	<span class="string">"sex"</span>:<span class="string">"boy"</span>,</span><br><span class="line">	<span class="string">"age"</span>: 20</span><br><span class="line">&#125;</span><br><span class="line">var jsonDemo = JSON.stringify(demo,[<span class="string">"name"</span>]);</span><br><span class="line">console.log(jsonDemo);</span><br></pre></td></tr></table></figure>
-<ul>
-<li>得到结果：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">"name"</span>:<span class="string">"aaa"</span>&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="用法三：把javascript对象转化成JSON格式，并改变原有的值"><a href="#用法三：把javascript对象转化成JSON格式，并改变原有的值" class="headerlink" title="用法三：把javascript对象转化成JSON格式，并改变原有的值"></a>用法三：把javascript对象转化成JSON格式，并改变原有的值</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var demo = &#123;</span><br><span class="line">	<span class="string">"name"</span>:<span class="string">"aaa"</span>,</span><br><span class="line">	<span class="string">"sex"</span>:<span class="string">"bbb"</span>,</span><br><span class="line">	<span class="string">"type"</span>:<span class="string">"ccc"</span></span><br><span class="line">&#125;</span><br><span class="line">var jsonDemo = JSON.stringify(demo,<span class="keyword">function</span> (key, value) &#123;</span><br><span class="line">	switch(key)&#123;</span><br><span class="line">		<span class="keyword">case</span> <span class="string">"name"</span>: <span class="built_in">return</span> <span class="string">"a"</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="string">"sex"</span>: <span class="built_in">return</span> <span class="string">"b"</span>;</span><br><span class="line">		default: <span class="built_in">return</span> value;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br><span class="line">console.log(jsonDemo);</span><br></pre></td></tr></table></figure>
-<ul>
-<li>得到结果：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">"name"</span>:<span class="string">"a"</span>,<span class="string">"sex"</span>:<span class="string">"b"</span>,<span class="string">"type"</span>:<span class="string">"ccc"</span>&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="用法四：把javascript对象转化成JSON格式，并控制缩进和空白符"><a href="#用法四：把javascript对象转化成JSON格式，并控制缩进和空白符" class="headerlink" title="用法四：把javascript对象转化成JSON格式，并控制缩进和空白符"></a>用法四：把javascript对象转化成JSON格式，并控制缩进和空白符</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var book = &#123;</span><br><span class="line">	<span class="string">"title"</span>: <span class="string">"aaa"</span>,</span><br><span class="line">	<span class="string">"type"</span>: <span class="string">"bbb"</span>,</span><br><span class="line">	<span class="string">"page"</span>: 50</span><br><span class="line">&#125;</span><br><span class="line">var jsonBook = JSON.stringify(book,null,<span class="string">"$$"</span>);</span><br><span class="line">console.log(jsonBook)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>得到结果：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">$$<span class="string">"title"</span>: <span class="string">"aaa"</span>,</span><br><span class="line">$$<span class="string">"type"</span>: <span class="string">"bbb"</span>,</span><br><span class="line">$$<span class="string">"page"</span>: 50</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>－该方法第三个参数如果为数字，那么就是每个属性前面缩进的字符数。</p>
-<h2 id="parse-方法"><a href="#parse-方法" class="headerlink" title="*parse()方法"></a>*parse()方法</h2><h4 id="用法一：把JSON转化成javascript格式-用来解析JSON字符串，构造由字符串描述的JavaScript值或对象。"><a href="#用法一：把JSON转化成javascript格式-用来解析JSON字符串，构造由字符串描述的JavaScript值或对象。" class="headerlink" title="用法一：把JSON转化成javascript格式, 用来解析JSON字符串，构造由字符串描述的JavaScript值或对象。"></a>用法一：把JSON转化成javascript格式, 用来解析JSON字符串，构造由字符串描述的JavaScript值或对象。</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var book = <span class="string">'&#123;"title":"aaa", "type":"bbb", "page":"50"&#125;'</span>;</span><br><span class="line">	  var demo = JSON.parse(book);</span><br><span class="line">	  console.log(demo);</span><br></pre></td></tr></table></figure>
-<ul>
-<li>得到结果：<br><code>demo.html:11 {title: &quot;aaa&quot;, type: &quot;bbb&quot;, page: &quot;50&quot;}</code></li>
-</ul>
-<h4 id="用法二：把JSON转化为javascript过程中，改变原有的值"><a href="#用法二：把JSON转化为javascript过程中，改变原有的值" class="headerlink" title="用法二：把JSON转化为javascript过程中，改变原有的值"></a>用法二：把JSON转化为javascript过程中，改变原有的值</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var book = <span class="string">'&#123;"title":"aaa", "type":"bbb", "page":50&#125;'</span>;</span><br><span class="line">	  var demo = JSON.stringify(book);</span><br><span class="line">	  var javascriptDemo = JSON.parse(demo, <span class="keyword">function</span> (key, value) &#123;</span><br><span class="line">		 switch (key) &#123;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">"title"</span>: <span class="built_in">return</span> <span class="string">"bbbbbb"</span>;</span><br><span class="line">			default: <span class="built_in">return</span> value;</span><br><span class="line">		 &#125;</span><br><span class="line">	  &#125;);</span><br><span class="line">	  console.log(javascriptDemo);</span><br></pre></td></tr></table></figure>
-<ul>
-<li>得到结果：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">"title"</span>:<span class="string">"aaa"</span>, <span class="string">"type"</span>:<span class="string">"bbb"</span>, <span class="string">"page"</span>:50&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/todo/2018/02/15/page/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王立超">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/652285661303743555.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="勇往直前">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/15/page/" itemprop="url">page</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-15T05:28:03+08:00">
-                2018-02-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/todo/2018/02/15/case-demo-2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王立超">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/652285661303743555.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="勇往直前">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/15/case-demo-2/" itemprop="url">case-demo</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-15T02:37:24+08:00">
-                2018-02-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/demo，案例/" itemprop="url" rel="index">
-                    <span itemprop="name">demo，案例</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="豆瓣电影介绍小案例"><a href="#豆瓣电影介绍小案例" class="headerlink" title="豆瓣电影介绍小案例"></a><a href="douban-movie">豆瓣电影介绍小案例</a></h3><h3 id="一个备忘录小案例"><a href="#一个备忘录小案例" class="headerlink" title="一个备忘录小案例"></a><a href="todo">一个备忘录小案例</a></h3><h3 id="一个弹力球小案例"><a href="#一个弹力球小案例" class="headerlink" title="一个弹力球小案例"></a><a href="flex-demo">一个弹力球小案例</a></h3><h3 id="一个圆形开屏导航栏小案例"><a href="#一个圆形开屏导航栏小案例" class="headerlink" title="一个圆形开屏导航栏小案例"></a><a href="spread">一个圆形开屏导航栏小案例</a></h3><h3 id="微金所首页小案例"><a href="#微金所首页小案例" class="headerlink" title="微金所首页小案例"></a><a href="wjs">微金所首页小案例</a></h3>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/todo/2018/02/13/article-0001/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王立超">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/652285661303743555.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="勇往直前">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/13/article-0001/" itemprop="url">'人生最重要的三种能力'</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-13T21:21:17+08:00">
-                2018-02-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/人生杂谈/" itemprop="url" rel="index">
-                    <span itemprop="name">人生杂谈</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="网络转载——人生最重要的三种能力，不是读书能学来的"><a href="#网络转载——人生最重要的三种能力，不是读书能学来的" class="headerlink" title="网络转载——人生最重要的三种能力，不是读书能学来的"></a>网络转载——人生最重要的三种能力，不是读书能学来的</h2><h2 id="一、人际交往中的期望值管理能力"><a href="#一、人际交往中的期望值管理能力" class="headerlink" title="一、人际交往中的期望值管理能力"></a>一、人际交往中的期望值管理能力</h2><h2 id="二、阈值自控意识"><a href="#二、阈值自控意识" class="headerlink" title="二、阈值自控意识"></a>二、阈值自控意识</h2><h2 id="三、应对主观时空扭曲的能力"><a href="#三、应对主观时空扭曲的能力" class="headerlink" title="三、应对主观时空扭曲的能力"></a>三、应对主观时空扭曲的能力</h2><h2 id="一-期望值管理能力"><a href="#一-期望值管理能力" class="headerlink" title="(一)期望值管理能力"></a>(一)期望值管理能力</h2><ul>
-<li>影视剧中往往有这样的观感：一个地痞或者土匪，平日无恶不作。到了最后一集，哎，这货突然抗日了，例如《大宅门》里的三爷。</li>
-<li>这时候观众对其好感度会突然爆棚，甚至超过许多没有爆点的正面角色，前几十集的劣迹简直一笔勾销。</li>
-<li>这就是期望值在前期被编剧压低之后的福利</li>
-<li>先记住一个公式：</li>
-<li>快乐值 = 现实 - 期望值</li>
-<li>我们刚进入一个团队时，如果一开始就大招尽出，会导致周围人和领导对你的期望值不断升高。</li>
-<li>最后总会有一次你满足不了对方的要求，这时候对你的负面评价也会随之而起，甚至会低过一直表现平平的同仁。</li>
-<li>有人将其总结为“不胜任陷阱”，因为在一个上升通道中，只要达到了上层的期望，就会被继续提拔。</li>
-<li>知道提拔到一个你不能胜任的岗位，让所有人失望，这个升迁过程才会结束。</li>
-<li>这一点在情场上也依然适用，你会发现浪子回头会获得相当的赞美，许多女人甚至可以不计较你之前是个多么烂的人；</li>
-<li>但老实巴交的“好好男人”一旦被抓到一次不老实就立刻被打入“渣男”的行列再也不得翻身。</li>
-<li>娱乐圈这样的例子年年都有，不再赘述。</li>
-<li>这就需要我们对别人对我们的期望值进行有限管理。</li>
-<li>比较常见的手段是憋大招，有一些在对方期待之外的东西不到关键时刻不能随便拿出来用。</li>
-<li>但周围人也不是傻瓜，次数多了，别人都会倾向于相信你藏着一手。</li>
-<li>例如学生时代那些永远叫嚷着这次考砸了的第一名们，信誉早已破产，其他人对其期望值依然在持续上升，这时候成熟的压力可想而知。</li>
-<li><strong>要真正做到有效控制周围人对你的期望值，需要做到真正无迹可寻，并在所有非必要的时候压抑自己的表现欲与虚荣心。</strong></li>
-<li>我认为这是进入职场的第一课。<h2 id="（二）阈值自控意识"><a href="#（二）阈值自控意识" class="headerlink" title="（二）阈值自控意识"></a>（二）阈值自控意识</h2></li>
-<li>阈值又叫临界值，指释放一个行为反应所需要的最小刺激强度。</li>
-<li>引用网上的一段文章：</li>
-<li>A片害了无数正常的男青年，没有A片的岁月里，男孩子满脑邪念充盈。</li>
-<li>可是在这个网络色情泛滥的当今，他们居然对生活中的女人没了想法，这不能不成为信息时代人类异化的经典案例。</li>
-<li>何以至此？阈值使然。也就是不断的持续刺激，太高了男人们欲望的触发点。</li>
-<li>上个世纪初，女人旗袍坐下时偶尔可一瞥的白花花大腿就可以出发老夫子们的欲念；</li>
-<li>可是100年后，看着满屏的玉体横陈，很多人居然会叹上一句： 没意思！</li>
-<li>这就是时代的变迁，使得阈值不断上升的最好例证。</li>
-<li>举个极端的例子，释迦牟尼本是个迦毗罗卫国的王子，很早就过着锦衣玉食的生活。其父为其修筑 春/夏/冬 三座宫殿。但他获得很厌世。</li>
-<li>其父为其选来印度最妖艳美丽的女子来取悦他，但是美酒美女对他的边际效用已经小道忽略，食欲肉欲的一切无法使他获得更高的满足，只有离开世俗创造佛教去了。</li>
-<li>他一出生就享受物质的极大满足，导致他的阈值搞到普通人难以想象的程度，最后凡是物质都无法使他快活。</li>
-<li>中国的例子是贾宝玉，从小活在女人堆里，最后也做和尚去了</li>
-<li>反而自小出家的人却未必能忘俗，所以施耐庵会有和尚最淫一说，潘巧云与裴如海那一段有很精妙的点评。</li>
-<li>自幼出家的人，从未享受过世俗的快感，所以阈值很低，一点就着。</li>
-<li>能大彻大悟的慧根认识，往往反而是富家弟子，也就不奇怪了。</li>
-<li>女人亦然。</li>
-<li>泛滥的韩剧将正常的女生活生生逼成大龄剩女，归根到底也是阈值作怪。</li>
-<li>本来少女看见年轻男子怀春，是老天爷安排的正常心理活动。现在这个自然的程序被突然打断，横插10部韩剧，男一号个个多金英俊完美，还有若干男二男三争抢。</li>
-<li>电视机钱的女人们于是看傻了，爱情阈值被活生生地抬道天上，身边的男人自然再也看不上。</li>
-<li>但你深刻理解了阈值对个人幸福与快乐的影响后，你就知道这个该概念不仅用在性和爱情上，更可以推广到人生幸福的方方面面。</li>
-<li>了解边际效用递减的规律，并学会一定程度的禁欲和自控，是防止阈值升高的不二法门。</li>
-<li>这绝对是需要在人生早期就要着力培养和锻炼的素质与意识，尤其对于男性。</li>
-<li>顺便提下，频繁观看色情片造成的刺激过度，会抑制大脑内对性刺激做出神经反应的奖赏机制。</li>
-<li>与药物成瘾相似，这种神经抑制会促使强迫的色情成瘾行为，并对正常的性意愿和性欲造成影响，可惜，对于有些人，这些话来的有点晚了。<h2 id="（三）应对主观时空扭曲的能力"><a href="#（三）应对主观时空扭曲的能力" class="headerlink" title="（三）应对主观时空扭曲的能力"></a>（三）应对主观时空扭曲的能力</h2></li>
-<li>这个概念有点玄。这里说的时空扭曲，指的是主观的时间流逝感觉随着年龄开始加速，而且一发不可收拾。</li>
-<li>相信大部分人都有这样的感觉，时间过的越来越快了。</li>
-<li>小学时是一个月一个月过，大学一学期一学期过，工作后就变成了一年一年过。</li>
-<li>越往上过度越快，问问你的父母，他们会告诉你十年一眨眼就没了，他们讨论着十几年二十年前的陈年旧事，好像就发生在昨天。</li>
-<li>网上的一个说法比较有趣：</li>
-<li>“五岁的时候人的记忆有五年，这时候过一年，到六岁时，记忆增加了五分之一；六岁到七岁，记忆增加六分之一。</li>
-<li>以此类推，到了二十岁的时候，过一年，记忆便只增加二十分之一。</li>
-<li>这一年的时光虽然没变，但是参照物变了，所以大家就感觉时间过得快了。</li>
-<li>可能等你六十岁的时候，过一年记忆只增加六十分之一，那时候就过得更快了。”</li>
-<li>这个说法有一定的道理。</li>
-<li>如果你仔细回忆一下会发现：</li>
-<li>童年的课间十分钟足够你从楼上跑下去玩点什么；</li>
-<li>但现在你坐在公司电脑前，才喝了杯热饮，把东西摊开准备干活，啥都没干呢一个小时就没了。</li>
-<li>小时候两个月的暑假特别漫长，现在的一个月不就是四个星期，一眨眼就没了。</li>
-<li>如果用记忆增量理论来解释，就就说明我们在成年后的工作和生活都是在简单重复，所以大脑中的“总数居”并没有像儿时那样迅猛增长。</li>
-<li>大脑处理今天的24小时，只需要动用几年前就已经存好的索引，驾轻就熟。</li>
-<li>总信息量几乎没有增加，你主观上感受到的“新东西”当然就少，而体验“新东西”恰恰是放慢主管时间的命门。</li>
-<li><strong>要解决时空扭曲的问题，我们必须走出“熟悉区”，“熟悉区”是时空黑洞，会不断加速消耗，吞噬你的时间。</strong></li>
-<li>如果你走出办公室，去陌生的国家一个月，就会发现这一个月并没有像办公室里那样，星期三过完就差不多能指望星期天了，而是觉得一个星期比在办公室两个星期都要多，这便是对抗时空扭曲的一个例子。</li>
-<li>并不是只有旅游才能有这样的效果，你如果在自己身上多试验，会发现能找到很多使用于你个人的手段，但前提是你要有“摆脱熟悉区”的意识。</li>
-<li><strong>这是我认为人的一生所需要掌握的最重要能力之一，掌握了对抗时空扭曲的本领，你就能延长主观生命。</strong></li>
-<li><img src="http://wx2.sinaimg.cn/mw690/005Io8Oqgy1fof7bt6ywdj30m80m8mzw.jpg" alt="不慌是一种底气，不乱是一种境界"></li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/todo/2018/02/11/Hexo-base/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王立超">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/652285661303743555.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="勇往直前">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/11/Hexo-base/" itemprop="url">Hexo 常用命令入门</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-11T23:42:05+08:00">
-                2018-02-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>欢迎使用hexo! 这是第一篇文章， 查阅 <a href="https://hexo.io/docs/" target="_blank" rel="noopener">文档</a>了解更多信息。 如果在使用Hexo时遇到任何问题, 你可以在 <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">故障诊断</a>中找到答案， 或者在<a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>上向我提问。（前面的链接不是我的<a href="https://github.com/wangwangwanglichao" target="_blank" rel="noopener">Github</a>哦！是原作者的）</p>
-<h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><h3 id="创建一个新帖子"><a href="#创建一个新帖子" class="headerlink" title="创建一个新帖子"></a>创建一个新帖子</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>详细信息: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">作品示例</a></p>
-<h3 id="运行服务器"><a href="#运行服务器" class="headerlink" title="运行服务器"></a>运行服务器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>详细信息: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">服务器</a></p>
-<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>详细信息: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">生成</a></p>
-<h3 id="部署到远程站点"><a href="#部署到远程站点" class="headerlink" title="部署到远程站点"></a>部署到远程站点</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>详细信息: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">部署</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/todo/2018/02/10/hello-Hexo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王立超">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/652285661303743555.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="勇往直前">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/10/hello-Hexo/" itemprop="url">你好,Hexo</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-10T21:30:40+08:00">
-                2018-02-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/搭建博客/" itemprop="url" rel="index">
-                    <span itemprop="name">搭建博客</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id=""><a href="#" class="headerlink" title=" "></a> </h2><h2 id="Hi！我是王立超"><a href="#Hi！我是王立超" class="headerlink" title="#Hi！我是王立超#"></a>#Hi！我是王立超#</h2><pre><code>一个很普通的人,目前做着一份很普通的工作;
-后来经过朋友推荐
-开始边工作边自学前端的菜鸟之路;
-不管道路有多坎坷,我都不想放弃;
-每天只要有进步;
-我就为自己高兴,因为我距离自己的梦想更近了一些;
-想成为一名前端工程师,我,一直在路上...
-</code></pre><hr>
-<ul>
-<li>这是我第一次使用hexo搭建我的博客，终于成功了，好高兴！</li>
-<li>努力学习中，希望自己每天都有进步,加油！</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/todo/2018/02/10/CSSlayout-01/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王立超">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/652285661303743555.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="勇往直前">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/10/CSSlayout-01/" itemprop="url">CSS布局之水平居中和垂直居中</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-10T21:30:40+08:00">
-                2018-02-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端布局/" itemprop="url" rel="index">
-                    <span itemprop="name">前端布局</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ul>
-<li>前端布局非常重要的一环就是页面框架的搭建，也是最基础的一环。在页面框架搭建之中，又有居中布局/多列布局/全局布局。今天介绍一下居中布局的一些技巧。</li>
-</ul>
-<h1 id="居中布局"><a href="#居中布局" class="headerlink" title="居中布局"></a>居中布局</h1><h2 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h2><h4 id="1-使用inline-block-text-align："><a href="#1-使用inline-block-text-align：" class="headerlink" title="1.使用inline-block + text-align："></a>1.使用inline-block + text-align：</h4><ul>
-<li>原理：先将子框由块级元素改变为行内块元素，再通过设置行内块元素居中以达到水平居中的目的。#####</li>
-<li>用法：对子框设置display:inline-block,对父框设置text-align:center。</li>
-<li>示例：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.child &#123;</span><br><span class="line">	display: inline-block;</span><br><span class="line">&#125;</span><br><span class="line">.parent &#123;</span><br><span class="line">	text-align: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>优点:兼容性好。</li>
-<li>缺点:.child里的文字也会水平居中。(可以在.child里添加text-align:left还原)</li>
-</ul>
-<h4 id="2-使用table-margin"><a href="#2-使用table-margin" class="headerlink" title="2.使用table + margin"></a>2.使用table + margin</h4><ul>
-<li>原理:先将子框设置为块级表格来显示,再设置子框居中以达到居中水平.</li>
-<li>用法:对子框设置display:table,再设置margin:0 auto;</li>
-<li>示例:</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.child &#123;</span><br><span class="line">	display: table;</span><br><span class="line">	margin: 0 auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>优点:只设置了child,IE8以上都支持;</li>
-<li>缺点:不支持IE6/IE7,将div换成了table;</li>
-</ul>
-<h4 id="3-使用absolute-transform"><a href="#3-使用absolute-transform" class="headerlink" title="3.使用absolute + transform"></a>3.使用absolute + transform</h4><ul>
-<li>原理:将子框设置为绝对定位,移动子框,使子框左侧距离相对框左侧边框的距离为相对框宽度的一半,再通过向左移动子框的一半宽度以达到水平居中。父框需要设置为相对定位(或者绝对定位),使父框成为子框的相对框。</li>
-<li>用法:对父框设置position:relative(absolute);对子框设置position:absolute;left:50%;transform:translateX(-50%);</li>
-<li>示例:</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">	position: relative;</span><br><span class="line">&#125;</span><br><span class="line">.child &#123;</span><br><span class="line">	position: absolute;</span><br><span class="line">	left: 50%;</span><br><span class="line">	transform: translateX(-50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>优点:居中元素不会对其它元素产生影响;</li>
-<li>缺点:transform属于CSS3内容,兼容性存在一定问题;</li>
-</ul>
-<h4 id="4-使用flex-margin"><a href="#4-使用flex-margin" class="headerlink" title="4.使用flex + margin"></a>4.使用flex + margin</h4><ul>
-<li>原理:通过CSS3中的布局利器flex将子框转换为flex item,再设置子框居中以达到居中目的。</li>
-<li>用法:先将父框设置为display:flex;再设置子框margin:0 auto;</li>
-<li>示例:</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">	display:flex;</span><br><span class="line">&#125;</span><br><span class="line">.child &#123;</span><br><span class="line">	margin:0 auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>缺点:IE6/7/8等低版本浏览器不支持;</li>
-</ul>
-<h4 id="5-使用flex-justify-content"><a href="#5-使用flex-justify-content" class="headerlink" title="5.使用flex + justify-content"></a>5.使用flex + justify-content</h4><ul>
-<li>原理:通过CSS3中的布局利器flex中的justify-content属性来达到居中目的;</li>
-<li>用法:先将父框设置为display:flex;再设置justify-content:center;</li>
-<li>示例:</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">	display:flex;</span><br><span class="line">	justify-content: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>优点:只设置parent即可;</li>
-<li>缺点:IE6/7/8等低版本浏览器不支持;</li>
-</ul>
-<h2 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h2><h4 id="1-使用table-cell-vertical-align"><a href="#1-使用table-cell-vertical-align" class="headerlink" title="1.使用table-cell + vertical-align"></a>1.使用table-cell + vertical-align</h4><ul>
-<li>原理:通过将父框转化为一个表格单元格显示,在通过设置属性,使表格单元格内容垂直居中;</li>
-<li>用法:先将父框设置为display:table-cell;再设置vertical-align:middle;</li>
-<li>实例:</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">	display:table-cell;</span><br><span class="line">	vertical-align: middle;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>优点: 兼容性较好,IE8以上都支持;</li>
-<li>缺点: 将div元素转化为了table元素;</li>
-</ul>
-<h4 id="2-使用absolute-transform"><a href="#2-使用absolute-transform" class="headerlink" title="2.使用absolute + transform"></a>2.使用absolute + transform</h4><ul>
-<li>原理:类似于上面说过的水平居中的原理，将子框设置为绝对定位，移动子框，使子框上边距离相对框上边边框的距离为相对框高度的一半，再通过向上移动子框的高度的一半以达到垂直居中;父框需设置为相对定位或者绝对定位，使其成为子框的相对框；</li>
-<li>用法:先将父框设置为position:relative(absolute);再设置子框position:absolute;top:50%;transform:translateY(-50%);</li>
-<li>实例:</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">	position:relative;</span><br><span class="line">&#125;</span><br><span class="line">.child &#123;</span><br><span class="line">	position: absolute;</span><br><span class="line">	top: 50%;</span><br><span class="line">	transform: translateY(-50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>优点: 居中元素不会对其它元素产生影响;</li>
-<li>缺点: transform属于CSS3内容,兼容性存在一定问题;</li>
-</ul>
-<h4 id="３-使用flex-align-items"><a href="#３-使用flex-align-items" class="headerlink" title="３.使用flex + align-items"></a>３.使用flex + align-items</h4><ul>
-<li>原理:通过CSS3中的布局利器flex中的align-items属性来达到居中目的;</li>
-<li>用法:先将父框设置为display:flex;再设置align-items:center;</li>
-<li>示例:</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">	display:flex;</span><br><span class="line">	align-items: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>优点:只设置parent即可;</li>
-<li>缺点:IE6/7/8等低版本浏览器不支持;</li>
-</ul>
-<h2 id="水平-垂直-居中"><a href="#水平-垂直-居中" class="headerlink" title="水平 + 垂直　居中"></a>水平 + 垂直　居中</h2><p>####　1.使用absolute + transform</p>
-<ul>
-<li>原理:将水平居中和垂直居中相结合;</li>
-<li>用法:先将父框设置为position:relative(absolute);再设置子框position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);</li>
-<li>实例:</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">	position:relative;</span><br><span class="line">&#125;</span><br><span class="line">.child &#123;</span><br><span class="line">	position: absolute;</span><br><span class="line">	left: 50%;</span><br><span class="line">	top: 50%;</span><br><span class="line">	transform: translate(-50%,-50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>优点: 居中元素不会对其它元素产生影响;</li>
-<li>缺点: transform属于CSS3内容,兼容性存在一定问题;</li>
-</ul>
-<h4 id="2-使用inline-block-text-align-table-cell-vertical-align"><a href="#2-使用inline-block-text-align-table-cell-vertical-align" class="headerlink" title="2.使用inline-block + text-align + table-cell + vertical-align"></a>2.使用inline-block + text-align + table-cell + vertical-align</h4><ul>
-<li>原理:使用inline-block+text-align水平居中;再用table-cell+vertical-align垂直居中;将二者结合起来;</li>
-<li>实例:</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">	text-align:center;</span><br><span class="line">	display:table-cell;</span><br><span class="line">	vertical-align:middle;</span><br><span class="line">&#125;</span><br><span class="line">.child &#123;</span><br><span class="line">	display: inline-block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>优点: 兼容性较好;</li>
-<li>缺点: 使用起来比较麻烦;</li>
-</ul>
-<h4 id="2-使用flex-justify-content-align-items"><a href="#2-使用flex-justify-content-align-items" class="headerlink" title="2.使用flex + justify-content + align-items"></a>2.使用flex + justify-content + align-items</h4><ul>
-<li>原理:通过设置flex中的justify-content和align-items,从而达到水平垂直居中;</li>
-<li>实例:</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">	display:flex;</span><br><span class="line">	justify-content:center;</span><br><span class="line">	align-items:center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>优点: 只设置parent元素;</li>
-<li>缺点: 兼容性存在一些问题;</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
 
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -1428,9 +261,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/10/CSSlayout-02/" itemprop="url">CSS布局之多列布局</a></h1>
+          <h1 class="post-title" itemprop="name headline">CSS布局之多列布局</h1>
         
 
         <div class="post-meta">
@@ -1502,9 +333,7 @@
       
 
       
-        
-          
-            <ul>
+        <ul>
 <li>前端布局非常重要的一环就是页面框架的搭建，也是最基础的一环。在页面框架搭建之中，又有居中布局/多列布局/全局布局。本文介绍一下多列布局的一些技巧。</li>
 </ul>
 <h1 id="多列布局"><a href="#多列布局" class="headerlink" title="多列布局"></a>多列布局</h1><h2 id="定宽-自适应"><a href="#定宽-自适应" class="headerlink" title="定宽 + 自适应"></a>定宽 + 自适应</h2><h4 id="1-使用float-overflow："><a href="#1-使用float-overflow：" class="headerlink" title="1.使用float + overflow："></a>1.使用float + overflow：</h4><ul>
@@ -1696,8 +525,6 @@
 <li>优缺点: 兼容性差,IE9及以下不兼容;</li>
 </ul>
 
-          
-        
       
     </div>
     
@@ -1712,14 +539,40 @@
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/前端/" rel="tag"># 前端</a>
+          
+            <a href="/tags/CSS/" rel="tag"># CSS</a>
+          
+            <a href="/tags/CSS基础/" rel="tag"># CSS基础</a>
+          
+        </div>
       
 
       
+      
+      
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/10/CSSlayout-01/" rel="prev" title="CSS布局之水平居中和垂直居中">
+                CSS布局之水平居中和垂直居中 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </footer>
   </div>
@@ -1729,10 +582,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -1740,6 +594,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -1760,8 +618,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1825,6 +692,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#多列布局"><span class="nav-number">1.</span> <span class="nav-text">多列布局</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定宽-自适应"><span class="nav-number">1.1.</span> <span class="nav-text">定宽 + 自适应</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-使用float-overflow："><span class="nav-number">1.1.0.1.</span> <span class="nav-text">1.使用float + overflow：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-使用float-margin"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">2.使用float + margin</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-使用float-margin-改良版"><span class="nav-number">1.1.0.3.</span> <span class="nav-text">3.使用float + margin (改良版)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-使用table"><span class="nav-number">1.1.0.4.</span> <span class="nav-text">4.使用table</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-使用flex"><span class="nav-number">1.1.0.5.</span> <span class="nav-text">5.使用flex</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#两列定宽-一列自适应"><span class="nav-number">1.2.</span> <span class="nav-text">两列定宽 + 一列自适应</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不定宽-自适应"><span class="nav-number">1.3.</span> <span class="nav-text">不定宽 + 自适应</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用float-overflow"><span class="nav-number">1.3.0.1.</span> <span class="nav-text">使用float + overflow</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用table"><span class="nav-number">1.3.0.2.</span> <span class="nav-text">使用table</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用flex"><span class="nav-number">1.3.0.3.</span> <span class="nav-text">使用flex</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#两列不定宽-一列自适应"><span class="nav-number">1.4.</span> <span class="nav-text">两列不定宽 + 一列自适应</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#等分布局"><span class="nav-number">1.5.</span> <span class="nav-text">等分布局</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用float"><span class="nav-number">1.5.0.1.</span> <span class="nav-text">使用float</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用flex-1"><span class="nav-number">1.5.0.2.</span> <span class="nav-text">使用flex</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定宽-自适应-两块高度相同"><span class="nav-number">1.6.</span> <span class="nav-text">定宽 + 自适应 + 两块高度相同</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用float-1"><span class="nav-number">1.6.0.1.</span> <span class="nav-text">使用float</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用table-1"><span class="nav-number">1.6.0.2.</span> <span class="nav-text">使用table</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用flex-2"><span class="nav-number">1.6.0.3.</span> <span class="nav-text">使用flex</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用display"><span class="nav-number">1.6.0.4.</span> <span class="nav-text">使用display</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#全屏布局"><span class="nav-number">1.7.</span> <span class="nav-text">全屏布局</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#全屏布局的特点"><span class="nav-number">1.7.0.1.</span> <span class="nav-text">全屏布局的特点:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全屏布局的方法"><span class="nav-number">1.7.1.</span> <span class="nav-text">全屏布局的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用position"><span class="nav-number">1.7.1.1.</span> <span class="nav-text">使用position</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用flex-3"><span class="nav-number">1.7.1.2.</span> <span class="nav-text">使用flex</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1967,6 +850,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
