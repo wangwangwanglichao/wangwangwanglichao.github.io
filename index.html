@@ -1,339 +1,170 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next mist use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-
-
-
-
-
-
-
-
-<meta property="og:type" content="website">
-<meta property="og:title" content="勇往直前">
-<meta property="og:url" content="http://www.wanglichao.top/todo/index.html">
-<meta property="og:site_name" content="勇往直前">
-<meta property="og:locale" content="zh-Hans">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="勇往直前">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="http://www.wanglichao.top/todo/"/>
-
-
-
-
-
-  <title>勇往直前</title>
-  
-
-
-
-
-
-
-
-
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  
-  
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-  
-
-  <div class="container sidebar-position-left 
-  page-home">
-    <div class="headband"></div>
-    <a href="https://github.com/wangwangwanglichao"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"></a>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
     
+    
+    
+    
+    <meta name="keywords" content="前端, 互联网, javascript, CSS, HTML5, JS">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="勇往直前" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato|Roboto+Condensed|Skranji|Ubuntu|Ubuntu+Mono">
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
 
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">勇往直前</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>勇往直前 - 心有远方</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">勇往直前</a></h1>
+        <h2 class="subtitle">心有远方</h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/logo.jpg" alt="logo">
+      </div>
+      
     </div>
-      
-        <p class="site-subtitle">心有远方</p>
-      
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="Toggle Navbar"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/" class="current">Home</a></li>
+        
+        <li role="menuitem"><a href="/archives/">Archives</a></li>
+        
+        <li role="menuitem"><a href="/tags/">Tags</a></li>
+        
+        <li role="menuitem"><a href="/about/">About</a></li>
+        
+      </ul>
+    </nav>
   </div>
+</header>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-something">
-          <a href="/something" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
-            
-            something
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
-</nav>
-
-
-
- </div>
-    </header>
 
     <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
             
-  <section id="posts" class="posts-expand">
-    
-      
 
+<div id="index" class="index page">
   
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/todo/2018/11/10/enter-event/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王立超">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/652285661303743555.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="勇往直前">
-    </span>
-
-    
-      <header class="post-header">
-
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/todo/2018/11/10/enter-event/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="王立超">
+        <meta itemprop="description" content="">
+        <meta itemprop="image" content="/images/652285661303743555.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="勇往直前">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/11/10/enter-event/" itemprop="url">输入URL地址敲回车之后发生了什么</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-11-10T12:14:24+08:00">2018-11-10 12:14:24</time></span>
+        </span>
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/10/enter-event/" itemprop="url">输入URL地址敲回车之后发生了什么</a></h1>
         
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-10T12:14:24+08:00">
-                2018-11-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
+        <span class="post-meta-divider divider">|</span>
         
+        <span class="post-categories">
           
-            <blockquote>
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <blockquote>
 <p> 输入网址敲回车之后,<br> 浏览器开始向DNS服务器发送请求,    (request)请求<br> DNS服务器解析,<br> 找到IP地址对应的服务器,<br> 服务器根据对应的端口号找到对应的项目,<br> 将需要的数据代码编码后返回给浏览器客户端,并将数据的类型告诉浏览器(HTML/json…),     (response)响应<br> 浏览器将接收到的数据根据返回来的数据类型进行解析,</p>
 </blockquote>
 <h4 id="http事物-request请求和response响应都成功就是一个完整的HTTP事物"><a href="#http事物-request请求和response响应都成功就是一个完整的HTTP事物" class="headerlink" title="http事物: request请求和response响应都成功就是一个完整的HTTP事物;"></a>http事物: request请求和response响应都成功就是一个完整的HTTP事物;</h4><h4 id="https-www-baidu-com-443-xx-yy-index-html-name-aa-amp-age-30-id-5"><a href="#https-www-baidu-com-443-xx-yy-index-html-name-aa-amp-age-30-id-5" class="headerlink" title="https://www.baidu.com:443/xx/yy/index.html?name=aa&amp;age=30#id=5"></a><a href="https://www.baidu.com:443/xx/yy/index.html?name=aa&amp;age=30#id=5" target="_blank" rel="noopener">https://www.baidu.com:443/xx/yy/index.html?name=aa&amp;age=30#id=5</a></h4><h4 id="https-–-www-baidu-com-–-443-–-xx-yy-index-html-–-name-aa-amp-age-30-–-id-5"><a href="#https-–-www-baidu-com-–-443-–-xx-yy-index-html-–-name-aa-amp-age-30-–-id-5" class="headerlink" title="(https) – (www.baidu.com ) – (443) – (/xx/yy/index.html) – (name=aa&amp;age=30) – (id=5)"></a>(https) – (www.baidu.com ) – (443) – (/xx/yy/index.html) – (name=aa&amp;age=30) – (id=5)</h4><h2 id="1-HTTPS-传输协议"><a href="#1-HTTPS-传输协议" class="headerlink" title="1.(HTTPS) 传输协议"></a>1.(HTTPS) 传输协议</h2><blockquote>
@@ -355,459 +186,202 @@
 <p>锚点定位<br>路由</p>
 </blockquote>
 
-          
-        
       
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
+    </main>
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/前端基础/" rel="tag"><i class="fas fa-tags"></i>前端基础</a>
+        
+        <a class="post-tag button" href="/tags/http/" rel="tag"><i class="fas fa-tags"></i>http</a>
+        
+        <a class="post-tag button" href="/tags/url/" rel="tag"><i class="fas fa-tags"></i>url</a>
+        
+      </div>
       
     </footer>
-  </div>
-  
-  
-  
   </article>
-
-
-    
-      
-
   
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/todo/2018/02/15/page/javascript-json/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王立超">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/652285661303743555.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="勇往直前">
-    </span>
-
-    
-      <header class="post-header">
-
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/todo/2018/02/15/page/javascript-json/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="王立超">
+        <meta itemprop="description" content="">
+        <meta itemprop="image" content="/images/652285661303743555.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="勇往直前">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/02/15/page/javascript-json/" itemprop="url">javascript学习之json常用方法</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-02-15T21:30:40+08:00">2018-02-15 21:30:40</time></span>
+        </span>
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/15/page/javascript-json/" itemprop="url">javascript学习之json常用方法</a></h1>
         
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-15T21:30:40+08:00">
-                2018-02-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/js学习/" itemprop="url" rel="index">
-                    <span itemprop="name">js学习</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
+        <span class="post-meta-divider divider">|</span>
         
+        <span class="post-categories">
           
-            <h2 id="javascript中JSON语法有三种表示方法："><a href="#javascript中JSON语法有三种表示方法：" class="headerlink" title="javascript中JSON语法有三种表示方法："></a>javascript中JSON语法有三种表示方法：</h2><h3 id="简单值-“hello-json”"><a href="#简单值-“hello-json”" class="headerlink" title="* 简单值     “hello json”"></a>* 简单值     “hello json”</h3><h3 id="对象-“name”-”jack”"><a href="#对象-“name”-”jack”" class="headerlink" title="* 对象        {“name”:”jack”}"></a>* 对象        {“name”:”jack”}</h3><h3 id="数组-“aaa”-”bbb”-“ccc”-”ddd”"><a href="#数组-“aaa”-”bbb”-“ccc”-”ddd”" class="headerlink" title="* 数组        [{“aaa”:”bbb”},{“ccc”:”ddd”}]"></a>* 数组        [{“aaa”:”bbb”},{“ccc”:”ddd”}]</h3><h2 id="JSON常用的两个方法："><a href="#JSON常用的两个方法：" class="headerlink" title="JSON常用的两个方法："></a>JSON常用的两个方法：</h2><h2 id="1-stringify"><a href="#1-stringify" class="headerlink" title="1.stringify()"></a>1.stringify()</h2><h2 id="2-parse"><a href="#2-parse" class="headerlink" title="2.parse()"></a>2.parse()</h2><h2 id="stringify用法："><a href="#stringify用法：" class="headerlink" title="*stringify用法："></a>*stringify用法：</h2><h4 id="用法一：-把javascript对象转化成JSON格式"><a href="#用法一：-把javascript对象转化成JSON格式" class="headerlink" title="用法一： 把javascript对象转化成JSON格式:"></a>用法一： 把javascript对象转化成JSON格式:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var demo = &#123;</span><br><span class="line">  <span class="string">"name"</span>:<span class="string">"aaa"</span>,</span><br><span class="line">  <span class="string">"type"</span>:<span class="string">"bbb"</span> </span><br><span class="line">&#125;</span><br><span class="line">var jsonDemo = JSON.stringify(demo);</span><br><span class="line">console.log(jsonDemo);</span><br></pre></td></tr></table></figure>
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/js学习/" itemprop="url" rel="index"><span itemprop="name">js学习</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h2 id="javascript中JSON语法有三种表示方法："><a href="#javascript中JSON语法有三种表示方法：" class="headerlink" title="javascript中JSON语法有三种表示方法："></a>javascript中JSON语法有三种表示方法：</h2><h3 id="简单值-“hello-json”"><a href="#简单值-“hello-json”" class="headerlink" title="* 简单值     “hello json”"></a>* 简单值     “hello json”</h3><h3 id="对象-“name”-”jack”"><a href="#对象-“name”-”jack”" class="headerlink" title="* 对象        {“name”:”jack”}"></a>* 对象        {“name”:”jack”}</h3><h3 id="数组-“aaa”-”bbb”-“ccc”-”ddd”"><a href="#数组-“aaa”-”bbb”-“ccc”-”ddd”" class="headerlink" title="* 数组        [{“aaa”:”bbb”},{“ccc”:”ddd”}]"></a>* 数组        [{“aaa”:”bbb”},{“ccc”:”ddd”}]</h3><h2 id="JSON常用的两个方法："><a href="#JSON常用的两个方法：" class="headerlink" title="JSON常用的两个方法："></a>JSON常用的两个方法：</h2><h2 id="1-stringify"><a href="#1-stringify" class="headerlink" title="1.stringify()"></a>1.stringify()</h2><h2 id="2-parse"><a href="#2-parse" class="headerlink" title="2.parse()"></a>2.parse()</h2><h2 id="stringify用法："><a href="#stringify用法：" class="headerlink" title="*stringify用法："></a>*stringify用法：</h2><h4 id="用法一：-把javascript对象转化成JSON格式"><a href="#用法一：-把javascript对象转化成JSON格式" class="headerlink" title="用法一： 把javascript对象转化成JSON格式:"></a>用法一： 把javascript对象转化成JSON格式:</h4><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var demo = &#123;</span><br><span class="line">  <span class="string">"name"</span>:<span class="string">"aaa"</span>,</span><br><span class="line">  <span class="string">"type"</span>:<span class="string">"bbb"</span> </span><br><span class="line">&#125;</span><br><span class="line">var jsonDemo = JSON.stringify(demo);</span><br><span class="line">console.log(jsonDemo);</span><br></pre></td></tr></table></figure>
 <ul>
-<li>得到结果：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">"name"</span>:<span class="string">"aaa"</span>,<span class="string">"type"</span>:<span class="string">"bbb"</span>&#125;</span><br></pre></td></tr></table></figure>
+<li>得到结果：<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">"name"</span>:<span class="string">"aaa"</span>,<span class="string">"type"</span>:<span class="string">"bbb"</span>&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h4 id="用法二：把javascript对象转化成JSON格式，增加过滤，只留想要的数据"><a href="#用法二：把javascript对象转化成JSON格式，增加过滤，只留想要的数据" class="headerlink" title="用法二：把javascript对象转化成JSON格式，增加过滤，只留想要的数据"></a>用法二：把javascript对象转化成JSON格式，增加过滤，只留想要的数据</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var demo = &#123;</span><br><span class="line">	<span class="string">"name"</span>:<span class="string">"aaa"</span>,</span><br><span class="line">	<span class="string">"sex"</span>:<span class="string">"boy"</span>,</span><br><span class="line">	<span class="string">"age"</span>: 20</span><br><span class="line">&#125;</span><br><span class="line">var jsonDemo = JSON.stringify(demo,[<span class="string">"name"</span>]);</span><br><span class="line">console.log(jsonDemo);</span><br></pre></td></tr></table></figure>
+<h4 id="用法二：把javascript对象转化成JSON格式，增加过滤，只留想要的数据"><a href="#用法二：把javascript对象转化成JSON格式，增加过滤，只留想要的数据" class="headerlink" title="用法二：把javascript对象转化成JSON格式，增加过滤，只留想要的数据"></a>用法二：把javascript对象转化成JSON格式，增加过滤，只留想要的数据</h4><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var demo = &#123;</span><br><span class="line">	<span class="string">"name"</span>:<span class="string">"aaa"</span>,</span><br><span class="line">	<span class="string">"sex"</span>:<span class="string">"boy"</span>,</span><br><span class="line">	<span class="string">"age"</span>: 20</span><br><span class="line">&#125;</span><br><span class="line">var jsonDemo = JSON.stringify(demo,[<span class="string">"name"</span>]);</span><br><span class="line">console.log(jsonDemo);</span><br></pre></td></tr></table></figure>
 <ul>
-<li>得到结果：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">"name"</span>:<span class="string">"aaa"</span>&#125;</span><br></pre></td></tr></table></figure>
+<li>得到结果：<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">"name"</span>:<span class="string">"aaa"</span>&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h4 id="用法三：把javascript对象转化成JSON格式，并改变原有的值"><a href="#用法三：把javascript对象转化成JSON格式，并改变原有的值" class="headerlink" title="用法三：把javascript对象转化成JSON格式，并改变原有的值"></a>用法三：把javascript对象转化成JSON格式，并改变原有的值</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var demo = &#123;</span><br><span class="line">	<span class="string">"name"</span>:<span class="string">"aaa"</span>,</span><br><span class="line">	<span class="string">"sex"</span>:<span class="string">"bbb"</span>,</span><br><span class="line">	<span class="string">"type"</span>:<span class="string">"ccc"</span></span><br><span class="line">&#125;</span><br><span class="line">var jsonDemo = JSON.stringify(demo,<span class="keyword">function</span> (key, value) &#123;</span><br><span class="line">	switch(key)&#123;</span><br><span class="line">		<span class="keyword">case</span> <span class="string">"name"</span>: <span class="built_in">return</span> <span class="string">"a"</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="string">"sex"</span>: <span class="built_in">return</span> <span class="string">"b"</span>;</span><br><span class="line">		default: <span class="built_in">return</span> value;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br><span class="line">console.log(jsonDemo);</span><br></pre></td></tr></table></figure>
+<h4 id="用法三：把javascript对象转化成JSON格式，并改变原有的值"><a href="#用法三：把javascript对象转化成JSON格式，并改变原有的值" class="headerlink" title="用法三：把javascript对象转化成JSON格式，并改变原有的值"></a>用法三：把javascript对象转化成JSON格式，并改变原有的值</h4><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var demo = &#123;</span><br><span class="line">	<span class="string">"name"</span>:<span class="string">"aaa"</span>,</span><br><span class="line">	<span class="string">"sex"</span>:<span class="string">"bbb"</span>,</span><br><span class="line">	<span class="string">"type"</span>:<span class="string">"ccc"</span></span><br><span class="line">&#125;</span><br><span class="line">var jsonDemo = JSON.stringify(demo,<span class="keyword">function</span> (key, value) &#123;</span><br><span class="line">	switch(key)&#123;</span><br><span class="line">		<span class="keyword">case</span> <span class="string">"name"</span>: <span class="built_in">return</span> <span class="string">"a"</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="string">"sex"</span>: <span class="built_in">return</span> <span class="string">"b"</span>;</span><br><span class="line">		default: <span class="built_in">return</span> value;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br><span class="line">console.log(jsonDemo);</span><br></pre></td></tr></table></figure>
 <ul>
-<li>得到结果：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">"name"</span>:<span class="string">"a"</span>,<span class="string">"sex"</span>:<span class="string">"b"</span>,<span class="string">"type"</span>:<span class="string">"ccc"</span>&#125;</span><br></pre></td></tr></table></figure>
+<li>得到结果：<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">"name"</span>:<span class="string">"a"</span>,<span class="string">"sex"</span>:<span class="string">"b"</span>,<span class="string">"type"</span>:<span class="string">"ccc"</span>&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h4 id="用法四：把javascript对象转化成JSON格式，并控制缩进和空白符"><a href="#用法四：把javascript对象转化成JSON格式，并控制缩进和空白符" class="headerlink" title="用法四：把javascript对象转化成JSON格式，并控制缩进和空白符"></a>用法四：把javascript对象转化成JSON格式，并控制缩进和空白符</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var book = &#123;</span><br><span class="line">	<span class="string">"title"</span>: <span class="string">"aaa"</span>,</span><br><span class="line">	<span class="string">"type"</span>: <span class="string">"bbb"</span>,</span><br><span class="line">	<span class="string">"page"</span>: 50</span><br><span class="line">&#125;</span><br><span class="line">var jsonBook = JSON.stringify(book,null,<span class="string">"$$"</span>);</span><br><span class="line">console.log(jsonBook)</span><br></pre></td></tr></table></figure>
+<h4 id="用法四：把javascript对象转化成JSON格式，并控制缩进和空白符"><a href="#用法四：把javascript对象转化成JSON格式，并控制缩进和空白符" class="headerlink" title="用法四：把javascript对象转化成JSON格式，并控制缩进和空白符"></a>用法四：把javascript对象转化成JSON格式，并控制缩进和空白符</h4><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var book = &#123;</span><br><span class="line">	<span class="string">"title"</span>: <span class="string">"aaa"</span>,</span><br><span class="line">	<span class="string">"type"</span>: <span class="string">"bbb"</span>,</span><br><span class="line">	<span class="string">"page"</span>: 50</span><br><span class="line">&#125;</span><br><span class="line">var jsonBook = JSON.stringify(book,null,<span class="string">"$$"</span>);</span><br><span class="line">console.log(jsonBook)</span><br></pre></td></tr></table></figure>
 <ul>
-<li>得到结果：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">$$<span class="string">"title"</span>: <span class="string">"aaa"</span>,</span><br><span class="line">$$<span class="string">"type"</span>: <span class="string">"bbb"</span>,</span><br><span class="line">$$<span class="string">"page"</span>: 50</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li>得到结果：<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">$$<span class="string">"title"</span>: <span class="string">"aaa"</span>,</span><br><span class="line">$$<span class="string">"type"</span>: <span class="string">"bbb"</span>,</span><br><span class="line">$$<span class="string">"page"</span>: 50</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>－该方法第三个参数如果为数字，那么就是每个属性前面缩进的字符数。</p>
-<h2 id="parse-方法"><a href="#parse-方法" class="headerlink" title="*parse()方法"></a>*parse()方法</h2><h4 id="用法一：把JSON转化成javascript格式-用来解析JSON字符串，构造由字符串描述的JavaScript值或对象。"><a href="#用法一：把JSON转化成javascript格式-用来解析JSON字符串，构造由字符串描述的JavaScript值或对象。" class="headerlink" title="用法一：把JSON转化成javascript格式, 用来解析JSON字符串，构造由字符串描述的JavaScript值或对象。"></a>用法一：把JSON转化成javascript格式, 用来解析JSON字符串，构造由字符串描述的JavaScript值或对象。</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var book = <span class="string">'&#123;"title":"aaa", "type":"bbb", "page":"50"&#125;'</span>;</span><br><span class="line">	  var demo = JSON.parse(book);</span><br><span class="line">	  console.log(demo);</span><br></pre></td></tr></table></figure>
+<h2 id="parse-方法"><a href="#parse-方法" class="headerlink" title="*parse()方法"></a>*parse()方法</h2><h4 id="用法一：把JSON转化成javascript格式-用来解析JSON字符串，构造由字符串描述的JavaScript值或对象。"><a href="#用法一：把JSON转化成javascript格式-用来解析JSON字符串，构造由字符串描述的JavaScript值或对象。" class="headerlink" title="用法一：把JSON转化成javascript格式, 用来解析JSON字符串，构造由字符串描述的JavaScript值或对象。"></a>用法一：把JSON转化成javascript格式, 用来解析JSON字符串，构造由字符串描述的JavaScript值或对象。</h4><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var book = <span class="string">'&#123;"title":"aaa", "type":"bbb", "page":"50"&#125;'</span>;</span><br><span class="line">	  var demo = JSON.parse(book);</span><br><span class="line">	  console.log(demo);</span><br></pre></td></tr></table></figure>
 <ul>
 <li>得到结果：<br><code>demo.html:11 {title: &quot;aaa&quot;, type: &quot;bbb&quot;, page: &quot;50&quot;}</code></li>
 </ul>
-<h4 id="用法二：把JSON转化为javascript过程中，改变原有的值"><a href="#用法二：把JSON转化为javascript过程中，改变原有的值" class="headerlink" title="用法二：把JSON转化为javascript过程中，改变原有的值"></a>用法二：把JSON转化为javascript过程中，改变原有的值</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var book = <span class="string">'&#123;"title":"aaa", "type":"bbb", "page":50&#125;'</span>;</span><br><span class="line">	  var demo = JSON.stringify(book);</span><br><span class="line">	  var javascriptDemo = JSON.parse(demo, <span class="keyword">function</span> (key, value) &#123;</span><br><span class="line">		 switch (key) &#123;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">"title"</span>: <span class="built_in">return</span> <span class="string">"bbbbbb"</span>;</span><br><span class="line">			default: <span class="built_in">return</span> value;</span><br><span class="line">		 &#125;</span><br><span class="line">	  &#125;);</span><br><span class="line">	  console.log(javascriptDemo);</span><br></pre></td></tr></table></figure>
+<h4 id="用法二：把JSON转化为javascript过程中，改变原有的值"><a href="#用法二：把JSON转化为javascript过程中，改变原有的值" class="headerlink" title="用法二：把JSON转化为javascript过程中，改变原有的值"></a>用法二：把JSON转化为javascript过程中，改变原有的值</h4><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var book = <span class="string">'&#123;"title":"aaa", "type":"bbb", "page":50&#125;'</span>;</span><br><span class="line">	  var demo = JSON.stringify(book);</span><br><span class="line">	  var javascriptDemo = JSON.parse(demo, <span class="keyword">function</span> (key, value) &#123;</span><br><span class="line">		 switch (key) &#123;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">"title"</span>: <span class="built_in">return</span> <span class="string">"bbbbbb"</span>;</span><br><span class="line">			default: <span class="built_in">return</span> value;</span><br><span class="line">		 &#125;</span><br><span class="line">	  &#125;);</span><br><span class="line">	  console.log(javascriptDemo);</span><br></pre></td></tr></table></figure>
 <ul>
-<li>得到结果：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">"title"</span>:<span class="string">"aaa"</span>, <span class="string">"type"</span>:<span class="string">"bbb"</span>, <span class="string">"page"</span>:50&#125;</span><br></pre></td></tr></table></figure>
+<li>得到结果：<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">"title"</span>:<span class="string">"aaa"</span>, <span class="string">"type"</span>:<span class="string">"bbb"</span>, <span class="string">"page"</span>:50&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 
-          
-        
       
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
+    </main>
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/javascript/" rel="tag"><i class="fas fa-tags"></i>javascript</a>
+        
+        <a class="post-tag button" href="/tags/json/" rel="tag"><i class="fas fa-tags"></i>json</a>
+        
+        <a class="post-tag button" href="/tags/js/" rel="tag"><i class="fas fa-tags"></i>js</a>
+        
+        <a class="post-tag button" href="/tags/js基础/" rel="tag"><i class="fas fa-tags"></i>js基础</a>
+        
+      </div>
       
     </footer>
-  </div>
-  
-  
-  
   </article>
-
-
-    
-      
-
   
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/todo/2018/02/15/case-demo-2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王立超">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/652285661303743555.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="勇往直前">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/15/case-demo-2/" itemprop="url">case-demo</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-15T02:37:24+08:00">
-                2018-02-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/demo，案例/" itemprop="url" rel="index">
-                    <span itemprop="name">demo，案例</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="豆瓣电影介绍小案例"><a href="#豆瓣电影介绍小案例" class="headerlink" title="豆瓣电影介绍小案例"></a><a href="douban-movie">豆瓣电影介绍小案例</a></h3><h3 id="一个备忘录小案例"><a href="#一个备忘录小案例" class="headerlink" title="一个备忘录小案例"></a><a href="todo">一个备忘录小案例</a></h3><h3 id="一个弹力球小案例"><a href="#一个弹力球小案例" class="headerlink" title="一个弹力球小案例"></a><a href="flex-demo">一个弹力球小案例</a></h3><h3 id="一个圆形开屏导航栏小案例"><a href="#一个圆形开屏导航栏小案例" class="headerlink" title="一个圆形开屏导航栏小案例"></a><a href="spread">一个圆形开屏导航栏小案例</a></h3><h3 id="微金所首页小案例"><a href="#微金所首页小案例" class="headerlink" title="微金所首页小案例"></a><a href="wjs">微金所首页小案例</a></h3><h3 id="一个网页小demo"><a href="#一个网页小demo" class="headerlink" title="一个网页小demo"></a><a href="vue-project-01">一个网页小demo</a></h3>
-          
-        
-      
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/todo/2018/02/15/case-demo-2/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="王立超">
+        <meta itemprop="description" content="">
+        <meta itemprop="image" content="/images/652285661303743555.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="勇往直前">
+      </span>
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/02/15/case-demo-2/" itemprop="url">case-demo</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-02-15T02:37:24+08:00">2018-02-15 02:37:24</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/demo，案例/" itemprop="url" rel="index"><span itemprop="name">demo，案例</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h3 id="豆瓣电影介绍小案例"><a href="#豆瓣电影介绍小案例" class="headerlink" title="豆瓣电影介绍小案例"></a><a href="douban-movie">豆瓣电影介绍小案例</a></h3><h3 id="一个备忘录小案例"><a href="#一个备忘录小案例" class="headerlink" title="一个备忘录小案例"></a><a href="todo">一个备忘录小案例</a></h3><h3 id="一个弹力球小案例"><a href="#一个弹力球小案例" class="headerlink" title="一个弹力球小案例"></a><a href="flex-demo">一个弹力球小案例</a></h3><h3 id="一个圆形开屏导航栏小案例"><a href="#一个圆形开屏导航栏小案例" class="headerlink" title="一个圆形开屏导航栏小案例"></a><a href="spread">一个圆形开屏导航栏小案例</a></h3><h3 id="微金所首页小案例"><a href="#微金所首页小案例" class="headerlink" title="微金所首页小案例"></a><a href="wjs">微金所首页小案例</a></h3><h3 id="一个网页小demo"><a href="#一个网页小demo" class="headerlink" title="一个网页小demo"></a><a href="vue-project-01">一个网页小demo</a></h3>
+      
+    </main>
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/hexo/" rel="tag"><i class="fas fa-tags"></i>hexo</a>
+        
+        <a class="post-tag button" href="/tags/github/" rel="tag"><i class="fas fa-tags"></i>github</a>
+        
+        <a class="post-tag button" href="/tags/npm/" rel="tag"><i class="fas fa-tags"></i>npm</a>
+        
+        <a class="post-tag button" href="/tags/基础/" rel="tag"><i class="fas fa-tags"></i>基础</a>
+        
+      </div>
       
     </footer>
-  </div>
-  
-  
-  
   </article>
-
-
-    
-      
-
   
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/todo/2018/02/15/node_base/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王立超">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/652285661303743555.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="勇往直前">
-    </span>
-
-    
-      <header class="post-header">
-
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/todo/2018/02/15/node_base/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="王立超">
+        <meta itemprop="description" content="">
+        <meta itemprop="image" content="/images/652285661303743555.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="勇往直前">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/02/15/node_base/" itemprop="url">node学习笔记</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-02-15T02:37:24+08:00">2018-02-15 02:37:24</time></span>
+        </span>
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/15/node_base/" itemprop="url">node学习笔记</a></h1>
         
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-15T02:37:24+08:00">
-                2018-02-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
+        <span class="post-meta-divider divider">|</span>
         
+        <span class="post-categories">
           
-            <h2 id="1-node-能够解决什么问题"><a href="#1-node-能够解决什么问题" class="headerlink" title="1.node 能够解决什么问题?"></a>1.node 能够解决什么问题?</h2><blockquote>
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h2 id="1-node-能够解决什么问题"><a href="#1-node-能够解决什么问题" class="headerlink" title="1.node 能够解决什么问题?"></a>1.node 能够解决什么问题?</h2><blockquote>
 <p>node的首要目标是提供一种简单的,用于创建高性能服务器的开发工具;<br>Web服务器的瓶颈在于并发的用户量,对比java和PHP的实现方式;</p>
 <h2 id="2-node是什么"><a href="#2-node是什么" class="headerlink" title="2.node是什么?"></a>2.node是什么?</h2><p>node.js是一个基于Chrome V8 引擎的JavaScript运行环境,让JavaScript的执行效率与底端的C语言的执行效率相近;<br>node.js使用了一个事件驱动,非阻塞式I/O的模型,使其轻量又高效;<br>node.js的包管理器npm,是全球最大的开源库生态系统;</p>
 <h2 id="3-node特点"><a href="#3-node特点" class="headerlink" title="3.node特点"></a>3.node特点</h2><p>####3.1为什么JavaScript是单线程?<br>这是由JavaScript这门脚本语言的用途决定的;<br>Web Worker并没有改变JavaScript单线程的本质;</p>
@@ -821,147 +395,58 @@
 <p>####3.9组合<br><strong><code>同步异步取决于被调用者,阻塞非阻塞取决于调用者;</code></strong><br>同步阻塞: A给B打电话商量事情,通话过程中B考虑了1分钟(同步),A等待了1分钟什么也没干(阻塞);<br>异步阻塞: A给B打电话商量事情,B挂断电话1分钟后回复A(异步),A等待了1分钟什么也没干(阻塞);<br>同步非阻塞: A给B打电话商量事情,通话过程中B考虑了1分钟(同步),A在这1分钟里干了别的事情(非阻塞)<br>异步非阻塞: A给B打电话商量事情,B挂断电话1分钟后回复A(异步),A在这1分钟里干了别的事情(非阻塞);</p>
 </blockquote>
 
-          
-        
       
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
+    </main>
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/前端基础/" rel="tag"><i class="fas fa-tags"></i>前端基础</a>
+        
+        <a class="post-tag button" href="/tags/node/" rel="tag"><i class="fas fa-tags"></i>node</a>
+        
+      </div>
       
     </footer>
-  </div>
-  
-  
-  
   </article>
-
-
-    
-      
-
   
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/todo/2018/02/15/nodejs_base/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王立超">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/652285661303743555.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="勇往直前">
-    </span>
-
-    
-      <header class="post-header">
-
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/todo/2018/02/15/nodejs_base/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="王立超">
+        <meta itemprop="description" content="">
+        <meta itemprop="image" content="/images/652285661303743555.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="勇往直前">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/02/15/nodejs_base/" itemprop="url">node介绍</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-02-15T02:37:24+08:00">2018-02-15 02:37:24</time></span>
+        </span>
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/15/nodejs_base/" itemprop="url">node介绍</a></h1>
         
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-15T02:37:24+08:00">
-                2018-02-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
+        <span class="post-meta-divider divider">|</span>
         
+        <span class="post-categories">
           
-            <h2 id="nodejs介绍"><a href="#nodejs介绍" class="headerlink" title="nodejs介绍"></a>nodejs介绍</h2><h4 id="nodejs不是一门语言-是一个运行环境-在node环境中运行JS"><a href="#nodejs不是一门语言-是一个运行环境-在node环境中运行JS" class="headerlink" title="nodejs不是一门语言,是一个运行环境,在node环境中运行JS;"></a>nodejs不是一门语言,是一个运行环境,在node环境中运行JS;</h4><blockquote>
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h2 id="nodejs介绍"><a href="#nodejs介绍" class="headerlink" title="nodejs介绍"></a>nodejs介绍</h2><h4 id="nodejs不是一门语言-是一个运行环境-在node环境中运行JS"><a href="#nodejs不是一门语言-是一个运行环境-在node环境中运行JS" class="headerlink" title="nodejs不是一门语言,是一个运行环境,在node环境中运行JS;"></a>nodejs不是一门语言,是一个运行环境,在node环境中运行JS;</h4><blockquote>
 <p>1.使用的是Chrome的V8引擎;<br>2.基于事件驱动的I/O操作(input/output);<br>3.单线程异步开发;<br>4.因为使用JS,所以适合前端人员上手;<br>5.自带NPM包管理器(全球最大的包管理器,使用NPM安装各种开发需要的安装包);<br>6.模块化开发,node自带很多内置模块;</p>
 </blockquote>
 <h3 id="node中的模块"><a href="#node中的模块" class="headerlink" title="node中的模块"></a>node中的模块</h3><h4 id="node中的模块分为三种"><a href="#node中的模块分为三种" class="headerlink" title="node中的模块分为三种"></a>node中的模块分为三种</h4><blockquote>
@@ -1013,150 +498,61 @@
 </ul>
 </blockquote>
 
-          
-        
       
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
+    </main>
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/前端基础/" rel="tag"><i class="fas fa-tags"></i>前端基础</a>
+        
+        <a class="post-tag button" href="/tags/node/" rel="tag"><i class="fas fa-tags"></i>node</a>
+        
+      </div>
       
     </footer>
-  </div>
-  
-  
-  
   </article>
-
-
-    
-      
-
   
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/todo/2018/02/15/ajax_base/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王立超">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/652285661303743555.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="勇往直前">
-    </span>
-
-    
-      <header class="post-header">
-
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/todo/2018/02/15/ajax_base/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="王立超">
+        <meta itemprop="description" content="">
+        <meta itemprop="image" content="/images/652285661303743555.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="勇往直前">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/02/15/ajax_base/" itemprop="url">ajax基础知识和核心原理</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-02-15T02:37:24+08:00">2018-02-15 02:37:24</time></span>
+        </span>
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/15/ajax_base/" itemprop="url">ajax基础知识和核心原理</a></h1>
         
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-15T02:37:24+08:00">
-                2018-02-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
+        <span class="post-meta-divider divider">|</span>
         
+        <span class="post-categories">
           
-            <p>###ajax基础知识</p>
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <p>###ajax基础知识</p>
 <p>####1.什么是ajax:</p>
 <blockquote>
-<p>Async Javascript And XML ====&gt; 异步的JS和XML;<br>XML:可扩展的标记语言(自定义的一些标签,包裹数据,服务器传递数据);<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">root</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">student</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">name</span>&gt;</span>王二小<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">age</span>&gt;</span>33<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">sex</span>&gt;</span>男<span class="tag">&lt;/<span class="name">sex</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">student</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">root</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>Async Javascript And XML ====&gt; 异步的JS和XML;<br>XML:可扩展的标记语言(自定义的一些标签,包裹数据,服务器传递数据);<br><figure class="hljs highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">root</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">student</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">name</span>&gt;</span>王二小<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">age</span>&gt;</span>33<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">sex</span>&gt;</span>男<span class="tag">&lt;/<span class="name">sex</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">student</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">root</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <p>####2.Ajax异步的概念:<br><code>局部刷新</code>:数据传递的是json字符串,前后端分离<br>1).向服务器发送ajax请求;<br>2).将服务器返回的数据经过前端的解析处理,绑定到页面上;<br>3).页面只需要改变一部分,整个页面不需要重新的渲染;<br><code>全局刷新</code>:页面的整体刷新,当页面上数据发生改变时,向后台发送请求,后台会将页面的数据重新渲染一遍,将渲染好的页面返回给客户端呈现,这是全局刷新,也是前后端不分离。这就要求后台去套数据,一般会使用jsp来套数据;</p>
 <p>###前后端分离和不分离的优势和劣势</p>
@@ -1167,7 +563,7 @@
 <p>####分离的优势<br>1.可以根据需求任意改变页面的某一部分的数据更新,而不用刷新整个页面(例如:实时刷新,表单提交,用户登录),用户体验好;<br>2.有利于开发,提高开发效率,开发的时候前后端互不影响,不需要考虑各自使用的技术,相当于实现了技术的分离;可以进行同时开发,项目开始的时候,只需要制定以下交互文档(API文档),规定请求的url,请求方式,参数,返回数据格式等等,前端也可以使用node模拟接口和数据,来验证和调试页面;</p>
 <p>####分离的弊端<br>1.不利于SEO优化(注意:后期使用JS将数据绑定到页面上,不会在源代码上体现,所以不会被SEO收录和抓取);<br>2.刚开始加载时,请求资源文件的时候如果请求次数过多,会影响页面的加载速度;为了防止加载速度过慢,可以进行优化处理;</p>
 <p>###基于原生实现ajax</p>
-<p>####示例:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建ajax对象:</span></span><br><span class="line"><span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttprequest();</span><br><span class="line"><span class="comment">// 定义请求方式,同步或者异步,请求路径等等:</span></span><br><span class="line">xhr.open(<span class="string">"method"</span>, <span class="string">"URL"</span>, <span class="keyword">async</span>, user.name, user.password);</span><br><span class="line"><span class="comment">// 定义返回状态:</span></span><br><span class="line">xhr.onreadystatechange = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">	<span class="keyword">if</span> (xhr.readyState === <span class="number">4</span> &amp;&amp; xhr.status === <span class="number">200</span>) &#123;</span><br><span class="line">		<span class="comment">// 获取响应的文本内容;</span></span><br><span class="line">		<span class="keyword">let</span> res = xhr.responseText;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 开始发送请求(请求主体的内容数据):</span></span><br><span class="line">xhr.send(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure></p>
+<p>####示例:<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建ajax对象:</span></span><br><span class="line"><span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttprequest();</span><br><span class="line"><span class="comment">// 定义请求方式,同步或者异步,请求路径等等:</span></span><br><span class="line">xhr.open(<span class="string">"method"</span>, <span class="string">"URL"</span>, <span class="keyword">async</span>, user.name, user.password);</span><br><span class="line"><span class="comment">// 定义返回状态:</span></span><br><span class="line">xhr.onreadystatechange = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">	<span class="keyword">if</span> (xhr.readyState === <span class="number">4</span> &amp;&amp; xhr.status === <span class="number">200</span>) &#123;</span><br><span class="line">		<span class="comment">// 获取响应的文本内容;</span></span><br><span class="line">		<span class="keyword">let</span> res = xhr.responseText;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 开始发送请求(请求主体的内容数据):</span></span><br><span class="line">xhr.send(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <p>####<strong><code>分析open的参数:</code></strong></p>
 <blockquote>
@@ -1190,7 +586,7 @@
 <li><code>GET</code>的参数在url上,一些简单的黑客技术,拦截url(url劫持),也可以把客户端传递的信息获取到,导致信息泄露;</li>
 <li><code>POST</code>的信息都在请求主体中,相对比较安全;<br>####第二个参数:URL<br><code>这个url地址就是后台给的地址,一般都会有一个API文档,参照文档写就成;</code><br>####第三个参数: Async</li>
 <li>async: true 不写就是默认true,===&gt;异步;</li>
-<li>async:false ===&gt; 同步;<br>####最后两个参数:用户名,密码<br><code>一般不需要写,只有一些服务器不允许匿名访问,只有开通权限的才可以访问,比如一些重要机密的,银行等这样的服务器才会设置权限;</code><br>####<strong><code>第三部分解析</code></strong><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;;</span><br></pre></td></tr></table></figure>
+<li>async:false ===&gt; 同步;<br>####最后两个参数:用户名,密码<br><code>一般不需要写,只有一些服务器不允许匿名访问,只有开通权限的才可以访问,比如一些重要机密的,银行等这样的服务器才会设置权限;</code><br>####<strong><code>第三部分解析</code></strong><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>ajax请求中xhr.readyState的状态码: </p>
@@ -1221,7 +617,7 @@
 <li>503:服务器超负载;</li>
 </ul>
 </blockquote>
-<p><strong>ajax常用的属性和方法有哪些</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line"><span class="built_in">console</span>.dir(xhr);</span><br></pre></td></tr></table></figure></p>
+<p><strong>ajax常用的属性和方法有哪些</strong><br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line"><span class="built_in">console</span>.dir(xhr);</span><br></pre></td></tr></table></figure></p>
 <blockquote>
 <p>[属性]</p>
 <ul>
@@ -1250,292 +646,114 @@
 </ul>
 </blockquote>
 
-          
-        
       
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
+    </main>
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/ajax/" rel="tag"><i class="fas fa-tags"></i>ajax</a>
+        
+        <a class="post-tag button" href="/tags/前端基础/" rel="tag"><i class="fas fa-tags"></i>前端基础</a>
+        
+      </div>
       
     </footer>
-  </div>
-  
-  
-  
   </article>
-
-
-    
-      
-
   
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/todo/2018/02/15/JS_base/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王立超">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/652285661303743555.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="勇往直前">
-    </span>
-
-    
-      <header class="post-header">
-
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/todo/2018/02/15/JS_base/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="王立超">
+        <meta itemprop="description" content="">
+        <meta itemprop="image" content="/images/652285661303743555.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="勇往直前">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/02/15/JS_base/" itemprop="url">JS编码方式</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-02-15T02:37:24+08:00">2018-02-15 02:37:24</time></span>
+        </span>
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/15/JS_base/" itemprop="url">JS编码方式</a></h1>
         
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-15T02:37:24+08:00">
-                2018-02-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
+        <span class="post-meta-divider divider">|</span>
         
+        <span class="post-categories">
           
-            <blockquote>
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <blockquote>
 <p>1.escape/unescape(一般只有js支持,前端网页之间的数据传递的时候进行的中文编码和解码);<br>2.encodeURI/decodeURI;所有的语言都支持;<br>3.encodeURIComponent/decodeURIComponent;同上面,这个可以编译一些特殊字符,上面的不行,最常用的是这个;</p>
 <p>###ajax的异步和同步问题<br>ajax任务:发送请求到收到响应主体内容(完整的HTTP事物);<br>ajax任务开始时发送请求开始(xhr.send());<br>同步请求下,绑定监听状态的事件(onreadystatechange)放在open之前可以监听1,4的状态,不可以放在send之后,因为send执行就已经状态为4, 结束了;<br>异步请求下,绑定监听状态的事件(onreadystatechange)放在open之前可以监听1,2,3,4的状态,放在open之后可以监听2,3,4的状态,</p>
 </blockquote>
 
-          
-        
       
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
+    </main>
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/前端基础/" rel="tag"><i class="fas fa-tags"></i>前端基础</a>
+        
+        <a class="post-tag button" href="/tags/JS/" rel="tag"><i class="fas fa-tags"></i>JS</a>
+        
+      </div>
       
     </footer>
-  </div>
-  
-  
-  
   </article>
-
-
-    
-      
-
   
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/todo/2018/02/13/article-0001/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王立超">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/652285661303743555.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="勇往直前">
-    </span>
-
-    
-      <header class="post-header">
-
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/todo/2018/02/13/article-0001/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="王立超">
+        <meta itemprop="description" content="">
+        <meta itemprop="image" content="/images/652285661303743555.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="勇往直前">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/02/13/article-0001/" itemprop="url">'人生最重要的三种能力'</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-02-13T21:21:17+08:00">2018-02-13 21:21:17</time></span>
+        </span>
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/13/article-0001/" itemprop="url">'人生最重要的三种能力'</a></h1>
         
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-13T21:21:17+08:00">
-                2018-02-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/人生杂谈/" itemprop="url" rel="index">
-                    <span itemprop="name">人生杂谈</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
+        <span class="post-meta-divider divider">|</span>
         
+        <span class="post-categories">
           
-            <h2 id="网络转载——人生最重要的三种能力，不是读书能学来的"><a href="#网络转载——人生最重要的三种能力，不是读书能学来的" class="headerlink" title="网络转载——人生最重要的三种能力，不是读书能学来的"></a>网络转载——人生最重要的三种能力，不是读书能学来的</h2><h2 id="一、人际交往中的期望值管理能力"><a href="#一、人际交往中的期望值管理能力" class="headerlink" title="一、人际交往中的期望值管理能力"></a>一、人际交往中的期望值管理能力</h2><h2 id="二、阈值自控意识"><a href="#二、阈值自控意识" class="headerlink" title="二、阈值自控意识"></a>二、阈值自控意识</h2><h2 id="三、应对主观时空扭曲的能力"><a href="#三、应对主观时空扭曲的能力" class="headerlink" title="三、应对主观时空扭曲的能力"></a>三、应对主观时空扭曲的能力</h2><h2 id="一-期望值管理能力"><a href="#一-期望值管理能力" class="headerlink" title="(一)期望值管理能力"></a>(一)期望值管理能力</h2><ul>
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/人生杂谈/" itemprop="url" rel="index"><span itemprop="name">人生杂谈</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h2 id="网络转载——人生最重要的三种能力，不是读书能学来的"><a href="#网络转载——人生最重要的三种能力，不是读书能学来的" class="headerlink" title="网络转载——人生最重要的三种能力，不是读书能学来的"></a>网络转载——人生最重要的三种能力，不是读书能学来的</h2><h2 id="一、人际交往中的期望值管理能力"><a href="#一、人际交往中的期望值管理能力" class="headerlink" title="一、人际交往中的期望值管理能力"></a>一、人际交往中的期望值管理能力</h2><h2 id="二、阈值自控意识"><a href="#二、阈值自控意识" class="headerlink" title="二、阈值自控意识"></a>二、阈值自控意识</h2><h2 id="三、应对主观时空扭曲的能力"><a href="#三、应对主观时空扭曲的能力" class="headerlink" title="三、应对主观时空扭曲的能力"></a>三、应对主观时空扭曲的能力</h2><h2 id="一-期望值管理能力"><a href="#一-期望值管理能力" class="headerlink" title="(一)期望值管理能力"></a>(一)期望值管理能力</h2><ul>
 <li>影视剧中往往有这样的观感：一个地痞或者土匪，平日无恶不作。到了最后一集，哎，这货突然抗日了，例如《大宅门》里的三爷。</li>
 <li>这时候观众对其好感度会突然爆棚，甚至超过许多没有爆点的正面角色，前几十集的劣迹简直一笔勾销。</li>
 <li>这就是期望值在前期被编剧压低之后的福利</li>
@@ -1602,275 +820,101 @@
 <li><img src="http://wx2.sinaimg.cn/mw690/005Io8Oqgy1fof7bt6ywdj30m80m8mzw.jpg" alt="不慌是一种底气，不乱是一种境界"></li>
 </ul>
 
-          
-        
       
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
+    </main>
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/人生，职场，能力，学习/" rel="tag"><i class="fas fa-tags"></i>人生，职场，能力，学习</a>
+        
+      </div>
       
     </footer>
-  </div>
-  
-  
-  
   </article>
-
-
-    
-      
-
   
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/todo/2018/02/11/Hexo-base/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王立超">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/652285661303743555.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="勇往直前">
-    </span>
-
-    
-      <header class="post-header">
-
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/todo/2018/02/11/Hexo-base/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="王立超">
+        <meta itemprop="description" content="">
+        <meta itemprop="image" content="/images/652285661303743555.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="勇往直前">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/02/11/Hexo-base/" itemprop="url">Hexo 常用命令入门</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-02-11T23:42:05+08:00">2018-02-11 23:42:05</time></span>
+        </span>
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/11/Hexo-base/" itemprop="url">Hexo 常用命令入门</a></h1>
         
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-11T23:42:05+08:00">
-                2018-02-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
       
-      
-
-      
-        
-          
-            <p>欢迎使用hexo! 这是第一篇文章， 查阅 <a href="https://hexo.io/docs/" target="_blank" rel="noopener">文档</a>了解更多信息。 如果在使用Hexo时遇到任何问题, 你可以在 <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">故障诊断</a>中找到答案， 或者在<a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>上向我提问。（前面的链接不是我的<a href="https://github.com/wangwangwanglichao" target="_blank" rel="noopener">Github</a>哦！是原作者的）</p>
-<h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><h3 id="创建一个新帖子"><a href="#创建一个新帖子" class="headerlink" title="创建一个新帖子"></a>创建一个新帖子</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+      <p>欢迎使用hexo! 这是第一篇文章， 查阅 <a href="https://hexo.io/docs/" target="_blank" rel="noopener">文档</a>了解更多信息。 如果在使用Hexo时遇到任何问题, 你可以在 <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">故障诊断</a>中找到答案， 或者在<a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>上向我提问。（前面的链接不是我的<a href="https://github.com/wangwangwanglichao" target="_blank" rel="noopener">Github</a>哦！是原作者的）</p>
+<h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><h3 id="创建一个新帖子"><a href="#创建一个新帖子" class="headerlink" title="创建一个新帖子"></a>创建一个新帖子</h3><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 <p>详细信息: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">作品示例</a></p>
-<h3 id="运行服务器"><a href="#运行服务器" class="headerlink" title="运行服务器"></a>运行服务器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h3 id="运行服务器"><a href="#运行服务器" class="headerlink" title="运行服务器"></a>运行服务器</h3><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 <p>详细信息: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">服务器</a></p>
-<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 <p>详细信息: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">生成</a></p>
-<h3 id="部署到远程站点"><a href="#部署到远程站点" class="headerlink" title="部署到远程站点"></a>部署到远程站点</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<h3 id="部署到远程站点"><a href="#部署到远程站点" class="headerlink" title="部署到远程站点"></a>部署到远程站点</h3><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>详细信息: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">部署</a></p>
 
-          
-        
       
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
+    </main>
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
     </footer>
-  </div>
-  
-  
-  
   </article>
-
-
-    
-      
-
   
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/todo/2018/02/10/CSSlayout-01/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王立超">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/652285661303743555.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="勇往直前">
-    </span>
-
-    
-      <header class="post-header">
-
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/todo/2018/02/10/CSSlayout-01/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="王立超">
+        <meta itemprop="description" content="">
+        <meta itemprop="image" content="/images/652285661303743555.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="勇往直前">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/02/10/CSSlayout-01/" itemprop="url">CSS布局之水平居中和垂直居中</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-02-10T21:30:40+08:00">2018-02-10 21:30:40</time></span>
+        </span>
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/10/CSSlayout-01/" itemprop="url">CSS布局之水平居中和垂直居中</a></h1>
         
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-10T21:30:40+08:00">
-                2018-02-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端布局/" itemprop="url" rel="index">
-                    <span itemprop="name">前端布局</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
+        <span class="post-meta-divider divider">|</span>
         
+        <span class="post-categories">
           
-            <ul>
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/前端布局/" itemprop="url" rel="index"><span itemprop="name">前端布局</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <ul>
 <li>前端布局非常重要的一环就是页面框架的搭建，也是最基础的一环。在页面框架搭建之中，又有居中布局/多列布局/全局布局。今天介绍一下居中布局的一些技巧。</li>
 </ul>
 <h1 id="居中布局"><a href="#居中布局" class="headerlink" title="居中布局"></a>居中布局</h1><h2 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h2><h4 id="1-使用inline-block-text-align："><a href="#1-使用inline-block-text-align：" class="headerlink" title="1.使用inline-block + text-align："></a>1.使用inline-block + text-align：</h4><ul>
@@ -1878,7 +922,7 @@
 <li>用法：对子框设置display:inline-block,对父框设置text-align:center。</li>
 <li>示例：</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.child &#123;</span><br><span class="line">	display: inline-block;</span><br><span class="line">&#125;</span><br><span class="line">.parent &#123;</span><br><span class="line">	text-align: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.child &#123;</span><br><span class="line">	display: inline-block;</span><br><span class="line">&#125;</span><br><span class="line">.parent &#123;</span><br><span class="line">	text-align: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>优点:兼容性好。</li>
 <li>缺点:.child里的文字也会水平居中。(可以在.child里添加text-align:left还原)</li>
@@ -1888,7 +932,7 @@
 <li>用法:对子框设置display:table,再设置margin:0 auto;</li>
 <li>示例:</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.child &#123;</span><br><span class="line">	display: table;</span><br><span class="line">	margin: 0 auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.child &#123;</span><br><span class="line">	display: table;</span><br><span class="line">	margin: 0 auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>优点:只设置了child,IE8以上都支持;</li>
 <li>缺点:不支持IE6/IE7,将div换成了table;</li>
@@ -1898,7 +942,7 @@
 <li>用法:对父框设置position:relative(absolute);对子框设置position:absolute;left:50%;transform:translateX(-50%);</li>
 <li>示例:</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">	position: relative;</span><br><span class="line">&#125;</span><br><span class="line">.child &#123;</span><br><span class="line">	position: absolute;</span><br><span class="line">	left: 50%;</span><br><span class="line">	transform: translateX(-50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">	position: relative;</span><br><span class="line">&#125;</span><br><span class="line">.child &#123;</span><br><span class="line">	position: absolute;</span><br><span class="line">	left: 50%;</span><br><span class="line">	transform: translateX(-50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>优点:居中元素不会对其它元素产生影响;</li>
 <li>缺点:transform属于CSS3内容,兼容性存在一定问题;</li>
@@ -1908,7 +952,7 @@
 <li>用法:先将父框设置为display:flex;再设置子框margin:0 auto;</li>
 <li>示例:</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">	display:flex;</span><br><span class="line">&#125;</span><br><span class="line">.child &#123;</span><br><span class="line">	margin:0 auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">	display:flex;</span><br><span class="line">&#125;</span><br><span class="line">.child &#123;</span><br><span class="line">	margin:0 auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>缺点:IE6/7/8等低版本浏览器不支持;</li>
 </ul>
@@ -1917,7 +961,7 @@
 <li>用法:先将父框设置为display:flex;再设置justify-content:center;</li>
 <li>示例:</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">	display:flex;</span><br><span class="line">	justify-content: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">	display:flex;</span><br><span class="line">	justify-content: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>优点:只设置parent即可;</li>
 <li>缺点:IE6/7/8等低版本浏览器不支持;</li>
@@ -1927,7 +971,7 @@
 <li>用法:先将父框设置为display:table-cell;再设置vertical-align:middle;</li>
 <li>实例:</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">	display:table-cell;</span><br><span class="line">	vertical-align: middle;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">	display:table-cell;</span><br><span class="line">	vertical-align: middle;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>优点: 兼容性较好,IE8以上都支持;</li>
 <li>缺点: 将div元素转化为了table元素;</li>
@@ -1937,7 +981,7 @@
 <li>用法:先将父框设置为position:relative(absolute);再设置子框position:absolute;top:50%;transform:translateY(-50%);</li>
 <li>实例:</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">	position:relative;</span><br><span class="line">&#125;</span><br><span class="line">.child &#123;</span><br><span class="line">	position: absolute;</span><br><span class="line">	top: 50%;</span><br><span class="line">	transform: translateY(-50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">	position:relative;</span><br><span class="line">&#125;</span><br><span class="line">.child &#123;</span><br><span class="line">	position: absolute;</span><br><span class="line">	top: 50%;</span><br><span class="line">	transform: translateY(-50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>优点: 居中元素不会对其它元素产生影响;</li>
 <li>缺点: transform属于CSS3内容,兼容性存在一定问题;</li>
@@ -1947,7 +991,7 @@
 <li>用法:先将父框设置为display:flex;再设置align-items:center;</li>
 <li>示例:</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">	display:flex;</span><br><span class="line">	align-items: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">	display:flex;</span><br><span class="line">	align-items: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>优点:只设置parent即可;</li>
 <li>缺点:IE6/7/8等低版本浏览器不支持;</li>
@@ -1958,7 +1002,7 @@
 <li>用法:先将父框设置为position:relative(absolute);再设置子框position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);</li>
 <li>实例:</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">	position:relative;</span><br><span class="line">&#125;</span><br><span class="line">.child &#123;</span><br><span class="line">	position: absolute;</span><br><span class="line">	left: 50%;</span><br><span class="line">	top: 50%;</span><br><span class="line">	transform: translate(-50%,-50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">	position:relative;</span><br><span class="line">&#125;</span><br><span class="line">.child &#123;</span><br><span class="line">	position: absolute;</span><br><span class="line">	left: 50%;</span><br><span class="line">	top: 50%;</span><br><span class="line">	transform: translate(-50%,-50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>优点: 居中元素不会对其它元素产生影响;</li>
 <li>缺点: transform属于CSS3内容,兼容性存在一定问题;</li>
@@ -1967,7 +1011,7 @@
 <li>原理:使用inline-block+text-align水平居中;再用table-cell+vertical-align垂直居中;将二者结合起来;</li>
 <li>实例:</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">	text-align:center;</span><br><span class="line">	display:table-cell;</span><br><span class="line">	vertical-align:middle;</span><br><span class="line">&#125;</span><br><span class="line">.child &#123;</span><br><span class="line">	display: inline-block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">	text-align:center;</span><br><span class="line">	display:table-cell;</span><br><span class="line">	vertical-align:middle;</span><br><span class="line">&#125;</span><br><span class="line">.child &#123;</span><br><span class="line">	display: inline-block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>优点: 兼容性较好;</li>
 <li>缺点: 使用起来比较麻烦;</li>
@@ -1976,342 +1020,150 @@
 <li>原理:通过设置flex中的justify-content和align-items,从而达到水平垂直居中;</li>
 <li>实例:</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">	display:flex;</span><br><span class="line">	justify-content:center;</span><br><span class="line">	align-items:center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">	display:flex;</span><br><span class="line">	justify-content:center;</span><br><span class="line">	align-items:center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>优点: 只设置parent元素;</li>
 <li>缺点: 兼容性存在一些问题;</li>
 </ul>
 
-          
-        
       
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
+    </main>
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/前端/" rel="tag"><i class="fas fa-tags"></i>前端</a>
+        
+        <a class="post-tag button" href="/tags/CSS/" rel="tag"><i class="fas fa-tags"></i>CSS</a>
+        
+        <a class="post-tag button" href="/tags/CSS基础/" rel="tag"><i class="fas fa-tags"></i>CSS基础</a>
+        
+      </div>
       
     </footer>
-  </div>
-  
-  
-  
   </article>
-
-
-    
-  </section>
-
+  
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-angle-right" aria-label="Next Page"></i></a>
   </nav>
-
-
+  
+  
+</div>
 
           </div>
           
-
-
           
-
-        </div>
-        
           
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="Search" class="form-control"/>
     </div>
   </div>
-
-  <aside id="sidebar" class="sidebar">
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/652285661303743555.jpg" alt="王立超">
+  
+  <h1 class="author-name">王立超</h1>
+  <h2 class="author-description"></h2>
+  <div class="site-count">
     
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image"
-                src="/images/652285661303743555.jpg"
-                alt="王立超" />
-            
-              <p class="site-author-name" itemprop="name">王立超</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">12</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-categories">
-                
-                  <span class="site-state-item-count">6</span>
-                  <span class="site-state-item-name">分类</span>
-                
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">18</span>
-                  <span class="site-state-item-name">标签</span>
-                </a>
-              </div>
-            
-
-          </nav>
-
-          
-
-          
-
-          
-          
-
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
-
-      
-
+    <div class="archives-count">
+      <div class="site-count-title">Archives</div>
+      <div><a href="/archives/">12</a></div>
     </div>
-  </aside>
+    
+    
+    
+    
+    <span class="site-count-divider divider">|</span>
+    
+    <div class="tags-count">
+      <div class="site-count-title">Tags</div>
+      <div><a href="/tags/">18</a></div>
+    </div>
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
 
 
+  <div class="sidebar-sticky">
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>Social Links</p></div>
+      <ul>
         
+        <li><i class="fas fa-envelope"></i><a href="wangwangwanglichao@foxmail.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/" target="_blank">wangwangwanglichao</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>Blogroll</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href="https://github.com/" target="_blank">GitHub</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="https://developer.mozilla.org/" target="_blank">MDN</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</aside>
+
+
+          
+        </div>
       </div>
     </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">王立超</span>
-
-  
-</div>
-<div class="powered-by">
-<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
-  本站访客数:<span id="busuanzi_value_site_uv"></span>
-</span>
-</div>
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash;  v5.1.4</div>
-
-
-
-
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="Back to Top"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">王立超</span><span class="year"><i class="far fa-copyright"></i>2018</span>
+        </div>
         
-
-
-
-
-
-
-
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="Site Visit Count" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="Site User Count" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="Page Click Count" aria-hidden="false"></span></span>
+        </div>
         
       </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          Proudly Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> | Theme is <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
       </div>
-    
-
-    
-
+    </div>
   </div>
+</footer>
 
-  
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-</body>
+  </body>
 </html>
-<script type="text/javascript" src="/js/src/love.js"></script>
