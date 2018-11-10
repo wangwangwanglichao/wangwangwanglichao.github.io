@@ -129,10 +129,10 @@
   
   <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/todo/2018/02/15/ajax_base/">
+      <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/2018/02/15/ajax_base/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
        <meta itemprop="name" content="王立超">
-       <meta itemprop="description" content="">
+       <meta itemprop="description" content="前端, JS, CSS, HTML5, Vue, React">
        <meta itemprop="image" content="/images/652285661303743555.jpg">
       </span>
       <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -144,7 +144,7 @@
       <div class="post-meta">
         
         <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-02-15T02:37:24+08:00">2018-02-15 02:37:24</time></span>
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-02-15T10:37:24+08:00">2018-02-15 02:37:24</time></span>
         </span>
         
         
@@ -174,16 +174,22 @@
 </ul>
 <h2 id="前后端分离和不分离的优势和劣势"><a href="#前后端分离和不分离的优势和劣势" class="headerlink" title="前后端分离和不分离的优势和劣势"></a>前后端分离和不分离的优势和劣势</h2><h3 id="不分离的优势"><a href="#不分离的优势" class="headerlink" title="不分离的优势:"></a>不分离的优势:</h3><ul>
 <li>1.页面上的数据都是服务器渲染好的,源代码上能看到数据,有利于SEO优化(SEO:搜索引擎的收录和抓取);</li>
-<li>2.从服务器上获取的页面已经是渲染好的,不需要客户端在去额外的请求,所以页面加载速度比较快(前提是服务器够快),一般京东淘宝这样的页面首屏一般都是前后端不分离,直接渲染好页面给前端返回;<br>####不分离的劣势:</li>
-<li>1.如果页面有很多内容需要改变,需要实时获取数据,每次更新数据都要重新刷新一下页面,客户体验不好;</li>
+<li>2.从服务器上获取的页面已经是渲染好的,不需要客户端在去额外的请求,所以页面加载速度比较快(前提是服务器够快),一般京东淘宝这样的页面首屏一般都是前后端不分离,直接渲染好页面给前端返回;</li>
+<li><h4 id="不分离的劣势"><a href="#不分离的劣势" class="headerlink" title="不分离的劣势:"></a>不分离的劣势:</h4></li>
+<li><p>1.如果页面有很多内容需要改变,需要实时获取数据,每次更新数据都要重新刷新一下页面,客户体验不好;</p>
+</li>
 <li>2.每次都是服务器渲染的话,对服务器的要求比较高,服务器的压力比较大,如果服务器处理不过来,就会导致加载变慢甚至服务器崩溃;所以京东淘宝等网站只有首屏才会采用服务器渲染以提高页面加载速度;</li>
-<li>3.目前市场上前后端分离的项目占大部分;<br>####分离的优势</li>
-<li>1.可以根据需求任意改变页面的某一部分的数据更新,而不用刷新整个页面(例如:实时刷新,表单提交,用户登录),用户体验好;</li>
-<li>2.有利于开发,提高开发效率,开发的时候前后端互不影响,不需要考虑各自使用的技术,相当于实现了技术的分离;可以进行同时开发,项目开始的时候,只需要制定以下交互文档(API文档),规定请求的url,请求方式,参数,返回数据格式等等,前端也可以使用node模拟接口和数据,来验证和调试页面;<br>####分离的弊端</li>
-<li>1.不利于SEO优化(注意:后期使用JS将数据绑定到页面上,不会在源代码上体现,所以不会被SEO收录和抓取);</li>
-<li>2.刚开始加载时,请求资源文件的时候如果请求次数过多,会影响页面的加载速度;为了防止加载速度过慢,可以进行优化处理;<br>###基于原生实现ajax<br>####示例:</li>
+<li>3.目前市场上前后端分离的项目占大部分;</li>
+<li><h4 id="分离的优势"><a href="#分离的优势" class="headerlink" title="分离的优势"></a>分离的优势</h4></li>
+<li><p>1.可以根据需求任意改变页面的某一部分的数据更新,而不用刷新整个页面(例如:实时刷新,表单提交,用户登录),用户体验好;</p>
+</li>
+<li>2.有利于开发,提高开发效率,开发的时候前后端互不影响,不需要考虑各自使用的技术,相当于实现了技术的分离;可以进行同时开发,项目开始的时候,只需要制定以下交互文档(API文档),规定请求的url,请求方式,参数,返回数据格式等等,前端也可以使用node模拟接口和数据,来验证和调试页面;</li>
 </ul>
-<figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 创建ajax对象:</span><br><span class="hljs-keyword">let</span> xhr = <span class="hljs-keyword">new</span> XMLHttpRequest();<br><span class="hljs-comment">// 定义请求方式,同步或者异步,请求路径等等:</span><br>xhr.open(<span class="hljs-string">"method"</span>, <span class="hljs-string">"URL"</span>, <span class="hljs-keyword">async</span>, user.name, user.password);<br><span class="hljs-comment">// 定义返回状态:</span><br>xhr.onreadystatechange = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> &#123;<br>	<span class="hljs-keyword">if</span> (xhr.readyState === <span class="hljs-number">4</span> &amp;&amp; xhr.status === <span class="hljs-number">200</span>) &#123;<br>		<span class="hljs-comment">// 获取响应的文本内容;</span><br>		<span class="hljs-keyword">let</span> res = xhr.responseText;<br>	&#125;<br>&#125;<br><span class="hljs-comment">// 开始发送请求(请求主体的内容数据):</span><br>xhr.send(<span class="hljs-literal">null</span>);<br></code></pre></td></tr></table></figure>
+<h4 id="分离的弊端"><a href="#分离的弊端" class="headerlink" title="分离的弊端"></a>分离的弊端</h4><ul>
+<li>1.不利于SEO优化(注意:后期使用JS将数据绑定到页面上,不会在源代码上体现,所以不会被SEO收录和抓取);</li>
+<li>2.刚开始加载时,请求资源文件的时候如果请求次数过多,会影响页面的加载速度;为了防止加载速度过慢,可以进行优化处理;</li>
+</ul>
+<h3 id="基于原生实现ajax"><a href="#基于原生实现ajax" class="headerlink" title="基于原生实现ajax"></a>基于原生实现ajax</h3><h4 id="示例"><a href="#示例" class="headerlink" title="示例:"></a>示例:</h4><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 创建ajax对象:</span><br><span class="hljs-keyword">let</span> xhr = <span class="hljs-keyword">new</span> XMLHttpRequest();<br><span class="hljs-comment">// 定义请求方式,同步或者异步,请求路径等等:</span><br>xhr.open(<span class="hljs-string">"method"</span>, <span class="hljs-string">"URL"</span>, <span class="hljs-keyword">async</span>, user.name, user.password);<br><span class="hljs-comment">// 定义返回状态:</span><br>xhr.onreadystatechange = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> &#123;<br>	<span class="hljs-keyword">if</span> (xhr.readyState === <span class="hljs-number">4</span> &amp;&amp; xhr.status === <span class="hljs-number">200</span>) &#123;<br>		<span class="hljs-comment">// 获取响应的文本内容;</span><br>		<span class="hljs-keyword">let</span> res = xhr.responseText;<br>	&#125;<br>&#125;<br><span class="hljs-comment">// 开始发送请求(请求主体的内容数据):</span><br>xhr.send(<span class="hljs-literal">null</span>);<br></code></pre></td></tr></table></figure>
 <h3 id="分析open的参数"><a href="#分析open的参数" class="headerlink" title="分析open的参数:"></a>分析open的参数:</h3><h4 id="method-ajax的请求方式"><a href="#method-ajax的请求方式" class="headerlink" title="method: ajax的请求方式:"></a>method: ajax的请求方式:</h4><ul>
 <li>1).<code>GET</code>系列方式(获取数据):</li>
 <li>get: 从服务器获取数据;</li>
@@ -254,8 +260,7 @@
 <li>503:服务器超负载;</li>
 </ul>
 </blockquote>
-<p><strong>ajax常用的属性和方法有哪些</strong></p>
-<figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> xhr = <span class="hljs-keyword">new</span> XMLHttpRequest();<br><span class="hljs-built_in">console</span>.dir(xhr);<br></code></pre></td></tr></table></figure>
+<h3 id="ajax常用的属性和方法有哪些"><a href="#ajax常用的属性和方法有哪些" class="headerlink" title="ajax常用的属性和方法有哪些"></a>ajax常用的属性和方法有哪些</h3><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> xhr = <span class="hljs-keyword">new</span> XMLHttpRequest();<br><span class="hljs-built_in">console</span>.dir(xhr);<br></code></pre></td></tr></table></figure>
 <blockquote>
 <p>[属性]</p>
 <ul>
@@ -292,7 +297,7 @@
       
       <div class="post-tags">
         
-        <a class="post-tag button" href="/tags/ajax-前端基础/" rel="tag"><i class="fas fa-tags"></i>ajax 前端基础</a>
+        <a class="post-tag button" href="/tags/ajax-前端基础/" rel="tag"><i class="fas fa-tags"></i>ajax  前端基础</a>
         
       </div>
       
@@ -303,12 +308,12 @@
   <nav class="page-nav">
     <div class="page-nav-next page-nav-item">
       
-      <a href="/2018/02/15/JS_base/" rel="next" title="JS编码方式"><i class="fas fa-angle-left"></i><span class="nav-title">JS编码方式</span></a>
+      <a href="/2018/02/15/node_base/" rel="next" title="node学习笔记"><i class="fas fa-angle-left"></i><span class="nav-title">node学习笔记</span></a>
       
     </div>
     <div class="page-nav-prev page-nav-item">
       
-      <a href="/2018/02/15/node_base/" rel="prev" title="node学习笔记"><span class="nav-title">node学习笔记</span><i class="fas fa-angle-right"></i></a>
+      <a href="/2018/02/15/case-demo-2/" rel="prev" title="做过的案例"><span class="nav-title">做过的案例</span><i class="fas fa-angle-right"></i></a>
       
     </div>
   </nav>
@@ -335,7 +340,7 @@
   <img class="author-avatar" src="/images/652285661303743555.jpg" alt="王立超">
   
   <h1 class="author-name">王立超</h1>
-  <h2 class="author-description"></h2>
+  <h2 class="author-description">前端, JS, CSS, HTML5, Vue, React</h2>
   <div class="site-count">
     
     <div class="archives-count">
@@ -350,7 +355,7 @@
     
     <div class="tags-count">
       <div class="site-count-title">标签</div>
-      <div><a href="/tags/">20</a></div>
+      <div><a href="/tags/">21</a></div>
     </div>
     
   </div>
@@ -371,7 +376,7 @@
     <hr>
     <div class="post-toc sidebar-item" id="toc-div">
       <div><i class="fas fa-list-ol"></i>文章目录</div>
-      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#ajax基础知识"><span class="toc-text">ajax基础知识</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#1-什么是ajax"><span class="toc-text">1.什么是ajax:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#2-Ajax异步的概念"><span class="toc-text">2. Ajax异步的概念:</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#前后端分离和不分离的优势和劣势"><span class="toc-text">前后端分离和不分离的优势和劣势</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#不分离的优势"><span class="toc-text">不分离的优势:</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#分析open的参数"><span class="toc-text">分析open的参数:</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#method-ajax的请求方式"><span class="toc-text">method: ajax的请求方式:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#第一个参数-GET和POST具体有哪些区别"><span class="toc-text">第一个参数:GET和POST具体有哪些区别</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#区别1-数据携带方式-GET向服务器发送请求时-发送的内容比POST少-获取的比POST多"><span class="toc-text">区别1:数据携带方式:  GET向服务器发送请求时,发送的内容比POST少,获取的比POST多;</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#区别2-缓存问题-GET请求容易走缓存-POST不会"><span class="toc-text">区别2:缓存问题: GET请求容易走缓存,POST不会:</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#区别3-安全性-GET请求法师没有POST请求方式安全"><span class="toc-text">区别3:安全性: GET请求法师没有POST请求方式安全:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#第二个参数-URL"><span class="toc-text">第二个参数:URL</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#第三个参数-Async"><span class="toc-text">第三个参数: Async</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#最后两个参数-用户名-密码"><span class="toc-text">最后两个参数:用户名,密码</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#第三部分解析"><span class="toc-text">第三部分解析</span></a></li></ol></li></ol></li></ol></div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#ajax基础知识"><span class="toc-text">ajax基础知识</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#1-什么是ajax"><span class="toc-text">1.什么是ajax:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#2-Ajax异步的概念"><span class="toc-text">2. Ajax异步的概念:</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#前后端分离和不分离的优势和劣势"><span class="toc-text">前后端分离和不分离的优势和劣势</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#不分离的优势"><span class="toc-text">不分离的优势:</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#不分离的劣势"><span class="toc-text">不分离的劣势:</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#分离的优势"><span class="toc-text">分离的优势</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#分离的弊端"><span class="toc-text">分离的弊端</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#基于原生实现ajax"><span class="toc-text">基于原生实现ajax</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#示例"><span class="toc-text">示例:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#分析open的参数"><span class="toc-text">分析open的参数:</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#method-ajax的请求方式"><span class="toc-text">method: ajax的请求方式:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#第一个参数-GET和POST具体有哪些区别"><span class="toc-text">第一个参数:GET和POST具体有哪些区别</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#区别1-数据携带方式-GET向服务器发送请求时-发送的内容比POST少-获取的比POST多"><span class="toc-text">区别1:数据携带方式:  GET向服务器发送请求时,发送的内容比POST少,获取的比POST多;</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#区别2-缓存问题-GET请求容易走缓存-POST不会"><span class="toc-text">区别2:缓存问题: GET请求容易走缓存,POST不会:</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#区别3-安全性-GET请求法师没有POST请求方式安全"><span class="toc-text">区别3:安全性: GET请求法师没有POST请求方式安全:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#第二个参数-URL"><span class="toc-text">第二个参数:URL</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#第三个参数-Async"><span class="toc-text">第三个参数: Async</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#最后两个参数-用户名-密码"><span class="toc-text">最后两个参数:用户名,密码</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#第三部分解析"><span class="toc-text">第三部分解析</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#ajax常用的属性和方法有哪些"><span class="toc-text">ajax常用的属性和方法有哪些</span></a></li></ol></li></ol></div>
     </div>
     
     
