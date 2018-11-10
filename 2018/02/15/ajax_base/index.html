@@ -103,16 +103,16 @@
       
     </div>
     <nav id="nav" class="nav">
-      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="Toggle Navbar"></i></a>
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
       <ul id="menu" role="menubar" aria-hidden="false">
         
-        <li role="menuitem"><a href="/">Home</a></li>
+        <li role="menuitem"><a href="/">首页</a></li>
         
-        <li role="menuitem"><a href="/archives/">Archives</a></li>
+        <li role="menuitem"><a href="/archives/">归档</a></li>
         
-        <li role="menuitem"><a href="/tags/">Tags</a></li>
+        <li role="menuitem"><a href="/tags/">标签</a></li>
         
-        <li role="menuitem"><a href="/about/">About</a></li>
+        <li role="menuitem"><a href="/about/">关于</a></li>
         
       </ul>
     </nav>
@@ -162,34 +162,53 @@
     <main class="post-main" itemprop="articleBody">
       <p>###ajax基础知识</p>
 <p>####1.什么是ajax:</p>
-<blockquote>
-<p>Async Javascript And XML ====&gt; 异步的JS和XML;<br>XML:可扩展的标记语言(自定义的一些标签,包裹数据,服务器传递数据);<br><figure class="hljs highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">root</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">student</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">name</span>&gt;</span>王二小<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">age</span>&gt;</span>33<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">sex</span>&gt;</span>男<span class="tag">&lt;/<span class="name">sex</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">student</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">root</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<p>####2.Ajax异步的概念:<br><code>局部刷新</code>:数据传递的是json字符串,前后端分离<br>1).向服务器发送ajax请求;<br>2).将服务器返回的数据经过前端的解析处理,绑定到页面上;<br>3).页面只需要改变一部分,整个页面不需要重新的渲染;<br><code>全局刷新</code>:页面的整体刷新,当页面上数据发生改变时,向后台发送请求,后台会将页面的数据重新渲染一遍,将渲染好的页面返回给客户端呈现,这是全局刷新,也是前后端不分离。这就要求后台去套数据,一般会使用jsp来套数据;</p>
-<p>###前后端分离和不分离的优势和劣势</p>
-<p>####不分离的优势:</p>
-<blockquote>
-<p>1.页面上的数据都是服务器渲染好的,源代码上能看到数据,有利于SEO优化(SEO:搜索引擎的收录和抓取);<br>2.从服务器上获取的页面已经是渲染好的,不需要客户端在去额外的请求,所以页面加载速度比较快(前提是服务器够快),一般京东淘宝这样的页面首屏一般都是前后端不分离,直接渲染好页面给前端返回;</p>
-<p>####不分离的劣势:<br>1.如果页面有很多内容需要改变,需要实时获取数据,每次更新数据都要重新刷新一下页面,客户体验不好;<br>2.每次都是服务器渲染的话,对服务器的要求比较高,服务器的压力比较大,如果服务器处理不过来,就会导致加载变慢甚至服务器崩溃;所以京东淘宝等网站只有首屏才会采用服务器渲染以提高页面加载速度;<br>3.目前市场上前后端分离的项目占大部分;</p>
-<p>####分离的优势<br>1.可以根据需求任意改变页面的某一部分的数据更新,而不用刷新整个页面(例如:实时刷新,表单提交,用户登录),用户体验好;<br>2.有利于开发,提高开发效率,开发的时候前后端互不影响,不需要考虑各自使用的技术,相当于实现了技术的分离;可以进行同时开发,项目开始的时候,只需要制定以下交互文档(API文档),规定请求的url,请求方式,参数,返回数据格式等等,前端也可以使用node模拟接口和数据,来验证和调试页面;</p>
-<p>####分离的弊端<br>1.不利于SEO优化(注意:后期使用JS将数据绑定到页面上,不会在源代码上体现,所以不会被SEO收录和抓取);<br>2.刚开始加载时,请求资源文件的时候如果请求次数过多,会影响页面的加载速度;为了防止加载速度过慢,可以进行优化处理;</p>
-<p>###基于原生实现ajax</p>
-<p>####示例:<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建ajax对象:</span></span><br><span class="line"><span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttprequest();</span><br><span class="line"><span class="comment">// 定义请求方式,同步或者异步,请求路径等等:</span></span><br><span class="line">xhr.open(<span class="string">"method"</span>, <span class="string">"URL"</span>, <span class="keyword">async</span>, user.name, user.password);</span><br><span class="line"><span class="comment">// 定义返回状态:</span></span><br><span class="line">xhr.onreadystatechange = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">	<span class="keyword">if</span> (xhr.readyState === <span class="number">4</span> &amp;&amp; xhr.status === <span class="number">200</span>) &#123;</span><br><span class="line">		<span class="comment">// 获取响应的文本内容;</span></span><br><span class="line">		<span class="keyword">let</span> res = xhr.responseText;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 开始发送请求(请求主体的内容数据):</span></span><br><span class="line">xhr.send(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure></p>
-</blockquote>
+<ul>
+<li>Async Javascript And XML ====&gt; 异步的JS和XML;</li>
+<li>XML:可扩展的标记语言(自定义的一些标签,包裹数据,服务器传递数据);</li>
+</ul>
+<figure class="hljs highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-comment">&lt;!--&lt;?xml version="1.0" encoding="UTF-8" ?&gt;--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">root</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">student</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>王二小<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">age</span>&gt;</span>33<span class="hljs-tag">&lt;/<span class="hljs-name">age</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">sex</span>&gt;</span>男<span class="hljs-tag">&lt;/<span class="hljs-name">sex</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">student</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">root</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p>###2.Ajax异步的概念:</p>
+<ul>
+<li><code>局部刷新</code>:数据传递的是json字符串,前后端分离</li>
+<li>1).向服务器发送ajax请求;</li>
+<li>2).将服务器返回的数据经过前端的解析处理,绑定到页面上;</li>
+<li>3).页面只需要改变一部分,整个页面不需要重新的渲染;</li>
+<li><code>全局刷新</code>:页面的整体刷新,当页面上数据发生改变时,向后台发送请求,后台会将页面的数据重新渲染一遍,将渲染好的页面返回给客户端呈现,这是全局刷新,也是前后端不分离。这就要求后台去套数据,一般会使用jsp来套数据;<br>###前后端分离和不分离的优势和劣势<br>####不分离的优势:</li>
+<li>1.页面上的数据都是服务器渲染好的,源代码上能看到数据,有利于SEO优化(SEO:搜索引擎的收录和抓取);</li>
+<li>2.从服务器上获取的页面已经是渲染好的,不需要客户端在去额外的请求,所以页面加载速度比较快(前提是服务器够快),一般京东淘宝这样的页面首屏一般都是前后端不分离,直接渲染好页面给前端返回;<br>####不分离的劣势:</li>
+<li>1.如果页面有很多内容需要改变,需要实时获取数据,每次更新数据都要重新刷新一下页面,客户体验不好;</li>
+<li>2.每次都是服务器渲染的话,对服务器的要求比较高,服务器的压力比较大,如果服务器处理不过来,就会导致加载变慢甚至服务器崩溃;所以京东淘宝等网站只有首屏才会采用服务器渲染以提高页面加载速度;</li>
+<li>3.目前市场上前后端分离的项目占大部分;<br>####分离的优势</li>
+<li>1.可以根据需求任意改变页面的某一部分的数据更新,而不用刷新整个页面(例如:实时刷新,表单提交,用户登录),用户体验好;</li>
+<li>2.有利于开发,提高开发效率,开发的时候前后端互不影响,不需要考虑各自使用的技术,相当于实现了技术的分离;可以进行同时开发,项目开始的时候,只需要制定以下交互文档(API文档),规定请求的url,请求方式,参数,返回数据格式等等,前端也可以使用node模拟接口和数据,来验证和调试页面;<br>####分离的弊端</li>
+<li>1.不利于SEO优化(注意:后期使用JS将数据绑定到页面上,不会在源代码上体现,所以不会被SEO收录和抓取);</li>
+<li>2.刚开始加载时,请求资源文件的时候如果请求次数过多,会影响页面的加载速度;为了防止加载速度过慢,可以进行优化处理;<br>###基于原生实现ajax<br>####示例:</li>
+</ul>
+<figure class="hljs highlight plain"><figcaption><span>6</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs ecmascript">// 创建ajax对象:<br>let xhr = new XMLHttpRequest();<br>// 定义请求方式,同步或者异步,请求路径等等:<br>xhr.open(&quot;method&quot;, &quot;URL&quot;, async, user.name, user.password);<br>// 定义返回状态:<br>xhr.onreadystatechange = () =&gt; &#123;<br>	if (xhr.readyState === 4 &amp;&amp; xhr.status === 200) &#123;<br>		// 获取响应的文本内容;<br>		let res = xhr.responseText;<br>	&#125;<br>&#125;<br>// 开始发送请求(请求主体的内容数据):<br>xhr.send(null);<br></code></pre></td></tr></table></figure>
 <p>####<strong><code>分析open的参数:</code></strong></p>
-<blockquote>
-<p>1.method: ajax的请求方式:<br>1).<code>GET</code>系列方式(获取数据):</p>
+<ul>
+<li>1.method: ajax的请求方式:</li>
+<li>1).<code>GET</code>系列方式(获取数据):</li>
+</ul>
 <ul>
 <li>get: 从服务器获取数据;</li>
 <li>delete: 从服务器上删除某些文件;</li>
 <li>head: 获取响应头信息;(不要响应主体,只要响应头);</li>
 <li>……</li>
 </ul>
-<p>2).<code>POST</code>系列方式((推送数据):</p>
+<ul>
+<li>2).<code>POST</code>系列方式((推送数据):</li>
+</ul>
 <ul>
 <li>post: 向服务器传递数据;</li>
 <li>put: 向服务器添加指定的资源文件;</li>
-<li>……<br><code>不管是哪一种方式,都可以向服务器发送数据,也可以获取数据,但是一般GET系列以获取为主,POST系列就是以发送数据为主;</code><br><code>1).想获取动态展示的数据(如:新闻列表),一般使用GET请求,因为只需要告诉服务器需要什么,服务器就返回需要的内容;</code><br><code>2).当页面上有大量信息需要发送给服务器(如:表单提交),服务器接收到数据只需要返回成功或失败的状态,此时合适POST请求;</code><br>####第一个参数:GET和POST具体有哪些区别<br>#####区别1:数据携带方式:  <code>GET</code>向服务器发送请求时,发送的内容比<code>POST</code>少,获取的比<code>POST</code>多;</li>
+<li>……</li>
+</ul>
+<p><code>不管是哪一种方式,都可以向服务器发送数据,也可以获取数据,但是一般GET系列以获取为主,POST系列就是以发送数据为主;</code><br><code>1).想获取动态展示的数据(如:新闻列表),一般使用GET请求,因为只需要告诉服务器需要什么,服务器就返回需要的内容;</code><br><code>2).当页面上有大量信息需要发送给服务器(如:表单提交),服务器接收到数据只需要返回成功或失败的状态,此时合适POST请求;</code></p>
+<p>####第一个参数:GET和POST具体有哪些区别</p>
+<p>#####区别1:数据携带方式:  <code>GET</code>向服务器发送请求时,发送的内容比<code>POST</code>少,获取的比<code>POST</code>多;</p>
+<blockquote>
+<ul>
 <li>1.GET请求的参数是拼接在url上的,通过url的参数形式来传递数据,但是url的大小是有限制的,只有几KB,一旦超过限制,就会被默认剪切掉,所以无法携带大量的数据;</li>
 <li>2.<code>POST</code>发送的数据是通过请求主体实现的,理论上大小是没有限制的,但是真实项目中为了保证传输数据的速度,也会加一些限制(例如:上传资料/图片等等文件时,后台服务器做一下特殊处理);<br>#####区别2:缓存问题: <code>GET</code>请求容易走缓存,<code>POST</code>不会:</li>
 <li><code>GET</code>通过url传参数的方式请求数据,当遇到实时获取数据的时候,以为url是一样的,参数也是一样的,此时浏览器就会默认读取缓存中的内容返回给页面,导致获取不到服务器最新的数据,一般都是在参数后面加一个时间戳或者随机数来防止浏览器读取缓存;</li>
@@ -197,7 +216,7 @@
 <li><code>GET</code>的参数在url上,一些简单的黑客技术,拦截url(url劫持),也可以把客户端传递的信息获取到,导致信息泄露;</li>
 <li><code>POST</code>的信息都在请求主体中,相对比较安全;<br>####第二个参数:URL<br><code>这个url地址就是后台给的地址,一般都会有一个API文档,参照文档写就成;</code><br>####第三个参数: Async</li>
 <li>async: true 不写就是默认true,===&gt;异步;</li>
-<li>async:false ===&gt; 同步;<br>####最后两个参数:用户名,密码<br><code>一般不需要写,只有一些服务器不允许匿名访问,只有开通权限的才可以访问,比如一些重要机密的,银行等这样的服务器才会设置权限;</code><br>####<strong><code>第三部分解析</code></strong><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;;</span><br></pre></td></tr></table></figure>
+<li>async:false ===&gt; 同步;<br>####最后两个参数:用户名,密码<br><code>一般不需要写,只有一些服务器不允许匿名访问,只有开通权限的才可以访问,比如一些重要机密的,银行等这样的服务器才会设置权限;</code><br>####<strong><code>第三部分解析</code></strong><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">xhr.onreadystatechange = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;&#125;;<br></code></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>ajax请求中xhr.readyState的状态码: </p>
@@ -228,7 +247,8 @@
 <li>503:服务器超负载;</li>
 </ul>
 </blockquote>
-<p><strong>ajax常用的属性和方法有哪些</strong><br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line"><span class="built_in">console</span>.dir(xhr);</span><br></pre></td></tr></table></figure></p>
+<p><strong>ajax常用的属性和方法有哪些</strong></p>
+<figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> xhr = <span class="hljs-keyword">new</span> XMLHttpRequest();<br><span class="hljs-built_in">console</span>.dir(xhr);<br></code></pre></td></tr></table></figure>
 <blockquote>
 <p>[属性]</p>
 <ul>
@@ -250,7 +270,10 @@
 <li>open(); 略</li>
 <li>overrideMimeType();重写MIME类型;</li>
 <li>send(); 略</li>
-<li>setRequestHeader(“属性名”,属性值);设置请求头;<code>注意</code>:必须写在open()之后,send()之前,内容不可以是中文,否则会报错;<br>[事件]</li>
+<li>setRequestHeader(“属性名”,属性值);设置请求头;<code>注意</code>:必须写在open()之后,send()之前,内容不可以是中文,否则会报错;</li>
+</ul>
+<p>[事件]</p>
+<ul>
 <li>onabort();当ajax中断的时候触发的事件;</li>
 <li>onreadystatechange();当ajax状态发生变化就会触发的事件;</li>
 <li>ontimeout();当ajax超时触发的事件;</li>
@@ -262,9 +285,7 @@
       
       <div class="post-tags">
         
-        <a class="post-tag button" href="/tags/ajax/" rel="tag"><i class="fas fa-tags"></i>ajax</a>
-        
-        <a class="post-tag button" href="/tags/前端基础/" rel="tag"><i class="fas fa-tags"></i>前端基础</a>
+        <a class="post-tag button" href="/tags/ajax-前端基础/" rel="tag"><i class="fas fa-tags"></i>ajax 前端基础</a>
         
       </div>
       
@@ -296,7 +317,7 @@
   
   <div class="search">
     <div class="form-group">
-      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="Search" class="form-control"/>
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
     </div>
   </div>
   <div class="search-result-box" id="search-result"></div>
@@ -311,7 +332,7 @@
   <div class="site-count">
     
     <div class="archives-count">
-      <div class="site-count-title">Archives</div>
+      <div class="site-count-title">归档</div>
       <div><a href="/archives/">13</a></div>
     </div>
     
@@ -321,8 +342,8 @@
     <span class="site-count-divider divider">|</span>
     
     <div class="tags-count">
-      <div class="site-count-title">Tags</div>
-      <div><a href="/tags/">18</a></div>
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">19</a></div>
     </div>
     
   </div>
@@ -344,7 +365,7 @@
     
     <hr>
     <div class="social-link sidebar-item">
-      <div><i class="far fa-address-card"></i>Social Links</p></div>
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
       <ul>
         
         <li><i class="fas fa-envelope"></i><a href="wangwangwanglichao@foxmail.com" target="_blank">E-Mail</a></li>
@@ -357,7 +378,7 @@
     
     <hr>
     <div class="blogroll sidebar-item">
-      <div><i class="fas fa-link"></i>Blogroll</div>
+      <div><i class="fas fa-link"></i>友情链接</div>
       <ul>
         
         <li><i class="fas fa-link"></i><a href="https://github.com/" target="_blank">GitHub</a></li>
@@ -379,7 +400,7 @@
 <footer id="footer" class="footer" style="background: #33363b;">
   <div class="container">
     <div class="back-to-top">
-      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="Back to Top"></i></button>
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
     </div>
     <div class="footer-container">
       <div class="footer-left">
@@ -388,7 +409,7 @@
         </div>
         
         <div class="busuanzi">
-          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="Site Visit Count" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="Site User Count" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="Page Click Count" aria-hidden="false"></span></span>
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
         </div>
         
       </div>
@@ -399,7 +420,7 @@
           
         </div>
         <div class="powered-by">
-          Proudly Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> | Theme is <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
         </div>
       </div>
     </div>
