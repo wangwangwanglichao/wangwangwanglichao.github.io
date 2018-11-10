@@ -240,647 +240,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/todo/2018/07/22/node_base/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王立超">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/652285661303743555.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="勇往直前">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/22/node_base/" itemprop="url">未命名</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-22T01:53:48+08:00">
-                2018-07-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="1-node-能够解决什么问题"><a href="#1-node-能够解决什么问题" class="headerlink" title="1.node 能够解决什么问题?"></a>1.node 能够解决什么问题?</h2><blockquote>
-<p>node的首要目标是提供一种简单的,用于创建高性能服务器的开发工具;<br>Web服务器的瓶颈在于并发的用户量,对比java和PHP的实现方式;</p>
-<h2 id="2-node是什么"><a href="#2-node是什么" class="headerlink" title="2.node是什么?"></a>2.node是什么?</h2><p>node.js是一个基于Chrome V8 引擎的JavaScript运行环境,让JavaScript的执行效率与底端的C语言的执行效率相近;<br>node.js使用了一个事件驱动,非阻塞式I/O的模型,使其轻量又高效;<br>node.js的包管理器npm,是全球最大的开源库生态系统;</p>
-<h2 id="3-node特点"><a href="#3-node特点" class="headerlink" title="3.node特点"></a>3.node特点</h2><p>####3.1为什么JavaScript是单线程?<br>这是由JavaScript这门脚本语言的用途决定的;<br>Web Worker并没有改变JavaScript单线程的本质;</p>
-<p>####3.2浏览器模型<br>用户界面:包括地址栏,前进后退按钮,书签菜单等;<br>浏览器引擎: 在用户界面和呈现引擎之间传送指令;<br>呈现引擎:又称渲染引擎,也被成为浏览器内核,在线程方面又称UI线程;<br>网络:用于网络调用,比如: HTTP请求;<br>用户界面后端:用于绘制基本的窗口小部件,UI线程和JS共用一个线程;<br>JavaScript解析器:用于解析和执行JavaScript代码;<br>数据存储:这是持久层;浏览器需要在硬盘上保存各种数据,例如Cookie;</p>
-<p>####3.3除了JS线程和UI线程之外的其它线程<br>浏览器事件触发线程<br>定时触发器线程<br>异步HTTP请求线程</p>
-<p>####3.4任务队列<br>1.所有同步任务都是在主线程上执行,形成一个执行栈;<br>2.主线程之外,还存在一个任务队列,只要异步任务有了运行结果,就在任务队列中放置一个事件;<br>3.一旦执行栈中的所有同步任务执行完毕,系统就会读取任务队列,看看里面有哪些事件,哪些对应的异步任务,于是结束等待状态,进入执行栈,开始执行;<br>4.主线程不断重复上面的第三步;</p>
-<p>####3.5EventLoop<br>主线程从任务队列中读取事件,这个过程是循环不断的,所以整个的这种运行机制又称为EventLoop(事件循环);</p>
-<p>####3.6node.js的EventLoop<br>1.V8引擎解析JavaScript脚本;<br>2.解析后的代码,调用node API;<br>3.libuv库负责node API的执行,将不用的任务分配给不同的线程,形成一个EventLoop(事件循环),以异步的方式将任务的执行结果返回个V8引擎;<br>4.V8引擎再将结果返回给 用户;</p>
-<p>####3.7同步与异步<br>同步和异步关注的是消息通知机制;<br><code>同步</code>就是发出调用后,没有得到结果之前,该调用不返回,一旦调用返回,就得到返回值了。简而言之就是调用者主动等待这个调用的结果;<br><code>异步</code>则相反,调用者在发出调用后这个调用就直接返回了,所以没有返回结果,即:当一个异步过程调用发出后,调用者不会立刻得到结果,而是调用发出后,被调用者通过状态、通知或回调函数处理这个调用;</p>
-<p>####3.8阻塞与非阻塞<br>阻塞和非阻塞关注的是程序在等待调用结果(消息/返回值)时的状态;<br><code>阻塞</code>调用是指调用结果返回之前,当前线程会被挂起,只有在得到结果之后才会返回;<br><code>非阻塞</code>调用是指在不能立刻得到结果之前,该调用不会阻塞当前线程;</p>
-<p>####3.9组合<br><strong><code>同步异步取决于被调用者,阻塞非阻塞取决于调用者;</code></strong><br>同步阻塞: A给B打电话商量事情,通话过程中B考虑了1分钟(同步),A等待了1分钟什么也没干(阻塞);<br>异步阻塞: A给B打电话商量事情,B挂断电话1分钟后回复A(异步),A等待了1分钟什么也没干(阻塞);<br>同步非阻塞: A给B打电话商量事情,通话过程中B考虑了1分钟(同步),A在这1分钟里干了别的事情(非阻塞)<br>异步非阻塞: A给B打电话商量事情,B挂断电话1分钟后回复A(异步),A在这1分钟里干了别的事情(非阻塞);</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/todo/2018/07/20/JS_base/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王立超">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/652285661303743555.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="勇往直前">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/20/JS_base/" itemprop="url">未命名</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-20T23:30:35+08:00">
-                2018-07-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="JS编码方式"><a href="#JS编码方式" class="headerlink" title="JS编码方式"></a>JS编码方式</h3><blockquote>
-<p>1.escape/unescape(一般只有js支持,前端网页之间的数据传递的时候进行的中文编码和解码);<br>2.encodeURI/decodeURI;所有的语言都支持;<br>3.encodeURIComponent/decodeURIComponent;同上面,这个可以编译一些特殊字符,上面的不行,最常用的是这个;</p>
-<p>###ajax的异步和同步问题<br>ajax任务:发送请求到收到响应主体内容(完整的HTTP事物);<br>ajax任务开始时发送请求开始(xhr.send());<br>同步请求下,绑定监听状态的事件(onreadystatechange)放在open之前可以监听1,4的状态,不可以放在send之后,因为send执行就已经状态为4, 结束了;<br>异步请求下,绑定监听状态的事件(onreadystatechange)放在open之前可以监听1,2,3,4的状态,放在open之后可以监听2,3,4的状态,</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/todo/2018/07/20/ajax_base/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王立超">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/652285661303743555.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="勇往直前">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/20/ajax_base/" itemprop="url">未命名</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-20T16:25:22+08:00">
-                2018-07-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>##ajax基础知识和核心原理</p>
-<p>###ajax基础知识</p>
-<p>####1.什么是ajax:</p>
-<blockquote>
-<p>Async Javascript And XML ====&gt; 异步的JS和XML;<br>XML:可扩展的标记语言(自定义的一些标签,包裹数据,服务器传递数据);<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">root</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">student</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">name</span>&gt;</span>王二小<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">age</span>&gt;</span>33<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">sex</span>&gt;</span>男<span class="tag">&lt;/<span class="name">sex</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">student</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">root</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<p>####2.Ajax异步的概念:<br><code>局部刷新</code>:数据传递的是json字符串,前后端分离<br>1).向服务器发送ajax请求;<br>2).将服务器返回的数据经过前端的解析处理,绑定到页面上;<br>3).页面只需要改变一部分,整个页面不需要重新的渲染;<br><code>全局刷新</code>:页面的整体刷新,当页面上数据发生改变时,向后台发送请求,后台会将页面的数据重新渲染一遍,将渲染好的页面返回给客户端呈现,这是全局刷新,也是前后端不分离。这就要求后台去套数据,一般会使用jsp来套数据;</p>
-<p>###前后端分离和不分离的优势和劣势</p>
-<p>####不分离的优势:</p>
-<blockquote>
-<p>1.页面上的数据都是服务器渲染好的,源代码上能看到数据,有利于SEO优化(SEO:搜索引擎的收录和抓取);<br>2.从服务器上获取的页面已经是渲染好的,不需要客户端在去额外的请求,所以页面加载速度比较快(前提是服务器够快),一般京东淘宝这样的页面首屏一般都是前后端不分离,直接渲染好页面给前端返回;</p>
-<p>####不分离的劣势:<br>1.如果页面有很多内容需要改变,需要实时获取数据,每次更新数据都要重新刷新一下页面,客户体验不好;<br>2.每次都是服务器渲染的话,对服务器的要求比较高,服务器的压力比较大,如果服务器处理不过来,就会导致加载变慢甚至服务器崩溃;所以京东淘宝等网站只有首屏才会采用服务器渲染以提高页面加载速度;<br>3.目前市场上前后端分离的项目占大部分;</p>
-<p>####分离的优势<br>1.可以根据需求任意改变页面的某一部分的数据更新,而不用刷新整个页面(例如:实时刷新,表单提交,用户登录),用户体验好;<br>2.有利于开发,提高开发效率,开发的时候前后端互不影响,不需要考虑各自使用的技术,相当于实现了技术的分离;可以进行同时开发,项目开始的时候,只需要制定以下交互文档(API文档),规定请求的url,请求方式,参数,返回数据格式等等,前端也可以使用node模拟接口和数据,来验证和调试页面;</p>
-<p>####分离的弊端<br>1.不利于SEO优化(注意:后期使用JS将数据绑定到页面上,不会在源代码上体现,所以不会被SEO收录和抓取);<br>2.刚开始加载时,请求资源文件的时候如果请求次数过多,会影响页面的加载速度;为了防止加载速度过慢,可以进行优化处理;</p>
-<p>###基于原生实现ajax</p>
-<p>####示例:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建ajax对象:</span></span><br><span class="line"><span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttprequest();</span><br><span class="line"><span class="comment">// 定义请求方式,同步或者异步,请求路径等等:</span></span><br><span class="line">xhr.open(<span class="string">"method"</span>, <span class="string">"URL"</span>, <span class="keyword">async</span>, user.name, user.password);</span><br><span class="line"><span class="comment">// 定义返回状态:</span></span><br><span class="line">xhr.onreadystatechange = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">	<span class="keyword">if</span> (xhr.readyState === <span class="number">4</span> &amp;&amp; xhr.status === <span class="number">200</span>) &#123;</span><br><span class="line">		<span class="comment">// 获取响应的文本内容;</span></span><br><span class="line">		<span class="keyword">let</span> res = xhr.responseText;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 开始发送请求(请求主体的内容数据):</span></span><br><span class="line">xhr.send(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<p>####<strong><code>分析open的参数:</code></strong></p>
-<blockquote>
-<p>1.method: ajax的请求方式:<br>1).<code>GET</code>系列方式(获取数据):</p>
-<ul>
-<li>get: 从服务器获取数据;</li>
-<li>delete: 从服务器上删除某些文件;</li>
-<li>head: 获取响应头信息;(不要响应主体,只要响应头);</li>
-<li>……</li>
-</ul>
-<p>2).<code>POST</code>系列方式((推送数据):</p>
-<ul>
-<li>post: 向服务器传递数据;</li>
-<li>put: 向服务器添加指定的资源文件;</li>
-<li>……<br><code>不管是哪一种方式,都可以向服务器发送数据,也可以获取数据,但是一般GET系列以获取为主,POST系列就是以发送数据为主;</code><br><code>1).想获取动态展示的数据(如:新闻列表),一般使用GET请求,因为只需要告诉服务器需要什么,服务器就返回需要的内容;</code><br><code>2).当页面上有大量信息需要发送给服务器(如:表单提交),服务器接收到数据只需要返回成功或失败的状态,此时合适POST请求;</code><br>####第一个参数:GET和POST具体有哪些区别<br>#####区别1:数据携带方式:  <code>GET</code>向服务器发送请求时,发送的内容比<code>POST</code>少,获取的比<code>POST</code>多;</li>
-<li>1.GET请求的参数是拼接在url上的,通过url的参数形式来传递数据,但是url的大小是有限制的,只有几KB,一旦超过限制,就会被默认剪切掉,所以无法携带大量的数据;</li>
-<li>2.<code>POST</code>发送的数据是通过请求主体实现的,理论上大小是没有限制的,但是真实项目中为了保证传输数据的速度,也会加一些限制(例如:上传资料/图片等等文件时,后台服务器做一下特殊处理);<br>#####区别2:缓存问题: <code>GET</code>请求容易走缓存,<code>POST</code>不会:</li>
-<li><code>GET</code>通过url传参数的方式请求数据,当遇到实时获取数据的时候,以为url是一样的,参数也是一样的,此时浏览器就会默认读取缓存中的内容返回给页面,导致获取不到服务器最新的数据,一般都是在参数后面加一个时间戳或者随机数来防止浏览器读取缓存;</li>
-<li><code>POST</code>请求不会走缓存,因为请求的数据在请求主体中,是不会走缓存的;<br>#####区别3:安全性: <code>GET</code>请求法师没有<code>POST</code>请求方式安全:</li>
-<li><code>GET</code>的参数在url上,一些简单的黑客技术,拦截url(url劫持),也可以把客户端传递的信息获取到,导致信息泄露;</li>
-<li><code>POST</code>的信息都在请求主体中,相对比较安全;<br>####第二个参数:URL<br><code>这个url地址就是后台给的地址,一般都会有一个API文档,参照文档写就成;</code><br>####第三个参数: Async</li>
-<li>async: true 不写就是默认true,===&gt;异步;</li>
-<li>async:false ===&gt; 同步;<br>####最后两个参数:用户名,密码<br><code>一般不需要写,只有一些服务器不允许匿名访问,只有开通权限的才可以访问,比如一些重要机密的,银行等这样的服务器才会设置权限;</code><br>####<strong><code>第三部分解析</code></strong><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>ajax请求中xhr.readyState的状态码: </p>
-<ul>
-<li>0: 创建一个ajax对象,默认状态是0;</li>
-<li>1: 执行xhr.open是1;</li>
-<li>2: 请求已发送,并接受到了响应头是2;</li>
-<li>3: 响应主体在路上是3;</li>
-<li>4:响应主体返回客户端是4;</li>
-</ul>
-<p>ajax请求中xhr.status的HTTP网络状态码:</p>
-<ul>
-<li>200:成功状态,一个完整的HTTP事物完成,以2开头的都是成功状态;</li>
-<li>300:以3开头的状态码也是成功状态,只不过是服务器做了一些处理;</li>
-<li>301:永久重定向(永久转移),一般都是域名的迁移;比如京东的www.360buy.com重定向到www.jd.com;</li>
-<li>302:临时重定向(临时转移),在新版的HTTP中307也代表临时重定向,一般是在处理服务器的负载均衡,当一个服务器负荷太大,将内容临时迁移到另一个服务器上处理,主要是一些图片,有一些大公司一般都有专门处理图片的服务器;</li>
-<li>304:从浏览器中读取缓存,把一些不经常更新的文件和图片缓存,减少服务器的压力,增加页面的加载速度;</li>
-</ul>
-<p>以4开头的都是失败的,一般都是客户端的错误;</p>
-<ul>
-<li>400:请求参数错误;</li>
-<li>401:无权限访问;</li>
-<li>404:访问的地址不存在;</li>
-</ul>
-<p>以5开头的一般都是服务器的错误;</p>
-<ul>
-<li>500:服务器未知错误;</li>
-<li>503:服务器超负载;</li>
-</ul>
-</blockquote>
-<p><strong>ajax常用的属性和方法有哪些</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line"><span class="built_in">console</span>.dir(xhr);</span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<p>[属性]</p>
-<ul>
-<li>readyState:存储的是ajax的状态码;</li>
-<li>responseText/responseXML:返回的是响应主体的内容,只是格式不一样,使用不同的属性接收即可;<ul>
-<li>responseText 一般都是json字符串;</li>
-<li>responseXML是XML格式的数据字符串;</li>
-</ul>
-</li>
-<li>status:记录服务器返回的HTTP状态码;</li>
-<li>statusText:对返回状态码status的描述;</li>
-<li>timeout:设置ajax请求的超时时间;超过设置的时间响应主体还没回来,浏览器就会把请求强制断开;</li>
-</ul>
-<p>[方法]</p>
-<ul>
-<li>abort():强制中断ajax请求;</li>
-<li>getAllResponseHeaders();获取全部响应头的信息(获取的是一堆字符串文本);</li>
-<li>getResponseHeader(“属性名”);获取指定的响应头;如:getResponseHeader(“date”);获取响应头中存储的服务器的时间;</li>
-<li>open(); 略</li>
-<li>overrideMimeType();重写MIME类型;</li>
-<li>send(); 略</li>
-<li>setRequestHeader(“属性名”,属性值);设置请求头;<code>注意</code>:必须写在open()之后,send()之前,内容不可以是中文,否则会报错;<br>[事件]</li>
-<li>onabort();当ajax中断的时候触发的事件;</li>
-<li>onreadystatechange();当ajax状态发生变化就会触发的事件;</li>
-<li>ontimeout();当ajax超时触发的事件;</li>
-</ul>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/todo/2018/07/15/nodejs_base/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王立超">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/652285661303743555.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="勇往直前">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/15/nodejs_base/" itemprop="url">未命名</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-15T22:17:14+08:00">
-                2018-07-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="nodejs介绍"><a href="#nodejs介绍" class="headerlink" title="nodejs介绍"></a>nodejs介绍</h2><h4 id="nodejs不是一门语言-是一个运行环境-在node环境中运行JS"><a href="#nodejs不是一门语言-是一个运行环境-在node环境中运行JS" class="headerlink" title="nodejs不是一门语言,是一个运行环境,在node环境中运行JS;"></a>nodejs不是一门语言,是一个运行环境,在node环境中运行JS;</h4><blockquote>
-<p>1.使用的是Chrome的V8引擎;<br>2.基于事件驱动的I/O操作(input/output);<br>3.单线程异步开发;<br>4.因为使用JS,所以适合前端人员上手;<br>5.自带NPM包管理器(全球最大的包管理器,使用NPM安装各种开发需要的安装包);<br>6.模块化开发,node自带很多内置模块;</p>
-</blockquote>
-<h3 id="node中的模块"><a href="#node中的模块" class="headerlink" title="node中的模块"></a>node中的模块</h3><h4 id="node中的模块分为三种"><a href="#node中的模块分为三种" class="headerlink" title="node中的模块分为三种"></a>node中的模块分为三种</h4><blockquote>
-<p>1.内置模块: node自带的模块,如fs,http,url…等等;官方中文文档: <a href="http://nodejs.cn/api" target="_blank" rel="noopener">http://nodejs.cn/api</a><br>2.自定义模块: 自己写的模块,一个JS就是一个模块,用的时候需要导入进来;<br>3.第三方模块: 别人发布的模块,需要下载安装来使用(一般使用NPM包管理器安装);</p>
-</blockquote>
-<h3 id="如何使用npm安装第三方模块"><a href="#如何使用npm安装第三方模块" class="headerlink" title="如何使用npm安装第三方模块"></a>如何使用npm安装第三方模块</h3><blockquote>
-<p><code>npm init -y</code><br>创建package.json文件,记录开发依赖<br><code>npm install less -g</code><br>将less安装在全局中;<br>g  –&gt; global, node中的全局对象<br><code>npm install less</code><br>将less安装在当前项目下;<br><code>npm install less --save-dev</code><br>“–save” 生产依赖<br>“–save-dev” 开发依赖</p>
-<p>在package.json文件中,出现:<br><code>&quot;devDependencies&quot;: {
-     &quot;less&quot;: &quot;^2.7.3&quot;
-}</code><br>来记录开发依赖;</p>
-<p><code>&quot;dependencies&quot;: {
-    &quot;bootstrap&quot;: &quot;^4.0.0&quot;
-}</code><br>来记录生产依赖</p>
-<p>安装了第三方模块会在当前项目下自动创建一个node_modules文件夹和一个package-lock.json文件</p>
-<ul>
-<li>NODE <ul>
-<li>node_modules</li>
-<li>package-lock.json</li>
-</ul>
-</li>
-</ul>
-<p>得到一个package.json文件,里面有配置好的文件名称,直接运行npm install回车,即可安装所有文件,叫做跑环境;</p>
-</blockquote>
-<h3 id="fs模块"><a href="#fs模块" class="headerlink" title="fs模块"></a>fs模块</h3><blockquote>
-<p>fs是node内置模块,处理文件写入和读取;<br>内置模块需要require导入进来</p>
-<ul>
-<li>引入fs模块</li>
-<li>let fs = require(“fs”);</li>
-<li></li>
-<li>读取文件内容</li>
-<li>fs.readFile();异步读取,不管是否读取完成,后面代码不受影响,继续执行;</li>
-<li>fs.readFileSync();同步读取,只有读取完成后才会执行后面的代码;</li>
-<li>fs.readFileSync([“pathName路径(必填)]”,[编码格式”urf-8”(选填)]);</li>
-<li>fs.readFile([“pathName路径(必填)]”,[编码格式”urf-8”(选填)], (error, value) =&gt; {</li>
-<li>todoSomething…</li>
-<li>});</li>
-<li></li>
-<li>写入文件内容</li>
-<li>fs.writeFile(“文件的路径”, “写入的内容”, “编码”, 回调函数callback);异步写入;</li>
-<li>fs.writeFileSync(“文件的路径”, “写入的内容”, “编码”);同步写入;</li>
-<li>写入文件内容相当于重写文件内容,之前的内容就会覆盖消失;</li>
-<li></li>
-<li>读取文件夹(文件目录)</li>
-<li>fs.readdir(“路径”, (error, value) =&gt; {</li>
-<li>value是一个数组:[“文件夹名字”, “文件夹名字”,…];</li>
-<li>todoSomething…</li>
-<li>});</li>
-<li>fs.readdirSync(“路径”); 也是返回一个数组;</li>
-</ul>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/todo/2018/07/15/enter-event/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1286,6 +645,734 @@
         
           
             <h3 id="豆瓣电影介绍小案例"><a href="#豆瓣电影介绍小案例" class="headerlink" title="豆瓣电影介绍小案例"></a><a href="douban-movie">豆瓣电影介绍小案例</a></h3><h3 id="一个备忘录小案例"><a href="#一个备忘录小案例" class="headerlink" title="一个备忘录小案例"></a><a href="todo">一个备忘录小案例</a></h3><h3 id="一个弹力球小案例"><a href="#一个弹力球小案例" class="headerlink" title="一个弹力球小案例"></a><a href="flex-demo">一个弹力球小案例</a></h3><h3 id="一个圆形开屏导航栏小案例"><a href="#一个圆形开屏导航栏小案例" class="headerlink" title="一个圆形开屏导航栏小案例"></a><a href="spread">一个圆形开屏导航栏小案例</a></h3><h3 id="微金所首页小案例"><a href="#微金所首页小案例" class="headerlink" title="微金所首页小案例"></a><a href="wjs">微金所首页小案例</a></h3><h3 id="一个网页小demo"><a href="#一个网页小demo" class="headerlink" title="一个网页小demo"></a><a href="vue-project-01">一个网页小demo</a></h3>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/todo/2018/02/15/node_base/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="王立超">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/652285661303743555.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="勇往直前">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/15/node_base/" itemprop="url">node学习笔记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-15T02:37:24+08:00">
+                2018-02-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="1-node-能够解决什么问题"><a href="#1-node-能够解决什么问题" class="headerlink" title="1.node 能够解决什么问题?"></a>1.node 能够解决什么问题?</h2><blockquote>
+<p>node的首要目标是提供一种简单的,用于创建高性能服务器的开发工具;<br>Web服务器的瓶颈在于并发的用户量,对比java和PHP的实现方式;</p>
+<h2 id="2-node是什么"><a href="#2-node是什么" class="headerlink" title="2.node是什么?"></a>2.node是什么?</h2><p>node.js是一个基于Chrome V8 引擎的JavaScript运行环境,让JavaScript的执行效率与底端的C语言的执行效率相近;<br>node.js使用了一个事件驱动,非阻塞式I/O的模型,使其轻量又高效;<br>node.js的包管理器npm,是全球最大的开源库生态系统;</p>
+<h2 id="3-node特点"><a href="#3-node特点" class="headerlink" title="3.node特点"></a>3.node特点</h2><p>####3.1为什么JavaScript是单线程?<br>这是由JavaScript这门脚本语言的用途决定的;<br>Web Worker并没有改变JavaScript单线程的本质;</p>
+<p>####3.2浏览器模型<br>用户界面:包括地址栏,前进后退按钮,书签菜单等;<br>浏览器引擎: 在用户界面和呈现引擎之间传送指令;<br>呈现引擎:又称渲染引擎,也被成为浏览器内核,在线程方面又称UI线程;<br>网络:用于网络调用,比如: HTTP请求;<br>用户界面后端:用于绘制基本的窗口小部件,UI线程和JS共用一个线程;<br>JavaScript解析器:用于解析和执行JavaScript代码;<br>数据存储:这是持久层;浏览器需要在硬盘上保存各种数据,例如Cookie;</p>
+<p>####3.3除了JS线程和UI线程之外的其它线程<br>浏览器事件触发线程<br>定时触发器线程<br>异步HTTP请求线程</p>
+<p>####3.4任务队列<br>1.所有同步任务都是在主线程上执行,形成一个执行栈;<br>2.主线程之外,还存在一个任务队列,只要异步任务有了运行结果,就在任务队列中放置一个事件;<br>3.一旦执行栈中的所有同步任务执行完毕,系统就会读取任务队列,看看里面有哪些事件,哪些对应的异步任务,于是结束等待状态,进入执行栈,开始执行;<br>4.主线程不断重复上面的第三步;</p>
+<p>####3.5EventLoop<br>主线程从任务队列中读取事件,这个过程是循环不断的,所以整个的这种运行机制又称为EventLoop(事件循环);</p>
+<p>####3.6node.js的EventLoop<br>1.V8引擎解析JavaScript脚本;<br>2.解析后的代码,调用node API;<br>3.libuv库负责node API的执行,将不用的任务分配给不同的线程,形成一个EventLoop(事件循环),以异步的方式将任务的执行结果返回个V8引擎;<br>4.V8引擎再将结果返回给 用户;</p>
+<p>####3.7同步与异步<br>同步和异步关注的是消息通知机制;<br><code>同步</code>就是发出调用后,没有得到结果之前,该调用不返回,一旦调用返回,就得到返回值了。简而言之就是调用者主动等待这个调用的结果;<br><code>异步</code>则相反,调用者在发出调用后这个调用就直接返回了,所以没有返回结果,即:当一个异步过程调用发出后,调用者不会立刻得到结果,而是调用发出后,被调用者通过状态、通知或回调函数处理这个调用;</p>
+<p>####3.8阻塞与非阻塞<br>阻塞和非阻塞关注的是程序在等待调用结果(消息/返回值)时的状态;<br><code>阻塞</code>调用是指调用结果返回之前,当前线程会被挂起,只有在得到结果之后才会返回;<br><code>非阻塞</code>调用是指在不能立刻得到结果之前,该调用不会阻塞当前线程;</p>
+<p>####3.9组合<br><strong><code>同步异步取决于被调用者,阻塞非阻塞取决于调用者;</code></strong><br>同步阻塞: A给B打电话商量事情,通话过程中B考虑了1分钟(同步),A等待了1分钟什么也没干(阻塞);<br>异步阻塞: A给B打电话商量事情,B挂断电话1分钟后回复A(异步),A等待了1分钟什么也没干(阻塞);<br>同步非阻塞: A给B打电话商量事情,通话过程中B考虑了1分钟(同步),A在这1分钟里干了别的事情(非阻塞)<br>异步非阻塞: A给B打电话商量事情,B挂断电话1分钟后回复A(异步),A在这1分钟里干了别的事情(非阻塞);</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/todo/2018/02/15/nodejs_base/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="王立超">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/652285661303743555.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="勇往直前">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/15/nodejs_base/" itemprop="url">node介绍</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-15T02:37:24+08:00">
+                2018-02-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="nodejs介绍"><a href="#nodejs介绍" class="headerlink" title="nodejs介绍"></a>nodejs介绍</h2><h4 id="nodejs不是一门语言-是一个运行环境-在node环境中运行JS"><a href="#nodejs不是一门语言-是一个运行环境-在node环境中运行JS" class="headerlink" title="nodejs不是一门语言,是一个运行环境,在node环境中运行JS;"></a>nodejs不是一门语言,是一个运行环境,在node环境中运行JS;</h4><blockquote>
+<p>1.使用的是Chrome的V8引擎;<br>2.基于事件驱动的I/O操作(input/output);<br>3.单线程异步开发;<br>4.因为使用JS,所以适合前端人员上手;<br>5.自带NPM包管理器(全球最大的包管理器,使用NPM安装各种开发需要的安装包);<br>6.模块化开发,node自带很多内置模块;</p>
+</blockquote>
+<h3 id="node中的模块"><a href="#node中的模块" class="headerlink" title="node中的模块"></a>node中的模块</h3><h4 id="node中的模块分为三种"><a href="#node中的模块分为三种" class="headerlink" title="node中的模块分为三种"></a>node中的模块分为三种</h4><blockquote>
+<p>1.内置模块: node自带的模块,如fs,http,url…等等;官方中文文档: <a href="http://nodejs.cn/api" target="_blank" rel="noopener">http://nodejs.cn/api</a><br>2.自定义模块: 自己写的模块,一个JS就是一个模块,用的时候需要导入进来;<br>3.第三方模块: 别人发布的模块,需要下载安装来使用(一般使用NPM包管理器安装);</p>
+</blockquote>
+<h3 id="如何使用npm安装第三方模块"><a href="#如何使用npm安装第三方模块" class="headerlink" title="如何使用npm安装第三方模块"></a>如何使用npm安装第三方模块</h3><blockquote>
+<p><code>npm init -y</code><br>创建package.json文件,记录开发依赖<br><code>npm install less -g</code><br>将less安装在全局中;<br>g  –&gt; global, node中的全局对象<br><code>npm install less</code><br>将less安装在当前项目下;<br><code>npm install less --save-dev</code><br>“–save” 生产依赖<br>“–save-dev” 开发依赖</p>
+<p>在package.json文件中,出现:<br><code>&quot;devDependencies&quot;: {
+     &quot;less&quot;: &quot;^2.7.3&quot;
+}</code><br>来记录开发依赖;</p>
+<p><code>&quot;dependencies&quot;: {
+    &quot;bootstrap&quot;: &quot;^4.0.0&quot;
+}</code><br>来记录生产依赖</p>
+<p>安装了第三方模块会在当前项目下自动创建一个node_modules文件夹和一个package-lock.json文件</p>
+<ul>
+<li>NODE <ul>
+<li>node_modules</li>
+<li>package-lock.json</li>
+</ul>
+</li>
+</ul>
+<p>得到一个package.json文件,里面有配置好的文件名称,直接运行npm install回车,即可安装所有文件,叫做跑环境;</p>
+</blockquote>
+<h3 id="fs模块"><a href="#fs模块" class="headerlink" title="fs模块"></a>fs模块</h3><blockquote>
+<p>fs是node内置模块,处理文件写入和读取;<br>内置模块需要require导入进来</p>
+<ul>
+<li>引入fs模块</li>
+<li>let fs = require(“fs”);</li>
+<li></li>
+<li>读取文件内容</li>
+<li>fs.readFile();异步读取,不管是否读取完成,后面代码不受影响,继续执行;</li>
+<li>fs.readFileSync();同步读取,只有读取完成后才会执行后面的代码;</li>
+<li>fs.readFileSync([“pathName路径(必填)]”,[编码格式”urf-8”(选填)]);</li>
+<li>fs.readFile([“pathName路径(必填)]”,[编码格式”urf-8”(选填)], (error, value) =&gt; {</li>
+<li>todoSomething…</li>
+<li>});</li>
+<li></li>
+<li>写入文件内容</li>
+<li>fs.writeFile(“文件的路径”, “写入的内容”, “编码”, 回调函数callback);异步写入;</li>
+<li>fs.writeFileSync(“文件的路径”, “写入的内容”, “编码”);同步写入;</li>
+<li>写入文件内容相当于重写文件内容,之前的内容就会覆盖消失;</li>
+<li></li>
+<li>读取文件夹(文件目录)</li>
+<li>fs.readdir(“路径”, (error, value) =&gt; {</li>
+<li>value是一个数组:[“文件夹名字”, “文件夹名字”,…];</li>
+<li>todoSomething…</li>
+<li>});</li>
+<li>fs.readdirSync(“路径”); 也是返回一个数组;</li>
+</ul>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/todo/2018/02/15/ajax_base/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="王立超">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/652285661303743555.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="勇往直前">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/15/ajax_base/" itemprop="url">ajax基础知识和核心原理</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-15T02:37:24+08:00">
+                2018-02-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>###ajax基础知识</p>
+<p>####1.什么是ajax:</p>
+<blockquote>
+<p>Async Javascript And XML ====&gt; 异步的JS和XML;<br>XML:可扩展的标记语言(自定义的一些标签,包裹数据,服务器传递数据);<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">root</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">student</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">name</span>&gt;</span>王二小<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">age</span>&gt;</span>33<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">sex</span>&gt;</span>男<span class="tag">&lt;/<span class="name">sex</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">student</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">root</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>####2.Ajax异步的概念:<br><code>局部刷新</code>:数据传递的是json字符串,前后端分离<br>1).向服务器发送ajax请求;<br>2).将服务器返回的数据经过前端的解析处理,绑定到页面上;<br>3).页面只需要改变一部分,整个页面不需要重新的渲染;<br><code>全局刷新</code>:页面的整体刷新,当页面上数据发生改变时,向后台发送请求,后台会将页面的数据重新渲染一遍,将渲染好的页面返回给客户端呈现,这是全局刷新,也是前后端不分离。这就要求后台去套数据,一般会使用jsp来套数据;</p>
+<p>###前后端分离和不分离的优势和劣势</p>
+<p>####不分离的优势:</p>
+<blockquote>
+<p>1.页面上的数据都是服务器渲染好的,源代码上能看到数据,有利于SEO优化(SEO:搜索引擎的收录和抓取);<br>2.从服务器上获取的页面已经是渲染好的,不需要客户端在去额外的请求,所以页面加载速度比较快(前提是服务器够快),一般京东淘宝这样的页面首屏一般都是前后端不分离,直接渲染好页面给前端返回;</p>
+<p>####不分离的劣势:<br>1.如果页面有很多内容需要改变,需要实时获取数据,每次更新数据都要重新刷新一下页面,客户体验不好;<br>2.每次都是服务器渲染的话,对服务器的要求比较高,服务器的压力比较大,如果服务器处理不过来,就会导致加载变慢甚至服务器崩溃;所以京东淘宝等网站只有首屏才会采用服务器渲染以提高页面加载速度;<br>3.目前市场上前后端分离的项目占大部分;</p>
+<p>####分离的优势<br>1.可以根据需求任意改变页面的某一部分的数据更新,而不用刷新整个页面(例如:实时刷新,表单提交,用户登录),用户体验好;<br>2.有利于开发,提高开发效率,开发的时候前后端互不影响,不需要考虑各自使用的技术,相当于实现了技术的分离;可以进行同时开发,项目开始的时候,只需要制定以下交互文档(API文档),规定请求的url,请求方式,参数,返回数据格式等等,前端也可以使用node模拟接口和数据,来验证和调试页面;</p>
+<p>####分离的弊端<br>1.不利于SEO优化(注意:后期使用JS将数据绑定到页面上,不会在源代码上体现,所以不会被SEO收录和抓取);<br>2.刚开始加载时,请求资源文件的时候如果请求次数过多,会影响页面的加载速度;为了防止加载速度过慢,可以进行优化处理;</p>
+<p>###基于原生实现ajax</p>
+<p>####示例:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建ajax对象:</span></span><br><span class="line"><span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttprequest();</span><br><span class="line"><span class="comment">// 定义请求方式,同步或者异步,请求路径等等:</span></span><br><span class="line">xhr.open(<span class="string">"method"</span>, <span class="string">"URL"</span>, <span class="keyword">async</span>, user.name, user.password);</span><br><span class="line"><span class="comment">// 定义返回状态:</span></span><br><span class="line">xhr.onreadystatechange = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">	<span class="keyword">if</span> (xhr.readyState === <span class="number">4</span> &amp;&amp; xhr.status === <span class="number">200</span>) &#123;</span><br><span class="line">		<span class="comment">// 获取响应的文本内容;</span></span><br><span class="line">		<span class="keyword">let</span> res = xhr.responseText;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 开始发送请求(请求主体的内容数据):</span></span><br><span class="line">xhr.send(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>####<strong><code>分析open的参数:</code></strong></p>
+<blockquote>
+<p>1.method: ajax的请求方式:<br>1).<code>GET</code>系列方式(获取数据):</p>
+<ul>
+<li>get: 从服务器获取数据;</li>
+<li>delete: 从服务器上删除某些文件;</li>
+<li>head: 获取响应头信息;(不要响应主体,只要响应头);</li>
+<li>……</li>
+</ul>
+<p>2).<code>POST</code>系列方式((推送数据):</p>
+<ul>
+<li>post: 向服务器传递数据;</li>
+<li>put: 向服务器添加指定的资源文件;</li>
+<li>……<br><code>不管是哪一种方式,都可以向服务器发送数据,也可以获取数据,但是一般GET系列以获取为主,POST系列就是以发送数据为主;</code><br><code>1).想获取动态展示的数据(如:新闻列表),一般使用GET请求,因为只需要告诉服务器需要什么,服务器就返回需要的内容;</code><br><code>2).当页面上有大量信息需要发送给服务器(如:表单提交),服务器接收到数据只需要返回成功或失败的状态,此时合适POST请求;</code><br>####第一个参数:GET和POST具体有哪些区别<br>#####区别1:数据携带方式:  <code>GET</code>向服务器发送请求时,发送的内容比<code>POST</code>少,获取的比<code>POST</code>多;</li>
+<li>1.GET请求的参数是拼接在url上的,通过url的参数形式来传递数据,但是url的大小是有限制的,只有几KB,一旦超过限制,就会被默认剪切掉,所以无法携带大量的数据;</li>
+<li>2.<code>POST</code>发送的数据是通过请求主体实现的,理论上大小是没有限制的,但是真实项目中为了保证传输数据的速度,也会加一些限制(例如:上传资料/图片等等文件时,后台服务器做一下特殊处理);<br>#####区别2:缓存问题: <code>GET</code>请求容易走缓存,<code>POST</code>不会:</li>
+<li><code>GET</code>通过url传参数的方式请求数据,当遇到实时获取数据的时候,以为url是一样的,参数也是一样的,此时浏览器就会默认读取缓存中的内容返回给页面,导致获取不到服务器最新的数据,一般都是在参数后面加一个时间戳或者随机数来防止浏览器读取缓存;</li>
+<li><code>POST</code>请求不会走缓存,因为请求的数据在请求主体中,是不会走缓存的;<br>#####区别3:安全性: <code>GET</code>请求法师没有<code>POST</code>请求方式安全:</li>
+<li><code>GET</code>的参数在url上,一些简单的黑客技术,拦截url(url劫持),也可以把客户端传递的信息获取到,导致信息泄露;</li>
+<li><code>POST</code>的信息都在请求主体中,相对比较安全;<br>####第二个参数:URL<br><code>这个url地址就是后台给的地址,一般都会有一个API文档,参照文档写就成;</code><br>####第三个参数: Async</li>
+<li>async: true 不写就是默认true,===&gt;异步;</li>
+<li>async:false ===&gt; 同步;<br>####最后两个参数:用户名,密码<br><code>一般不需要写,只有一些服务器不允许匿名访问,只有开通权限的才可以访问,比如一些重要机密的,银行等这样的服务器才会设置权限;</code><br>####<strong><code>第三部分解析</code></strong><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>ajax请求中xhr.readyState的状态码: </p>
+<ul>
+<li>0: 创建一个ajax对象,默认状态是0;</li>
+<li>1: 执行xhr.open是1;</li>
+<li>2: 请求已发送,并接受到了响应头是2;</li>
+<li>3: 响应主体在路上是3;</li>
+<li>4:响应主体返回客户端是4;</li>
+</ul>
+<p>ajax请求中xhr.status的HTTP网络状态码:</p>
+<ul>
+<li>200:成功状态,一个完整的HTTP事物完成,以2开头的都是成功状态;</li>
+<li>300:以3开头的状态码也是成功状态,只不过是服务器做了一些处理;</li>
+<li>301:永久重定向(永久转移),一般都是域名的迁移;比如京东的www.360buy.com重定向到www.jd.com;</li>
+<li>302:临时重定向(临时转移),在新版的HTTP中307也代表临时重定向,一般是在处理服务器的负载均衡,当一个服务器负荷太大,将内容临时迁移到另一个服务器上处理,主要是一些图片,有一些大公司一般都有专门处理图片的服务器;</li>
+<li>304:从浏览器中读取缓存,把一些不经常更新的文件和图片缓存,减少服务器的压力,增加页面的加载速度;</li>
+</ul>
+<p>以4开头的都是失败的,一般都是客户端的错误;</p>
+<ul>
+<li>400:请求参数错误;</li>
+<li>401:无权限访问;</li>
+<li>404:访问的地址不存在;</li>
+</ul>
+<p>以5开头的一般都是服务器的错误;</p>
+<ul>
+<li>500:服务器未知错误;</li>
+<li>503:服务器超负载;</li>
+</ul>
+</blockquote>
+<p><strong>ajax常用的属性和方法有哪些</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line"><span class="built_in">console</span>.dir(xhr);</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>[属性]</p>
+<ul>
+<li>readyState:存储的是ajax的状态码;</li>
+<li>responseText/responseXML:返回的是响应主体的内容,只是格式不一样,使用不同的属性接收即可;<ul>
+<li>responseText 一般都是json字符串;</li>
+<li>responseXML是XML格式的数据字符串;</li>
+</ul>
+</li>
+<li>status:记录服务器返回的HTTP状态码;</li>
+<li>statusText:对返回状态码status的描述;</li>
+<li>timeout:设置ajax请求的超时时间;超过设置的时间响应主体还没回来,浏览器就会把请求强制断开;</li>
+</ul>
+<p>[方法]</p>
+<ul>
+<li>abort():强制中断ajax请求;</li>
+<li>getAllResponseHeaders();获取全部响应头的信息(获取的是一堆字符串文本);</li>
+<li>getResponseHeader(“属性名”);获取指定的响应头;如:getResponseHeader(“date”);获取响应头中存储的服务器的时间;</li>
+<li>open(); 略</li>
+<li>overrideMimeType();重写MIME类型;</li>
+<li>send(); 略</li>
+<li>setRequestHeader(“属性名”,属性值);设置请求头;<code>注意</code>:必须写在open()之后,send()之前,内容不可以是中文,否则会报错;<br>[事件]</li>
+<li>onabort();当ajax中断的时候触发的事件;</li>
+<li>onreadystatechange();当ajax状态发生变化就会触发的事件;</li>
+<li>ontimeout();当ajax超时触发的事件;</li>
+</ul>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/todo/2018/02/15/JS_base/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="王立超">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/652285661303743555.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="勇往直前">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/15/JS_base/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-15T02:37:24+08:00">
+                2018-02-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>1.escape/unescape(一般只有js支持,前端网页之间的数据传递的时候进行的中文编码和解码);<br>2.encodeURI/decodeURI;所有的语言都支持;<br>3.encodeURIComponent/decodeURIComponent;同上面,这个可以编译一些特殊字符,上面的不行,最常用的是这个;</p>
+<p>###ajax的异步和同步问题<br>ajax任务:发送请求到收到响应主体内容(完整的HTTP事物);<br>ajax任务开始时发送请求开始(xhr.send());<br>同步请求下,绑定监听状态的事件(onreadystatechange)放在open之前可以监听1,4的状态,不可以放在send之后,因为send执行就已经状态为4, 结束了;<br>异步请求下,绑定监听状态的事件(onreadystatechange)放在open之前可以监听1,2,3,4的状态,放在open之后可以监听2,3,4的状态,</p>
+</blockquote>
+
           
         
       
@@ -1972,7 +2059,7 @@
               
               <div class="site-state-item site-state-categories">
                 
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 
               </div>
@@ -1983,7 +2070,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
