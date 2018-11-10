@@ -160,24 +160,38 @@
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      <blockquote>
+      <h2 id="输入URL地址敲回车之后发生了什么"><a href="#输入URL地址敲回车之后发生了什么" class="headerlink" title="输入URL地址敲回车之后发生了什么"></a>输入URL地址敲回车之后发生了什么</h2><blockquote>
 <p> 输入网址敲回车之后,<br> 浏览器开始向DNS服务器发送请求,    (request)请求<br> DNS服务器解析,<br> 找到IP地址对应的服务器,<br> 服务器根据对应的端口号找到对应的项目,<br> 将需要的数据代码编码后返回给浏览器客户端,并将数据的类型告诉浏览器(HTML/json…),     (response)响应<br> 浏览器将接收到的数据根据返回来的数据类型进行解析,</p>
 </blockquote>
-<h4 id="http事物-request请求和response响应都成功就是一个完整的HTTP事物"><a href="#http事物-request请求和response响应都成功就是一个完整的HTTP事物" class="headerlink" title="http事物: request请求和response响应都成功就是一个完整的HTTP事物;"></a>http事物: request请求和response响应都成功就是一个完整的HTTP事物;</h4><h4 id="https-www-baidu-com-443-xx-yy-index-html-name-aa-amp-age-30-id-5"><a href="#https-www-baidu-com-443-xx-yy-index-html-name-aa-amp-age-30-id-5" class="headerlink" title="https://www.baidu.com:443/xx/yy/index.html?name=aa&amp;age=30#id=5"></a><a href="https://www.baidu.com:443/xx/yy/index.html?name=aa&amp;age=30#id=5" target="_blank" rel="noopener">https://www.baidu.com:443/xx/yy/index.html?name=aa&amp;age=30#id=5</a></h4><h4 id="https-–-www-baidu-com-–-443-–-xx-yy-index-html-–-name-aa-amp-age-30-–-id-5"><a href="#https-–-www-baidu-com-–-443-–-xx-yy-index-html-–-name-aa-amp-age-30-–-id-5" class="headerlink" title="(https) – (www.baidu.com ) – (443) – (/xx/yy/index.html) – (name=aa&amp;age=30) – (id=5)"></a>(https) – (www.baidu.com ) – (443) – (/xx/yy/index.html) – (name=aa&amp;age=30) – (id=5)</h4><h2 id="1-HTTPS-传输协议"><a href="#1-HTTPS-传输协议" class="headerlink" title="1.(HTTPS) 传输协议"></a>1.(HTTPS) 传输协议</h2><blockquote>
+<ul>
+<li><p>http事物: request请求和response响应都成功就是一个完整的HTTP事物;</p>
+</li>
+<li><p><a href="https://www.baidu.com:443/xx/yy/index.html?name=aa&amp;age=30#id=5" target="_blank" rel="noopener">https://www.baidu.com:443/xx/yy/index.html?name=aa&amp;age=30#id=5</a></p>
+</li>
+<li><p>(https) – (www.baidu.com ) – (443) – (/xx/yy/index.html) – (name=aa&amp;age=30) – (id=5)</p>
+</li>
+</ul>
+<h2 id="1-HTTPS-传输协议"><a href="#1-HTTPS-传输协议" class="headerlink" title="1.(HTTPS) 传输协议"></a>1.(HTTPS) 传输协议</h2><blockquote>
 <p>https / http  完成客户端和服务端的数据交互传输<br>https: 更加安全<br>http: 超文本传输协议<br>FTP: 往服务器上上传项目文件</p>
 </blockquote>
 <h2 id="2-www-baidu-com-域名"><a href="#2-www-baidu-com-域名" class="headerlink" title="2.(www.baidu.com) 域名:"></a>2.(www.baidu.com) 域名:</h2><blockquote>
 <p>一级域名<br>二级域名<br>三级域名</p>
 </blockquote>
-<h2 id="3-443-端口号"><a href="#3-443-端口号" class="headerlink" title="3.(443) 端口号:"></a>3.(443) 端口号:</h2><p>根据端口号找到对应的项目</p>
-<blockquote>
+<h2 id="3-443-端口号"><a href="#3-443-端口号" class="headerlink" title="3.(443) 端口号:"></a>3.(443) 端口号:</h2><ul>
+<li>根据端口号找到对应的项目<blockquote>
 <p>http: 默认端口号80<br>https: 默认端口号443<br>FTP: 默认端口号21</p>
 </blockquote>
-<h2 id="4-xx-yy-index-html-项目地址"><a href="#4-xx-yy-index-html-项目地址" class="headerlink" title="4.(/xx/yy/index.html)项目地址"></a>4.(/xx/yy/index.html)项目地址</h2><p>根据地址值找到项目下的具体页面文件</p>
-<blockquote>
+</li>
+</ul>
+<h2 id="4-xx-yy-index-html-项目地址"><a href="#4-xx-yy-index-html-项目地址" class="headerlink" title="4.(/xx/yy/index.html)项目地址"></a>4.(/xx/yy/index.html)项目地址</h2><ul>
+<li>根据地址值找到项目下的具体页面文件<blockquote>
 <p>/xx/yy/index.html 真实地址, 请求资源文件<br>/xxx  伪地址, 请求数据</p>
 </blockquote>
-<h2 id="5-name-aa-amp-age-30-参数"><a href="#5-name-aa-amp-age-30-参数" class="headerlink" title="5.(name=aa&amp;age=30)参数"></a>5.(name=aa&amp;age=30)参数</h2><p>参数格式是后台规定的,根据参数的值返回响应的数据</p>
+</li>
+</ul>
+<h2 id="5-name-aa-amp-age-30-参数"><a href="#5-name-aa-amp-age-30-参数" class="headerlink" title="5.(name=aa&amp;age=30)参数"></a>5.(name=aa&amp;age=30)参数</h2><ul>
+<li>参数格式是后台规定的,根据参数的值返回响应的数据</li>
+</ul>
 <h2 id="6-id-5-哈希值-Hash值"><a href="#6-id-5-哈希值-Hash值" class="headerlink" title="6.(id=5) 哈希值 Hash值"></a>6.(id=5) 哈希值 Hash值</h2><blockquote>
 <p>锚点定位<br>路由</p>
 </blockquote>
@@ -270,7 +284,7 @@
     <hr>
     <div class="post-toc sidebar-item" id="toc-div">
       <div><i class="fas fa-list-ol"></i>文章目录</div>
-      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#http事物-request请求和response响应都成功就是一个完整的HTTP事物"><span class="toc-text">http事物: request请求和response响应都成功就是一个完整的HTTP事物;</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#https-www-baidu-com-443-xx-yy-index-html-name-aa-amp-age-30-id-5"><span class="toc-text">https://www.baidu.com:443/xx/yy/index.html?name=aa&amp;age=30#id=5</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#https-–-www-baidu-com-–-443-–-xx-yy-index-html-–-name-aa-amp-age-30-–-id-5"><span class="toc-text">(https) – (www.baidu.com ) – (443) – (/xx/yy/index.html) – (name=aa&amp;age=30) – (id=5)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#1-HTTPS-传输协议"><span class="toc-text">1.(HTTPS) 传输协议</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#2-www-baidu-com-域名"><span class="toc-text">2.(www.baidu.com) 域名:</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#3-443-端口号"><span class="toc-text">3.(443) 端口号:</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#4-xx-yy-index-html-项目地址"><span class="toc-text">4.(/xx/yy/index.html)项目地址</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#5-name-aa-amp-age-30-参数"><span class="toc-text">5.(name=aa&amp;age=30)参数</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#6-id-5-哈希值-Hash值"><span class="toc-text">6.(id=5) 哈希值 Hash值</span></a></div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#输入URL地址敲回车之后发生了什么"><span class="toc-text">输入URL地址敲回车之后发生了什么</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#1-HTTPS-传输协议"><span class="toc-text">1.(HTTPS) 传输协议</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#2-www-baidu-com-域名"><span class="toc-text">2.(www.baidu.com) 域名:</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#3-443-端口号"><span class="toc-text">3.(443) 端口号:</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#4-xx-yy-index-html-项目地址"><span class="toc-text">4.(/xx/yy/index.html)项目地址</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#5-name-aa-amp-age-30-参数"><span class="toc-text">5.(name=aa&amp;age=30)参数</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#6-id-5-哈希值-Hash值"><span class="toc-text">6.(id=5) 哈希值 Hash值</span></a></li></ol></div>
     </div>
     
     

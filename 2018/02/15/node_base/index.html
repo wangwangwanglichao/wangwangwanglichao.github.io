@@ -162,16 +162,37 @@
     <main class="post-main" itemprop="articleBody">
       <h2 id="1-node-能够解决什么问题"><a href="#1-node-能够解决什么问题" class="headerlink" title="1.node 能够解决什么问题?"></a>1.node 能够解决什么问题?</h2><blockquote>
 <p>node的首要目标是提供一种简单的,用于创建高性能服务器的开发工具;<br>Web服务器的瓶颈在于并发的用户量,对比java和PHP的实现方式;</p>
-<h2 id="2-node是什么"><a href="#2-node是什么" class="headerlink" title="2.node是什么?"></a>2.node是什么?</h2><p>node.js是一个基于Chrome V8 引擎的JavaScript运行环境,让JavaScript的执行效率与底端的C语言的执行效率相近;<br>node.js使用了一个事件驱动,非阻塞式I/O的模型,使其轻量又高效;<br>node.js的包管理器npm,是全球最大的开源库生态系统;</p>
-<h2 id="3-node特点"><a href="#3-node特点" class="headerlink" title="3.node特点"></a>3.node特点</h2><p>####3.1为什么JavaScript是单线程?<br>这是由JavaScript这门脚本语言的用途决定的;<br>Web Worker并没有改变JavaScript单线程的本质;</p>
-<p>####3.2浏览器模型<br>用户界面:包括地址栏,前进后退按钮,书签菜单等;<br>浏览器引擎: 在用户界面和呈现引擎之间传送指令;<br>呈现引擎:又称渲染引擎,也被成为浏览器内核,在线程方面又称UI线程;<br>网络:用于网络调用,比如: HTTP请求;<br>用户界面后端:用于绘制基本的窗口小部件,UI线程和JS共用一个线程;<br>JavaScript解析器:用于解析和执行JavaScript代码;<br>数据存储:这是持久层;浏览器需要在硬盘上保存各种数据,例如Cookie;</p>
-<p>####3.3除了JS线程和UI线程之外的其它线程<br>浏览器事件触发线程<br>定时触发器线程<br>异步HTTP请求线程</p>
-<p>####3.4任务队列<br>1.所有同步任务都是在主线程上执行,形成一个执行栈;<br>2.主线程之外,还存在一个任务队列,只要异步任务有了运行结果,就在任务队列中放置一个事件;<br>3.一旦执行栈中的所有同步任务执行完毕,系统就会读取任务队列,看看里面有哪些事件,哪些对应的异步任务,于是结束等待状态,进入执行栈,开始执行;<br>4.主线程不断重复上面的第三步;</p>
-<p>####3.5EventLoop<br>主线程从任务队列中读取事件,这个过程是循环不断的,所以整个的这种运行机制又称为EventLoop(事件循环);</p>
-<p>####3.6node.js的EventLoop<br>1.V8引擎解析JavaScript脚本;<br>2.解析后的代码,调用node API;<br>3.libuv库负责node API的执行,将不用的任务分配给不同的线程,形成一个EventLoop(事件循环),以异步的方式将任务的执行结果返回个V8引擎;<br>4.V8引擎再将结果返回给 用户;</p>
-<p>####3.7同步与异步<br>同步和异步关注的是消息通知机制;<br><code>同步</code>就是发出调用后,没有得到结果之前,该调用不返回,一旦调用返回,就得到返回值了。简而言之就是调用者主动等待这个调用的结果;<br><code>异步</code>则相反,调用者在发出调用后这个调用就直接返回了,所以没有返回结果,即:当一个异步过程调用发出后,调用者不会立刻得到结果,而是调用发出后,被调用者通过状态、通知或回调函数处理这个调用;</p>
-<p>####3.8阻塞与非阻塞<br>阻塞和非阻塞关注的是程序在等待调用结果(消息/返回值)时的状态;<br><code>阻塞</code>调用是指调用结果返回之前,当前线程会被挂起,只有在得到结果之后才会返回;<br><code>非阻塞</code>调用是指在不能立刻得到结果之前,该调用不会阻塞当前线程;</p>
-<p>####3.9组合<br><strong><code>同步异步取决于被调用者,阻塞非阻塞取决于调用者;</code></strong><br>同步阻塞: A给B打电话商量事情,通话过程中B考虑了1分钟(同步),A等待了1分钟什么也没干(阻塞);<br>异步阻塞: A给B打电话商量事情,B挂断电话1分钟后回复A(异步),A等待了1分钟什么也没干(阻塞);<br>同步非阻塞: A给B打电话商量事情,通话过程中B考虑了1分钟(同步),A在这1分钟里干了别的事情(非阻塞)<br>异步非阻塞: A给B打电话商量事情,B挂断电话1分钟后回复A(异步),A在这1分钟里干了别的事情(非阻塞);</p>
+</blockquote>
+<h2 id="2-node是什么"><a href="#2-node是什么" class="headerlink" title="2.node是什么?"></a>2.node是什么?</h2><blockquote>
+<p>node.js是一个基于Chrome V8 引擎的JavaScript运行环境,让JavaScript的执行效率与底端的C语言的执行效率相近;<br>node.js使用了一个事件驱动,非阻塞式I/O的模型,使其轻量又高效;<br>node.js的包管理器npm,是全球最大的开源库生态系统;</p>
+</blockquote>
+<h2 id="3-node特点"><a href="#3-node特点" class="headerlink" title="3.node特点"></a>3.node特点</h2><h3 id="3-1-为什么JavaScript是单线程"><a href="#3-1-为什么JavaScript是单线程" class="headerlink" title="3.1 为什么JavaScript是单线程?"></a>3.1 为什么JavaScript是单线程?</h3><blockquote>
+<p>这是由JavaScript这门脚本语言的用途决定的;<br>Web Worker并没有改变JavaScript单线程的本质;</p>
+</blockquote>
+<h3 id="3-2-浏览器模型"><a href="#3-2-浏览器模型" class="headerlink" title="3.2 浏览器模型"></a>3.2 浏览器模型</h3><blockquote>
+<p>用户界面:包括地址栏,前进后退按钮,书签菜单等;<br>浏览器引擎: 在用户界面和呈现引擎之间传送指令;<br>呈现引擎:又称渲染引擎,也被成为浏览器内核,在线程方面又称UI线程;<br>网络:用于网络调用,比如: HTTP请求;<br>用户界面后端:用于绘制基本的窗口小部件,UI线程和JS共用一个线程;<br>JavaScript解析器:用于解析和执行JavaScript代码;<br>数据存储:这是持久层;浏览器需要在硬盘上保存各种数据,例如Cookie;</p>
+</blockquote>
+<h3 id="3-3-除了JS线程和UI线程之外的其它线程"><a href="#3-3-除了JS线程和UI线程之外的其它线程" class="headerlink" title="3.3 除了JS线程和UI线程之外的其它线程"></a>3.3 除了JS线程和UI线程之外的其它线程</h3><blockquote>
+<p>浏览器事件触发线程<br>定时触发器线程<br>异步HTTP请求线程</p>
+</blockquote>
+<h3 id="3-4-任务队列"><a href="#3-4-任务队列" class="headerlink" title="3.4 任务队列"></a>3.4 任务队列</h3><blockquote>
+<p>1.所有同步任务都是在主线程上执行,形成一个执行栈;<br>2.主线程之外,还存在一个任务队列,只要异步任务有了运行结果,就在任务队列中放置一个事件;<br>3.一旦执行栈中的所有同步任务执行完毕,系统就会读取任务队列,看看里面有哪些事件,哪些对应的异步任务,于是结束等待状态,进入执行栈,开始执行;<br>4.主线程不断重复上面的第三步;</p>
+</blockquote>
+<h3 id="3-5-EventLoop"><a href="#3-5-EventLoop" class="headerlink" title="3.5 EventLoop"></a>3.5 EventLoop</h3><blockquote>
+<p>主线程从任务队列中读取事件,这个过程是循环不断的,所以整个的这种运行机制又称为EventLoop(事件循环);</p>
+</blockquote>
+<h3 id="3-6-node-js的EventLoop"><a href="#3-6-node-js的EventLoop" class="headerlink" title="3.6 node.js的EventLoop"></a>3.6 node.js的EventLoop</h3><blockquote>
+<p>1.V8引擎解析JavaScript脚本;<br>2.解析后的代码,调用node API;<br>3.libuv库负责node API的执行,将不用的任务分配给不同的线程,形成一个EventLoop(事件循环),以异步的方式将任务的执行结果返回个V8引擎;<br>4.V8引擎再将结果返回给 用户;</p>
+</blockquote>
+<h3 id="3-7-同步与异步"><a href="#3-7-同步与异步" class="headerlink" title="3.7 同步与异步"></a>3.7 同步与异步</h3><blockquote>
+<p>同步和异步关注的是消息通知机制;<br><code>同步</code>就是发出调用后,没有得到结果之前,该调用不返回,一旦调用返回,就得到返回值了。简而言之就是调用者主动等待这个调用的结果;<br><code>异步</code>则相反,调用者在发出调用后这个调用就直接返回了,所以没有返回结果,即:当一个异步过程调用发出后,调用者不会立刻得到结果,而是调用发出后,被调用者通过状态、通知或回调函数处理这个调用;</p>
+</blockquote>
+<h3 id="3-8-阻塞与非阻塞"><a href="#3-8-阻塞与非阻塞" class="headerlink" title="3.8 阻塞与非阻塞"></a>3.8 阻塞与非阻塞</h3><blockquote>
+<p>阻塞和非阻塞关注的是程序在等待调用结果(消息/返回值)时的状态;<br><code>阻塞</code>调用是指调用结果返回之前,当前线程会被挂起,只有在得到结果之后才会返回;<br><code>非阻塞</code>调用是指在不能立刻得到结果之前,该调用不会阻塞当前线程;</p>
+</blockquote>
+<h3 id="3-9-组合"><a href="#3-9-组合" class="headerlink" title="3.9 组合"></a>3.9 组合</h3><p><strong><code>同步异步取决于被调用者,阻塞非阻塞取决于调用者;</code></strong></p>
+<blockquote>
+<p>同步阻塞: A给B打电话商量事情,通话过程中B考虑了1分钟(同步),A等待了1分钟什么也没干(阻塞);<br>异步阻塞: A给B打电话商量事情,B挂断电话1分钟后回复A(异步),A等待了1分钟什么也没干(阻塞);<br>同步非阻塞: A给B打电话商量事情,通话过程中B考虑了1分钟(同步),A在这1分钟里干了别的事情(非阻塞)<br>异步非阻塞: A给B打电话商量事情,B挂断电话1分钟后回复A(异步),A在这1分钟里干了别的事情(非阻塞);</p>
 </blockquote>
 
     </main>
@@ -260,7 +281,7 @@
     <hr>
     <div class="post-toc sidebar-item" id="toc-div">
       <div><i class="fas fa-list-ol"></i>文章目录</div>
-      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#1-node-能够解决什么问题"><span class="toc-text">1.node 能够解决什么问题?</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#2-node是什么"><span class="toc-text">2.node是什么?</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#3-node特点"><span class="toc-text">3.node特点</span></a></li></ol></div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#1-node-能够解决什么问题"><span class="toc-text">1.node 能够解决什么问题?</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#2-node是什么"><span class="toc-text">2.node是什么?</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#3-node特点"><span class="toc-text">3.node特点</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#3-1-为什么JavaScript是单线程"><span class="toc-text">3.1 为什么JavaScript是单线程?</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#3-2-浏览器模型"><span class="toc-text">3.2 浏览器模型</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#3-3-除了JS线程和UI线程之外的其它线程"><span class="toc-text">3.3 除了JS线程和UI线程之外的其它线程</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#3-4-任务队列"><span class="toc-text">3.4 任务队列</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#3-5-EventLoop"><span class="toc-text">3.5 EventLoop</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#3-6-node-js的EventLoop"><span class="toc-text">3.6 node.js的EventLoop</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#3-7-同步与异步"><span class="toc-text">3.7 同步与异步</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#3-8-阻塞与非阻塞"><span class="toc-text">3.8 阻塞与非阻塞</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#3-9-组合"><span class="toc-text">3.9 组合</span></a></li></ol></li></ol></div>
     </div>
     
     

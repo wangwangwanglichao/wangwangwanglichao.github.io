@@ -251,24 +251,38 @@
     </header>
     <main class="post-main" itemprop="articleBody">
       
-      <blockquote>
+      <h2 id="输入URL地址敲回车之后发生了什么"><a href="#输入URL地址敲回车之后发生了什么" class="headerlink" title="输入URL地址敲回车之后发生了什么"></a>输入URL地址敲回车之后发生了什么</h2><blockquote>
 <p> 输入网址敲回车之后,<br> 浏览器开始向DNS服务器发送请求,    (request)请求<br> DNS服务器解析,<br> 找到IP地址对应的服务器,<br> 服务器根据对应的端口号找到对应的项目,<br> 将需要的数据代码编码后返回给浏览器客户端,并将数据的类型告诉浏览器(HTML/json…),     (response)响应<br> 浏览器将接收到的数据根据返回来的数据类型进行解析,</p>
 </blockquote>
-<h4 id="http事物-request请求和response响应都成功就是一个完整的HTTP事物"><a href="#http事物-request请求和response响应都成功就是一个完整的HTTP事物" class="headerlink" title="http事物: request请求和response响应都成功就是一个完整的HTTP事物;"></a>http事物: request请求和response响应都成功就是一个完整的HTTP事物;</h4><h4 id="https-www-baidu-com-443-xx-yy-index-html-name-aa-amp-age-30-id-5"><a href="#https-www-baidu-com-443-xx-yy-index-html-name-aa-amp-age-30-id-5" class="headerlink" title="https://www.baidu.com:443/xx/yy/index.html?name=aa&amp;age=30#id=5"></a><a href="https://www.baidu.com:443/xx/yy/index.html?name=aa&amp;age=30#id=5" target="_blank" rel="noopener">https://www.baidu.com:443/xx/yy/index.html?name=aa&amp;age=30#id=5</a></h4><h4 id="https-–-www-baidu-com-–-443-–-xx-yy-index-html-–-name-aa-amp-age-30-–-id-5"><a href="#https-–-www-baidu-com-–-443-–-xx-yy-index-html-–-name-aa-amp-age-30-–-id-5" class="headerlink" title="(https) – (www.baidu.com ) – (443) – (/xx/yy/index.html) – (name=aa&amp;age=30) – (id=5)"></a>(https) – (www.baidu.com ) – (443) – (/xx/yy/index.html) – (name=aa&amp;age=30) – (id=5)</h4><h2 id="1-HTTPS-传输协议"><a href="#1-HTTPS-传输协议" class="headerlink" title="1.(HTTPS) 传输协议"></a>1.(HTTPS) 传输协议</h2><blockquote>
+<ul>
+<li><p>http事物: request请求和response响应都成功就是一个完整的HTTP事物;</p>
+</li>
+<li><p><a href="https://www.baidu.com:443/xx/yy/index.html?name=aa&amp;age=30#id=5" target="_blank" rel="noopener">https://www.baidu.com:443/xx/yy/index.html?name=aa&amp;age=30#id=5</a></p>
+</li>
+<li><p>(https) – (www.baidu.com ) – (443) – (/xx/yy/index.html) – (name=aa&amp;age=30) – (id=5)</p>
+</li>
+</ul>
+<h2 id="1-HTTPS-传输协议"><a href="#1-HTTPS-传输协议" class="headerlink" title="1.(HTTPS) 传输协议"></a>1.(HTTPS) 传输协议</h2><blockquote>
 <p>https / http  完成客户端和服务端的数据交互传输<br>https: 更加安全<br>http: 超文本传输协议<br>FTP: 往服务器上上传项目文件</p>
 </blockquote>
 <h2 id="2-www-baidu-com-域名"><a href="#2-www-baidu-com-域名" class="headerlink" title="2.(www.baidu.com) 域名:"></a>2.(www.baidu.com) 域名:</h2><blockquote>
 <p>一级域名<br>二级域名<br>三级域名</p>
 </blockquote>
-<h2 id="3-443-端口号"><a href="#3-443-端口号" class="headerlink" title="3.(443) 端口号:"></a>3.(443) 端口号:</h2><p>根据端口号找到对应的项目</p>
-<blockquote>
+<h2 id="3-443-端口号"><a href="#3-443-端口号" class="headerlink" title="3.(443) 端口号:"></a>3.(443) 端口号:</h2><ul>
+<li>根据端口号找到对应的项目<blockquote>
 <p>http: 默认端口号80<br>https: 默认端口号443<br>FTP: 默认端口号21</p>
 </blockquote>
-<h2 id="4-xx-yy-index-html-项目地址"><a href="#4-xx-yy-index-html-项目地址" class="headerlink" title="4.(/xx/yy/index.html)项目地址"></a>4.(/xx/yy/index.html)项目地址</h2><p>根据地址值找到项目下的具体页面文件</p>
-<blockquote>
+</li>
+</ul>
+<h2 id="4-xx-yy-index-html-项目地址"><a href="#4-xx-yy-index-html-项目地址" class="headerlink" title="4.(/xx/yy/index.html)项目地址"></a>4.(/xx/yy/index.html)项目地址</h2><ul>
+<li>根据地址值找到项目下的具体页面文件<blockquote>
 <p>/xx/yy/index.html 真实地址, 请求资源文件<br>/xxx  伪地址, 请求数据</p>
 </blockquote>
-<h2 id="5-name-aa-amp-age-30-参数"><a href="#5-name-aa-amp-age-30-参数" class="headerlink" title="5.(name=aa&amp;age=30)参数"></a>5.(name=aa&amp;age=30)参数</h2><p>参数格式是后台规定的,根据参数的值返回响应的数据</p>
+</li>
+</ul>
+<h2 id="5-name-aa-amp-age-30-参数"><a href="#5-name-aa-amp-age-30-参数" class="headerlink" title="5.(name=aa&amp;age=30)参数"></a>5.(name=aa&amp;age=30)参数</h2><ul>
+<li>参数格式是后台规定的,根据参数的值返回响应的数据</li>
+</ul>
 <h2 id="6-id-5-哈希值-Hash值"><a href="#6-id-5-哈希值-Hash值" class="headerlink" title="6.(id=5) 哈希值 Hash值"></a>6.(id=5) 哈希值 Hash值</h2><blockquote>
 <p>锚点定位<br>路由</p>
 </blockquote>
@@ -472,16 +486,37 @@
       
       <h2 id="1-node-能够解决什么问题"><a href="#1-node-能够解决什么问题" class="headerlink" title="1.node 能够解决什么问题?"></a>1.node 能够解决什么问题?</h2><blockquote>
 <p>node的首要目标是提供一种简单的,用于创建高性能服务器的开发工具;<br>Web服务器的瓶颈在于并发的用户量,对比java和PHP的实现方式;</p>
-<h2 id="2-node是什么"><a href="#2-node是什么" class="headerlink" title="2.node是什么?"></a>2.node是什么?</h2><p>node.js是一个基于Chrome V8 引擎的JavaScript运行环境,让JavaScript的执行效率与底端的C语言的执行效率相近;<br>node.js使用了一个事件驱动,非阻塞式I/O的模型,使其轻量又高效;<br>node.js的包管理器npm,是全球最大的开源库生态系统;</p>
-<h2 id="3-node特点"><a href="#3-node特点" class="headerlink" title="3.node特点"></a>3.node特点</h2><p>####3.1为什么JavaScript是单线程?<br>这是由JavaScript这门脚本语言的用途决定的;<br>Web Worker并没有改变JavaScript单线程的本质;</p>
-<p>####3.2浏览器模型<br>用户界面:包括地址栏,前进后退按钮,书签菜单等;<br>浏览器引擎: 在用户界面和呈现引擎之间传送指令;<br>呈现引擎:又称渲染引擎,也被成为浏览器内核,在线程方面又称UI线程;<br>网络:用于网络调用,比如: HTTP请求;<br>用户界面后端:用于绘制基本的窗口小部件,UI线程和JS共用一个线程;<br>JavaScript解析器:用于解析和执行JavaScript代码;<br>数据存储:这是持久层;浏览器需要在硬盘上保存各种数据,例如Cookie;</p>
-<p>####3.3除了JS线程和UI线程之外的其它线程<br>浏览器事件触发线程<br>定时触发器线程<br>异步HTTP请求线程</p>
-<p>####3.4任务队列<br>1.所有同步任务都是在主线程上执行,形成一个执行栈;<br>2.主线程之外,还存在一个任务队列,只要异步任务有了运行结果,就在任务队列中放置一个事件;<br>3.一旦执行栈中的所有同步任务执行完毕,系统就会读取任务队列,看看里面有哪些事件,哪些对应的异步任务,于是结束等待状态,进入执行栈,开始执行;<br>4.主线程不断重复上面的第三步;</p>
-<p>####3.5EventLoop<br>主线程从任务队列中读取事件,这个过程是循环不断的,所以整个的这种运行机制又称为EventLoop(事件循环);</p>
-<p>####3.6node.js的EventLoop<br>1.V8引擎解析JavaScript脚本;<br>2.解析后的代码,调用node API;<br>3.libuv库负责node API的执行,将不用的任务分配给不同的线程,形成一个EventLoop(事件循环),以异步的方式将任务的执行结果返回个V8引擎;<br>4.V8引擎再将结果返回给 用户;</p>
-<p>####3.7同步与异步<br>同步和异步关注的是消息通知机制;<br><code>同步</code>就是发出调用后,没有得到结果之前,该调用不返回,一旦调用返回,就得到返回值了。简而言之就是调用者主动等待这个调用的结果;<br><code>异步</code>则相反,调用者在发出调用后这个调用就直接返回了,所以没有返回结果,即:当一个异步过程调用发出后,调用者不会立刻得到结果,而是调用发出后,被调用者通过状态、通知或回调函数处理这个调用;</p>
-<p>####3.8阻塞与非阻塞<br>阻塞和非阻塞关注的是程序在等待调用结果(消息/返回值)时的状态;<br><code>阻塞</code>调用是指调用结果返回之前,当前线程会被挂起,只有在得到结果之后才会返回;<br><code>非阻塞</code>调用是指在不能立刻得到结果之前,该调用不会阻塞当前线程;</p>
-<p>####3.9组合<br><strong><code>同步异步取决于被调用者,阻塞非阻塞取决于调用者;</code></strong><br>同步阻塞: A给B打电话商量事情,通话过程中B考虑了1分钟(同步),A等待了1分钟什么也没干(阻塞);<br>异步阻塞: A给B打电话商量事情,B挂断电话1分钟后回复A(异步),A等待了1分钟什么也没干(阻塞);<br>同步非阻塞: A给B打电话商量事情,通话过程中B考虑了1分钟(同步),A在这1分钟里干了别的事情(非阻塞)<br>异步非阻塞: A给B打电话商量事情,B挂断电话1分钟后回复A(异步),A在这1分钟里干了别的事情(非阻塞);</p>
+</blockquote>
+<h2 id="2-node是什么"><a href="#2-node是什么" class="headerlink" title="2.node是什么?"></a>2.node是什么?</h2><blockquote>
+<p>node.js是一个基于Chrome V8 引擎的JavaScript运行环境,让JavaScript的执行效率与底端的C语言的执行效率相近;<br>node.js使用了一个事件驱动,非阻塞式I/O的模型,使其轻量又高效;<br>node.js的包管理器npm,是全球最大的开源库生态系统;</p>
+</blockquote>
+<h2 id="3-node特点"><a href="#3-node特点" class="headerlink" title="3.node特点"></a>3.node特点</h2><h3 id="3-1-为什么JavaScript是单线程"><a href="#3-1-为什么JavaScript是单线程" class="headerlink" title="3.1 为什么JavaScript是单线程?"></a>3.1 为什么JavaScript是单线程?</h3><blockquote>
+<p>这是由JavaScript这门脚本语言的用途决定的;<br>Web Worker并没有改变JavaScript单线程的本质;</p>
+</blockquote>
+<h3 id="3-2-浏览器模型"><a href="#3-2-浏览器模型" class="headerlink" title="3.2 浏览器模型"></a>3.2 浏览器模型</h3><blockquote>
+<p>用户界面:包括地址栏,前进后退按钮,书签菜单等;<br>浏览器引擎: 在用户界面和呈现引擎之间传送指令;<br>呈现引擎:又称渲染引擎,也被成为浏览器内核,在线程方面又称UI线程;<br>网络:用于网络调用,比如: HTTP请求;<br>用户界面后端:用于绘制基本的窗口小部件,UI线程和JS共用一个线程;<br>JavaScript解析器:用于解析和执行JavaScript代码;<br>数据存储:这是持久层;浏览器需要在硬盘上保存各种数据,例如Cookie;</p>
+</blockquote>
+<h3 id="3-3-除了JS线程和UI线程之外的其它线程"><a href="#3-3-除了JS线程和UI线程之外的其它线程" class="headerlink" title="3.3 除了JS线程和UI线程之外的其它线程"></a>3.3 除了JS线程和UI线程之外的其它线程</h3><blockquote>
+<p>浏览器事件触发线程<br>定时触发器线程<br>异步HTTP请求线程</p>
+</blockquote>
+<h3 id="3-4-任务队列"><a href="#3-4-任务队列" class="headerlink" title="3.4 任务队列"></a>3.4 任务队列</h3><blockquote>
+<p>1.所有同步任务都是在主线程上执行,形成一个执行栈;<br>2.主线程之外,还存在一个任务队列,只要异步任务有了运行结果,就在任务队列中放置一个事件;<br>3.一旦执行栈中的所有同步任务执行完毕,系统就会读取任务队列,看看里面有哪些事件,哪些对应的异步任务,于是结束等待状态,进入执行栈,开始执行;<br>4.主线程不断重复上面的第三步;</p>
+</blockquote>
+<h3 id="3-5-EventLoop"><a href="#3-5-EventLoop" class="headerlink" title="3.5 EventLoop"></a>3.5 EventLoop</h3><blockquote>
+<p>主线程从任务队列中读取事件,这个过程是循环不断的,所以整个的这种运行机制又称为EventLoop(事件循环);</p>
+</blockquote>
+<h3 id="3-6-node-js的EventLoop"><a href="#3-6-node-js的EventLoop" class="headerlink" title="3.6 node.js的EventLoop"></a>3.6 node.js的EventLoop</h3><blockquote>
+<p>1.V8引擎解析JavaScript脚本;<br>2.解析后的代码,调用node API;<br>3.libuv库负责node API的执行,将不用的任务分配给不同的线程,形成一个EventLoop(事件循环),以异步的方式将任务的执行结果返回个V8引擎;<br>4.V8引擎再将结果返回给 用户;</p>
+</blockquote>
+<h3 id="3-7-同步与异步"><a href="#3-7-同步与异步" class="headerlink" title="3.7 同步与异步"></a>3.7 同步与异步</h3><blockquote>
+<p>同步和异步关注的是消息通知机制;<br><code>同步</code>就是发出调用后,没有得到结果之前,该调用不返回,一旦调用返回,就得到返回值了。简而言之就是调用者主动等待这个调用的结果;<br><code>异步</code>则相反,调用者在发出调用后这个调用就直接返回了,所以没有返回结果,即:当一个异步过程调用发出后,调用者不会立刻得到结果,而是调用发出后,被调用者通过状态、通知或回调函数处理这个调用;</p>
+</blockquote>
+<h3 id="3-8-阻塞与非阻塞"><a href="#3-8-阻塞与非阻塞" class="headerlink" title="3.8 阻塞与非阻塞"></a>3.8 阻塞与非阻塞</h3><blockquote>
+<p>阻塞和非阻塞关注的是程序在等待调用结果(消息/返回值)时的状态;<br><code>阻塞</code>调用是指调用结果返回之前,当前线程会被挂起,只有在得到结果之后才会返回;<br><code>非阻塞</code>调用是指在不能立刻得到结果之前,该调用不会阻塞当前线程;</p>
+</blockquote>
+<h3 id="3-9-组合"><a href="#3-9-组合" class="headerlink" title="3.9 组合"></a>3.9 组合</h3><p><strong><code>同步异步取决于被调用者,阻塞非阻塞取决于调用者;</code></strong></p>
+<blockquote>
+<p>同步阻塞: A给B打电话商量事情,通话过程中B考虑了1分钟(同步),A等待了1分钟什么也没干(阻塞);<br>异步阻塞: A给B打电话商量事情,B挂断电话1分钟后回复A(异步),A等待了1分钟什么也没干(阻塞);<br>同步非阻塞: A给B打电话商量事情,通话过程中B考虑了1分钟(同步),A在这1分钟里干了别的事情(非阻塞)<br>异步非阻塞: A给B打电话商量事情,B挂断电话1分钟后回复A(异步),A在这1分钟里干了别的事情(非阻塞);</p>
 </blockquote>
 
       
@@ -704,10 +739,17 @@
     </header>
     <main class="post-main" itemprop="articleBody">
       
-      <blockquote>
-<p>1.escape/unescape(一般只有js支持,前端网页之间的数据传递的时候进行的中文编码和解码);<br>2.encodeURI/decodeURI;所有的语言都支持;<br>3.encodeURIComponent/decodeURIComponent;同上面,这个可以编译一些特殊字符,上面的不行,最常用的是这个;</p>
-<p>###ajax的异步和同步问题<br>ajax任务:发送请求到收到响应主体内容(完整的HTTP事物);<br>ajax任务开始时发送请求开始(xhr.send());<br>同步请求下,绑定监听状态的事件(onreadystatechange)放在open之前可以监听1,4的状态,不可以放在send之后,因为send执行就已经状态为4, 结束了;<br>异步请求下,绑定监听状态的事件(onreadystatechange)放在open之前可以监听1,2,3,4的状态,放在open之后可以监听2,3,4的状态,</p>
-</blockquote>
+      <h2 id="JS的编码解码"><a href="#JS的编码解码" class="headerlink" title="JS的编码解码"></a>JS的编码解码</h2><ul>
+<li>1.escape/unescape(一般只有js支持,前端网页之间的数据传递的时候进行的中文编码和解码);</li>
+<li>2.encodeURI/decodeURI;所有的语言都支持;</li>
+<li>3.encodeURIComponent/decodeURIComponent;同上面,这个可以编译一些特殊字符,上面的不行,最常用的是这个;</li>
+</ul>
+<h2 id="ajax的异步和同步问题"><a href="#ajax的异步和同步问题" class="headerlink" title="ajax的异步和同步问题"></a>ajax的异步和同步问题</h2><ul>
+<li>ajax任务:发送请求到收到响应主体内容(完整的HTTP事物);</li>
+<li>ajax任务开始时发送请求开始(xhr.send());</li>
+<li>同步请求下,绑定监听状态的事件(onreadystatechange)放在open之前可以监听1,4的状态,不可以放在send之后,因为send执行就已经状态为4, 结束了;</li>
+<li>异步请求下,绑定监听状态的事件(onreadystatechange)放在open之前可以监听1,2,3,4的状态,放在open之后可以监听2,3,4的状态,</li>
+</ul>
 
       
     </main>
@@ -863,7 +905,7 @@
     </header>
     <main class="post-main" itemprop="articleBody">
       
-      <h2 id="网络转载——人生最重要的三种能力，不是读书能学来的"><a href="#网络转载——人生最重要的三种能力，不是读书能学来的" class="headerlink" title="网络转载——人生最重要的三种能力，不是读书能学来的"></a>网络转载——人生最重要的三种能力，不是读书能学来的</h2><h2 id="一、人际交往中的期望值管理能力"><a href="#一、人际交往中的期望值管理能力" class="headerlink" title="一、人际交往中的期望值管理能力"></a>一、人际交往中的期望值管理能力</h2><h2 id="二、阈值自控意识"><a href="#二、阈值自控意识" class="headerlink" title="二、阈值自控意识"></a>二、阈值自控意识</h2><h2 id="三、应对主观时空扭曲的能力"><a href="#三、应对主观时空扭曲的能力" class="headerlink" title="三、应对主观时空扭曲的能力"></a>三、应对主观时空扭曲的能力</h2><h2 id="一-期望值管理能力"><a href="#一-期望值管理能力" class="headerlink" title="(一)期望值管理能力"></a>(一)期望值管理能力</h2><ul>
+      <h1 id="网络转载——人生最重要的三种能力，不是读书能学来的"><a href="#网络转载——人生最重要的三种能力，不是读书能学来的" class="headerlink" title="网络转载——人生最重要的三种能力，不是读书能学来的"></a>网络转载——人生最重要的三种能力，不是读书能学来的</h1><h3 id="一、人际交往中的期望值管理能力"><a href="#一、人际交往中的期望值管理能力" class="headerlink" title="一、人际交往中的期望值管理能力"></a>一、人际交往中的期望值管理能力</h3><h3 id="二、阈值自控意识"><a href="#二、阈值自控意识" class="headerlink" title="二、阈值自控意识"></a>二、阈值自控意识</h3><h3 id="三、应对主观时空扭曲的能力"><a href="#三、应对主观时空扭曲的能力" class="headerlink" title="三、应对主观时空扭曲的能力"></a>三、应对主观时空扭曲的能力</h3><h2 id="一-期望值管理能力"><a href="#一-期望值管理能力" class="headerlink" title="(一)期望值管理能力"></a>(一)期望值管理能力</h2><ul>
 <li>影视剧中往往有这样的观感：一个地痞或者土匪，平日无恶不作。到了最后一集，哎，这货突然抗日了，例如《大宅门》里的三爷。</li>
 <li>这时候观众对其好感度会突然爆棚，甚至超过许多没有爆点的正面角色，前几十集的劣迹简直一笔勾销。</li>
 <li>这就是期望值在前期被编剧压低之后的福利</li>
@@ -972,13 +1014,13 @@
     <main class="post-main" itemprop="articleBody">
       
       <p>欢迎使用hexo! 这是第一篇文章， 查阅 <a href="https://hexo.io/docs/" target="_blank" rel="noopener">文档</a>了解更多信息。 如果在使用Hexo时遇到任何问题, 你可以在 <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">故障诊断</a>中找到答案， 或者在<a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>上向我提问。（前面的链接不是我的<a href="https://github.com/wangwangwanglichao" target="_blank" rel="noopener">Github</a>哦！是原作者的）</p>
-<h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><h3 id="创建一个新帖子"><a href="#创建一个新帖子" class="headerlink" title="创建一个新帖子"></a>创建一个新帖子</h3><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><h3 id="创建一个新帖子"><a href="#创建一个新帖子" class="headerlink" title="创建一个新帖子"></a>创建一个新帖子</h3><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">"My New Post"</span><br></code></pre></td></tr></table></figure>
 <p>详细信息: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">作品示例</a></p>
-<h3 id="运行服务器"><a href="#运行服务器" class="headerlink" title="运行服务器"></a>运行服务器</h3><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h3 id="运行服务器"><a href="#运行服务器" class="headerlink" title="运行服务器"></a>运行服务器</h3><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
 <p>详细信息: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">服务器</a></p>
-<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
 <p>详细信息: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">生成</a></p>
-<h3 id="部署到远程站点"><a href="#部署到远程站点" class="headerlink" title="部署到远程站点"></a>部署到远程站点</h3><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<h3 id="部署到远程站点"><a href="#部署到远程站点" class="headerlink" title="部署到远程站点"></a>部署到远程站点</h3><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
 <p>详细信息: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">部署</a></p>
 
       

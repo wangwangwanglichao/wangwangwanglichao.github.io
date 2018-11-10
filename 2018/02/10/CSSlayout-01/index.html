@@ -168,7 +168,7 @@
 <li>用法：对子框设置display:inline-block,对父框设置text-align:center。</li>
 <li>示例：</li>
 </ul>
-<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.child &#123;</span><br><span class="line">	display: inline-block;</span><br><span class="line">&#125;</span><br><span class="line">.parent &#123;</span><br><span class="line">	text-align: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs undefined">`&lt;div class=&apos;parent&apos;&gt;<br>	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;<br>&lt;/div&gt;<br>.child &#123;<br>	display: inline-block;<br>&#125;<br>.parent &#123;<br>	text-align: center;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
 <li>优点:兼容性好。</li>
 <li>缺点:.child里的文字也会水平居中。(可以在.child里添加text-align:left还原)</li>
@@ -178,7 +178,7 @@
 <li>用法:对子框设置display:table,再设置margin:0 auto;</li>
 <li>示例:</li>
 </ul>
-<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.child &#123;</span><br><span class="line">	display: table;</span><br><span class="line">	margin: 0 auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs undefined">`&lt;div class=&apos;parent&apos;&gt;<br>	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;<br>&lt;/div&gt;<br>.child &#123;<br>	display: table;<br>	margin: 0 auto;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
 <li>优点:只设置了child,IE8以上都支持;</li>
 <li>缺点:不支持IE6/IE7,将div换成了table;</li>
@@ -188,7 +188,7 @@
 <li>用法:对父框设置position:relative(absolute);对子框设置position:absolute;left:50%;transform:translateX(-50%);</li>
 <li>示例:</li>
 </ul>
-<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">	position: relative;</span><br><span class="line">&#125;</span><br><span class="line">.child &#123;</span><br><span class="line">	position: absolute;</span><br><span class="line">	left: 50%;</span><br><span class="line">	transform: translateX(-50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs undefined">`&lt;div class=&apos;parent&apos;&gt;<br>	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;<br>&lt;/div&gt;<br>.parent &#123;<br>	position: relative;<br>&#125;<br>.child &#123;<br>	position: absolute;<br>	left: 50%;<br>	transform: translateX(-50%);<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
 <li>优点:居中元素不会对其它元素产生影响;</li>
 <li>缺点:transform属于CSS3内容,兼容性存在一定问题;</li>
@@ -198,7 +198,7 @@
 <li>用法:先将父框设置为display:flex;再设置子框margin:0 auto;</li>
 <li>示例:</li>
 </ul>
-<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">	display:flex;</span><br><span class="line">&#125;</span><br><span class="line">.child &#123;</span><br><span class="line">	margin:0 auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs undefined">`&lt;div class=&apos;parent&apos;&gt;<br>	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;<br>&lt;/div&gt;<br>.parent &#123;<br>	display:flex;<br>&#125;<br>.child &#123;<br>	margin:0 auto;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
 <li>缺点:IE6/7/8等低版本浏览器不支持;</li>
 </ul>
@@ -207,7 +207,7 @@
 <li>用法:先将父框设置为display:flex;再设置justify-content:center;</li>
 <li>示例:</li>
 </ul>
-<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">	display:flex;</span><br><span class="line">	justify-content: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs undefined">`&lt;div class=&apos;parent&apos;&gt;<br>	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;<br>&lt;/div&gt;<br>.parent &#123;<br>	display:flex;<br>	justify-content: center;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
 <li>优点:只设置parent即可;</li>
 <li>缺点:IE6/7/8等低版本浏览器不支持;</li>
@@ -217,7 +217,7 @@
 <li>用法:先将父框设置为display:table-cell;再设置vertical-align:middle;</li>
 <li>实例:</li>
 </ul>
-<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">	display:table-cell;</span><br><span class="line">	vertical-align: middle;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs undefined">`&lt;div class=&apos;parent&apos;&gt;<br>	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;<br>&lt;/div&gt;<br>.parent &#123;<br>	display:table-cell;<br>	vertical-align: middle;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
 <li>优点: 兼容性较好,IE8以上都支持;</li>
 <li>缺点: 将div元素转化为了table元素;</li>
@@ -227,7 +227,7 @@
 <li>用法:先将父框设置为position:relative(absolute);再设置子框position:absolute;top:50%;transform:translateY(-50%);</li>
 <li>实例:</li>
 </ul>
-<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">	position:relative;</span><br><span class="line">&#125;</span><br><span class="line">.child &#123;</span><br><span class="line">	position: absolute;</span><br><span class="line">	top: 50%;</span><br><span class="line">	transform: translateY(-50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs undefined">`&lt;div class=&apos;parent&apos;&gt;<br>	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;<br>&lt;/div&gt;<br>.parent &#123;<br>	position:relative;<br>&#125;<br>.child &#123;<br>	position: absolute;<br>	top: 50%;<br>	transform: translateY(-50%);<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
 <li>优点: 居中元素不会对其它元素产生影响;</li>
 <li>缺点: transform属于CSS3内容,兼容性存在一定问题;</li>
@@ -237,7 +237,7 @@
 <li>用法:先将父框设置为display:flex;再设置align-items:center;</li>
 <li>示例:</li>
 </ul>
-<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">	display:flex;</span><br><span class="line">	align-items: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs undefined">`&lt;div class=&apos;parent&apos;&gt;<br>	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;<br>&lt;/div&gt;<br>.parent &#123;<br>	display:flex;<br>	align-items: center;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
 <li>优点:只设置parent即可;</li>
 <li>缺点:IE6/7/8等低版本浏览器不支持;</li>
@@ -248,7 +248,7 @@
 <li>用法:先将父框设置为position:relative(absolute);再设置子框position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);</li>
 <li>实例:</li>
 </ul>
-<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">	position:relative;</span><br><span class="line">&#125;</span><br><span class="line">.child &#123;</span><br><span class="line">	position: absolute;</span><br><span class="line">	left: 50%;</span><br><span class="line">	top: 50%;</span><br><span class="line">	transform: translate(-50%,-50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs undefined">`&lt;div class=&apos;parent&apos;&gt;<br>	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;<br>&lt;/div&gt;<br>.parent &#123;<br>	position:relative;<br>&#125;<br>.child &#123;<br>	position: absolute;<br>	left: 50%;<br>	top: 50%;<br>	transform: translate(-50%,-50%);<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
 <li>优点: 居中元素不会对其它元素产生影响;</li>
 <li>缺点: transform属于CSS3内容,兼容性存在一定问题;</li>
@@ -257,7 +257,7 @@
 <li>原理:使用inline-block+text-align水平居中;再用table-cell+vertical-align垂直居中;将二者结合起来;</li>
 <li>实例:</li>
 </ul>
-<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">	text-align:center;</span><br><span class="line">	display:table-cell;</span><br><span class="line">	vertical-align:middle;</span><br><span class="line">&#125;</span><br><span class="line">.child &#123;</span><br><span class="line">	display: inline-block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs undefined">`&lt;div class=&apos;parent&apos;&gt;<br>	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;<br>&lt;/div&gt;<br>.parent &#123;<br>	text-align:center;<br>	display:table-cell;<br>	vertical-align:middle;<br>&#125;<br>.child &#123;<br>	display: inline-block;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
 <li>优点: 兼容性较好;</li>
 <li>缺点: 使用起来比较麻烦;</li>
@@ -266,7 +266,7 @@
 <li>原理:通过设置flex中的justify-content和align-items,从而达到水平垂直居中;</li>
 <li>实例:</li>
 </ul>
-<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">`&lt;div class=&apos;parent&apos;&gt;</span><br><span class="line">	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.parent &#123;</span><br><span class="line">	display:flex;</span><br><span class="line">	justify-content:center;</span><br><span class="line">	align-items:center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs undefined">`&lt;div class=&apos;parent&apos;&gt;<br>	&lt;div class=&apos;child&apos;&gt;DEMO&lt;/div&gt;<br>&lt;/div&gt;<br>.parent &#123;<br>	display:flex;<br>	justify-content:center;<br>	align-items:center;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
 <li>优点: 只设置parent元素;</li>
 <li>缺点: 兼容性存在一些问题;</li>
