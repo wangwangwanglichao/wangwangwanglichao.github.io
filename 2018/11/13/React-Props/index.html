@@ -85,7 +85,7 @@
     <script defer type="text/javascript" src="/js/index.js"></script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>React-Props | 勇往直前 - 心有远方</title>
+    <title>React学习笔记之Props | 勇往直前 - 心有远方</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN"  data-spy="scroll" data-target=".list-group">
     
@@ -103,16 +103,16 @@
       
     </div>
     <nav id="nav" class="nav">
-      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="Toggle Navbar"></i></a>
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
       <ul id="menu" role="menubar" aria-hidden="false">
         
-        <li role="menuitem"><a href="/">Home</a></li>
+        <li role="menuitem"><a href="/">首页</a></li>
         
-        <li role="menuitem"><a href="/archives/">Archives</a></li>
+        <li role="menuitem"><a href="/archives/">归档</a></li>
         
-        <li role="menuitem"><a href="/tags/">Tags</a></li>
+        <li role="menuitem"><a href="/tags/">标签</a></li>
         
-        <li role="menuitem"><a href="/about/">About</a></li>
+        <li role="menuitem"><a href="/about/">关于</a></li>
         
       </ul>
     </nav>
@@ -140,11 +140,11 @@
       </span>
     </div>
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">React-Props</h1>
+      <h1 class="post-title" itemprop="name headline">React学习笔记之Props</h1>
       <div class="post-meta">
         
         <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-11-13T09:08:10+08:00">2018-11-13 01:08:10</time></span>
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-11-13T05:28:01+08:00">2018-11-12 21:28:01</time></span>
         </span>
         
         
@@ -152,9 +152,28 @@
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      
+      <h2 id="React-Props"><a href="#React-Props" class="headerlink" title="React Props"></a>React Props</h2><blockquote>
+<p>state 和 props 主要的区别在于props是不可变的,而state可以根据与用户交互来改变;<br>这就是为什么有些容器组件需要定义state来更新和修改数据;<br>而子组件只能通过props来传递数据;<br>演示如何在组件中使用props:<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs undefined">function Message(props) &#123;<br>            return &lt;h1&gt;Hello, &#123;props.name&#125;!&lt;/h1&gt;<br>        &#125;<br>        const element = &lt;Message name=&quot;React&quot;/&gt;;<br>        ReactDOM.render(<br>            element,<br>            document.getElementById(&quot;box&quot;)<br>        )<br></code></pre></td></tr></table></figure></p>
+<p>实例中name属性通过props.name来获取;</p>
+</blockquote>
+<h3 id="默认Props"><a href="#默认Props" class="headerlink" title="默认Props"></a>默认Props</h3><blockquote>
+<p>你可以通过组件类的defaultProps属性为Props设置默认值:<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs undefined">class Message extends React.Component &#123;<br>            constructor() &#123;<br>                super()<br>            &#125;<br>            render() &#123;<br>                return (<br>                    &lt;h1&gt;Hello, &#123;this.props.name&#125;!&lt;/h1&gt;<br>                )<br>            &#125;<br>        &#125;<br>        Message.defaultProps = &#123;<br>            name: &apos;React&apos;<br>        &#125;;<br>        const element = &lt;Message /&gt;;<br>        ReactDOM.render(<br>            element,<br>            document.getElementById(&apos;box&apos;)<br>        )<br></code></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="State-和-Props"><a href="#State-和-Props" class="headerlink" title="State 和 Props"></a>State 和 Props</h3><p>以下实例演示了如何在应用中组合使用state和props, 我们可以在父组件中设置state,并通过在子组件上使用props将其传递到子组件上,在render函数中,我们设置name和site来获取父组件传递过来的数据;<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs undefined">class WebSite extends React.Component &#123;<br>            constructor () &#123;<br>                super();<br>                this.state = &#123;<br>                    name: &quot;勇往直前&quot;,<br>                    site: &quot;http://www.wanglichao.top&quot;<br>                &#125;<br>            &#125;<br>            render() &#123;<br>                return (<br>                    &lt;div&gt;<br>                        &lt;Name name=&#123;this.state.name&#125;/&gt;<br>                        &lt;Link site=&#123;this.state.site&#125;/&gt;<br>                    &lt;/div&gt;<br>                )<br>            &#125;<br>        &#125;<br><br>        class Name extends React.Component &#123;<br>            render() &#123;<br>                return (<br>                    &lt;h1&gt;&#123;this.props.name&#125;&lt;/h1&gt;<br>                )<br>            &#125;<br>        &#125;<br><br>        class Link extends React.Component &#123;<br>            render() &#123;<br>                return (<br>                    &lt;a href=&#123;this.props.site&#125;&gt;<br>                        &#123;this.props.site&#125;<br>                    &lt;/a&gt;<br>                )<br>            &#125;<br>        &#125;<br><br>        ReactDOM.render(<br>            &lt;WebSite /&gt;,<br>            document.getElementById(&quot;box&quot;)<br>        )<br></code></pre></td></tr></table></figure></p>
+<h3 id="Props-验证"><a href="#Props-验证" class="headerlink" title="Props 验证"></a>Props 验证</h3><blockquote>
+<p><code>React.PropTypes 在 React v15.5 版本后已经移动到prop-types库.</code><br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;script src=&quot;https://cdn.bootcss.com/prop-types/15.6.1/prop-types.js&quot;&gt;&lt;/script&gt;<br></code></pre></td></tr></table></figure></p>
+<p>Props验证使用propTypes,它可以保证我们的应用组件被正确的使用,React.PropTypes 提供很多验证器(validator)来验证传入数据是否有效;<br>当向props传入无效数据时,JavaScript控制台会抛出警告.<br>以下实例创建一个MyTitle组件,属性title是必须的且是字符串,非字符串类型会自动转换为字符串.<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs undefined">// React 16.4 实例<br>let title = &quot;勇往直前&quot;;<br>        // title = 123;<br>        // Failed prop type: Invalid prop `title` of type `number` supplied to `MyTitle`, expected `string`.<br>    in MyTitle<br>        class MyTitle extends React.Component &#123;<br>            render() &#123;<br>                return (<br>                    &lt;h1&gt;Hello, &#123;this.props.title&#125;&lt;/h1&gt;<br>                )<br>            &#125;<br>        &#125;<br><br>        MyTitle.propTypes = &#123;<br>            title: PropTypes.string<br>        &#125;;<br><br>        ReactDOM.render(<br>            &lt;MyTitle title=&#123;title&#125; /&gt;,<br>            document.getElementById(&quot;box&quot;)<br>        )<br></code></pre></td></tr></table></figure></p>
+</blockquote>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs undefined">// React 15.4 实例<br>let title = &quot;勇往直前&quot;;<br>    // title = 123;<br>    const MyTitle = React.createClass(&#123;<br>        propTypes: &#123;<br>            title: React.PropTypes.string.isRequired<br>        &#125;,<br>        render: function() &#123;<br>            return &lt;h1&gt;&#123;this.props.title&#125;&lt;/h1&gt;<br>        &#125;<br>    &#125;);<br>    ReactDOM.render(<br>        &lt;MyTitle title=&#123;title&#125; /&gt;,<br>        document.getElementById(&apos;example&apos;)<br>    );<br></code></pre></td></tr></table></figure>
+
     </main>
     <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/react-前端/" rel="tag"><i class="fas fa-tags"></i>react 前端</a>
+        
+      </div>
       
     </footer>
   </article>
@@ -182,7 +201,7 @@
   
   <div class="search">
     <div class="form-group">
-      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="Search" class="form-control"/>
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
     </div>
   </div>
   <div class="search-result-box" id="search-result"></div>
@@ -197,7 +216,7 @@
   <div class="site-count">
     
     <div class="archives-count">
-      <div class="site-count-title">Archives</div>
+      <div class="site-count-title">归档</div>
       <div><a href="/archives/">17</a></div>
     </div>
     
@@ -207,8 +226,8 @@
     <span class="site-count-divider divider">|</span>
     
     <div class="tags-count">
-      <div class="site-count-title">Tags</div>
-      <div><a href="/tags/">20</a></div>
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">22</a></div>
     </div>
     
   </div>
@@ -223,9 +242,20 @@
   <div class="sidebar-sticky">
     
     
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#React-Props"><span class="toc-text">React Props</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#默认Props"><span class="toc-text">默认Props</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#State-和-Props"><span class="toc-text">State 和 Props</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#Props-验证"><span class="toc-text">Props 验证</span></a></li></ol></li></ol></div>
+    </div>
+    
+    
+    
     <hr>
     <div class="social-link sidebar-item">
-      <div><i class="far fa-address-card"></i>Social Links</p></div>
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
       <ul>
         
         <li><i class="fas fa-envelope"></i><a href="wangwangwanglichao@foxmail.com" target="_blank">E-Mail</a></li>
@@ -238,7 +268,7 @@
     
     <hr>
     <div class="blogroll sidebar-item">
-      <div><i class="fas fa-link"></i>Blogroll</div>
+      <div><i class="fas fa-link"></i>友情链接</div>
       <ul>
         
         <li><i class="fas fa-link"></i><a href="https://github.com/" target="_blank">GitHub</a></li>
@@ -260,7 +290,7 @@
 <footer id="footer" class="footer" style="background: #33363b;">
   <div class="container">
     <div class="back-to-top">
-      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="Back to Top"></i></button>
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
     </div>
     <div class="footer-container">
       <div class="footer-left">
@@ -269,7 +299,7 @@
         </div>
         
         <div class="busuanzi">
-          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="Site Visit Count" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="Site User Count" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="Page Click Count" aria-hidden="false"></span></span>
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
         </div>
         
       </div>
@@ -280,7 +310,7 @@
           
         </div>
         <div class="powered-by">
-          Proudly Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> | Theme is <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
         </div>
       </div>
     </div>
