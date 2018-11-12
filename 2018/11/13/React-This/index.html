@@ -85,7 +85,7 @@
     <script defer type="text/javascript" src="/js/index.js"></script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>Category: 搭建博客 | 勇往直前 - 心有远方</title>
+    <title>React学习笔记之this相关 | 勇往直前 - 心有远方</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN"  data-spy="scroll" data-target=".list-group">
     
@@ -125,21 +125,83 @@
         <div class="main-container">
           <div class="content">
             
-<div id="category" class="category page">
-  <h1 class="page-title">搭建博客</h1>
+<div id="post" class="page">
   
   <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <header id="post-header" class="post-header">
-      <h1 class="post-title-simple" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/02/11/hello-Hexo/" itemprop="url">你好,Hexo</a>
-      </h1>
-      
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-02-10T21:30:40Z">02-10</time>
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/2018/11/13/React-This/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="王立超">
+       <meta itemprop="description" content="前端, JS, CSS, HTML5, Vue, React">
+       <meta itemprop="image" content="/images/652285661303743555.jpg">
       </span>
-      
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="勇往直前">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">React学习笔记之this相关</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-11-12T21:28:01Z">2018-11-12 21:28:01</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span>
+        </span>
+        
+        
+      </div>
     </header>
+    <main class="post-main" itemprop="articleBody">
+      <blockquote>
+<p>在JavaScript中，this对象是运行时基于函数的执行环境（也就是上下文）绑定的。</p>
+<p>从 react 中的 demo 说起<br>Facebook一次更新react时，将es6中的class加入了组件的创建方式当中。Facebook也推荐组件创建使用通过定义一个继承自 React.Component 的class来定义一个组件类。官方的demo：<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs undefined">class LikeButton extends React.Component &#123;<br>  constructor() &#123;<br>    super();<br>    this.state = &#123;<br>      liked: false<br>    &#125;;<br>    this.handleClick = this.handleClick.bind(this);<br>  &#125;<br>  handleClick() &#123;<br>    this.setState(&#123;liked: !this.state.liked&#125;);<br>  &#125;<br>  render() &#123;<br>    const text = this.state.liked ? &apos;liked&apos; : &apos;haven\&apos;t liked&apos;;<br>    return (<br>      &lt;div onClick=&#123;this.handleClick&#125;&gt;<br>        You &#123;text&#125; this. Click to toggle.<br>      &lt;/div&gt;<br>    );<br>  &#125;<br>&#125;<br>ReactDOM.render(<br>  &lt;LikeButton /&gt;,<br>  document.getElementById(&apos;example&apos;)<br>);<br></code></pre></td></tr></table></figure></p>
+<p>上面的demo中有大量this的使用，在 class LikeButton extends React.Component 中我们是声明该class，因为this具体是由其上下文决定的，因此在类定义中我们无法得知this用法。<br>相当于是new了上面定义的类，首先调用 constructor() 函数， this.state 的this上下文就是该实例对象；<br>同理，render() 函数中 this.state.liked 的this上下文也是该对象。<br>问题在于 onClick={this.handleClick} ，获取该函数引用是没有问题，这里的this上下文就是该对象。</p>
+<p>这时问题来了，在原来 React.createClass 中， handleClick() 在onClick事件触发的时候，会自动绑定到LikeButton实例上，这时候该函数的this的上下文就是该实例。<br>不过在ES6的class的写法中，Facebook取消了自动绑定，实例化LikeButton后，handleClick()的上下文是div的支撑实例（ backing instance ），而 handleClick() 原本要绑定的上下文是LikeButton的实例。<br>对于该问题，我们有多种解决方案。<br><strong>使用 bind() 函数改变 this 的上下文</strong><br>可以在class声明中的constructor()函数中使用：<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">this.handleClick = this.handleClick.bind(this);<br></code></pre></td></tr></table></figure></p>
+<p>该方法是一个bind()绑定，多次使用。在该方法中，我们在声明该实例后，可以在该实例任何地方使用 handleClick() 函数，并且该 handleClick() 函数的this的上下文都是LikeButton实例对象。<br>除此我们也可以在具体使用该函数的地方绑定this的上下文到LikeButton实例对象，代码如下：<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;div onClick=&#123;this.handleClick.bind(this)&#125;&gt;<br>   Click to toggle.<br>&lt;/div&gt;<br></code></pre></td></tr></table></figure></p>
+<p>这种方法需要我们每次使用bind()函数绑定到组件对象上。<br><strong>es6的箭头函数</strong><br>es6中新加入了箭头函数=&gt;，箭头函数除了方便之外还有而一个特征就是将函数的this绑定到其定义时所在的上下文。这个特征也可以帮助我们解决这个问题。使用如下代码：<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;div onClick=&#123;() =&gt; this.handleClick()&#125;&gt;<br>  Click to toggle.<br>&lt;/div&gt;<br></code></pre></td></tr></table></figure></p>
+</blockquote>
+<p>这样该 this.handleClick() 的上下文就会被绑定到 LikeButton 的实例对象上。</p>
+<blockquote>
+<p><strong>this的总结</strong><br>this 的本质就是：this跟作用域无关的，只跟执行上下文有关。</p>
+</blockquote>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/前端/" rel="tag"><i class="fas fa-tags"></i>前端</a>
+        
+        <a class="post-tag button" href="/tags/JS/" rel="tag"><i class="fas fa-tags"></i>JS</a>
+        
+        <a class="post-tag button" href="/tags/react/" rel="tag"><i class="fas fa-tags"></i>react</a>
+        
+      </div>
+      
+    </footer>
   </article>
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2018/11/13/React-install/" rel="next" title="React学习笔记之安装"><i class="fas fa-angle-left"></i><span class="nav-title">React学习笔记之安装</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/2018/11/13/React-State/" rel="prev" title="React学习笔记之State"><span class="nav-title">React学习笔记之State</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
   
   
 </div>
@@ -191,6 +253,11 @@
 
 
   <div class="sidebar-sticky">
+    
+    
+    
+    
+    
     
     
     <hr>
