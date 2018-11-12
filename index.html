@@ -130,7 +130,7 @@
   
   <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/2018/11/13/React-Props/">
+      <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/2018/11/13/React-State/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="王立超">
         <meta itemprop="description" content="前端, JS, CSS, HTML5, Vue, React">
@@ -142,7 +142,7 @@
     </div>
     <header class="post-header">
       <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/11/13/React-Props/" itemprop="url">React学习笔记之Props</a>
+        <a class="post-title-link post-title-link-external" href="/2018/11/13/React-State/" itemprop="url">React学习笔记之State</a>
       </h1>
       <div class="post-meta">
         
@@ -164,19 +164,19 @@
     </header>
     <main class="post-main" itemprop="articleBody">
       
-      <h2 id="React-Props"><a href="#React-Props" class="headerlink" title="React Props"></a>React Props</h2><blockquote>
-<p>state 和 props 主要的区别在于props是不可变的,而state可以根据与用户交互来改变;<br>这就是为什么有些容器组件需要定义state来更新和修改数据;<br>而子组件只能通过props来传递数据;<br>演示如何在组件中使用props:<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs undefined">function Message(props) &#123;<br>            return &lt;h1&gt;Hello, &#123;props.name&#125;!&lt;/h1&gt;<br>        &#125;<br>        const element = &lt;Message name=&quot;React&quot;/&gt;;<br>        ReactDOM.render(<br>            element,<br>            document.getElementById(&quot;box&quot;)<br>        )<br></code></pre></td></tr></table></figure></p>
-<p>实例中name属性通过props.name来获取;</p>
+      <h2 id="React-State"><a href="#React-State" class="headerlink" title="React State"></a>React State</h2><blockquote>
+<p>React 把组件看成是一个状态机(StateMachines).通过与用户的交互,实现不同的状态,然后渲染UI,让用户界面和数据保持一致;<br>React里,只需更新组件的state,然后根据新的state重新渲染用户界面,而不需要去操作DOM;</p>
 </blockquote>
-<h3 id="默认Props"><a href="#默认Props" class="headerlink" title="默认Props"></a>默认Props</h3><blockquote>
-<p>你可以通过组件类的defaultProps属性为Props设置默认值:<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs undefined">class Message extends React.Component &#123;<br>            constructor() &#123;<br>                super()<br>            &#125;<br>            render() &#123;<br>                return (<br>                    &lt;h1&gt;Hello, &#123;this.props.name&#125;!&lt;/h1&gt;<br>                )<br>            &#125;<br>        &#125;<br>        Message.defaultProps = &#123;<br>            name: &apos;React&apos;<br>        &#125;;<br>        const element = &lt;Message /&gt;;<br>        ReactDOM.render(<br>            element,<br>            document.getElementById(&apos;box&apos;)<br>        )<br></code></pre></td></tr></table></figure></p>
+<h3 id="将生命周期方法添加到类中"><a href="#将生命周期方法添加到类中" class="headerlink" title="将生命周期方法添加到类中"></a>将生命周期方法添加到类中</h3><blockquote>
+<p>在具有许多组件的应用程序中,在销毁时释放组件所占用的资源非常重要;<br>每当组件第一次加载到DOM中的时候,在React中被称为挂载;<br>当这个组件生成的DOM被移除的时候,在React中被称为卸载;</p>
 </blockquote>
-<h3 id="State-和-Props"><a href="#State-和-Props" class="headerlink" title="State 和 Props"></a>State 和 Props</h3><p>以下实例演示了如何在应用中组合使用state和props, 我们可以在父组件中设置state,并通过在子组件上使用props将其传递到子组件上,在render函数中,我们设置name和site来获取父组件传递过来的数据;<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs undefined">class WebSite extends React.Component &#123;<br>            constructor () &#123;<br>                super();<br>                this.state = &#123;<br>                    name: &quot;勇往直前&quot;,<br>                    site: &quot;http://www.wanglichao.top&quot;<br>                &#125;<br>            &#125;<br>            render() &#123;<br>                return (<br>                    &lt;div&gt;<br>                        &lt;Name name=&#123;this.state.name&#125;/&gt;<br>                        &lt;Link site=&#123;this.state.site&#125;/&gt;<br>                    &lt;/div&gt;<br>                )<br>            &#125;<br>        &#125;<br><br>        class Name extends React.Component &#123;<br>            render() &#123;<br>                return (<br>                    &lt;h1&gt;&#123;this.props.name&#125;&lt;/h1&gt;<br>                )<br>            &#125;<br>        &#125;<br><br>        class Link extends React.Component &#123;<br>            render() &#123;<br>                return (<br>                    &lt;a href=&#123;this.props.site&#125;&gt;<br>                        &#123;this.props.site&#125;<br>                    &lt;/a&gt;<br>                )<br>            &#125;<br>        &#125;<br><br>        ReactDOM.render(<br>            &lt;WebSite /&gt;,<br>            document.getElementById(&quot;box&quot;)<br>        )<br></code></pre></td></tr></table></figure></p>
-<h3 id="Props-验证"><a href="#Props-验证" class="headerlink" title="Props 验证"></a>Props 验证</h3><blockquote>
-<p><code>React.PropTypes 在 React v15.5 版本后已经移动到prop-types库.</code><br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;script src=&quot;https://cdn.bootcss.com/prop-types/15.6.1/prop-types.js&quot;&gt;&lt;/script&gt;<br></code></pre></td></tr></table></figure></p>
-<p>Props验证使用propTypes,它可以保证我们的应用组件被正确的使用,React.PropTypes 提供很多验证器(validator)来验证传入数据是否有效;<br>当向props传入无效数据时,JavaScript控制台会抛出警告.<br>以下实例创建一个MyTitle组件,属性title是必须的且是字符串,非字符串类型会自动转换为字符串.<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs undefined">// React 16.4 实例<br>let title = &quot;勇往直前&quot;;<br>        // title = 123;<br>        // Failed prop type: Invalid prop `title` of type `number` supplied to `MyTitle`, expected `string`.<br>    in MyTitle<br>        class MyTitle extends React.Component &#123;<br>            render() &#123;<br>                return (<br>                    &lt;h1&gt;Hello, &#123;this.props.title&#125;&lt;/h1&gt;<br>                )<br>            &#125;<br>        &#125;<br><br>        MyTitle.propTypes = &#123;<br>            title: PropTypes.string<br>        &#125;;<br><br>        ReactDOM.render(<br>            &lt;MyTitle title=&#123;title&#125; /&gt;,<br>            document.getElementById(&quot;box&quot;)<br>        )<br></code></pre></td></tr></table></figure></p>
+<h3 id="数据自顶向下流动"><a href="#数据自顶向下流动" class="headerlink" title="数据自顶向下流动"></a>数据自顶向下流动</h3><blockquote>
+<p>父组件或子组件都不能知道某个组件是有状态还是无状态，并且它们不应该关心某组件是被定义为一个函数还是一个类。</p>
+<p>这就是为什么状态通常被称为局部或封装。 除了拥有并设置它的组件外，其它组件不可访问。</p>
+<p>通常被称为自顶向下或单向数据流。 任何状态始终由某些特定组件所有，并且从该状态导出的任何数据或 UI 只能影响树中下方的组件;</p>
+<p>在 React 应用程序中，组件是有状态还是无状态被认为是可能随时间而变化的组件的实现细节。</p>
+<p>我们可以在有状态组件中使用无状态组件，也可以在无状态组件中使用有状态组件。</p>
 </blockquote>
-<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs undefined">// React 15.4 实例<br>let title = &quot;勇往直前&quot;;<br>    // title = 123;<br>    const MyTitle = React.createClass(&#123;<br>        propTypes: &#123;<br>            title: React.PropTypes.string.isRequired<br>        &#125;,<br>        render: function() &#123;<br>            return &lt;h1&gt;&#123;this.props.title&#125;&lt;/h1&gt;<br>        &#125;<br>    &#125;);<br>    ReactDOM.render(<br>        &lt;MyTitle title=&#123;title&#125; /&gt;,<br>        document.getElementById(&apos;example&apos;)<br>    );<br></code></pre></td></tr></table></figure>
 
       
     </main>
@@ -186,9 +186,143 @@
         
         <a class="post-tag button" href="/tags/前端/" rel="tag"><i class="fas fa-tags"></i>前端</a>
         
+        <a class="post-tag button" href="/tags/react/" rel="tag"><i class="fas fa-tags"></i>react</a>
+        
         <a class="post-tag button" href="/tags/JS/" rel="tag"><i class="fas fa-tags"></i>JS</a>
         
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/2018/11/13/React-condition-render/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="王立超">
+        <meta itemprop="description" content="前端, JS, CSS, HTML5, Vue, React">
+        <meta itemprop="image" content="/images/652285661303743555.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="勇往直前">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/11/13/React-condition-render/" itemprop="url">React学习笔记之条件渲染</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-11-12T21:28:01Z">2018-11-12 21:28:01</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h2 id="React-条件渲染"><a href="#React-条件渲染" class="headerlink" title="React 条件渲染"></a>React 条件渲染</h2><blockquote>
+<p>在React中，你可以创建不同的组件来封装你需要的各种行为，然后还可以根据应用的状态变化仅渲染其中的一部分。<br>React中的条件渲染和JavaScript中的一致，使用JavaScript操作符if或条件运算符来创建表示当前状态的元素，然后让React根据它们来更新UI。<br>一个根据用户是否登录来显示其中之一的组件：<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs undefined">function UserGreeting() &#123;<br>        return &lt;h1&gt;欢迎登录&lt;/h1&gt;<br>    &#125;<br><br>    function GuestGreeting() &#123;<br>        return &lt;h1&gt;请先注册&lt;/h1&gt;<br>    &#125;<br><br>    function Greeting(props) &#123;<br>        const isLoggedIn = props.isLoggedIn;<br>        if (isLoggedIn) &#123;<br>            return &lt;UserGreeting /&gt;<br>        &#125;<br>        return &lt;GuestGreeting /&gt;<br>    &#125;<br><br>    ReactDOM.render(<br>        // true or false<br>        &lt;Greeting isLoggedIn=&#123;false&#125;/&gt;,<br>        document.getElementById(&apos;example&apos;)<br>    )<br></code></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="元素变量"><a href="#元素变量" class="headerlink" title="元素变量"></a>元素变量</h3><blockquote>
+<p>你可以使用变量来储存元素，它可以帮助你有条件的渲染组件中的一部分，而其他的部分不会更改。<br>创建一个LoginControl的有状态的组件，根据当前的状态来渲染<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><code class="hljs undefined">class LoginControl extends React.Component &#123;<br>        constructor(props) &#123;<br>            super(props);<br>            this.state = &#123;<br>                isLoggedIn: false<br>            &#125;;<br>            this.handleLoginClick = this.handleLoginClick.bind(this);<br>            this.handleLogoutClick = this.handleLogoutClick.bind(this);<br>        &#125;<br>        handleLoginClick() &#123;<br>            this.setState(&#123;<br>                isLoggedIn: true<br>            &#125;)<br>        &#125;<br>        handleLogoutClick() &#123;<br>            this.setState(&#123;<br>                isLoggedIn: false<br>            &#125;)<br>        &#125;<br>        render() &#123;<br>            const isLoggedIn = this.state.isLoggedIn;<br>            let button = null;<br>            if (isLoggedIn) &#123;<br>                button = &lt;LogoutButton onClick=&#123;this.handleLogoutClick&#125;/&gt;<br>            &#125; else &#123;<br>                button = &lt;LoginButton onClick=&#123;this.handleLoginClick&#125;/&gt;<br>            &#125;<br>            return (<br>                &lt;div&gt;<br>                    &lt;Greeting isLoggedIn=&#123;isLoggedIn&#125;/&gt;<br>                    &#123;button&#125;<br>                &lt;/div&gt;<br>            )<br>        &#125;<br>    &#125;<br><br>    function UserGreeting() &#123;<br>        return &lt;h1&gt;欢迎登录&lt;/h1&gt;<br>    &#125;<br><br>    function GuestGreeting() &#123;<br>        return &lt;h1&gt;请先登录或者注册&lt;/h1&gt;<br>    &#125;<br><br>    function Greeting(props) &#123;<br>        const isLoggedIn = props.isLoggedIn;<br>        if (isLoggedIn) &#123;<br>            return &lt;UserGreeting /&gt;<br>        &#125;<br>        return &lt;GuestGreeting /&gt;<br>    &#125;<br><br>    function LoginButton(props) &#123;<br>        return (<br>            &lt;button onClick=&#123;props.onClick&#125;&gt;登录&lt;/button&gt;<br>        )<br>    &#125;<br><br>    function LogoutButton(props) &#123;<br>        return (<br>            &lt;button onClick=&#123;props.onClick&#125;&gt;退出&lt;/button&gt;<br>        )<br>    &#125;<br><br>    ReactDOM.render(<br>        &lt;LoginControl /&gt;,<br>        document.getElementById(&quot;example&quot;)<br>    )<br></code></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="与运算符-amp-amp"><a href="#与运算符-amp-amp" class="headerlink" title="与运算符 &amp;&amp;"></a>与运算符 &amp;&amp;</h3><blockquote>
+<p>你可以通过花括号包裹代码在JSX中嵌入任何表达式，也包括JavaScript的逻辑与&amp;&amp;，它可以方便的条件渲染一个元素<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs undefined">function Mailbox(props) &#123;<br>        const unreadMessages = props.unreadMessages;<br>        return (<br>            &lt;div&gt;<br>                &lt;h1&gt;Hello!&lt;/h1&gt;<br>                &#123;unreadMessages.length &gt; 0 &amp;&amp;<br>                    &lt;h2&gt;<br>                        您有&#123;unreadMessages.length&#125;条未读消息<br>                    &lt;/h2&gt;<br>                &#125;<br>            &lt;/div&gt;<br>        )<br>    &#125;<br><br>    const messages = [&apos;react&apos;, &apos;vue&apos;, &apos;javascript&apos;];<br>    ReactDOM.render(<br>        &lt;Mailbox unreadMessages=&#123;messages&#125;/&gt;,<br>        document.getElementById(&quot;example&quot;)<br>    )<br></code></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="三目运算符"><a href="#三目运算符" class="headerlink" title="三目运算符"></a>三目运算符</h3><p>条件渲染的另一种方法是使用JavaScript的条件运算符。<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">something ? true : false<br></code></pre></td></tr></table></figure></p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs undefined">render() &#123;<br>  const isLoggedIn = this.state.isLoggedIn;<br>  return (<br>    &lt;div&gt;<br>      &#123;isLoggedIn ? (<br>        &lt;LogoutButton onClick=&#123;this.handleLogoutClick&#125; /&gt;<br>      ) : (<br>        &lt;LoginButton onClick=&#123;this.handleLoginClick&#125; /&gt;<br>      )&#125;<br>    &lt;/div&gt;<br>  );<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>在极少数情况下，你可能希望隐藏组件，即使它被其他组件渲染。让 render 方法返回 null 而不是它的渲染结果即可实现。<br>组件的 render 方法返回 null 并不会影响该组件生命周期方法的回调。例如，componentWillUpdate 和 componentDidUpdate 依然可以被调用。</p>
+</blockquote>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/前端/" rel="tag"><i class="fas fa-tags"></i>前端</a>
+        
         <a class="post-tag button" href="/tags/react/" rel="tag"><i class="fas fa-tags"></i>react</a>
+        
+        <a class="post-tag button" href="/tags/JS/" rel="tag"><i class="fas fa-tags"></i>JS</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/2018/11/13/React-This/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="王立超">
+        <meta itemprop="description" content="前端, JS, CSS, HTML5, Vue, React">
+        <meta itemprop="image" content="/images/652285661303743555.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="勇往直前">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/11/13/React-This/" itemprop="url">React学习笔记之this相关</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-11-12T21:28:01Z">2018-11-12 21:28:01</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <blockquote>
+<p>在JavaScript中，this对象是运行时基于函数的执行环境（也就是上下文）绑定的。</p>
+<p>从 react 中的 demo 说起<br>Facebook一次更新react时，将es6中的class加入了组件的创建方式当中。Facebook也推荐组件创建使用通过定义一个继承自 React.Component 的class来定义一个组件类。官方的demo：<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs undefined">class LikeButton extends React.Component &#123;<br>  constructor() &#123;<br>    super();<br>    this.state = &#123;<br>      liked: false<br>    &#125;;<br>    this.handleClick = this.handleClick.bind(this);<br>  &#125;<br>  handleClick() &#123;<br>    this.setState(&#123;liked: !this.state.liked&#125;);<br>  &#125;<br>  render() &#123;<br>    const text = this.state.liked ? &apos;liked&apos; : &apos;haven\&apos;t liked&apos;;<br>    return (<br>      &lt;div onClick=&#123;this.handleClick&#125;&gt;<br>        You &#123;text&#125; this. Click to toggle.<br>      &lt;/div&gt;<br>    );<br>  &#125;<br>&#125;<br>ReactDOM.render(<br>  &lt;LikeButton /&gt;,<br>  document.getElementById(&apos;example&apos;)<br>);<br></code></pre></td></tr></table></figure></p>
+<p>上面的demo中有大量this的使用，在 class LikeButton extends React.Component 中我们是声明该class，因为this具体是由其上下文决定的，因此在类定义中我们无法得知this用法。<br>相当于是new了上面定义的类，首先调用 constructor() 函数， this.state 的this上下文就是该实例对象；<br>同理，render() 函数中 this.state.liked 的this上下文也是该对象。<br>问题在于 onClick={this.handleClick} ，获取该函数引用是没有问题，这里的this上下文就是该对象。</p>
+<p>这时问题来了，在原来 React.createClass 中， handleClick() 在onClick事件触发的时候，会自动绑定到LikeButton实例上，这时候该函数的this的上下文就是该实例。<br>不过在ES6的class的写法中，Facebook取消了自动绑定，实例化LikeButton后，handleClick()的上下文是div的支撑实例（ backing instance ），而 handleClick() 原本要绑定的上下文是LikeButton的实例。<br>对于该问题，我们有多种解决方案。<br><strong>使用 bind() 函数改变 this 的上下文</strong><br>可以在class声明中的constructor()函数中使用：<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">this.handleClick = this.handleClick.bind(this);<br></code></pre></td></tr></table></figure></p>
+<p>该方法是一个bind()绑定，多次使用。在该方法中，我们在声明该实例后，可以在该实例任何地方使用 handleClick() 函数，并且该 handleClick() 函数的this的上下文都是LikeButton实例对象。<br>除此我们也可以在具体使用该函数的地方绑定this的上下文到LikeButton实例对象，代码如下：<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;div onClick=&#123;this.handleClick.bind(this)&#125;&gt;<br>   Click to toggle.<br>&lt;/div&gt;<br></code></pre></td></tr></table></figure></p>
+<p>这种方法需要我们每次使用bind()函数绑定到组件对象上。<br><strong>es6的箭头函数</strong><br>es6中新加入了箭头函数=&gt;，箭头函数除了方便之外还有而一个特征就是将函数的this绑定到其定义时所在的上下文。这个特征也可以帮助我们解决这个问题。使用如下代码：<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;div onClick=&#123;() =&gt; this.handleClick()&#125;&gt;<br>  Click to toggle.<br>&lt;/div&gt;<br></code></pre></td></tr></table></figure></p>
+</blockquote>
+<p>这样该 this.handleClick() 的上下文就会被绑定到 LikeButton 的实例对象上。</p>
+<blockquote>
+<p><strong>this的总结</strong><br>this 的本质就是：this跟作用域无关的，只跟执行上下文有关。</p>
+</blockquote>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/前端/" rel="tag"><i class="fas fa-tags"></i>前端</a>
+        
+        <a class="post-tag button" href="/tags/react/" rel="tag"><i class="fas fa-tags"></i>react</a>
+        
+        <a class="post-tag button" href="/tags/JS/" rel="tag"><i class="fas fa-tags"></i>JS</a>
         
       </div>
       
@@ -253,9 +387,9 @@
         
         <a class="post-tag button" href="/tags/前端/" rel="tag"><i class="fas fa-tags"></i>前端</a>
         
-        <a class="post-tag button" href="/tags/JS/" rel="tag"><i class="fas fa-tags"></i>JS</a>
-        
         <a class="post-tag button" href="/tags/react/" rel="tag"><i class="fas fa-tags"></i>react</a>
+        
+        <a class="post-tag button" href="/tags/JS/" rel="tag"><i class="fas fa-tags"></i>JS</a>
         
       </div>
       
@@ -318,87 +452,9 @@
         
         <a class="post-tag button" href="/tags/前端/" rel="tag"><i class="fas fa-tags"></i>前端</a>
         
-        <a class="post-tag button" href="/tags/JS/" rel="tag"><i class="fas fa-tags"></i>JS</a>
-        
         <a class="post-tag button" href="/tags/react/" rel="tag"><i class="fas fa-tags"></i>react</a>
         
-      </div>
-      
-    </footer>
-  </article>
-  
-  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/2018/11/13/React-Events/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="王立超">
-        <meta itemprop="description" content="前端, JS, CSS, HTML5, Vue, React">
-        <meta itemprop="image" content="/images/652285661303743555.jpg">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="勇往直前">
-      </span>
-    </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/11/13/React-Events/" itemprop="url">React学习笔记之事件处理</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-11-12T21:28:01Z">2018-11-12 21:28:01</time></span>
-        </span>
-        
-        
-        
-        <span class="post-meta-divider divider">|</span>
-        
-        <span class="post-categories">
-          
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span>
-        </span>
-        
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      
-      <h2 id="React-事件处理"><a href="#React-事件处理" class="headerlink" title="React 事件处理"></a>React 事件处理</h2><blockquote>
-<p>React 元素的事件处理和DOM元素类似，但是语法上有有点不同；</p>
-<ul>
-<li>React 事件绑定属性的命名采用驼峰式写法，而不是小写；</li>
-<li>如果采用JSX的语法你需要传入一个函数作为事件处理函数，而不是一个字符串（DOM元素的写法）；<br>HTML写法：<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;button onclick=&quot;todoSomething()&quot;&gt;button&lt;/button&gt;<br></code></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>React写法：<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;button onClick=&quot;todoSomething&quot;&gt;button&lt;/button&gt;<br></code></pre></td></tr></table></figure></p>
-<p>在React中另一个不同是不能使用返回false的方式阻止默认行为，而必须<br>明确的使用preventDefault；<br>使用React的时候通常不需要使用addEventListener为一个已创建的DOM元素添加监视器，仅仅需要在这个元素渲染的时候提供一个监视器；<br>当使用ES6 class语法来定义一个组件的时候，事件处理器会成为类的一个方法。例如：Toggle组件渲染一个让用户切换开关状态的按钮：<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs undefined">class Toggle extends React.Component &#123;<br>        constructor(props) &#123;<br>            super(props);<br>            this.state = &#123;<br>                isToggle: true<br>            &#125;;<br>            this.handleClick = this.handleClick.bind(this);<br>        &#125;<br><br>        handleClick() &#123;<br>            this.setState(prevState =&gt; (&#123;<br>                isToggle: !prevState.isToggle<br>            &#125;))<br>        &#125;<br><br>        render() &#123;<br>            return (<br>                &lt;button onClick=&#123;this.handleClick&#125;&gt;<br>                    &#123;this.state.isToggle ? &apos;ON&apos; : &apos;OFF&apos;&#125;<br>                &lt;/button&gt;<br>            )<br>        &#125;<br>    &#125;<br><br>    ReactDOM.render(<br>        &lt;Toggle /&gt;,<br>        document.getElementById(&quot;example&quot;)<br>    )<br></code></pre></td></tr></table></figure></p>
-<p>必须谨慎对待JSX回调函数中的this， 类的方法默认是不会绑定this的<br>如果忘记绑定this.handleClick并把它传入onClick，当调用这个函数的时候this的值会是undefined。<br>这不是React的特殊行为，它是函数如何在javaScript中运行的一部分。通常情况下，如果没有在方法后面添加（），例如：onClick={this.handleClick},应该为这个方法绑定this。<br>如果使用bind觉得有点烦，可以有两种解决方法：</p>
-<ul>
-<li><p>如果你正在使用实验性的属性初始化器语法，你可以使用属性初始化器来正确的绑定回调函数：</p>
-<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs undefined">class LoggingButton extends React.Component &#123;<br>  // 这个语法确保了 `this` 绑定在  handleClick 中<br>  handleClick = () =&gt; &#123;<br>    console.log(&apos;this is:&apos;, this);<br>  &#125;<br> <br>  render() &#123;<br>    return (<br>      &lt;button onClick=&#123;this.handleClick&#125;&gt;<br>        Click me<br>      &lt;/button&gt;<br>    );<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-</li>
-<li><p>如果你没有使用属性初始化器语法，你可以在回调函数中使用 箭头函数：</p>
-<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs undefined">class LoggingButton extends React.Component &#123;<br>  handleClick() &#123;<br>    console.log(&apos;this is:&apos;, this);<br>  &#125;<br> <br>  render() &#123;<br>    //  这个语法确保了 `this` 绑定在  handleClick 中<br>    return (<br>      &lt;button onClick=&#123;(e) =&gt; this.handleClick(e)&#125;&gt;<br>        Click me<br>      &lt;/button&gt;<br>    );<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>这个语法有个问题就是么次LoggingButton渲染的时候都会创建一个不同的回调函数。在大多数情况下，这没有问题。然而如果这个回调函数作为一个属性值传入低阶组件，这些组件可能会进行额外的重新渲染。通常建议在构造函数中绑定或使用属性初始化器语法来避免这类性能问题。</p>
-</blockquote>
-<h3 id="向事件处理程序传递参数"><a href="#向事件处理程序传递参数" class="headerlink" title="向事件处理程序传递参数"></a>向事件处理程序传递参数</h3><blockquote>
-<p>通常我们会为事件处理程序传递额外的参数。例如，如果是id是要删除的那一行的id，以下两种方式都可以向事件处理程序传递参数：<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;button onClick=&#123;(e) =&gt; this.deleteSome(id, e)&#125;&gt;Delete&lt;/button&gt;<br>&lt;button onClick=&#123;this.deleteSome.bind(this, id)&#125;&gt;Delete&lt;/button&gt;<br></code></pre></td></tr></table></figure></p>
-<p>这两种方式是等价的。<br>参数e作为React事件对象将会被作为第二个参数进行传递。<br>通过箭头函数的方式，事件对象必须显式的进行传递。<br>通过bind的方式，事件对象以及更多的参数将会被隐式的进行传递。<br>值得注意的是,通过bind方式向监听函数传参，在类组件中定义的监听函数，事件对象e要排在所传递参数的后面。例如：<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs undefined">class Popper extends React.Component &#123;<br>    constructor(props) &#123;<br>        super(props);<br>        this.state = &#123;<br>            name: &apos;Hello, React&apos;<br>        &#125;<br>    &#125;<br>    preventPop(name, e) &#123;<br>        e.preventDefault();<br>        console.log(name);<br>    &#125;<br>    render() &#123;<br>        return (<br>            &lt;div&gt;<br>                &lt;p&gt;hello&lt;/p&gt;<br>                &#123;/*通过bind()方法传递参数*/&#125;<br>                &lt;a href=&quot;http://www.wanglichao.top&quot;<br>                    onClick=&#123;this.preventPop.bind(this, this.state.name)&#125;<br>                &gt;Click&lt;/a&gt;<br>            &lt;/div&gt;<br>        )<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></p>
-</blockquote>
-
-      
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-        <a class="post-tag button" href="/tags/前端/" rel="tag"><i class="fas fa-tags"></i>前端</a>
-        
         <a class="post-tag button" href="/tags/JS/" rel="tag"><i class="fas fa-tags"></i>JS</a>
-        
-        <a class="post-tag button" href="/tags/react/" rel="tag"><i class="fas fa-tags"></i>react</a>
         
       </div>
       
@@ -477,202 +533,9 @@
         
         <a class="post-tag button" href="/tags/前端/" rel="tag"><i class="fas fa-tags"></i>前端</a>
         
-        <a class="post-tag button" href="/tags/JS/" rel="tag"><i class="fas fa-tags"></i>JS</a>
-        
         <a class="post-tag button" href="/tags/react/" rel="tag"><i class="fas fa-tags"></i>react</a>
         
-      </div>
-      
-    </footer>
-  </article>
-  
-  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/2018/11/13/React-anzhuang/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="王立超">
-        <meta itemprop="description" content="前端, JS, CSS, HTML5, Vue, React">
-        <meta itemprop="image" content="/images/652285661303743555.jpg">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="勇往直前">
-      </span>
-    </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/11/13/React-anzhuang/" itemprop="url">React学习笔记之介绍</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-11-12T21:28:01Z">2018-11-12 21:28:01</time></span>
-        </span>
-        
-        
-        
-        <span class="post-meta-divider divider">|</span>
-        
-        <span class="post-categories">
-          
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span>
-        </span>
-        
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      
-      <h2 id="React介绍"><a href="#React介绍" class="headerlink" title="React介绍"></a>React介绍</h2><blockquote>
-<p>React是一个 用于构建用户界面的javascript库<br>React主要用于构建UI,很多人认为React是MVC中的V(视图)<br>React起源于Facebook的内部项目,用来架设Instagram的网站,并于2013年开源<br>React拥有较高的性能,代码逻辑非常简单,越来越多的人开始关注和使用它</p>
-</blockquote>
-<h3 id="React特点"><a href="#React特点" class="headerlink" title="React特点"></a>React特点</h3><blockquote>
-<p>1.声明式设计 - React采用声明范式,可以轻松描述应用<br>2.高效  - React通过对DOM的模拟,最大限度的减少与DOM的交互<br>3.灵活 - React可以与已知的库或框架很好的配合<br>4.JSX - JSX是JavaScript语法的扩展,React开发不一定使用JSX,但建议使用它<br>5.组件 - 通过React构建组件,使得代码更加容易得到复用,能够很好的应用在大项目的开发中<br>6.单向响应的数据流 - React实现了单向响应的数据流,从而减少了重复代码,这也是它为什么比传统数据绑定更简单</p>
-</blockquote>
-
-      
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-        <a class="post-tag button" href="/tags/前端/" rel="tag"><i class="fas fa-tags"></i>前端</a>
-        
         <a class="post-tag button" href="/tags/JS/" rel="tag"><i class="fas fa-tags"></i>JS</a>
-        
-        <a class="post-tag button" href="/tags/react/" rel="tag"><i class="fas fa-tags"></i>react</a>
-        
-      </div>
-      
-    </footer>
-  </article>
-  
-  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/2018/11/13/React-State/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="王立超">
-        <meta itemprop="description" content="前端, JS, CSS, HTML5, Vue, React">
-        <meta itemprop="image" content="/images/652285661303743555.jpg">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="勇往直前">
-      </span>
-    </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/11/13/React-State/" itemprop="url">React学习笔记之State</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-11-12T21:28:01Z">2018-11-12 21:28:01</time></span>
-        </span>
-        
-        
-        
-        <span class="post-meta-divider divider">|</span>
-        
-        <span class="post-categories">
-          
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span>
-        </span>
-        
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      
-      <h2 id="React-State"><a href="#React-State" class="headerlink" title="React State"></a>React State</h2><blockquote>
-<p>React 把组件看成是一个状态机(StateMachines).通过与用户的交互,实现不同的状态,然后渲染UI,让用户界面和数据保持一致;<br>React里,只需更新组件的state,然后根据新的state重新渲染用户界面,而不需要去操作DOM;</p>
-</blockquote>
-<h3 id="将生命周期方法添加到类中"><a href="#将生命周期方法添加到类中" class="headerlink" title="将生命周期方法添加到类中"></a>将生命周期方法添加到类中</h3><blockquote>
-<p>在具有许多组件的应用程序中,在销毁时释放组件所占用的资源非常重要;<br>每当组件第一次加载到DOM中的时候,在React中被称为挂载;<br>当这个组件生成的DOM被移除的时候,在React中被称为卸载;</p>
-</blockquote>
-<h3 id="数据自顶向下流动"><a href="#数据自顶向下流动" class="headerlink" title="数据自顶向下流动"></a>数据自顶向下流动</h3><blockquote>
-<p>父组件或子组件都不能知道某个组件是有状态还是无状态，并且它们不应该关心某组件是被定义为一个函数还是一个类。</p>
-<p>这就是为什么状态通常被称为局部或封装。 除了拥有并设置它的组件外，其它组件不可访问。</p>
-<p>通常被称为自顶向下或单向数据流。 任何状态始终由某些特定组件所有，并且从该状态导出的任何数据或 UI 只能影响树中下方的组件;</p>
-<p>在 React 应用程序中，组件是有状态还是无状态被认为是可能随时间而变化的组件的实现细节。</p>
-<p>我们可以在有状态组件中使用无状态组件，也可以在无状态组件中使用有状态组件。</p>
-</blockquote>
-
-      
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-        <a class="post-tag button" href="/tags/前端/" rel="tag"><i class="fas fa-tags"></i>前端</a>
-        
-        <a class="post-tag button" href="/tags/JS/" rel="tag"><i class="fas fa-tags"></i>JS</a>
-        
-        <a class="post-tag button" href="/tags/react/" rel="tag"><i class="fas fa-tags"></i>react</a>
-        
-      </div>
-      
-    </footer>
-  </article>
-  
-  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/2018/11/13/React-This/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="王立超">
-        <meta itemprop="description" content="前端, JS, CSS, HTML5, Vue, React">
-        <meta itemprop="image" content="/images/652285661303743555.jpg">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="勇往直前">
-      </span>
-    </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/11/13/React-This/" itemprop="url">React学习笔记之this相关</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-11-12T21:28:01Z">2018-11-12 21:28:01</time></span>
-        </span>
-        
-        
-        
-        <span class="post-meta-divider divider">|</span>
-        
-        <span class="post-categories">
-          
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span>
-        </span>
-        
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      
-      <blockquote>
-<p>在JavaScript中，this对象是运行时基于函数的执行环境（也就是上下文）绑定的。</p>
-<p>从 react 中的 demo 说起<br>Facebook一次更新react时，将es6中的class加入了组件的创建方式当中。Facebook也推荐组件创建使用通过定义一个继承自 React.Component 的class来定义一个组件类。官方的demo：<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs undefined">class LikeButton extends React.Component &#123;<br>  constructor() &#123;<br>    super();<br>    this.state = &#123;<br>      liked: false<br>    &#125;;<br>    this.handleClick = this.handleClick.bind(this);<br>  &#125;<br>  handleClick() &#123;<br>    this.setState(&#123;liked: !this.state.liked&#125;);<br>  &#125;<br>  render() &#123;<br>    const text = this.state.liked ? &apos;liked&apos; : &apos;haven\&apos;t liked&apos;;<br>    return (<br>      &lt;div onClick=&#123;this.handleClick&#125;&gt;<br>        You &#123;text&#125; this. Click to toggle.<br>      &lt;/div&gt;<br>    );<br>  &#125;<br>&#125;<br>ReactDOM.render(<br>  &lt;LikeButton /&gt;,<br>  document.getElementById(&apos;example&apos;)<br>);<br></code></pre></td></tr></table></figure></p>
-<p>上面的demo中有大量this的使用，在 class LikeButton extends React.Component 中我们是声明该class，因为this具体是由其上下文决定的，因此在类定义中我们无法得知this用法。<br>相当于是new了上面定义的类，首先调用 constructor() 函数， this.state 的this上下文就是该实例对象；<br>同理，render() 函数中 this.state.liked 的this上下文也是该对象。<br>问题在于 onClick={this.handleClick} ，获取该函数引用是没有问题，这里的this上下文就是该对象。</p>
-<p>这时问题来了，在原来 React.createClass 中， handleClick() 在onClick事件触发的时候，会自动绑定到LikeButton实例上，这时候该函数的this的上下文就是该实例。<br>不过在ES6的class的写法中，Facebook取消了自动绑定，实例化LikeButton后，handleClick()的上下文是div的支撑实例（ backing instance ），而 handleClick() 原本要绑定的上下文是LikeButton的实例。<br>对于该问题，我们有多种解决方案。<br><strong>使用 bind() 函数改变 this 的上下文</strong><br>可以在class声明中的constructor()函数中使用：<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">this.handleClick = this.handleClick.bind(this);<br></code></pre></td></tr></table></figure></p>
-<p>该方法是一个bind()绑定，多次使用。在该方法中，我们在声明该实例后，可以在该实例任何地方使用 handleClick() 函数，并且该 handleClick() 函数的this的上下文都是LikeButton实例对象。<br>除此我们也可以在具体使用该函数的地方绑定this的上下文到LikeButton实例对象，代码如下：<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;div onClick=&#123;this.handleClick.bind(this)&#125;&gt;<br>   Click to toggle.<br>&lt;/div&gt;<br></code></pre></td></tr></table></figure></p>
-<p>这种方法需要我们每次使用bind()函数绑定到组件对象上。<br><strong>es6的箭头函数</strong><br>es6中新加入了箭头函数=&gt;，箭头函数除了方便之外还有而一个特征就是将函数的this绑定到其定义时所在的上下文。这个特征也可以帮助我们解决这个问题。使用如下代码：<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;div onClick=&#123;() =&gt; this.handleClick()&#125;&gt;<br>  Click to toggle.<br>&lt;/div&gt;<br></code></pre></td></tr></table></figure></p>
-</blockquote>
-<p>这样该 this.handleClick() 的上下文就会被绑定到 LikeButton 的实例对象上。</p>
-<blockquote>
-<p><strong>this的总结</strong><br>this 的本质就是：this跟作用域无关的，只跟执行上下文有关。</p>
-</blockquote>
-
-      
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-        <a class="post-tag button" href="/tags/前端/" rel="tag"><i class="fas fa-tags"></i>前端</a>
-        
-        <a class="post-tag button" href="/tags/JS/" rel="tag"><i class="fas fa-tags"></i>JS</a>
-        
-        <a class="post-tag button" href="/tags/react/" rel="tag"><i class="fas fa-tags"></i>react</a>
         
       </div>
       
@@ -754,9 +617,214 @@
         
         <a class="post-tag button" href="/tags/前端/" rel="tag"><i class="fas fa-tags"></i>前端</a>
         
+        <a class="post-tag button" href="/tags/react/" rel="tag"><i class="fas fa-tags"></i>react</a>
+        
         <a class="post-tag button" href="/tags/JS/" rel="tag"><i class="fas fa-tags"></i>JS</a>
         
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/2018/11/13/React-Props/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="王立超">
+        <meta itemprop="description" content="前端, JS, CSS, HTML5, Vue, React">
+        <meta itemprop="image" content="/images/652285661303743555.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="勇往直前">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/11/13/React-Props/" itemprop="url">React学习笔记之Props</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-11-12T21:28:01Z">2018-11-12 21:28:01</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h2 id="React-Props"><a href="#React-Props" class="headerlink" title="React Props"></a>React Props</h2><blockquote>
+<p>state 和 props 主要的区别在于props是不可变的,而state可以根据与用户交互来改变;<br>这就是为什么有些容器组件需要定义state来更新和修改数据;<br>而子组件只能通过props来传递数据;<br>演示如何在组件中使用props:<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs undefined">function Message(props) &#123;<br>            return &lt;h1&gt;Hello, &#123;props.name&#125;!&lt;/h1&gt;<br>        &#125;<br>        const element = &lt;Message name=&quot;React&quot;/&gt;;<br>        ReactDOM.render(<br>            element,<br>            document.getElementById(&quot;box&quot;)<br>        )<br></code></pre></td></tr></table></figure></p>
+<p>实例中name属性通过props.name来获取;</p>
+</blockquote>
+<h3 id="默认Props"><a href="#默认Props" class="headerlink" title="默认Props"></a>默认Props</h3><blockquote>
+<p>你可以通过组件类的defaultProps属性为Props设置默认值:<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs undefined">class Message extends React.Component &#123;<br>            constructor() &#123;<br>                super()<br>            &#125;<br>            render() &#123;<br>                return (<br>                    &lt;h1&gt;Hello, &#123;this.props.name&#125;!&lt;/h1&gt;<br>                )<br>            &#125;<br>        &#125;<br>        Message.defaultProps = &#123;<br>            name: &apos;React&apos;<br>        &#125;;<br>        const element = &lt;Message /&gt;;<br>        ReactDOM.render(<br>            element,<br>            document.getElementById(&apos;box&apos;)<br>        )<br></code></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="State-和-Props"><a href="#State-和-Props" class="headerlink" title="State 和 Props"></a>State 和 Props</h3><p>以下实例演示了如何在应用中组合使用state和props, 我们可以在父组件中设置state,并通过在子组件上使用props将其传递到子组件上,在render函数中,我们设置name和site来获取父组件传递过来的数据;<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs undefined">class WebSite extends React.Component &#123;<br>            constructor () &#123;<br>                super();<br>                this.state = &#123;<br>                    name: &quot;勇往直前&quot;,<br>                    site: &quot;http://www.wanglichao.top&quot;<br>                &#125;<br>            &#125;<br>            render() &#123;<br>                return (<br>                    &lt;div&gt;<br>                        &lt;Name name=&#123;this.state.name&#125;/&gt;<br>                        &lt;Link site=&#123;this.state.site&#125;/&gt;<br>                    &lt;/div&gt;<br>                )<br>            &#125;<br>        &#125;<br><br>        class Name extends React.Component &#123;<br>            render() &#123;<br>                return (<br>                    &lt;h1&gt;&#123;this.props.name&#125;&lt;/h1&gt;<br>                )<br>            &#125;<br>        &#125;<br><br>        class Link extends React.Component &#123;<br>            render() &#123;<br>                return (<br>                    &lt;a href=&#123;this.props.site&#125;&gt;<br>                        &#123;this.props.site&#125;<br>                    &lt;/a&gt;<br>                )<br>            &#125;<br>        &#125;<br><br>        ReactDOM.render(<br>            &lt;WebSite /&gt;,<br>            document.getElementById(&quot;box&quot;)<br>        )<br></code></pre></td></tr></table></figure></p>
+<h3 id="Props-验证"><a href="#Props-验证" class="headerlink" title="Props 验证"></a>Props 验证</h3><blockquote>
+<p><code>React.PropTypes 在 React v15.5 版本后已经移动到prop-types库.</code><br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;script src=&quot;https://cdn.bootcss.com/prop-types/15.6.1/prop-types.js&quot;&gt;&lt;/script&gt;<br></code></pre></td></tr></table></figure></p>
+<p>Props验证使用propTypes,它可以保证我们的应用组件被正确的使用,React.PropTypes 提供很多验证器(validator)来验证传入数据是否有效;<br>当向props传入无效数据时,JavaScript控制台会抛出警告.<br>以下实例创建一个MyTitle组件,属性title是必须的且是字符串,非字符串类型会自动转换为字符串.<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs undefined">// React 16.4 实例<br>let title = &quot;勇往直前&quot;;<br>        // title = 123;<br>        // Failed prop type: Invalid prop `title` of type `number` supplied to `MyTitle`, expected `string`.<br>    in MyTitle<br>        class MyTitle extends React.Component &#123;<br>            render() &#123;<br>                return (<br>                    &lt;h1&gt;Hello, &#123;this.props.title&#125;&lt;/h1&gt;<br>                )<br>            &#125;<br>        &#125;<br><br>        MyTitle.propTypes = &#123;<br>            title: PropTypes.string<br>        &#125;;<br><br>        ReactDOM.render(<br>            &lt;MyTitle title=&#123;title&#125; /&gt;,<br>            document.getElementById(&quot;box&quot;)<br>        )<br></code></pre></td></tr></table></figure></p>
+</blockquote>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs undefined">// React 15.4 实例<br>let title = &quot;勇往直前&quot;;<br>    // title = 123;<br>    const MyTitle = React.createClass(&#123;<br>        propTypes: &#123;<br>            title: React.PropTypes.string.isRequired<br>        &#125;,<br>        render: function() &#123;<br>            return &lt;h1&gt;&#123;this.props.title&#125;&lt;/h1&gt;<br>        &#125;<br>    &#125;);<br>    ReactDOM.render(<br>        &lt;MyTitle title=&#123;title&#125; /&gt;,<br>        document.getElementById(&apos;example&apos;)<br>    );<br></code></pre></td></tr></table></figure>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/前端/" rel="tag"><i class="fas fa-tags"></i>前端</a>
+        
         <a class="post-tag button" href="/tags/react/" rel="tag"><i class="fas fa-tags"></i>react</a>
+        
+        <a class="post-tag button" href="/tags/JS/" rel="tag"><i class="fas fa-tags"></i>JS</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/2018/11/13/React-Events/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="王立超">
+        <meta itemprop="description" content="前端, JS, CSS, HTML5, Vue, React">
+        <meta itemprop="image" content="/images/652285661303743555.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="勇往直前">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/11/13/React-Events/" itemprop="url">React学习笔记之事件处理</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-11-12T21:28:01Z">2018-11-12 21:28:01</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h2 id="React-事件处理"><a href="#React-事件处理" class="headerlink" title="React 事件处理"></a>React 事件处理</h2><blockquote>
+<p>React 元素的事件处理和DOM元素类似，但是语法上有有点不同；</p>
+<ul>
+<li>React 事件绑定属性的命名采用驼峰式写法，而不是小写；</li>
+<li>如果采用JSX的语法你需要传入一个函数作为事件处理函数，而不是一个字符串（DOM元素的写法）；<br>HTML写法：<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;button onclick=&quot;todoSomething()&quot;&gt;button&lt;/button&gt;<br></code></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>React写法：<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;button onClick=&quot;todoSomething&quot;&gt;button&lt;/button&gt;<br></code></pre></td></tr></table></figure></p>
+<p>在React中另一个不同是不能使用返回false的方式阻止默认行为，而必须<br>明确的使用preventDefault；<br>使用React的时候通常不需要使用addEventListener为一个已创建的DOM元素添加监视器，仅仅需要在这个元素渲染的时候提供一个监视器；<br>当使用ES6 class语法来定义一个组件的时候，事件处理器会成为类的一个方法。例如：Toggle组件渲染一个让用户切换开关状态的按钮：<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs undefined">class Toggle extends React.Component &#123;<br>        constructor(props) &#123;<br>            super(props);<br>            this.state = &#123;<br>                isToggle: true<br>            &#125;;<br>            this.handleClick = this.handleClick.bind(this);<br>        &#125;<br><br>        handleClick() &#123;<br>            this.setState(prevState =&gt; (&#123;<br>                isToggle: !prevState.isToggle<br>            &#125;))<br>        &#125;<br><br>        render() &#123;<br>            return (<br>                &lt;button onClick=&#123;this.handleClick&#125;&gt;<br>                    &#123;this.state.isToggle ? &apos;ON&apos; : &apos;OFF&apos;&#125;<br>                &lt;/button&gt;<br>            )<br>        &#125;<br>    &#125;<br><br>    ReactDOM.render(<br>        &lt;Toggle /&gt;,<br>        document.getElementById(&quot;example&quot;)<br>    )<br></code></pre></td></tr></table></figure></p>
+<p>必须谨慎对待JSX回调函数中的this， 类的方法默认是不会绑定this的<br>如果忘记绑定this.handleClick并把它传入onClick，当调用这个函数的时候this的值会是undefined。<br>这不是React的特殊行为，它是函数如何在javaScript中运行的一部分。通常情况下，如果没有在方法后面添加（），例如：onClick={this.handleClick},应该为这个方法绑定this。<br>如果使用bind觉得有点烦，可以有两种解决方法：</p>
+<ul>
+<li><p>如果你正在使用实验性的属性初始化器语法，你可以使用属性初始化器来正确的绑定回调函数：</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs undefined">class LoggingButton extends React.Component &#123;<br>  // 这个语法确保了 `this` 绑定在  handleClick 中<br>  handleClick = () =&gt; &#123;<br>    console.log(&apos;this is:&apos;, this);<br>  &#125;<br> <br>  render() &#123;<br>    return (<br>      &lt;button onClick=&#123;this.handleClick&#125;&gt;<br>        Click me<br>      &lt;/button&gt;<br>    );<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>如果你没有使用属性初始化器语法，你可以在回调函数中使用 箭头函数：</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs undefined">class LoggingButton extends React.Component &#123;<br>  handleClick() &#123;<br>    console.log(&apos;this is:&apos;, this);<br>  &#125;<br> <br>  render() &#123;<br>    //  这个语法确保了 `this` 绑定在  handleClick 中<br>    return (<br>      &lt;button onClick=&#123;(e) =&gt; this.handleClick(e)&#125;&gt;<br>        Click me<br>      &lt;/button&gt;<br>    );<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>这个语法有个问题就是么次LoggingButton渲染的时候都会创建一个不同的回调函数。在大多数情况下，这没有问题。然而如果这个回调函数作为一个属性值传入低阶组件，这些组件可能会进行额外的重新渲染。通常建议在构造函数中绑定或使用属性初始化器语法来避免这类性能问题。</p>
+</blockquote>
+<h3 id="向事件处理程序传递参数"><a href="#向事件处理程序传递参数" class="headerlink" title="向事件处理程序传递参数"></a>向事件处理程序传递参数</h3><blockquote>
+<p>通常我们会为事件处理程序传递额外的参数。例如，如果是id是要删除的那一行的id，以下两种方式都可以向事件处理程序传递参数：<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;button onClick=&#123;(e) =&gt; this.deleteSome(id, e)&#125;&gt;Delete&lt;/button&gt;<br>&lt;button onClick=&#123;this.deleteSome.bind(this, id)&#125;&gt;Delete&lt;/button&gt;<br></code></pre></td></tr></table></figure></p>
+<p>这两种方式是等价的。<br>参数e作为React事件对象将会被作为第二个参数进行传递。<br>通过箭头函数的方式，事件对象必须显式的进行传递。<br>通过bind的方式，事件对象以及更多的参数将会被隐式的进行传递。<br>值得注意的是,通过bind方式向监听函数传参，在类组件中定义的监听函数，事件对象e要排在所传递参数的后面。例如：<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs undefined">class Popper extends React.Component &#123;<br>    constructor(props) &#123;<br>        super(props);<br>        this.state = &#123;<br>            name: &apos;Hello, React&apos;<br>        &#125;<br>    &#125;<br>    preventPop(name, e) &#123;<br>        e.preventDefault();<br>        console.log(name);<br>    &#125;<br>    render() &#123;<br>        return (<br>            &lt;div&gt;<br>                &lt;p&gt;hello&lt;/p&gt;<br>                &#123;/*通过bind()方法传递参数*/&#125;<br>                &lt;a href=&quot;http://www.wanglichao.top&quot;<br>                    onClick=&#123;this.preventPop.bind(this, this.state.name)&#125;<br>                &gt;Click&lt;/a&gt;<br>            &lt;/div&gt;<br>        )<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></p>
+</blockquote>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/前端/" rel="tag"><i class="fas fa-tags"></i>前端</a>
+        
+        <a class="post-tag button" href="/tags/react/" rel="tag"><i class="fas fa-tags"></i>react</a>
+        
+        <a class="post-tag button" href="/tags/JS/" rel="tag"><i class="fas fa-tags"></i>JS</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/2018/11/13/React-anzhuang/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="王立超">
+        <meta itemprop="description" content="前端, JS, CSS, HTML5, Vue, React">
+        <meta itemprop="image" content="/images/652285661303743555.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="勇往直前">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/11/13/React-anzhuang/" itemprop="url">React学习笔记之介绍</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-11-12T21:28:01Z">2018-11-12 21:28:01</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h2 id="React介绍"><a href="#React介绍" class="headerlink" title="React介绍"></a>React介绍</h2><blockquote>
+<p>React是一个 用于构建用户界面的javascript库<br>React主要用于构建UI,很多人认为React是MVC中的V(视图)<br>React起源于Facebook的内部项目,用来架设Instagram的网站,并于2013年开源<br>React拥有较高的性能,代码逻辑非常简单,越来越多的人开始关注和使用它</p>
+</blockquote>
+<h3 id="React特点"><a href="#React特点" class="headerlink" title="React特点"></a>React特点</h3><blockquote>
+<p>1.声明式设计 - React采用声明范式,可以轻松描述应用<br>2.高效  - React通过对DOM的模拟,最大限度的减少与DOM的交互<br>3.灵活 - React可以与已知的库或框架很好的配合<br>4.JSX - JSX是JavaScript语法的扩展,React开发不一定使用JSX,但建议使用它<br>5.组件 - 通过React构建组件,使得代码更加容易得到复用,能够很好的应用在大项目的开发中<br>6.单向响应的数据流 - React实现了单向响应的数据流,从而减少了重复代码,这也是它为什么比传统数据绑定更简单</p>
+</blockquote>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/前端/" rel="tag"><i class="fas fa-tags"></i>前端</a>
+        
+        <a class="post-tag button" href="/tags/react/" rel="tag"><i class="fas fa-tags"></i>react</a>
+        
+        <a class="post-tag button" href="/tags/JS/" rel="tag"><i class="fas fa-tags"></i>JS</a>
         
       </div>
       
@@ -1262,69 +1330,6 @@
   
   <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/2018/02/15/JS_base/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="王立超">
-        <meta itemprop="description" content="前端, JS, CSS, HTML5, Vue, React">
-        <meta itemprop="image" content="/images/652285661303743555.jpg">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="勇往直前">
-      </span>
-    </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/02/15/JS_base/" itemprop="url">JS编码方式</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-02-15T02:37:24Z">2018-02-15 02:37:24</time></span>
-        </span>
-        
-        
-        
-        <span class="post-meta-divider divider">|</span>
-        
-        <span class="post-categories">
-          
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span>
-        </span>
-        
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      
-      <h2 id="JS的编码解码"><a href="#JS的编码解码" class="headerlink" title="JS的编码解码"></a>JS的编码解码</h2><ul>
-<li>1.escape/unescape(一般只有js支持,前端网页之间的数据传递的时候进行的中文编码和解码);</li>
-<li>2.encodeURI/decodeURI;所有的语言都支持;</li>
-<li>3.encodeURIComponent/decodeURIComponent;同上面,这个可以编译一些特殊字符,上面的不行,最常用的是这个;</li>
-</ul>
-<h2 id="ajax的异步和同步问题"><a href="#ajax的异步和同步问题" class="headerlink" title="ajax的异步和同步问题"></a>ajax的异步和同步问题</h2><ul>
-<li>ajax任务:发送请求到收到响应主体内容(完整的HTTP事物);</li>
-<li>ajax任务开始时发送请求开始(xhr.send());</li>
-<li>同步请求下,绑定监听状态的事件(onreadystatechange)放在open之前可以监听1,4的状态,不可以放在send之后,因为send执行就已经状态为4, 结束了;</li>
-<li>异步请求下,绑定监听状态的事件(onreadystatechange)放在open之前可以监听1,2,3,4的状态,放在open之后可以监听2,3,4的状态,</li>
-</ul>
-
-      
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-        <a class="post-tag button" href="/tags/前端/" rel="tag"><i class="fas fa-tags"></i>前端</a>
-        
-        <a class="post-tag button" href="/tags/JS/" rel="tag"><i class="fas fa-tags"></i>JS</a>
-        
-      </div>
-      
-    </footer>
-  </article>
-  
-  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
       <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/2018/02/15/node_base/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="王立超">
@@ -1403,6 +1408,69 @@
         <a class="post-tag button" href="/tags/前端/" rel="tag"><i class="fas fa-tags"></i>前端</a>
         
         <a class="post-tag button" href="/tags/node/" rel="tag"><i class="fas fa-tags"></i>node</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/2018/02/15/JS_base/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="王立超">
+        <meta itemprop="description" content="前端, JS, CSS, HTML5, Vue, React">
+        <meta itemprop="image" content="/images/652285661303743555.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="勇往直前">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/02/15/JS_base/" itemprop="url">JS编码方式</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-02-15T02:37:24Z">2018-02-15 02:37:24</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h2 id="JS的编码解码"><a href="#JS的编码解码" class="headerlink" title="JS的编码解码"></a>JS的编码解码</h2><ul>
+<li>1.escape/unescape(一般只有js支持,前端网页之间的数据传递的时候进行的中文编码和解码);</li>
+<li>2.encodeURI/decodeURI;所有的语言都支持;</li>
+<li>3.encodeURIComponent/decodeURIComponent;同上面,这个可以编译一些特殊字符,上面的不行,最常用的是这个;</li>
+</ul>
+<h2 id="ajax的异步和同步问题"><a href="#ajax的异步和同步问题" class="headerlink" title="ajax的异步和同步问题"></a>ajax的异步和同步问题</h2><ul>
+<li>ajax任务:发送请求到收到响应主体内容(完整的HTTP事物);</li>
+<li>ajax任务开始时发送请求开始(xhr.send());</li>
+<li>同步请求下,绑定监听状态的事件(onreadystatechange)放在open之前可以监听1,4的状态,不可以放在send之后,因为send执行就已经状态为4, 结束了;</li>
+<li>异步请求下,绑定监听状态的事件(onreadystatechange)放在open之前可以监听1,2,3,4的状态,放在open之后可以监听2,3,4的状态,</li>
+</ul>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/前端/" rel="tag"><i class="fas fa-tags"></i>前端</a>
+        
+        <a class="post-tag button" href="/tags/JS/" rel="tag"><i class="fas fa-tags"></i>JS</a>
         
       </div>
       
@@ -2174,7 +2242,7 @@
     
     <div class="archives-count">
       <div class="site-count-title">Archives</div>
-      <div><a href="/archives/">22</a></div>
+      <div><a href="/archives/">23</a></div>
     </div>
     
     
