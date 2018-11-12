@@ -85,7 +85,7 @@
     <script defer type="text/javascript" src="/js/index.js"></script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>输入URL地址敲回车之后发生了什么 | 勇往直前 - 心有远方</title>
+    <title>React学习笔记之安装 | 勇往直前 - 心有远方</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN"  data-spy="scroll" data-target=".list-group">
     
@@ -129,7 +129,7 @@
   
   <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/2018/11/10/enter-event/">
+      <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/2018/11/13/React-install/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
        <meta itemprop="name" content="王立超">
        <meta itemprop="description" content="前端, JS, CSS, HTML5, Vue, React">
@@ -140,11 +140,11 @@
       </span>
     </div>
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">输入URL地址敲回车之后发生了什么</h1>
+      <h1 class="post-title" itemprop="name headline">React学习笔记之安装</h1>
       <div class="post-meta">
         
         <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-11-10T20:14:24+08:00">2018-11-10 12:14:24</time></span>
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-11-12T21:28:01Z">2018-11-12 21:28:01</time></span>
         </span>
         
         
@@ -160,41 +160,36 @@
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      <h2 id="输入URL地址敲回车之后发生了什么"><a href="#输入URL地址敲回车之后发生了什么" class="headerlink" title="输入URL地址敲回车之后发生了什么"></a>输入URL地址敲回车之后发生了什么</h2><blockquote>
-<p> 输入网址敲回车之后,<br> 浏览器开始向DNS服务器发送请求,    (request)请求<br> DNS服务器解析,<br> 找到IP地址对应的服务器,<br> 服务器根据对应的端口号找到对应的项目,<br> 将需要的数据代码编码后返回给浏览器客户端,并将数据的类型告诉浏览器(HTML/json…),     (response)响应<br> 浏览器将接收到的数据根据返回来的数据类型进行解析,</p>
+      <h2 id="React-安装"><a href="#React-安装" class="headerlink" title="React 安装"></a>React 安装</h2><h3 id="React-可以直接下载使用-也可以使用CDN"><a href="#React-可以直接下载使用-也可以使用CDN" class="headerlink" title="React 可以直接下载使用,也可以使用CDN;"></a>React 可以直接下载使用,也可以使用CDN;</h3><blockquote>
+<p>Staticfile CDN 的 React CDN 库:</p>
 </blockquote>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;script src=&quot;https://cdn.staticfile.org/react/16.4.0/umd/react.development.js&quot;&gt;&lt;/script&gt;<br>&lt;script src=&quot;https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js&quot;&gt;&lt;/script&gt;<br>&lt;!-- 生产环境中不建议使用 --&gt;<br>&lt;script src=&quot;https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js&quot;&gt;&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>官方提供的DCN地址:<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;script src=&quot;https://unpkg.com/react@16/umd/react.development.js&quot;&gt;&lt;/script&gt;<br>&lt;script src=&quot;https://unpkg.com/react-dom@16/umd/react-dom.development.js&quot;&gt;&lt;/script&gt;<br>&lt;!-- 生产环境中不建议使用 --&gt;<br>&lt;script src=&quot;https://unpkg.com/babel-standalone@6.15.0/babel.min.js&quot;&gt;&lt;/script&gt;<br></code></pre></td></tr></table></figure></p>
+<p>输出Hello,React!的实例<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;!DOCTYPE html&gt;<br>&lt;html&gt;<br>&lt;head&gt;<br>&lt;meta charset=&quot;UTF-8&quot; /&gt;<br>&lt;title&gt;Hello React!&lt;/title&gt;<br>&lt;script src=&quot;https://cdn.staticfile.org/react/16.4.0/umd/react.development.js&quot;&gt;&lt;/script&gt;<br>&lt;script src=&quot;https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js&quot;&gt;&lt;/script&gt;<br>&lt;script src=&quot;https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js&quot;&gt;&lt;/script&gt;<br>&lt;/head&gt;<br>&lt;body&gt;<br> <br>&lt;div id=&quot;app&quot;&gt;&lt;/div&gt;<br>&lt;script type=&quot;text/babel&quot;&gt;<br>ReactDOM.render(<br>    &lt;h1&gt;Hello,React!&lt;/h1&gt;,<br>    document.getElementById(&apos;app&apos;)<br>);<br>&lt;/script&gt;<br> <br>&lt;/body&gt;<br>&lt;/html&gt;<br></code></pre></td></tr></table></figure></p>
+<p>实例中需要3个库 react / react-DOM / babel</p>
 <ul>
-<li><p>http事物: request请求和response响应都成功就是一个完整的HTTP事物;</p>
-</li>
-<li><p><a href="https://www.baidu.com:443/xx/yy/index.html?name=aa&amp;age=30#id=5" target="_blank" rel="noopener">https://www.baidu.com:443/xx/yy/index.html?name=aa&amp;age=30#id=5</a></p>
-</li>
-<li><p>(https) – (www.baidu.com ) – (443) – (/xx/yy/index.html) – (name=aa&amp;age=30) – (id=5)</p>
-</li>
+<li>react -&gt; React的核心库</li>
+<li>react-dom -&gt; 提供与DOM相关的功能</li>
+<li>babel -&gt;babel可以将ES6代码转为ES5代码,这就可以在不支持ES6的浏览器上执行React代码,babel内嵌了对JSX的支持<br>注意:如果需要使用JSX,则script标签的type属性需要设置为text/babel</li>
 </ul>
-<h2 id="1-HTTPS-传输协议"><a href="#1-HTTPS-传输协议" class="headerlink" title="1.(HTTPS) 传输协议"></a>1.(HTTPS) 传输协议</h2><blockquote>
-<p>https / http  完成客户端和服务端的数据交互传输<br>https: 更加安全<br>http: 超文本传输协议<br>FTP: 往服务器上上传项目文件</p>
 </blockquote>
-<h2 id="2-www-baidu-com-域名"><a href="#2-www-baidu-com-域名" class="headerlink" title="2.(www.baidu.com) 域名:"></a>2.(www.baidu.com) 域名:</h2><blockquote>
-<p>一级域名<br>二级域名<br>三级域名</p>
+<h3 id="通过npm使用React"><a href="#通过npm使用React" class="headerlink" title="通过npm使用React"></a>通过npm使用React</h3><p>国内简易使用cnpm代替npm安装package;<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined">$ npm install -g cnpm --registry=https://registry.npm.taobao.org<br>$ npm config set registry https://registry.npm.taobao.org<br></code></pre></td></tr></table></figure></p>
+<blockquote>
+<p>这样就可以使用cnpm命令来安装模块了<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">$ cnpm install [packagename]<br></code></pre></td></tr></table></figure></p>
 </blockquote>
-<h2 id="3-443-端口号"><a href="#3-443-端口号" class="headerlink" title="3.(443) 端口号:"></a>3.(443) 端口号:</h2><ul>
-<li>根据端口号找到对应的项目<blockquote>
-<p>http: 默认端口号80<br>https: 默认端口号443<br>FTP: 默认端口号21</p>
+<h3 id="使用create-react-app-快速构建React开发环境"><a href="#使用create-react-app-快速构建React开发环境" class="headerlink" title="使用create-react-app 快速构建React开发环境"></a>使用create-react-app 快速构建React开发环境</h3><blockquote>
+<p>create-react-app 是来自于facebook，通过该命令我们无需配置就能快速构建React开发环境。<br>create-react-app 自动创建的项目是基于Webpack + ES6.<br>执行以下命令创建项目：<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs undefined">$ cnpm install -g create-react-app<br>$ create-react-app [my-app]<br>$ cd [my-app]<br>$ npm start<br></code></pre></td></tr></table></figure></p>
+<p>在浏览器中打开<a href="http://localhost:3000，就会呈现项目页面" target="_blank" rel="noopener">http://localhost:3000，就会呈现项目页面</a></p>
 </blockquote>
-</li>
-</ul>
-<h2 id="4-xx-yy-index-html-项目地址"><a href="#4-xx-yy-index-html-项目地址" class="headerlink" title="4.(/xx/yy/index.html)项目地址"></a>4.(/xx/yy/index.html)项目地址</h2><ul>
-<li>根据地址值找到项目下的具体页面文件<blockquote>
-<p>/xx/yy/index.html 真实地址, 请求资源文件<br>/xxx  伪地址, 请求数据</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="5-name-aa-amp-age-30-参数"><a href="#5-name-aa-amp-age-30-参数" class="headerlink" title="5.(name=aa&amp;age=30)参数"></a>5.(name=aa&amp;age=30)参数</h2><ul>
-<li>参数格式是后台规定的,根据参数的值返回响应的数据</li>
-</ul>
-<h2 id="6-id-5-哈希值-Hash值"><a href="#6-id-5-哈希值-Hash值" class="headerlink" title="6.(id=5) 哈希值 Hash值"></a>6.(id=5) 哈希值 Hash值</h2><blockquote>
-<p>锚点定位<br>路由</p>
-</blockquote>
+<p>React 代码的书写格式和以前的 JS 有很大的不同，下面通过对这段代码进行分析了解一下他。</p>
+<p>以前使用JS 定义一个变量使用 var 现在用 const：</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">const div = document.createElement(&apos;div&apos;);<br></code></pre></td></tr></table></figure>
+<p>ReactDOM.render(…) 是渲染方法，所有的 js,html 都可通过它进行渲染绘制，他又两个参数，内容和渲染目标 js 对象。</p>
+<p>内容就是要在渲染目标中显示的东西，可以是一个React 部件，也可以是一段HTML或TEXT文本。渲染目标JS对象，就是一个DIV或TABEL,或TD 等HTML的节点对象。</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">ReactDOM.render(&lt;App /&gt;, div);<br></code></pre></td></tr></table></figure>
+<p>unmountComponentAtNode() 这个方法是解除渲染挂载，作用和 render 刚好相反，也就清空一个渲染目标中的 React 部件或 html 内容。</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">ReactDOM.unmountComponentAtNode(div);<br></code></pre></td></tr></table></figure>
 
     </main>
     <footer class="post-footer">
@@ -203,9 +198,9 @@
         
         <a class="post-tag button" href="/tags/前端/" rel="tag"><i class="fas fa-tags"></i>前端</a>
         
-        <a class="post-tag button" href="/tags/http/" rel="tag"><i class="fas fa-tags"></i>http</a>
+        <a class="post-tag button" href="/tags/JS/" rel="tag"><i class="fas fa-tags"></i>JS</a>
         
-        <a class="post-tag button" href="/tags/url/" rel="tag"><i class="fas fa-tags"></i>url</a>
+        <a class="post-tag button" href="/tags/react/" rel="tag"><i class="fas fa-tags"></i>react</a>
         
       </div>
       
@@ -216,12 +211,12 @@
   <nav class="page-nav">
     <div class="page-nav-next page-nav-item">
       
-      <a href="/2018/02/16/page/javascript-json/" rel="next" title="javascript学习之json常用方法"><i class="fas fa-angle-left"></i><span class="nav-title">javascript学习之json常用方法</span></a>
+      <a href="/2018/11/13/React-Props/" rel="next" title="React学习笔记之Props"><i class="fas fa-angle-left"></i><span class="nav-title">React学习笔记之Props</span></a>
       
     </div>
     <div class="page-nav-prev page-nav-item">
       
-      <a href="/2018/11/11/project_webpack_optimize/" rel="prev" title="关于项目打包时的优化"><span class="nav-title">关于项目打包时的优化</span><i class="fas fa-angle-right"></i></a>
+      <a href="/2018/11/13/React-render/" rel="prev" title="React学习笔记之渲染"><span class="nav-title">React学习笔记之渲染</span><i class="fas fa-angle-right"></i></a>
       
     </div>
   </nav>
@@ -284,7 +279,7 @@
     <hr>
     <div class="post-toc sidebar-item" id="toc-div">
       <div><i class="fas fa-list-ol"></i>Table of Contents</div>
-      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#输入URL地址敲回车之后发生了什么"><span class="toc-text">输入URL地址敲回车之后发生了什么</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#1-HTTPS-传输协议"><span class="toc-text">1.(HTTPS) 传输协议</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#2-www-baidu-com-域名"><span class="toc-text">2.(www.baidu.com) 域名:</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#3-443-端口号"><span class="toc-text">3.(443) 端口号:</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#4-xx-yy-index-html-项目地址"><span class="toc-text">4.(/xx/yy/index.html)项目地址</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#5-name-aa-amp-age-30-参数"><span class="toc-text">5.(name=aa&amp;age=30)参数</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#6-id-5-哈希值-Hash值"><span class="toc-text">6.(id=5) 哈希值 Hash值</span></a></li></ol></div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#React-安装"><span class="toc-text">React 安装</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#React-可以直接下载使用-也可以使用CDN"><span class="toc-text">React 可以直接下载使用,也可以使用CDN;</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#通过npm使用React"><span class="toc-text">通过npm使用React</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#使用create-react-app-快速构建React开发环境"><span class="toc-text">使用create-react-app 快速构建React开发环境</span></a></li></ol></li></ol></div>
     </div>
     
     

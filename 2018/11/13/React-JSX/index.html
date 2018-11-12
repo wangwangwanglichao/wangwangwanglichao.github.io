@@ -85,7 +85,7 @@
     <script defer type="text/javascript" src="/js/index.js"></script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>输入URL地址敲回车之后发生了什么 | 勇往直前 - 心有远方</title>
+    <title>React学习笔记之JSX | 勇往直前 - 心有远方</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN"  data-spy="scroll" data-target=".list-group">
     
@@ -129,7 +129,7 @@
   
   <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/2018/11/10/enter-event/">
+      <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/2018/11/13/React-JSX/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
        <meta itemprop="name" content="王立超">
        <meta itemprop="description" content="前端, JS, CSS, HTML5, Vue, React">
@@ -140,11 +140,11 @@
       </span>
     </div>
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">输入URL地址敲回车之后发生了什么</h1>
+      <h1 class="post-title" itemprop="name headline">React学习笔记之JSX</h1>
       <div class="post-meta">
         
         <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-11-10T20:14:24+08:00">2018-11-10 12:14:24</time></span>
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-11-12T21:28:01Z">2018-11-12 21:28:01</time></span>
         </span>
         
         
@@ -160,40 +160,32 @@
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      <h2 id="输入URL地址敲回车之后发生了什么"><a href="#输入URL地址敲回车之后发生了什么" class="headerlink" title="输入URL地址敲回车之后发生了什么"></a>输入URL地址敲回车之后发生了什么</h2><blockquote>
-<p> 输入网址敲回车之后,<br> 浏览器开始向DNS服务器发送请求,    (request)请求<br> DNS服务器解析,<br> 找到IP地址对应的服务器,<br> 服务器根据对应的端口号找到对应的项目,<br> 将需要的数据代码编码后返回给浏览器客户端,并将数据的类型告诉浏览器(HTML/json…),     (response)响应<br> 浏览器将接收到的数据根据返回来的数据类型进行解析,</p>
-</blockquote>
+      <h2 id="React-JSX"><a href="#React-JSX" class="headerlink" title="React JSX"></a>React JSX</h2><blockquote>
+<p>React 使用JSX来替代常规的JavaScript;<br>JSX是一个看起来像XML的JavaScript语法扩展;<br>我们不需要一定使用JSX,但它有以下优点:</p>
 <ul>
-<li><p>http事物: request请求和response响应都成功就是一个完整的HTTP事物;</p>
-</li>
-<li><p><a href="https://www.baidu.com:443/xx/yy/index.html?name=aa&amp;age=30#id=5" target="_blank" rel="noopener">https://www.baidu.com:443/xx/yy/index.html?name=aa&amp;age=30#id=5</a></p>
-</li>
-<li><p>(https) – (www.baidu.com ) – (443) – (/xx/yy/index.html) – (name=aa&amp;age=30) – (id=5)</p>
-</li>
+<li>JSX执行更快,因为它在编译为JavaScript代码后进行了优化;</li>
+<li>它是安全类型的,在编译过程中就能发现错误;</li>
+<li>使用JSX编写模板更加简单快速</li>
 </ul>
-<h2 id="1-HTTPS-传输协议"><a href="#1-HTTPS-传输协议" class="headerlink" title="1.(HTTPS) 传输协议"></a>1.(HTTPS) 传输协议</h2><blockquote>
-<p>https / http  完成客户端和服务端的数据交互传输<br>https: 更加安全<br>http: 超文本传输协议<br>FTP: 往服务器上上传项目文件</p>
 </blockquote>
-<h2 id="2-www-baidu-com-域名"><a href="#2-www-baidu-com-域名" class="headerlink" title="2.(www.baidu.com) 域名:"></a>2.(www.baidu.com) 域名:</h2><blockquote>
-<p>一级域名<br>二级域名<br>三级域名</p>
+<h3 id="使用JSX"><a href="#使用JSX" class="headerlink" title="使用JSX"></a>使用JSX</h3><blockquote>
+<p>JSX使用起来类似HTML;<br>JSX代码可以放在一个独立的文件上,例如:创建一个js文件,然后在HTML中引入该js文件;<br> <figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs undefined"> ReactDOM.render(<br>    &lt;h1&gt;Hello React!&lt;/h1&gt;,<br>    document.getElementById(&quot;box&quot;)<br>);<br></code></pre></td></tr></table></figure></p>
 </blockquote>
-<h2 id="3-443-端口号"><a href="#3-443-端口号" class="headerlink" title="3.(443) 端口号:"></a>3.(443) 端口号:</h2><ul>
-<li>根据端口号找到对应的项目<blockquote>
-<p>http: 默认端口号80<br>https: 默认端口号443<br>FTP: 默认端口号21</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;body&gt;<br>    &lt;!--创建一个JS文件引入--&gt;<br>    &lt;div id=&quot;box&quot;&gt;&lt;/div&gt;<br>    &lt;script type=&quot;text/babel&quot; src=&quot;hello_react.js&quot;&gt;&lt;/script&gt;<br>&lt;/body&gt;<br></code></pre></td></tr></table></figure>
+<h3 id="JavaScript表达式"><a href="#JavaScript表达式" class="headerlink" title="JavaScript表达式"></a>JavaScript表达式</h3><blockquote>
+<p>我们可以在 JSX 中使用 JavaScript 表达式。表达式写在花括号 {} 中<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs undefined">let i = 1;<br>ReactDOM.render(<br>    &lt;h1&gt;&#123;i == 1 ? &apos;True&apos; : &apos;False&apos;&#125;&lt;/h1&gt;,<br>    document.getElementById(&quot;box&quot;)<br>);<br></code></pre></td></tr></table></figure></p>
+<p>在 JSX 中不能使用 if else 语句，但可以使用 conditional (三元运算) 表达式来替代。以下实例中如果变量 i 等于 1 浏览器将输出 true, 如果修改 i 的值，则会输出 false.</p>
 </blockquote>
-</li>
-</ul>
-<h2 id="4-xx-yy-index-html-项目地址"><a href="#4-xx-yy-index-html-项目地址" class="headerlink" title="4.(/xx/yy/index.html)项目地址"></a>4.(/xx/yy/index.html)项目地址</h2><ul>
-<li>根据地址值找到项目下的具体页面文件<blockquote>
-<p>/xx/yy/index.html 真实地址, 请求资源文件<br>/xxx  伪地址, 请求数据</p>
+<h3 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h3><blockquote>
+<p>React 推荐使用内联样式。我们可以使用 camelCase 语法来设置内联样式. React 会在指定元素数字后自动添加 px<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs undefined">let myStyle = &#123;<br>    fontSize: 50,<br>    color: &apos;#ff0000&apos;<br>&#125;;<br><br>ReactDOM.render(<br>    &lt;h1 style=&#123;myStyle&#125;&gt;我是菜鸟&lt;/h1&gt;,<br>    document.getElementById(&quot;box&quot;)<br>);<br></code></pre></td></tr></table></figure></p>
 </blockquote>
-</li>
-</ul>
-<h2 id="5-name-aa-amp-age-30-参数"><a href="#5-name-aa-amp-age-30-参数" class="headerlink" title="5.(name=aa&amp;age=30)参数"></a>5.(name=aa&amp;age=30)参数</h2><ul>
-<li>参数格式是后台规定的,根据参数的值返回响应的数据</li>
-</ul>
-<h2 id="6-id-5-哈希值-Hash值"><a href="#6-id-5-哈希值-Hash值" class="headerlink" title="6.(id=5) 哈希值 Hash值"></a>6.(id=5) 哈希值 Hash值</h2><blockquote>
-<p>锚点定位<br>路由</p>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><blockquote>
+<p>注释需要写在花括号中<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs undefined">ReactDOM.render(<br>    &lt;div&gt;<br>    &lt;h1&gt;哈哈哈&lt;/h1&gt;<br>    &#123;/*注释...*/&#125;<br>     &lt;/div&gt;,<br>    document.getElementById(&apos;example&apos;)<br>);<br></code></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p>JSX 允许在模板中插入数组，数组会自动展开所有成员：<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs undefined">let arr = [<br>    &lt;h1&gt;我是菜鸟&lt;/h1&gt;,<br>    &lt;h2&gt;正在学习&lt;/h2&gt;,<br>    &lt;h3&gt;不仅技术&lt;/h3&gt;,<br>    &lt;h4&gt;更是梦想&lt;/h4&gt;<br>];<br><br>ReactDOM.render(<br>    &lt;h1&gt;&#123;arr&#125;&lt;/h1&gt;,<br>    document.getElementById(&quot;box&quot;)<br>);<br></code></pre></td></tr></table></figure></p>
+<h3 id="HTML标签-VS-React组件"><a href="#HTML标签-VS-React组件" class="headerlink" title="HTML标签 VS React组件"></a>HTML标签 VS React组件</h3><blockquote>
+<p>React 可以渲染 HTML 标签 (strings) 或 React 组件 (classes)。<br>要渲染 HTML 标签，只需在 JSX 里使用小写字母的标签名。<br>React 的 JSX 使用大、小写的约定来区分本地组件的类和 HTML 标签。<br>要渲染 React 组件，只需创建一个大写字母开头的本地变量。</p>
+<p>注意:<br>由于 JSX 就是 JavaScript，一些标识符像 class 和 for 不建议作为 XML 属性名。作为替代，React DOM 使用 className 和 htmlFor 来做对应的属性。</p>
 </blockquote>
 
     </main>
@@ -203,9 +195,9 @@
         
         <a class="post-tag button" href="/tags/前端/" rel="tag"><i class="fas fa-tags"></i>前端</a>
         
-        <a class="post-tag button" href="/tags/http/" rel="tag"><i class="fas fa-tags"></i>http</a>
+        <a class="post-tag button" href="/tags/JS/" rel="tag"><i class="fas fa-tags"></i>JS</a>
         
-        <a class="post-tag button" href="/tags/url/" rel="tag"><i class="fas fa-tags"></i>url</a>
+        <a class="post-tag button" href="/tags/react/" rel="tag"><i class="fas fa-tags"></i>react</a>
         
       </div>
       
@@ -216,12 +208,12 @@
   <nav class="page-nav">
     <div class="page-nav-next page-nav-item">
       
-      <a href="/2018/02/16/page/javascript-json/" rel="next" title="javascript学习之json常用方法"><i class="fas fa-angle-left"></i><span class="nav-title">javascript学习之json常用方法</span></a>
+      <a href="/2018/11/11/project_webpack_optimize/" rel="next" title="关于项目打包时的优化"><i class="fas fa-angle-left"></i><span class="nav-title">关于项目打包时的优化</span></a>
       
     </div>
     <div class="page-nav-prev page-nav-item">
       
-      <a href="/2018/11/11/project_webpack_optimize/" rel="prev" title="关于项目打包时的优化"><span class="nav-title">关于项目打包时的优化</span><i class="fas fa-angle-right"></i></a>
+      <a href="/2018/11/13/React-component/" rel="prev" title="React学习笔记之组件"><span class="nav-title">React学习笔记之组件</span><i class="fas fa-angle-right"></i></a>
       
     </div>
   </nav>
@@ -284,7 +276,7 @@
     <hr>
     <div class="post-toc sidebar-item" id="toc-div">
       <div><i class="fas fa-list-ol"></i>Table of Contents</div>
-      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#输入URL地址敲回车之后发生了什么"><span class="toc-text">输入URL地址敲回车之后发生了什么</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#1-HTTPS-传输协议"><span class="toc-text">1.(HTTPS) 传输协议</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#2-www-baidu-com-域名"><span class="toc-text">2.(www.baidu.com) 域名:</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#3-443-端口号"><span class="toc-text">3.(443) 端口号:</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#4-xx-yy-index-html-项目地址"><span class="toc-text">4.(/xx/yy/index.html)项目地址</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#5-name-aa-amp-age-30-参数"><span class="toc-text">5.(name=aa&amp;age=30)参数</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#6-id-5-哈希值-Hash值"><span class="toc-text">6.(id=5) 哈希值 Hash值</span></a></li></ol></div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#React-JSX"><span class="toc-text">React JSX</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#使用JSX"><span class="toc-text">使用JSX</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#JavaScript表达式"><span class="toc-text">JavaScript表达式</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#样式"><span class="toc-text">样式</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#注释"><span class="toc-text">注释</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#数组"><span class="toc-text">数组</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#HTML标签-VS-React组件"><span class="toc-text">HTML标签 VS React组件</span></a></li></ol></li></ol></div>
     </div>
     
     
