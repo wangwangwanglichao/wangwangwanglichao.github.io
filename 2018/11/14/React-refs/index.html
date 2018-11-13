@@ -85,7 +85,7 @@
     <script defer type="text/javascript" src="/js/index.js"></script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>做过的案例 | 勇往直前 - 心有远方</title>
+    <title>React学习笔记之渲染 | 勇往直前 - 心有远方</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN"  data-spy="scroll" data-target=".list-group">
     
@@ -129,7 +129,7 @@
   
   <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/2018/02/15/case-demo-2/">
+      <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/2018/11/14/React-refs/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
        <meta itemprop="name" content="王立超">
        <meta itemprop="description" content="前端, JS, CSS, HTML5, Vue, React">
@@ -140,11 +140,11 @@
       </span>
     </div>
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">做过的案例</h1>
+      <h1 class="post-title" itemprop="name headline">React学习笔记之渲染</h1>
       <div class="post-meta">
         
         <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-02-15T10:37:24+08:00">2018-02-15 02:37:24</time></span>
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-11-14T06:10:05Z">2018-11-14 06:10:05</time></span>
         </span>
         
         
@@ -153,20 +153,33 @@
         
         <span class="post-categories">
           
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/案例/" itemprop="url" rel="index"><span itemprop="name">案例</span></a></span>
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span>
         </span>
         
         
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      <h2 id="豆瓣电影案例"><a href="#豆瓣电影案例" class="headerlink" title="豆瓣电影案例"></a><a href="http://www.wanglichao.top/douban-movie/">豆瓣电影案例</a></h2><h2 id="备忘录案例"><a href="#备忘录案例" class="headerlink" title="备忘录案例"></a><a href="http://www.wanglichao.top/todo/">备忘录案例</a></h2><h2 id="弹力运动案例"><a href="#弹力运动案例" class="headerlink" title="弹力运动案例"></a><a href="http://flex.wanglichao.top/" target="_blank" rel="noopener">弹力运动案例</a></h2><h2 id="开屏导航栏"><a href="#开屏导航栏" class="headerlink" title="开屏导航栏"></a><a href="http://spread.wanglichao.top/" target="_blank" rel="noopener">开屏导航栏</a></h2><h2 id="微金所案例"><a href="#微金所案例" class="headerlink" title="微金所案例"></a><a href="http://wjs.wanglichao.top/" target="_blank" rel="noopener">微金所案例</a></h2><h2 id="电商平台案例"><a href="#电商平台案例" class="headerlink" title="电商平台案例"></a><a href="http://www.wanglichao.top/vue-project-01/">电商平台案例</a></h2><h2 id="未完成的读书器"><a href="#未完成的读书器" class="headerlink" title="未完成的读书器"></a><a href="http://www.wanglichao.top/case_FictionReader/">未完成的读书器</a></h2><h2 id="商城后台管理系统案例"><a href="#商城后台管理系统案例" class="headerlink" title="商城后台管理系统案例"></a><a href="https://github.com/wangwangwanglichao/admin-v2-fe/tree/tag-product-02" target="_blank" rel="noopener">商城后台管理系统案例</a></h2>
+      <h2 id="React-Refs"><a href="#React-Refs" class="headerlink" title="React Refs"></a>React Refs</h2><blockquote>
+<p>React支持一种非常特殊的属性 ref , 可以用来绑定到render()输出的任何组件上;<br>这个特殊的属性允许引用render()返回的相应的支撑实例(backing instance),这样就可以确保在任何时间都能拿到正确的实例;</p>
+<h5 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h5><p>绑定一个ref属性到render的返回值上:<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;input ref=&quot;myInput&quot;/&gt;<br></code></pre></td></tr></table></figure></p>
+</blockquote>
+<p>在其他代码中,通过this.refs获取支撑实例:<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined">let input = this.refs.myInput;<br>let inputValue = input.value;<br></code></pre></td></tr></table></figure></p>
+<h4 id="完整实例"><a href="#完整实例" class="headerlink" title="完整实例"></a>完整实例</h4><blockquote>
+<p>可以通过使用this来获取当前React组件,或使用ref来获取组件的引用;<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs undefined">class MyComponent extends React.Component &#123;<br>  handleClick() &#123;<br>    // 使用原生的DOM API获取焦点<br>    this.refs.myInput.focus();<br>  &#125;<br>  render() &#123;<br>    // 当组件插入到DOM后，ref属性添加一个组件的引用于到this.refs<br>    return (<br>      &lt;div&gt;<br>        &lt;input type=&quot;text&quot; ref=&quot;myInput&quot; /&gt;<br>        &lt;input<br>          type=&quot;button&quot;<br>          value=&quot;点我输入框获取焦点&quot;<br>          onClick=&#123;this.handleClick.bind(this)&#125;<br>        /&gt;<br>      &lt;/div&gt;<br>    );<br>  &#125;<br>&#125;<br> <br>ReactDOM.render(<br>  &lt;MyComponent /&gt;,<br>  document.getElementById(&apos;example&apos;)<br>);<br></code></pre></td></tr></table></figure></p>
+<p>也可以使用getDOMNode()方法获取DOM元素;</p>
+</blockquote>
+
     </main>
     <footer class="post-footer">
       
       <div class="post-tags">
         
-        <a class="post-tag button" href="/tags/案例/" rel="tag"><i class="fas fa-tags"></i>案例</a>
+        <a class="post-tag button" href="/tags/前端/" rel="tag"><i class="fas fa-tags"></i>前端</a>
+        
+        <a class="post-tag button" href="/tags/JS/" rel="tag"><i class="fas fa-tags"></i>JS</a>
+        
+        <a class="post-tag button" href="/tags/react/" rel="tag"><i class="fas fa-tags"></i>react</a>
         
       </div>
       
@@ -177,12 +190,12 @@
   <nav class="page-nav">
     <div class="page-nav-next page-nav-item">
       
-      <a href="/2018/02/15/node_base/" rel="next" title="node学习笔记"><i class="fas fa-angle-left"></i><span class="nav-title">node学习笔记</span></a>
+      <a href="/2018/11/14/React-component-API/" rel="next" title="React学习笔记之组件API"><i class="fas fa-angle-left"></i><span class="nav-title">React学习笔记之组件API</span></a>
       
     </div>
     <div class="page-nav-prev page-nav-item">
       
-      <a href="/2018/02/15/ajax_base/" rel="prev" title="ajax基础知识和核心原理"><span class="nav-title">ajax基础知识和核心原理</span><i class="fas fa-angle-right"></i></a>
+      <a href="/2018/11/15/React-form-and-events/" rel="prev" title="React学习笔记之表单与事件"><span class="nav-title">React学习笔记之表单与事件</span><i class="fas fa-angle-right"></i></a>
       
     </div>
   </nav>
@@ -245,7 +258,7 @@
     <hr>
     <div class="post-toc sidebar-item" id="toc-div">
       <div><i class="fas fa-list-ol"></i>文章目录</div>
-      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#豆瓣电影案例"><span class="toc-text">豆瓣电影案例</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#备忘录案例"><span class="toc-text">备忘录案例</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#弹力运动案例"><span class="toc-text">弹力运动案例</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#开屏导航栏"><span class="toc-text">开屏导航栏</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#微金所案例"><span class="toc-text">微金所案例</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#电商平台案例"><span class="toc-text">电商平台案例</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#未完成的读书器"><span class="toc-text">未完成的读书器</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#商城后台管理系统案例"><span class="toc-text">商城后台管理系统案例</span></a></li></ol></div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#React-Refs"><span class="toc-text">React Refs</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#使用方法"><span class="toc-text">使用方法</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#完整实例"><span class="toc-text">完整实例</span></a></li></ol></li></ol></li></ol></div>
     </div>
     
     

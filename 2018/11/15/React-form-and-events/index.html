@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="前端, 前端学习, 前端工程师, 互联网, JavaScript, CSS, HTML5, JS, Vue, React, 前端开发">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="勇往直前" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato|Roboto+Condensed|Skranji|Ubuntu|Ubuntu+Mono">
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/core.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>React学习笔记之表单与事件 | 勇往直前 - 心有远方</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">勇往直前</a></h1>
+        <h2 class="subtitle">心有远方</h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/logo.jpg" alt="logo">
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/">首页</a></li>
+        
+        <li role="menuitem"><a href="/archives/">归档</a></li>
+        
+        <li role="menuitem"><a href="/tags/">标签</a></li>
+        
+        <li role="menuitem"><a href="/about/">关于</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/2018/11/15/React-form-and-events/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="王立超">
+       <meta itemprop="description" content="前端, JS, CSS, HTML5, Vue, React">
+       <meta itemprop="image" content="/images/652285661303743555.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="勇往直前">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">React学习笔记之表单与事件</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-11-14T21:28:01Z">2018-11-14 21:28:01</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h2 id="Reactor-表单与事件"><a href="#Reactor-表单与事件" class="headerlink" title="Reactor 表单与事件"></a>Reactor 表单与事件</h2><blockquote>
+<p>HTML表单元素与Reactor中的其它DOM元素有所不同,因为表单元素生来就保留一些内部状态;<br>在HTML当中,像input,textarea和select这类表单元素会维持自身状态,并根据用户输入进行更新,但在React中,可变的状态通常保存在组件的状态属性中,并且只能用setState()方法进行更新;</p>
+</blockquote>
+<h5 id="实例1"><a href="#实例1" class="headerlink" title="实例1"></a>实例1</h5><blockquote>
+<p>在实例中设置了输入框input的值value={this.state.data},在输入框的值发生变化时我们可以更新state,我们可以使用onChange事件来监听input的变化,并修改state;<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs undefined">class Content extends React.Component &#123;<br>        render() &#123;<br>            return (<br>                &lt;div&gt;<br>                    &lt;input type=&quot;text&quot;<br>                           value=&#123;this.props.myDataProp&#125;<br>                           onChange=&#123;this.props.updateStateProp&#125;<br>                    /&gt;<br>                    &lt;h4&gt;&#123;this.props.myDataProp&#125;&lt;/h4&gt;<br>                &lt;/div&gt;<br>            )<br>        &#125;<br>    &#125;<br>    class HelloMessage extends React.Component &#123;<br>        constructor(props) &#123;<br>            super(props);<br>            this.state = &#123;value: &quot;Hello, React!&quot;&#125;;<br>        &#125;<br>        handleChange(e) &#123;<br>            this.setState(&#123;value: e.target.value&#125;);<br>        &#125;<br>        render() &#123;<br>            let value = this.state.value;<br>            return (<br>                &lt;div&gt;<br>                    &lt;Content myDataProp=&#123;value&#125;<br>                             updateStateProp=&#123;(e)=&gt;this.handleChange(e)&#125;<br>                    /&gt;<br>                &lt;/div&gt;<br>            )<br>        &#125;<br>    &#125;<br>    ReactDOM.render(<br>        &lt;HelloMessage /&gt;,<br>        document.getElementById(&apos;example&apos;)<br>    )<br></code></pre></td></tr></table></figure></p>
+<p>上面的代码将渲染出一个值为Hello React! 的input元素,并通过onChange事件影响更新用户输入的值</p>
+</blockquote>
+<h5 id="实例2"><a href="#实例2" class="headerlink" title="实例2"></a>实例2</h5><blockquote>
+<p>在以下实例中,将演示如何在子组件上使用表单,onChange方法将触发state的更新,并将更新的值传递到子组件的输入框的value上来重新渲染界面;<br>需要在父组件通过创建事件句柄(handleChange),并作为prop(updateStateProp)传递到子组件上;<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><code class="hljs undefined">// 创建一个Content组件:<br>    class Content extends React.Component &#123;<br>        render() &#123;<br>            return (<br>                &lt;div&gt;<br>                    &lt;input type=&quot;text&quot;<br>                           value=&#123;this.props.myDataProp&#125;<br>                           onChange=&#123;this.props.updateStateProp&#125;<br>                    /&gt;<br>                    &lt;h4&gt;&#123;this.props.myDataProp&#125;&lt;/h4&gt;<br>                &lt;/div&gt;<br>            )<br>        &#125;<br>    &#125;<br><br>    // 创建HelloMessage组件<br>    class HelloMessage extends React.Component &#123;<br>        constructor(props) &#123;<br>            super(props);<br>            this.state = &#123;<br>                value: &apos;Hello, React&apos;<br>            &#125;;<br>        &#125;<br><br>        handleChange(e) &#123;<br>            this.setState(&#123;<br>                value: e.target.value<br>            &#125;)<br>        &#125;<br><br>        render() &#123;<br>            let value = this.state.value;<br>            return (<br>                &lt;div&gt;<br>                    &lt;Content myDataProp=&#123;value&#125;<br>                             updateStateProp=&#123;e=&gt;this.handleChange(e)&#125;<br>                    /&gt;<br>                &lt;/div&gt;<br>            )<br>        &#125;<br>    &#125;<br><br>    ReactDOM.render(<br>        &lt;HelloMessage/&gt;,<br>        document.getElementById(&quot;example&quot;)<br>    )<br></code></pre></td></tr></table></figure></p>
+</blockquote>
+<h5 id="Select下拉菜单"><a href="#Select下拉菜单" class="headerlink" title="Select下拉菜单"></a>Select下拉菜单</h5><blockquote>
+<p>在React中,不使用selected属性,而是在根select标签上用value属性来表示选中项;<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs undefined">class LikeForm extends React.Component &#123;<br>        constructor(props) &#123;<br>            super(props);<br>            this.state = &#123;<br>                value: &apos;coconut&apos;<br>            &#125;<br>        &#125;<br>        handleChange(e) &#123;<br>            this.setState(&#123;<br>                value: e.target.value<br>            &#125;)<br>        &#125;<br>        handleSubmit(e) &#123;<br>            alert(&quot;你最喜欢的网站是&quot; + this.state.value);<br>            e.preventDefault();<br>        &#125;<br>        render() &#123;<br>            return (<br>                &lt;form onSubmit=&#123;(e)=&gt;this.handleSubmit(e)&#125;&gt;<br>                    &lt;label&gt;<br>                        &lt;select value=&#123;this.state.value&#125;<br>                                onChange=&#123;e=&gt;this.handleChange(e)&#125;<br>                        &gt;<br>                            &lt;option value=&quot;谷歌&quot;&gt;Google&lt;/option&gt;<br>                            &lt;option value=&quot;脸书&quot;&gt;Facebook&lt;/option&gt;<br>                            &lt;option value=&quot;淘宝&quot;&gt;Taobao&lt;/option&gt;<br>                            &lt;option value=&quot;草榴&quot;&gt;Caoliu&lt;/option&gt;<br>                        &lt;/select&gt;<br>                    &lt;/label&gt;<br>                    &lt;input type=&quot;submit&quot; value=&apos;提交&apos;/&gt;<br>                &lt;/form&gt;<br>            )<br>        &#125;<br>    &#125;<br>    ReactDOM.render(<br>        &lt;LikeForm /&gt;,<br>        document.getElementById(&apos;example&apos;)<br>    )<br></code></pre></td></tr></table></figure></p>
+</blockquote>
+<h5 id="多个表单"><a href="#多个表单" class="headerlink" title="多个表单"></a>多个表单</h5><blockquote>
+<p>当需要处理多个input元素时,可以通过给每个元素添加一个name属性,来让处理函数根据event.target.name的值来选择做什么:<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><code class="hljs undefined">class Reservation extends React.Component &#123;<br>        constructor(props) &#123;<br>            super(props);<br>            this.state = &#123;<br>                isGoing: true,<br>                numberOfGuests: 10<br>            &#125;;<br>        &#125;<br>        handleInputChange(e) &#123;<br>            const target = e.target;<br>            const value = target.type === &apos;checkbox&apos; ? target.checked : target.value;<br>            const name = target.name;<br>            this.setState(&#123;<br>                [name]: value<br>            &#125;)<br>        &#125;<br>        render() &#123;<br>            return (<br>                &lt;form&gt;<br>                    &lt;label&gt;<br>                        是或否:<br>                        &lt;input type=&quot;checkbox&quot;<br>                               name=&quot;isGoing&quot;<br>                               checked=&#123;this.state.isGoing&#125;<br>                               onChange=&#123;e=&gt;this.handleInputChange(e)&#125;<br>                        /&gt;<br>                    &lt;/label&gt;<br>                    &lt;br/&gt;<br>                    &lt;label&gt;<br>                        统计数:<br>                        &lt;input type=&quot;number&quot;<br>                               name=&quot;numberOfGuests&quot;<br>                               value=&#123;this.state.numberOfGuests&#125;<br>                               onChange=&#123;e=&gt;this.handleInputChange(e)&#125;<br>                        /&gt;<br>                    &lt;/label&gt;<br>                &lt;/form&gt;<br>            )<br>        &#125;<br>    &#125;<br>    ReactDOM.render(<br>        &lt;Reservation /&gt;,<br>        document.getElementById(&quot;example&quot;)<br>    )<br></code></pre></td></tr></table></figure></p>
+</blockquote>
+<h5 id="React事件"><a href="#React事件" class="headerlink" title="React事件"></a>React事件</h5><blockquote>
+<p>通过onClick事件来修改数据:<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs undefined">class Message extends React.Component &#123;<br>        constructor(props) &#123;<br>            super(props);<br>            this.state = &#123;<br>                value: &quot;Hello, React!&quot;<br>            &#125;;<br>        &#125;<br>        handleChangeValue() &#123;<br>            this.setState(&#123;<br>                value: &quot;Hello, Vue!&quot;<br>            &#125;)<br>        &#125;<br>        render() &#123;<br>            return (<br>                &lt;div&gt;<br>                    &lt;button onClick=&#123;()=&gt;this.handleChangeValue()&#125;&gt;点我&lt;/button&gt;<br>                    &lt;h4&gt;&#123;this.state.value&#125;&lt;/h4&gt;<br>                &lt;/div&gt;<br>            )<br>        &#125;<br>    &#125;<br>    ReactDOM.render(<br>        &lt;Message /&gt;,<br>        document.getElementById(&quot;example&quot;)<br>    )<br></code></pre></td></tr></table></figure></p>
+<p>当需要从子组件中更新父组件的state时,需要在父组件通过创建事件句柄(handleChange),并作为prop(updateStateProp)传递到子组件上;<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs undefined">class Content extends React.Component &#123;<br>        render() &#123;<br>            return(<br>                &lt;div&gt;<br>                    &lt;button onClick=&#123;this.props.updateStateProp&#125;&gt;button&lt;/button&gt;<br>                    &lt;h4&gt;&#123;this.props.myDataProp&#125;&lt;/h4&gt;<br>                &lt;/div&gt;<br>            )<br>        &#125;<br>    &#125;<br>    class Message extends React.Component &#123;<br>        constructor(props) &#123;<br>            super(props);<br>            this.state = &#123;<br>                value: &quot;Hello React!!!&quot;<br>            &#125;;<br>        &#125;<br>        handleChange() &#123;<br>            this.setState(&#123;<br>                value: &quot;My App is Success!!!&quot;<br>            &#125;)<br>        &#125;<br>        render() &#123;<br>            return (<br>                &lt;div&gt;<br>                    &lt;Content updateStateProp=&#123;()=&gt;this.handleChange()&#125;<br>                             myDataProp=&#123;this.state.value&#125;<br>                    /&gt;<br>                &lt;/div&gt;<br>            )<br>        &#125;<br>    &#125;<br>    ReactDOM.render(<br>        &lt;Message /&gt;,<br>        document.getElementById(&quot;example&quot;)<br>    )<br></code></pre></td></tr></table></figure></p>
+</blockquote>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/前端/" rel="tag"><i class="fas fa-tags"></i>前端</a>
+        
+        <a class="post-tag button" href="/tags/JS/" rel="tag"><i class="fas fa-tags"></i>JS</a>
+        
+        <a class="post-tag button" href="/tags/react/" rel="tag"><i class="fas fa-tags"></i>react</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2018/11/14/React-refs/" rel="next" title="React学习笔记之渲染"><i class="fas fa-angle-left"></i><span class="nav-title">React学习笔记之渲染</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/2018/11/15/React-ajax/" rel="prev" title="React学习笔记之ajax"><span class="nav-title">React学习笔记之ajax</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/652285661303743555.jpg" alt="王立超">
+  
+  <h1 class="author-name">王立超</h1>
+  <h2 class="author-description">前端, JS, CSS, HTML5, Vue, React</h2>
+  <div class="site-count">
+    
+    <div class="archives-count">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">29</a></div>
+    </div>
+    
+    
+    
+    
+    <span class="site-count-divider divider">|</span>
+    
+    <div class="tags-count">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">17</a></div>
+    </div>
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#Reactor-表单与事件"><span class="toc-text">Reactor 表单与事件</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#实例1"><span class="toc-text">实例1</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#实例2"><span class="toc-text">实例2</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#Select下拉菜单"><span class="toc-text">Select下拉菜单</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#多个表单"><span class="toc-text">多个表单</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#React事件"><span class="toc-text">React事件</span></a></li></ol></li></ol></li></ol></li></ol></div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="wangwangwanglichao@foxmail.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/" target="_blank">wangwangwanglichao</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href="https://github.com/" target="_blank">GitHub</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="https://developer.mozilla.org/" target="_blank">MDN</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">王立超</span><span class="year"><i class="far fa-copyright"></i>2018</span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>
