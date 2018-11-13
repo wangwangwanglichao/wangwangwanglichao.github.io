@@ -103,16 +103,16 @@
       
     </div>
     <nav id="nav" class="nav">
-      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="Toggle Navbar"></i></a>
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
       <ul id="menu" role="menubar" aria-hidden="false">
         
-        <li role="menuitem"><a href="/">Home</a></li>
+        <li role="menuitem"><a href="/">首页</a></li>
         
-        <li role="menuitem"><a href="/archives/">Archives</a></li>
+        <li role="menuitem"><a href="/archives/">归档</a></li>
         
-        <li role="menuitem"><a href="/tags/">Tags</a></li>
+        <li role="menuitem"><a href="/tags/">标签</a></li>
         
-        <li role="menuitem"><a href="/about/">About</a></li>
+        <li role="menuitem"><a href="/about/">关于</a></li>
         
       </ul>
     </nav>
@@ -331,7 +331,7 @@
   
   <div class="search">
     <div class="form-group">
-      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="Search" class="form-control"/>
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
     </div>
   </div>
   <div class="search-result-box" id="search-result"></div>
@@ -346,7 +346,7 @@
   <div class="site-count">
     
     <div class="archives-count">
-      <div class="site-count-title">Archives</div>
+      <div class="site-count-title">归档</div>
       <div><a href="/archives/">27</a></div>
     </div>
     
@@ -356,7 +356,7 @@
     <span class="site-count-divider divider">|</span>
     
     <div class="tags-count">
-      <div class="site-count-title">Tags</div>
+      <div class="site-count-title">标签</div>
       <div><a href="/tags/">17</a></div>
     </div>
     
@@ -377,7 +377,7 @@
     
     <hr>
     <div class="post-toc sidebar-item" id="toc-div">
-      <div><i class="fas fa-list-ol"></i>Table of Contents</div>
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
       <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#ajax基础知识"><span class="toc-text">ajax基础知识</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#1-什么是ajax"><span class="toc-text">1.什么是ajax:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#2-Ajax异步的概念"><span class="toc-text">2. Ajax异步的概念:</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#前后端分离和不分离的优势和劣势"><span class="toc-text">前后端分离和不分离的优势和劣势</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#不分离的优势"><span class="toc-text">不分离的优势:</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#不分离的劣势"><span class="toc-text">不分离的劣势:</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#分离的优势"><span class="toc-text">分离的优势</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#分离的弊端"><span class="toc-text">分离的弊端</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#基于原生实现ajax"><span class="toc-text">基于原生实现ajax</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#示例"><span class="toc-text">示例:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#分析open的参数"><span class="toc-text">分析open的参数:</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#method-ajax的请求方式"><span class="toc-text">method: ajax的请求方式:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#第一个参数-GET和POST具体有哪些区别"><span class="toc-text">第一个参数:GET和POST具体有哪些区别</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#区别1-数据携带方式-GET向服务器发送请求时-发送的内容比POST少-获取的比POST多"><span class="toc-text">区别1:数据携带方式:  GET向服务器发送请求时,发送的内容比POST少,获取的比POST多;</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#区别2-缓存问题-GET请求容易走缓存-POST不会"><span class="toc-text">区别2:缓存问题: GET请求容易走缓存,POST不会:</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#区别3-安全性-GET请求法师没有POST请求方式安全"><span class="toc-text">区别3:安全性: GET请求法师没有POST请求方式安全:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#第二个参数-URL"><span class="toc-text">第二个参数:URL</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#第三个参数-Async"><span class="toc-text">第三个参数: Async</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#最后两个参数-用户名-密码"><span class="toc-text">最后两个参数:用户名,密码</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#第三部分解析"><span class="toc-text">第三部分解析</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#ajax常用的属性和方法有哪些"><span class="toc-text">ajax常用的属性和方法有哪些</span></a></li></ol></li></ol></div>
     </div>
     
@@ -385,7 +385,7 @@
     
     <hr>
     <div class="social-link sidebar-item">
-      <div><i class="far fa-address-card"></i>Social Links</p></div>
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
       <ul>
         
         <li><i class="fas fa-envelope"></i><a href="wangwangwanglichao@foxmail.com" target="_blank">E-Mail</a></li>
@@ -398,7 +398,7 @@
     
     <hr>
     <div class="blogroll sidebar-item">
-      <div><i class="fas fa-link"></i>Blogroll</div>
+      <div><i class="fas fa-link"></i>友情链接</div>
       <ul>
         
         <li><i class="fas fa-link"></i><a href="https://github.com/" target="_blank">GitHub</a></li>
@@ -420,7 +420,7 @@
 <footer id="footer" class="footer" style="background: #33363b;">
   <div class="container">
     <div class="back-to-top">
-      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="Back to Top"></i></button>
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
     </div>
     <div class="footer-container">
       <div class="footer-left">
@@ -429,7 +429,7 @@
         </div>
         
         <div class="busuanzi">
-          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="Site Visit Count" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="Site User Count" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="Page Click Count" aria-hidden="false"></span></span>
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
         </div>
         
       </div>
@@ -440,7 +440,7 @@
           
         </div>
         <div class="powered-by">
-          Proudly Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> | Theme is <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
         </div>
       </div>
     </div>
