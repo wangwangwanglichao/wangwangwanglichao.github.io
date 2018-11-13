@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="前端, 前端学习, 前端工程师, 互联网, JavaScript, CSS, HTML5, JS, Vue, React, 前端开发">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="勇往直前" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato|Roboto+Condensed|Skranji|Ubuntu|Ubuntu+Mono">
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/core.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>React学习笔记之组件API | 勇往直前 - 心有远方</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">勇往直前</a></h1>
+        <h2 class="subtitle">心有远方</h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/logo.jpg" alt="logo">
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="Toggle Navbar"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/">Home</a></li>
+        
+        <li role="menuitem"><a href="/archives/">Archives</a></li>
+        
+        <li role="menuitem"><a href="/tags/">Tags</a></li>
+        
+        <li role="menuitem"><a href="/about/">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/2018/11/13/React-component-API/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="王立超">
+       <meta itemprop="description" content="前端, JS, CSS, HTML5, Vue, React">
+       <meta itemprop="image" content="/images/652285661303743555.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="勇往直前">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">React学习笔记之组件API</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-11-12T21:28:01Z">2018-11-12 21:28:01</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h2 id="React-组件-API"><a href="#React-组件-API" class="headerlink" title="React 组件 API"></a>React 组件 API</h2><blockquote>
+<p>React 组件API的7个方法:</p>
+<ul>
+<li>设置状态:setState</li>
+<li>替换状态: replaceState</li>
+<li>设置属性: setProps</li>
+<li>替换属性: replaceState</li>
+<li>强制更新: forceUpdate</li>
+<li>获取DOM节点: findDOMNode</li>
+<li>判断组件挂在状态： isMounted</li>
+</ul>
+</blockquote>
+<h3 id="设置状态-setState"><a href="#设置状态-setState" class="headerlink" title="设置状态: setState"></a>设置状态: setState</h3><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">setState(object nextState[, function callback])<br></code></pre></td></tr></table></figure>
+<h5 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h5><pre><code>&gt; * nextState 将要设置新的状态,该状态会和当前的state合并;
+&gt; * callback 可选参数,回调函数,该函数会在setState设置成功,且组件重新渲染后调用;
+</code></pre><blockquote>
+<p>合并nextState和当前state,并重新渲染组件,setState是React事件处理函数中和请求回调函数中触发UI更新的主要方法;</p>
+</blockquote>
+<h5 id="关于setState"><a href="#关于setState" class="headerlink" title="关于setState"></a>关于setState</h5><blockquote>
+<p>不能在组件内部通过this.state修改状态,因为该状态会在调用setState()后被替换;<br>setState()并不会立即改变this.state,而是创建一个即将处理的state;<br>setState()并不一定是同步的,为了提升性能React会批量执行state和DOM渲染;<br>setState()总是会触发一次组件重绘,除非在shouldComponentUpdate()中实现了一些条件渲染逻辑;<br>点击计数器:<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs undefined">class Counter extends React.Component &#123;<br>        constructor(props) &#123;<br>            super(props);<br>            this.state = &#123;<br>                clickCount: 0<br>            &#125;;<br>            this.handleClick = this.handleClick.bind(this);<br>        &#125;<br><br>        handleClick() &#123;<br>            this.setState(function (state) &#123;<br>                return &#123;clickCount: state.clickCount + 1&#125;;<br>            &#125;)<br>        &#125;<br><br>        render() &#123;<br>            return(<br>                &lt;div&gt;<br>                    &lt;button onClick=&#123;this.handleClick&#125;&gt;点我&lt;/button&gt;<br>                    &lt;h3&gt;点击次数为&#123;this.state.clickCount&#125;&lt;/h3&gt;<br>                &lt;/div&gt;<br>            )<br>        &#125;<br>    &#125;<br><br>    ReactDOM.render(<br>        &lt;Counter /&gt;,<br>        document.getElementById(&quot;example&quot;)<br>    )<br></code></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="替换状态-replaceState"><a href="#替换状态-replaceState" class="headerlink" title="替换状态: replaceState"></a>替换状态: replaceState</h3><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">replaceState(object nextState[, function callback])<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>replaceState() 方法与setState() 类似,但是方法只会保留nextState中的状态,原state不在nextState中的状态都会被删除</p>
+</blockquote>
+<h3 id="设置属性-setProps"><a href="#设置属性-setProps" class="headerlink" title="设置属性: setProps"></a>设置属性: setProps</h3><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">setProps(object nextProps[, function callback])<br></code></pre></td></tr></table></figure>
+<pre><code>&gt; * nextProps 将要设置的新属性,该状态会和当前的props合并;
+&gt; * callback 可选参数,回调函数,该函数会在setProps设置成功,且组件重新渲染后调用;
+</code></pre><blockquote>
+<p>props相当于组件的数据流,它总是会从父组件向下传递至所有的子组件中.<br>当和一个外部的javascript应用集成时,我们可能需要向组件传递数据或者通知React.render() 组件需要重新渲染,可以使用setProps();<br>更新组件,我可以在节点上再次调用React.render(),也可以通过setProps() 方法改变组件属性,触发组件重新渲染;</p>
+</blockquote>
+<h3 id="替换属性-replaceProps"><a href="#替换属性-replaceProps" class="headerlink" title="替换属性: replaceProps"></a>替换属性: replaceProps</h3><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">replaceProps(object nextProps[, function callback])<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>replaceProps()方法与setProps()方法类似,但是它会删除原有的props;</p>
+</blockquote>
+<h3 id="强制更新-forceUpdate"><a href="#强制更新-forceUpdate" class="headerlink" title="强制更新: forceUpdate"></a>强制更新: forceUpdate</h3><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">forceUpdate([function callback])<br></code></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>callback 可选参数,回调函数,该函数会在组件render()方法调用后调用;<br>forceUpdate()方法会使组件调用自身的render() 方法重新渲染组件,组件的子组件也会调用自己的render() ,但是,组件重新渲染时,依然会读取this.props和this.state,如果状态没有改变,那么React只会更新DOM;<br>forceUpdate()方式适用于this.props和this.state之外的组件重绘(如:修改了this.state后), 通过该方法通知React需要调用render();<br>一般来说,应该尽量避免使用forceUpdate(),而仅从this.props和this.state中读取状态并由React触发render调用;</li>
+</ul>
+</blockquote>
+<h3 id="获取DOM节点-findDOMNode"><a href="#获取DOM节点-findDOMNode" class="headerlink" title="获取DOM节点: findDOMNode"></a>获取DOM节点: findDOMNode</h3><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">DOMElement findDOMNode<br></code></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>返回值: DOM元素DOMElement<br>如果组件已经挂载到DOM中,该方法返回对应的本地浏览器DOM元素<br>当render()返回null或false时,this.findDOMNode()也会返回null.<br>从DOM中读取值得时候，该方法很有用，如：获取表单字段的值和做一些DOM操作；</li>
+</ul>
+</blockquote>
+<h3 id="判断组件挂载状态：-isMounted"><a href="#判断组件挂载状态：-isMounted" class="headerlink" title="判断组件挂载状态： isMounted"></a>判断组件挂载状态： isMounted</h3><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">bool isMounted()<br></code></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>返回值： true或false，表示组件是否已经挂载到DOM中<br>isMounted()方法用于判断组件是否已挂在到DOM中<br>可以使用该方法保证来setState（）和forceUpdate（）在异步场景下的调用不会出错。</li>
+</ul>
+</blockquote>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/前端/" rel="tag"><i class="fas fa-tags"></i>前端</a>
+        
+        <a class="post-tag button" href="/tags/JS/" rel="tag"><i class="fas fa-tags"></i>JS</a>
+        
+        <a class="post-tag button" href="/tags/react/" rel="tag"><i class="fas fa-tags"></i>react</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2018/11/13/React-life/" rel="next" title="React学习笔记之生命周期"><i class="fas fa-angle-left"></i><span class="nav-title">React学习笔记之生命周期</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/2018/11/13/React-This/" rel="prev" title="React学习笔记之this相关"><span class="nav-title">React学习笔记之this相关</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="Search" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/652285661303743555.jpg" alt="王立超">
+  
+  <h1 class="author-name">王立超</h1>
+  <h2 class="author-description">前端, JS, CSS, HTML5, Vue, React</h2>
+  <div class="site-count">
+    
+    <div class="archives-count">
+      <div class="site-count-title">Archives</div>
+      <div><a href="/archives/">27</a></div>
+    </div>
+    
+    
+    
+    
+    <span class="site-count-divider divider">|</span>
+    
+    <div class="tags-count">
+      <div class="site-count-title">Tags</div>
+      <div><a href="/tags/">17</a></div>
+    </div>
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>Table of Contents</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#React-组件-API"><span class="toc-text">React 组件 API</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#设置状态-setState"><span class="toc-text">设置状态: setState</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#参数说明"><span class="toc-text">参数说明</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#关于setState"><span class="toc-text">关于setState</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#替换状态-replaceState"><span class="toc-text">替换状态: replaceState</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#设置属性-setProps"><span class="toc-text">设置属性: setProps</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#替换属性-replaceProps"><span class="toc-text">替换属性: replaceProps</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#强制更新-forceUpdate"><span class="toc-text">强制更新: forceUpdate</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#获取DOM节点-findDOMNode"><span class="toc-text">获取DOM节点: findDOMNode</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#判断组件挂载状态：-isMounted"><span class="toc-text">判断组件挂载状态： isMounted</span></a></li></ol></li></ol></div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>Social Links</p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="wangwangwanglichao@foxmail.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/" target="_blank">wangwangwanglichao</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>Blogroll</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href="https://github.com/" target="_blank">GitHub</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="https://developer.mozilla.org/" target="_blank">MDN</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="Back to Top"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">王立超</span><span class="year"><i class="far fa-copyright"></i>2018</span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="Site Visit Count" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="Site User Count" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="Page Click Count" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          Proudly Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> | Theme is <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>

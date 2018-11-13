@@ -85,7 +85,7 @@
     <script defer type="text/javascript" src="/js/index.js"></script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>React学习笔记之渲染 | 勇往直前 - 心有远方</title>
+    <title>React学习笔记之列表和keys | 勇往直前 - 心有远方</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN"  data-spy="scroll" data-target=".list-group">
     
@@ -129,7 +129,7 @@
   
   <article class="article post card animate" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/2018/11/13/React-render/">
+      <link itemprop="mainEntityOfPage" href="http://www.wanglichao.top/2018/11/13/React-list/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
        <meta itemprop="name" content="王立超">
        <meta itemprop="description" content="前端, JS, CSS, HTML5, Vue, React">
@@ -140,7 +140,7 @@
       </span>
     </div>
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">React学习笔记之渲染</h1>
+      <h1 class="post-title" itemprop="name headline">React学习笔记之列表和keys</h1>
       <div class="post-meta">
         
         <span class="post-date">
@@ -160,18 +160,27 @@
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      <h2 id="React元素渲染"><a href="#React元素渲染" class="headerlink" title="React元素渲染"></a>React元素渲染</h2><blockquote>
-<p>元素是构成React应用的最小单位，它用于描述屏幕上输出的内容。<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">const element = &lt;h1&gt;Hello,React!&lt;/h1&gt;;<br></code></pre></td></tr></table></figure></p>
-<p>与浏览器的DOM元素不同，React当中的元素事实上是普通的对象， React DOM可以确保浏览器DOM的数据内容与React元素保持一致。</p>
+      <h2 id="React-列表-和-keys"><a href="#React-列表-和-keys" class="headerlink" title="React 列表 和 keys"></a>React 列表 和 keys</h2><blockquote>
+<p>我们可以使用javascript的map()方法来创建数字列表:<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs undefined">const numbers = [1, 2, 3, 4, 5];<br>    const listItem = numbers.map(number =&gt;<br>        &lt;li&gt;&#123;number&#125;&lt;/li&gt;<br>    );<br>    ReactDOM.render(<br>        &lt;ul&gt;<br>            &#123;listItem&#125;<br>        &lt;/ul&gt;,<br>        document.getElementById(&quot;example&quot;)<br>    )<br></code></pre></td></tr></table></figure></p>
+<p>我们可以将以上实例重构成一个组件,组件接收数组参数,每个列表元素分配一个key,不然会出现警告<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs undefined">let numbers = [1, 2, 3, 4, 5];<br><br>   function NumberList(props) &#123;<br>       const numbers = props.numbers;<br>       const listItems = numbers.map(number =&gt;<br>           &lt;li key=&#123;number&#125;&gt;&#123;number&#125;&lt;/li&gt;<br>       );<br>       return (<br>           &lt;ul&gt;<br>               &#123;listItems&#125;<br>           &lt;/ul&gt;<br>       )<br>   &#125;<br><br>   ReactDOM.render(<br>       &lt;NumberList numbers=&#123;numbers&#125;/&gt;,<br>       document.getElementById(&quot;example&quot;)<br>   )<br></code></pre></td></tr></table></figure></p>
 </blockquote>
-<h3 id="将元素渲染到DOM中"><a href="#将元素渲染到DOM中" class="headerlink" title="将元素渲染到DOM中"></a>将元素渲染到DOM中</h3><blockquote>
-<p>首先，在一个html页面中添加一个id=“example”的div<br>在此div中的所有内容都将由React DOM来管理，所以我们将其称之为“根”DOM节点<br>用React开发应用时一般只会定义一个根节点，但如果是在一个已有的项目中引入React的话，可能会需要在不同部分单独定义React根节点。</p>
+<h3 id="Keys"><a href="#Keys" class="headerlink" title="Keys"></a>Keys</h3><blockquote>
+<p>keys可以在DOM中的某些元素被增加或删除的时候,帮助React识别哪些元素发生了变化,因此应当给数组中每一个元素赋予一个确定的标识.<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;li key=&#123;number.toString()&#125;&gt;<br></code></pre></td></tr></table></figure></p>
+<p>一个元素的key最好是这个元素在列表中拥有的独一无二的字符串,通常,我们使用来自数据的ID作为元素的key;<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs undefined">const todoItems = todos.map(todo =&gt;<br>	&lt;li key=&#123;todo.id&#125;&gt;<br>		&#123;todo.text&#125;<br>	&lt;/li&gt;<br>	);<br></code></pre></td></tr></table></figure></p>
+<p>当元素没有确定的id时,可以使用它的序列号索引index作为它的key<br> <figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs undefined">const todoItems = todos.map((todo, index) =&gt;<br>	&lt;li key=&#123;index&#125;&gt;<br>		&#123;todo.text&#125;<br>	&lt;/li&gt;<br>	);<br></code></pre></td></tr></table></figure></p>
+<p>如果列表可以重新排序,我们不建议使用索引来进行排序,因为这回导致渲染变得很慢</p>
 </blockquote>
-<h3 id="更新元素渲染"><a href="#更新元素渲染" class="headerlink" title="更新元素渲染"></a>更新元素渲染</h3><blockquote>
-<p>React 元素都是不可变的，当元素被创建之后，是无法改变其内容或属性的。<br>目前更新界面的唯一办法就是创建一个新的元素，然后将它传入React DOM.render()方法；</p>
+<h3 id="用Keys-提取组件"><a href="#用Keys-提取组件" class="headerlink" title="用Keys 提取组件"></a>用Keys 提取组件</h3><blockquote>
+<p>元素的key只有在它和它的兄弟节点对比时才有意义;<br>比方说,如果需要提取一个ListItem组件,你应该把key保存在数组中的<listitem>元素上,而不是放在ListItem组件中的li元素上<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs undefined">function ListItem(props) &#123;<br>  // 这里不需要指定key<br>  return &lt;li&gt;&#123;props.value&#125;&lt;/li&gt;;<br>&#125;<br>function NumberList(props) &#123;<br>  const numbers = props.numbers;<br>  const listItems = numbers.map((number) =&gt;<br>    // 建议将key指定在这里,数组的上下文里;<br>    &lt;ListItem key=&#123;number.toString()&#125;<br>              value=&#123;number&#125; /&gt;<br>  );<br>  return (<br>    &lt;ul&gt;<br>      &#123;listItems&#125;<br>    &lt;/ul&gt;<br>  );<br>&#125;<br>const numbers = [1, 2, 3, 4, 5];<br>ReactDOM.render(<br>  &lt;NumberList numbers=&#123;numbers&#125; /&gt;,<br>  document.getElementById(&apos;example&apos;)<br>);<br></code></pre></td></tr></table></figure></listitem></p>
+<p>在map()方法的内部调用元素时,最好随时记得为每一个元素加上独一无二的key;</p>
 </blockquote>
-<h3 id="React-只会更新必要的部分"><a href="#React-只会更新必要的部分" class="headerlink" title="React 只会更新必要的部分"></a>React 只会更新必要的部分</h3><blockquote>
-<p>值得注意的是，React　DOM首先会比较元素内容先后的不同，而在渲染过程中只会更新改变了的部分。</p>
+<h3 id="元素的key在它与它的兄弟元素之间应该是唯一"><a href="#元素的key在它与它的兄弟元素之间应该是唯一" class="headerlink" title="元素的key在它与它的兄弟元素之间应该是唯一"></a>元素的key在它与它的兄弟元素之间应该是唯一</h3><blockquote>
+<p>数组元素中使用的key在其兄弟之间应该是独一无二的,然而,它们不需要是全局唯一的,当生成两个不同的数组时,可以使用相同的key;<br>key会作为给React的提示,但不会传递给你的组件.如果你的组件中需要使用和key相同的值,请将其作为属性传递;<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs undefined">const content = posts.map((post) =&gt; <br>	&lt;Post key=&#123;post.id&#125;<br>			  id=&#123;post.id&#125;<br>			  title=&#123;post.title&#125; /&gt;<br>);<br></code></pre></td></tr></table></figure></p>
+<p>上面例子中,Post组件可以读出props.id,但是不能读出props.key;</p>
+</blockquote>
+<h3 id="在JSX中嵌入map"><a href="#在JSX中嵌入map" class="headerlink" title="在JSX中嵌入map()"></a>在JSX中嵌入map()</h3><blockquote>
+<p>JSX允许在大括号中嵌入任何表达式,所以我们可以在map()中这样使用:<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs undefined">function NumberList(props)&#123;<br> 	const nubers = props.numbers;<br>	reutnr (<br>		&lt;ul&gt;<br>			&#123;numbers.map(number) =&gt;<br>				&lt;ListItem key=&#123;number.toString()&#125; value=&#123;number&#125; /&gt;<br>		&lt;/ul&gt;<br>	)<br> &#125;<br></code></pre></td></tr></table></figure></p>
+<p>这么做有时可以使你的代码更清晰,但有时这种风格会被滥用,就像在javascript中一样,何时需要为了可读性提取出一个变量,这完全取决于你自己,但请记住,如果一个map() 嵌套了太多层级,那你就可以提取出组件;</p>
 </blockquote>
 
     </main>
@@ -194,12 +203,12 @@
   <nav class="page-nav">
     <div class="page-nav-next page-nav-item">
       
-      <a href="/2018/11/13/React-condition-render/" rel="next" title="React学习笔记之条件渲染"><i class="fas fa-angle-left"></i><span class="nav-title">React学习笔记之条件渲染</span></a>
+      <a href="/2018/11/13/React-anzhuang/" rel="next" title="React学习笔记之介绍"><i class="fas fa-angle-left"></i><span class="nav-title">React学习笔记之介绍</span></a>
       
     </div>
     <div class="page-nav-prev page-nav-item">
       
-      <a href="/2018/11/13/React-install/" rel="prev" title="React学习笔记之安装"><span class="nav-title">React学习笔记之安装</span><i class="fas fa-angle-right"></i></a>
+      <a href="/2018/11/13/React-JSX/" rel="prev" title="React学习笔记之JSX"><span class="nav-title">React学习笔记之JSX</span><i class="fas fa-angle-right"></i></a>
       
     </div>
   </nav>
@@ -262,7 +271,7 @@
     <hr>
     <div class="post-toc sidebar-item" id="toc-div">
       <div><i class="fas fa-list-ol"></i>Table of Contents</div>
-      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#React元素渲染"><span class="toc-text">React元素渲染</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#将元素渲染到DOM中"><span class="toc-text">将元素渲染到DOM中</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#更新元素渲染"><span class="toc-text">更新元素渲染</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#React-只会更新必要的部分"><span class="toc-text">React 只会更新必要的部分</span></a></li></ol></li></ol></div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#React-列表-和-keys"><span class="toc-text">React 列表 和 keys</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#Keys"><span class="toc-text">Keys</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#用Keys-提取组件"><span class="toc-text">用Keys 提取组件</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#元素的key在它与它的兄弟元素之间应该是唯一"><span class="toc-text">元素的key在它与它的兄弟元素之间应该是唯一</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#在JSX中嵌入map"><span class="toc-text">在JSX中嵌入map()</span></a></li></ol></li></ol></div>
     </div>
     
     
