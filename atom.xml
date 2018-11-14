@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.wanglichao.top/"/>
-  <updated>2018-11-13T22:07:53.489Z</updated>
+  <updated>2018-11-14T19:15:55.503Z</updated>
   <id>http://www.wanglichao.top/</id>
   
   <author>
@@ -15,6 +15,109 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Vue学习笔记之条件语句</title>
+    <link href="http://www.wanglichao.top/2018/11/15/Vue-if/"/>
+    <id>http://www.wanglichao.top/2018/11/15/Vue-if/</id>
+    <published>2018-11-15T00:00:00.000Z</published>
+    <updated>2018-11-14T19:15:55.503Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Vue-js条件语句"><a href="#Vue-js条件语句" class="headerlink" title="Vue.js条件语句"></a>Vue.js条件语句</h2><h3 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断:"></a>条件判断:</h3><h4 id="v-if"><a href="#v-if" class="headerlink" title="v-if"></a>v-if</h4><blockquote><p>条件判断使用v-if指令:<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;div id=&quot;app&quot;&gt;<br>    &lt;button @click=&quot;isShow=!isShow&quot;&gt;显示或隐藏&lt;/button&gt;<br>    &lt;p v-if=&quot;isShow&quot;&gt;能看到我吗?&lt;/p&gt;<br>&lt;/div&gt;<br>&lt;script&gt;<br>    new Vue(&#123;<br>        el: &quot;#app&quot;,<br>        data: &#123;<br>            isShow: true<br>        &#125;<br>    &#125;)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure></p></blockquote><h4 id="v-else"><a href="#v-else" class="headerlink" title="v-else"></a>v-else</h4><blockquote><p>可以用v-else指令给v-if添加一个else块:<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;div id=&quot;app&quot;&gt;<br>&lt;div v-if=&quot;Math.random() &gt; 0.5&quot;&gt;<br>  哈哈<br>&lt;/div&gt;<br>&lt;div v-else&gt;<br>  呵呵<br>&lt;/div&gt;<br>&lt;/div&gt;<br>&lt;script&gt;<br>new Vue(&#123;<br>  el: &apos;#app&apos;<br>&#125;)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure></p></blockquote><h4 id="v-else-if"><a href="#v-else-if" class="headerlink" title="v-else-if"></a>v-else-if</h4><blockquote><p>v-else-if 在2.1.0中新增,用作v-if的else-if块,可以链式使用;<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;div id=&quot;app&quot;&gt;<br>    &lt;div v-if=&quot;type === &apos;A&apos;&quot;&gt;<br>      A<br>    &lt;/div&gt;<br>    &lt;div v-else-if=&quot;type === &apos;B&apos;&quot;&gt;<br>      B<br>    &lt;/div&gt;<br>    &lt;div v-else-if=&quot;type === &apos;C&apos;&quot;&gt;<br>      C<br>    &lt;/div&gt;<br>    &lt;div v-else&gt;<br>      Not A/B/C<br>    &lt;/div&gt;<br>&lt;/div&gt;<br></code></pre></td></tr></table></figure></p><p>v-else v-else-if v-else 必须跟在v-if或者v-else之后; </p></blockquote><h4 id="v-show"><a href="#v-show" class="headerlink" title="v-show"></a>v-show</h4><p>根据true或者false来展示或者隐藏元素;<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;div v-show=&quot;true&quot;&gt;&lt;/div&gt;<br></code></pre></td></tr></table></figure></p><h4 id="v-if-和-v-show-的区别"><a href="#v-if-和-v-show-的区别" class="headerlink" title="v-if 和 v-show 的区别"></a>v-if 和 v-show 的区别</h4><blockquote><p>在切换 v-if 块时，Vue.js 有一个局部编译/卸载过程，因为 v-if 之中的模板也可能包括数据绑定或子组件。v-if 是真实的条件渲染，因为它会确保条件块在切换当中合适地销毁与重建条件块内的事件监听器和子组件。</p><p>v-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做——在条件第一次变为真时才开始局部编译（编译会被缓存起来）。</p><p>相比之下，v-show 简单得多——元素始终被编译并保留，只是简单地基于 CSS 切换。</p><p>一般来说，v-if 有更高的切换消耗而 v-show 有更高的初始渲染消耗。因此，如果需要频繁切换 v-show 较好，如果在运行时条件不大可能改变 v-if 较好。</p><p>v-if 是动态添加，当值为 false 时，是完全移除该元素，即 dom 树中不存在该元素。</p><p>v-show 仅是隐藏 / 显示，值为 false 时，该元素依旧存在于 dom 树中。若其原有样式设置了 display: none 则会导致其无法正常显示。</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Vue-js条件语句&quot;&gt;&lt;a href=&quot;#Vue-js条件语句&quot; class=&quot;headerlink&quot; title=&quot;Vue.js条件语句&quot;&gt;&lt;/a&gt;Vue.js条件语句&lt;/h2&gt;&lt;h3 id=&quot;条件判断&quot;&gt;&lt;a href=&quot;#条件判断&quot; class=&quot;head
+      
+    
+    </summary>
+    
+      <category term="笔记" scheme="http://www.wanglichao.top/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="前端" scheme="http://www.wanglichao.top/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="JS" scheme="http://www.wanglichao.top/tags/JS/"/>
+    
+      <category term="vue" scheme="http://www.wanglichao.top/tags/vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue学习笔记之循环语句</title>
+    <link href="http://www.wanglichao.top/2018/11/15/Vue-for/"/>
+    <id>http://www.wanglichao.top/2018/11/15/Vue-for/</id>
+    <published>2018-11-15T00:00:00.000Z</published>
+    <updated>2018-11-14T22:02:29.325Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Vue-js-循环语句"><a href="#Vue-js-循环语句" class="headerlink" title="Vue.js 循环语句"></a>Vue.js 循环语句</h2><blockquote><p>循环使用v-for指令;<br>v-for指令需要以 list in lists 形式的特殊语法,lists是源数据数组并且list时数组元素迭代的别名;<br>v-for可以绑定数据到数组来渲染一个列表;<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;div id=&quot;app&quot;&gt;<br>    &lt;ul&gt;<br>        &lt;li v-for=&quot;(arr, index) in array&quot; :key=&quot;index&quot;&gt;&#123;&#123;arr&#125;&#125;&lt;/li&gt;<br>    &lt;/ul&gt;<br>&lt;/div&gt;<br>&lt;script&gt;<br>    new Vue(&#123;<br>        el: &quot;#app&quot;,<br>        data: &#123;<br>            array: [&apos;google&apos;, &apos;baidu&apos;, &apos;taobao&apos;, &apos;facebook&apos;]<br>        &#125;<br>    &#125;)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure></p><p>也可以在模板中使用<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;div id=&quot;app&quot;&gt;<br>    &lt;ul&gt;<br>        &lt;template v-for=&quot;arr in array&quot;&gt;<br>            &lt;li&gt;&#123;&#123;arr&#125;&#125;&lt;/li&gt;<br>        &lt;/template&gt;<br>    &lt;/ul&gt;<br>&lt;/div&gt;<br>&lt;script&gt;<br>    new Vue(&#123;<br>        el: &quot;#app&quot;,<br>        data: &#123;<br>            array: [&apos;google&apos;, &apos;baidu&apos;, &apos;taobao&apos;, &apos;facebook&apos;]<br>        &#125;<br>    &#125;)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure></p></blockquote><h4 id="v-for-迭代对象"><a href="#v-for-迭代对象" class="headerlink" title="v-for 迭代对象"></a>v-for 迭代对象</h4><blockquote><p>v-for 可以通过一个对象的属性来迭代数据:<br>第一个参数是value,第二个参数(可选)是key,第三个参数(可选)是index;<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;div id=&quot;app&quot;&gt;<br>    &lt;ul&gt;<br>        &lt;template v-for=&quot;(value,key,index) in object&quot;&gt;<br>            &lt;li&gt;&#123;&#123;index&#125;&#125;:&#123;&#123;key&#125;&#125;: &#123;&#123;value&#125;&#125;&lt;/li&gt;<br>        &lt;/template&gt;<br>    &lt;/ul&gt;<br>&lt;/div&gt;<br>&lt;script&gt;<br>    new Vue(&#123;<br>        el: &quot;#app&quot;,<br>        data: &#123;<br>            object: &#123;<br>                site1:&apos;google&apos;,<br>                site2:&apos;baidu&apos;,<br>                site3:&apos;taobao&apos;,<br>                site4:&apos;facebook&apos;<br>            &#125;<br>        &#125;<br>    &#125;)<br></code></pre></td></tr></table></figure></p><p>v-for可以直接迭代整数<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;div id=&quot;app&quot;&gt;<br>  &lt;ul&gt;<br>    &lt;li v-for=&quot;n in 10&quot;&gt;<br>     &#123;&#123; n &#125;&#125;<br>    &lt;/li&gt;<br>  &lt;/ul&gt;<br>&lt;/div&gt;<br></code></pre></td></tr></table></figure></p><p>嵌套迭代对象<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;div id=&quot;app&quot;&gt;<br>    &lt;ul&gt;<br>        &lt;li v-for=&quot;(value,key,index) in object&quot;&gt;<br>            &lt;p v-if=&quot;typeof value != &apos;object&apos;&quot;&gt;&#123;&#123;value&#125;&#125; ===&gt; &#123;&#123;key&#125;&#125;&lt;/p&gt;<br>            &lt;p v-else&gt;嵌套对象:&#123;&#123;value&#125;&#125;&lt;/p&gt;<br>            &lt;ul v-if=&quot;typeof value == &apos;object&apos;&quot;&gt;<br>                &lt;li v-for=&quot;(val, key, index) in value&quot;&gt;<br>                    &#123;&#123;val&#125;&#125; ===&gt; &#123;&#123;key&#125;&#125;<br>                &lt;/li&gt;<br>            &lt;/ul&gt;<br>        &lt;/li&gt;<br>    &lt;/ul&gt;<br>&lt;/div&gt;<br>&lt;script&gt;<br>    new Vue(&#123;<br>        el: &quot;#app&quot;,<br>        data: &#123;<br>            object: &#123;<br>                site1: &apos;谷歌&apos;,<br>                site2: &apos;百度&apos;,<br>                site3: &apos;淘宝&apos;,<br>                object2: &#123;<br>                    name1: &quot;京东&quot;,<br>                    name2: &quot;天猫&quot;<br>                &#125;<br>            &#125;<br>        &#125;<br>    &#125;)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure></p><p>乘法表<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;div id=&quot;app&quot;&gt;<br>    &lt;div v-for=&quot;n in 9&quot;&gt;<br>        &lt;b v-for=&quot;m in n&quot;&gt;<br>            &#123;&#123;m&#125;&#125;*&#123;&#123;n&#125;&#125;=&#123;&#123;m*n&#125;&#125;<br>        &lt;/b&gt;<br>    &lt;/div&gt;<br>&lt;/div&gt;<br>&lt;script&gt;<br>    new Vue(&#123;<br>        el: &quot;#app&quot;<br>    &#125;)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Vue-js-循环语句&quot;&gt;&lt;a href=&quot;#Vue-js-循环语句&quot; class=&quot;headerlink&quot; title=&quot;Vue.js 循环语句&quot;&gt;&lt;/a&gt;Vue.js 循环语句&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;循环使用v-for指令;&lt;br&gt;v-for
+      
+    
+    </summary>
+    
+      <category term="笔记" scheme="http://www.wanglichao.top/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="前端" scheme="http://www.wanglichao.top/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="JS" scheme="http://www.wanglichao.top/tags/JS/"/>
+    
+      <category term="vue" scheme="http://www.wanglichao.top/tags/vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue学习笔记之计算属性</title>
+    <link href="http://www.wanglichao.top/2018/11/15/Vue-Computed/"/>
+    <id>http://www.wanglichao.top/2018/11/15/Vue-Computed/</id>
+    <published>2018-11-15T00:00:00.000Z</published>
+    <updated>2018-11-14T22:46:56.149Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Vue-js计算属性"><a href="#Vue-js计算属性" class="headerlink" title="Vue.js计算属性"></a>Vue.js计算属性</h2><blockquote><p>计算属性关键词: computed<br>计算属性在处理一些复杂逻辑的时候是非常有用的<br>如: 反转字符串实例的计算属性方式实现:<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;div id=&quot;app&quot;&gt;<br>    &lt;p&gt;反转之前的字符串:----&gt;&#123;&#123;message&#125;&#125;&lt;/p&gt;<br>    &lt;p&gt;反转之后的字符串:----&gt;&#123;&#123;reverseMessage&#125;&#125;&lt;/p&gt;<br>&lt;/div&gt;<br>&lt;script&gt;<br>    new Vue(&#123;<br>        el: &quot;#app&quot;,<br>        data: &#123;<br>            message: &quot;Hello, World!!!&quot;<br>        &#125;,<br>        computed: &#123;<br>            reverseMessage() &#123;<br>                return this.message.split(&quot;&quot;).reverse().join(&apos;&apos;);<br>            &#125;<br>        &#125;<br>    &#125;)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure></p><p>实例中声明了一个计算属性 reversedMessage ;<br>提供的函数将用作属性 vm.reversedMessage 的 getter ;<br>vm.reversedMessage 依赖于 vm.message;<br>在 vm.message 发生改变时，vm.reversedMessage 也会更新;</p></blockquote><h5 id="computed-对比-methods"><a href="#computed-对比-methods" class="headerlink" title="computed 对比 methods"></a>computed 对比 methods</h5><blockquote><p>我们可以使用 methods 来替代 computed，效果上两个都是一样的，&gt; 但是 computed 是基于它的依赖缓存，只有相关依赖发生改变时才会重新取值。<br>而使用 methods ，在重新渲染的时候，函数总会重新调用执行。<br>可以说使用 computed 性能会更好，但是如果不希望缓存，可以使用 methods 属性。<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs undefined">methods: &#123;<br>  reversedMessage2: function () &#123;<br>    return this.message.split(&apos;&apos;).reverse().join(&apos;&apos;)<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure></p></blockquote><h3 id="computed-setter"><a href="#computed-setter" class="headerlink" title="computed setter"></a>computed setter</h3><blockquote><p>computed 属性默认只有getter,不过在需要时也可以提供一个setter;<br>在运行vm.site=”xxx”;的时候,setter会被调用,vm.name和vm.url也会被对应更新;<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;div id=&quot;app&quot;&gt;<br>    &lt;p&gt;&#123;&#123; site &#125;&#125;&lt;/p&gt;<br>&lt;/div&gt;<br>&lt;script&gt;<br>    const vm = new Vue(&#123;<br>        el: &quot;#app&quot;,<br>        data: &#123;<br>            name: &quot;心有远方&quot;,<br>            url: &quot;http://www.wanglichao.top&quot;<br>        &#125;,<br>        computed: &#123;<br>            site: &#123;<br>                get() &#123;<br>                    return this.name + &quot; &quot; + this.url;<br>                &#125;,<br>                set(newValue) &#123;<br>                    let names = newValue.split(&quot; &quot;);<br>                    this.name = names[0];<br>                    this.url = names[names.length - 1]<br>                &#125;<br>            &#125;<br>        &#125;<br>    &#125;);<br>    vm.site = &quot;勇往直前 www.wanglichao.top&quot;;<br>    document.write(&apos;name: &apos; + vm.name);<br>    document.write(&apos;&lt;br&gt;&apos;);<br>    document.write(&apos;url: &apos; + vm.url);<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Vue-js计算属性&quot;&gt;&lt;a href=&quot;#Vue-js计算属性&quot; class=&quot;headerlink&quot; title=&quot;Vue.js计算属性&quot;&gt;&lt;/a&gt;Vue.js计算属性&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;计算属性关键词: computed&lt;br&gt;计算属性
+      
+    
+    </summary>
+    
+      <category term="笔记" scheme="http://www.wanglichao.top/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="前端" scheme="http://www.wanglichao.top/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="JS" scheme="http://www.wanglichao.top/tags/JS/"/>
+    
+      <category term="vue" scheme="http://www.wanglichao.top/tags/vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue-ModuleLanguage</title>
+    <link href="http://www.wanglichao.top/2018/11/15/Vue-ModuleLanguage/"/>
+    <id>http://www.wanglichao.top/2018/11/15/Vue-ModuleLanguage/</id>
+    <published>2018-11-14T22:02:49.000Z</published>
+    <updated>2018-11-14T14:02:49.419Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>React学习笔记之ajax</title>
@@ -40,9 +143,9 @@
     
       <category term="前端" scheme="http://www.wanglichao.top/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="JS" scheme="http://www.wanglichao.top/tags/JS/"/>
-    
       <category term="react" scheme="http://www.wanglichao.top/tags/react/"/>
+    
+      <category term="JS" scheme="http://www.wanglichao.top/tags/JS/"/>
     
   </entry>
   
@@ -70,9 +173,9 @@
     
       <category term="前端" scheme="http://www.wanglichao.top/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="JS" scheme="http://www.wanglichao.top/tags/JS/"/>
-    
       <category term="react" scheme="http://www.wanglichao.top/tags/react/"/>
+    
+      <category term="JS" scheme="http://www.wanglichao.top/tags/JS/"/>
     
   </entry>
   
@@ -100,9 +203,9 @@
     
       <category term="前端" scheme="http://www.wanglichao.top/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="JS" scheme="http://www.wanglichao.top/tags/JS/"/>
-    
       <category term="react" scheme="http://www.wanglichao.top/tags/react/"/>
+    
+      <category term="JS" scheme="http://www.wanglichao.top/tags/JS/"/>
     
   </entry>
   
@@ -130,9 +233,9 @@
     
       <category term="前端" scheme="http://www.wanglichao.top/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="JS" scheme="http://www.wanglichao.top/tags/JS/"/>
-    
       <category term="react" scheme="http://www.wanglichao.top/tags/react/"/>
+    
+      <category term="JS" scheme="http://www.wanglichao.top/tags/JS/"/>
     
   </entry>
   
@@ -160,9 +263,9 @@
     
       <category term="前端" scheme="http://www.wanglichao.top/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="JS" scheme="http://www.wanglichao.top/tags/JS/"/>
-    
       <category term="react" scheme="http://www.wanglichao.top/tags/react/"/>
+    
+      <category term="JS" scheme="http://www.wanglichao.top/tags/JS/"/>
     
   </entry>
   
@@ -192,39 +295,9 @@
     
       <category term="前端" scheme="http://www.wanglichao.top/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="JS" scheme="http://www.wanglichao.top/tags/JS/"/>
-    
       <category term="react" scheme="http://www.wanglichao.top/tags/react/"/>
     
-  </entry>
-  
-  <entry>
-    <title>React学习笔记之State</title>
-    <link href="http://www.wanglichao.top/2018/11/13/React-State/"/>
-    <id>http://www.wanglichao.top/2018/11/13/React-State/</id>
-    <published>2018-11-12T21:28:01.000Z</published>
-    <updated>2018-11-12T18:44:38.821Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="React-State"><a href="#React-State" class="headerlink" title="React State"></a>React State</h2><blockquote><p>React 把组件看成是一个状态机(StateMachines).通过与用户的交互,实现不同的状态,然后渲染UI,让用户界面和数据保持一致;<br>React里,只需更新组件的state,然后根据新的state重新渲染用户界面,而不需要去操作DOM;</p></blockquote><h3 id="将生命周期方法添加到类中"><a href="#将生命周期方法添加到类中" class="headerlink" title="将生命周期方法添加到类中"></a>将生命周期方法添加到类中</h3><blockquote><p>在具有许多组件的应用程序中,在销毁时释放组件所占用的资源非常重要;<br>每当组件第一次加载到DOM中的时候,在React中被称为挂载;<br>当这个组件生成的DOM被移除的时候,在React中被称为卸载;</p></blockquote><h3 id="数据自顶向下流动"><a href="#数据自顶向下流动" class="headerlink" title="数据自顶向下流动"></a>数据自顶向下流动</h3><blockquote><p>父组件或子组件都不能知道某个组件是有状态还是无状态，并且它们不应该关心某组件是被定义为一个函数还是一个类。</p><p>这就是为什么状态通常被称为局部或封装。 除了拥有并设置它的组件外，其它组件不可访问。</p><p>通常被称为自顶向下或单向数据流。 任何状态始终由某些特定组件所有，并且从该状态导出的任何数据或 UI 只能影响树中下方的组件;</p><p>在 React 应用程序中，组件是有状态还是无状态被认为是可能随时间而变化的组件的实现细节。</p><p>我们可以在有状态组件中使用无状态组件，也可以在无状态组件中使用有状态组件。</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;React-State&quot;&gt;&lt;a href=&quot;#React-State&quot; class=&quot;headerlink&quot; title=&quot;React State&quot;&gt;&lt;/a&gt;React State&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;React 把组件看成是一个状态机(Sta
-      
-    
-    </summary>
-    
-      <category term="笔记" scheme="http://www.wanglichao.top/categories/%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="前端" scheme="http://www.wanglichao.top/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="JS" scheme="http://www.wanglichao.top/tags/JS/"/>
-    
-      <category term="react" scheme="http://www.wanglichao.top/tags/react/"/>
     
   </entry>
   
@@ -253,129 +326,9 @@
     
       <category term="前端" scheme="http://www.wanglichao.top/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="JS" scheme="http://www.wanglichao.top/tags/JS/"/>
-    
       <category term="react" scheme="http://www.wanglichao.top/tags/react/"/>
     
-  </entry>
-  
-  <entry>
-    <title>React学习笔记之介绍</title>
-    <link href="http://www.wanglichao.top/2018/11/13/React-anzhuang/"/>
-    <id>http://www.wanglichao.top/2018/11/13/React-anzhuang/</id>
-    <published>2018-11-12T21:28:01.000Z</published>
-    <updated>2018-11-12T18:44:36.212Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="React介绍"><a href="#React介绍" class="headerlink" title="React介绍"></a>React介绍</h2><blockquote><p>React是一个 用于构建用户界面的javascript库<br>React主要用于构建UI,很多人认为React是MVC中的V(视图)<br>React起源于Facebook的内部项目,用来架设Instagram的网站,并于2013年开源<br>React拥有较高的性能,代码逻辑非常简单,越来越多的人开始关注和使用它</p></blockquote><h3 id="React特点"><a href="#React特点" class="headerlink" title="React特点"></a>React特点</h3><blockquote><p>1.声明式设计 - React采用声明范式,可以轻松描述应用<br>2.高效  - React通过对DOM的模拟,最大限度的减少与DOM的交互<br>3.灵活 - React可以与已知的库或框架很好的配合<br>4.JSX - JSX是JavaScript语法的扩展,React开发不一定使用JSX,但建议使用它<br>5.组件 - 通过React构建组件,使得代码更加容易得到复用,能够很好的应用在大项目的开发中<br>6.单向响应的数据流 - React实现了单向响应的数据流,从而减少了重复代码,这也是它为什么比传统数据绑定更简单</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;React介绍&quot;&gt;&lt;a href=&quot;#React介绍&quot; class=&quot;headerlink&quot; title=&quot;React介绍&quot;&gt;&lt;/a&gt;React介绍&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;React是一个 用于构建用户界面的javascript库&lt;br&gt;Reac
-      
-    
-    </summary>
-    
-      <category term="笔记" scheme="http://www.wanglichao.top/categories/%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="前端" scheme="http://www.wanglichao.top/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="JS" scheme="http://www.wanglichao.top/tags/JS/"/>
-    
-      <category term="react" scheme="http://www.wanglichao.top/tags/react/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>React学习笔记之事件处理</title>
-    <link href="http://www.wanglichao.top/2018/11/13/React-Events/"/>
-    <id>http://www.wanglichao.top/2018/11/13/React-Events/</id>
-    <published>2018-11-12T21:28:01.000Z</published>
-    <updated>2018-11-12T19:41:39.462Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="React-事件处理"><a href="#React-事件处理" class="headerlink" title="React 事件处理"></a>React 事件处理</h2><blockquote><p>React 元素的事件处理和DOM元素类似，但是语法上有有点不同；</p><ul><li>React 事件绑定属性的命名采用驼峰式写法，而不是小写；</li><li>如果采用JSX的语法你需要传入一个函数作为事件处理函数，而不是一个字符串（DOM元素的写法）；<br>HTML写法：<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;button onclick=&quot;todoSomething()&quot;&gt;button&lt;/button&gt;<br></code></pre></td></tr></table></figure></li></ul><p>React写法：<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;button onClick=&quot;todoSomething&quot;&gt;button&lt;/button&gt;<br></code></pre></td></tr></table></figure></p><p>在React中另一个不同是不能使用返回false的方式阻止默认行为，而必须<br>明确的使用preventDefault；<br>使用React的时候通常不需要使用addEventListener为一个已创建的DOM元素添加监视器，仅仅需要在这个元素渲染的时候提供一个监视器；<br>当使用ES6 class语法来定义一个组件的时候，事件处理器会成为类的一个方法。例如：Toggle组件渲染一个让用户切换开关状态的按钮：<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs undefined">class Toggle extends React.Component &#123;<br>        constructor(props) &#123;<br>            super(props);<br>            this.state = &#123;<br>                isToggle: true<br>            &#125;;<br>            this.handleClick = this.handleClick.bind(this);<br>        &#125;<br><br>        handleClick() &#123;<br>            this.setState(prevState =&gt; (&#123;<br>                isToggle: !prevState.isToggle<br>            &#125;))<br>        &#125;<br><br>        render() &#123;<br>            return (<br>                &lt;button onClick=&#123;this.handleClick&#125;&gt;<br>                    &#123;this.state.isToggle ? &apos;ON&apos; : &apos;OFF&apos;&#125;<br>                &lt;/button&gt;<br>            )<br>        &#125;<br>    &#125;<br><br>    ReactDOM.render(<br>        &lt;Toggle /&gt;,<br>        document.getElementById(&quot;example&quot;)<br>    )<br></code></pre></td></tr></table></figure></p><p>必须谨慎对待JSX回调函数中的this， 类的方法默认是不会绑定this的<br>如果忘记绑定this.handleClick并把它传入onClick，当调用这个函数的时候this的值会是undefined。<br>这不是React的特殊行为，它是函数如何在javaScript中运行的一部分。通常情况下，如果没有在方法后面添加（），例如：onClick={this.handleClick},应该为这个方法绑定this。<br>如果使用bind觉得有点烦，可以有两种解决方法：</p><ul><li><p>如果你正在使用实验性的属性初始化器语法，你可以使用属性初始化器来正确的绑定回调函数：</p><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs undefined">class LoggingButton extends React.Component &#123;<br>  // 这个语法确保了 `this` 绑定在  handleClick 中<br>  handleClick = () =&gt; &#123;<br>    console.log(&apos;this is:&apos;, this);<br>  &#125;<br> <br>  render() &#123;<br>    return (<br>      &lt;button onClick=&#123;this.handleClick&#125;&gt;<br>        Click me<br>      &lt;/button&gt;<br>    );<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure></li><li><p>如果你没有使用属性初始化器语法，你可以在回调函数中使用 箭头函数：</p><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs undefined">class LoggingButton extends React.Component &#123;<br>  handleClick() &#123;<br>    console.log(&apos;this is:&apos;, this);<br>  &#125;<br> <br>  render() &#123;<br>    //  这个语法确保了 `this` 绑定在  handleClick 中<br>    return (<br>      &lt;button onClick=&#123;(e) =&gt; this.handleClick(e)&#125;&gt;<br>        Click me<br>      &lt;/button&gt;<br>    );<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure></li></ul><p>这个语法有个问题就是么次LoggingButton渲染的时候都会创建一个不同的回调函数。在大多数情况下，这没有问题。然而如果这个回调函数作为一个属性值传入低阶组件，这些组件可能会进行额外的重新渲染。通常建议在构造函数中绑定或使用属性初始化器语法来避免这类性能问题。</p></blockquote><h3 id="向事件处理程序传递参数"><a href="#向事件处理程序传递参数" class="headerlink" title="向事件处理程序传递参数"></a>向事件处理程序传递参数</h3><blockquote><p>通常我们会为事件处理程序传递额外的参数。例如，如果是id是要删除的那一行的id，以下两种方式都可以向事件处理程序传递参数：<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;button onClick=&#123;(e) =&gt; this.deleteSome(id, e)&#125;&gt;Delete&lt;/button&gt;<br>&lt;button onClick=&#123;this.deleteSome.bind(this, id)&#125;&gt;Delete&lt;/button&gt;<br></code></pre></td></tr></table></figure></p><p>这两种方式是等价的。<br>参数e作为React事件对象将会被作为第二个参数进行传递。<br>通过箭头函数的方式，事件对象必须显式的进行传递。<br>通过bind的方式，事件对象以及更多的参数将会被隐式的进行传递。<br>值得注意的是,通过bind方式向监听函数传参，在类组件中定义的监听函数，事件对象e要排在所传递参数的后面。例如：<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs undefined">class Popper extends React.Component &#123;<br>    constructor(props) &#123;<br>        super(props);<br>        this.state = &#123;<br>            name: &apos;Hello, React&apos;<br>        &#125;<br>    &#125;<br>    preventPop(name, e) &#123;<br>        e.preventDefault();<br>        console.log(name);<br>    &#125;<br>    render() &#123;<br>        return (<br>            &lt;div&gt;<br>                &lt;p&gt;hello&lt;/p&gt;<br>                &#123;/*通过bind()方法传递参数*/&#125;<br>                &lt;a href=&quot;http://www.wanglichao.top&quot;<br>                    onClick=&#123;this.preventPop.bind(this, this.state.name)&#125;<br>                &gt;Click&lt;/a&gt;<br>            &lt;/div&gt;<br>        )<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;React-事件处理&quot;&gt;&lt;a href=&quot;#React-事件处理&quot; class=&quot;headerlink&quot; title=&quot;React 事件处理&quot;&gt;&lt;/a&gt;React 事件处理&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;React 元素的事件处理和DOM元素类似，但是语
-      
-    
-    </summary>
-    
-      <category term="笔记" scheme="http://www.wanglichao.top/categories/%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="前端" scheme="http://www.wanglichao.top/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="JS" scheme="http://www.wanglichao.top/tags/JS/"/>
-    
-      <category term="react" scheme="http://www.wanglichao.top/tags/react/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>React学习笔记之JSX</title>
-    <link href="http://www.wanglichao.top/2018/11/13/React-JSX/"/>
-    <id>http://www.wanglichao.top/2018/11/13/React-JSX/</id>
-    <published>2018-11-12T21:28:01.000Z</published>
-    <updated>2018-11-12T18:44:41.021Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="React-JSX"><a href="#React-JSX" class="headerlink" title="React JSX"></a>React JSX</h2><blockquote><p>React 使用JSX来替代常规的JavaScript;<br>JSX是一个看起来像XML的JavaScript语法扩展;<br>我们不需要一定使用JSX,但它有以下优点:</p><ul><li>JSX执行更快,因为它在编译为JavaScript代码后进行了优化;</li><li>它是安全类型的,在编译过程中就能发现错误;</li><li>使用JSX编写模板更加简单快速</li></ul></blockquote><h3 id="使用JSX"><a href="#使用JSX" class="headerlink" title="使用JSX"></a>使用JSX</h3><blockquote><p>JSX使用起来类似HTML;<br>JSX代码可以放在一个独立的文件上,例如:创建一个js文件,然后在HTML中引入该js文件;<br> <figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs undefined"> ReactDOM.render(<br>    &lt;h1&gt;Hello React!&lt;/h1&gt;,<br>    document.getElementById(&quot;box&quot;)<br>);<br></code></pre></td></tr></table></figure></p></blockquote><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;body&gt;<br>    &lt;!--创建一个JS文件引入--&gt;<br>    &lt;div id=&quot;box&quot;&gt;&lt;/div&gt;<br>    &lt;script type=&quot;text/babel&quot; src=&quot;hello_react.js&quot;&gt;&lt;/script&gt;<br>&lt;/body&gt;<br></code></pre></td></tr></table></figure><h3 id="JavaScript表达式"><a href="#JavaScript表达式" class="headerlink" title="JavaScript表达式"></a>JavaScript表达式</h3><blockquote><p>我们可以在 JSX 中使用 JavaScript 表达式。表达式写在花括号 {} 中<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs undefined">let i = 1;<br>ReactDOM.render(<br>    &lt;h1&gt;&#123;i == 1 ? &apos;True&apos; : &apos;False&apos;&#125;&lt;/h1&gt;,<br>    document.getElementById(&quot;box&quot;)<br>);<br></code></pre></td></tr></table></figure></p><p>在 JSX 中不能使用 if else 语句，但可以使用 conditional (三元运算) 表达式来替代。以下实例中如果变量 i 等于 1 浏览器将输出 true, 如果修改 i 的值，则会输出 false.</p></blockquote><h3 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h3><blockquote><p>React 推荐使用内联样式。我们可以使用 camelCase 语法来设置内联样式. React 会在指定元素数字后自动添加 px<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs undefined">let myStyle = &#123;<br>    fontSize: 50,<br>    color: &apos;#ff0000&apos;<br>&#125;;<br><br>ReactDOM.render(<br>    &lt;h1 style=&#123;myStyle&#125;&gt;我是菜鸟&lt;/h1&gt;,<br>    document.getElementById(&quot;box&quot;)<br>);<br></code></pre></td></tr></table></figure></p></blockquote><h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><blockquote><p>注释需要写在花括号中<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs undefined">ReactDOM.render(<br>    &lt;div&gt;<br>    &lt;h1&gt;哈哈哈&lt;/h1&gt;<br>    &#123;/*注释...*/&#125;<br>     &lt;/div&gt;,<br>    document.getElementById(&apos;example&apos;)<br>);<br></code></pre></td></tr></table></figure></p></blockquote><h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p>JSX 允许在模板中插入数组，数组会自动展开所有成员：<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs undefined">let arr = [<br>    &lt;h1&gt;我是菜鸟&lt;/h1&gt;,<br>    &lt;h2&gt;正在学习&lt;/h2&gt;,<br>    &lt;h3&gt;不仅技术&lt;/h3&gt;,<br>    &lt;h4&gt;更是梦想&lt;/h4&gt;<br>];<br><br>ReactDOM.render(<br>    &lt;h1&gt;&#123;arr&#125;&lt;/h1&gt;,<br>    document.getElementById(&quot;box&quot;)<br>);<br></code></pre></td></tr></table></figure></p><h3 id="HTML标签-VS-React组件"><a href="#HTML标签-VS-React组件" class="headerlink" title="HTML标签 VS React组件"></a>HTML标签 VS React组件</h3><blockquote><p>React 可以渲染 HTML 标签 (strings) 或 React 组件 (classes)。<br>要渲染 HTML 标签，只需在 JSX 里使用小写字母的标签名。<br>React 的 JSX 使用大、小写的约定来区分本地组件的类和 HTML 标签。<br>要渲染 React 组件，只需创建一个大写字母开头的本地变量。</p><p>注意:<br>由于 JSX 就是 JavaScript，一些标识符像 class 和 for 不建议作为 XML 属性名。作为替代，React DOM 使用 className 和 htmlFor 来做对应的属性。</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;React-JSX&quot;&gt;&lt;a href=&quot;#React-JSX&quot; class=&quot;headerlink&quot; title=&quot;React JSX&quot;&gt;&lt;/a&gt;React JSX&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;React 使用JSX来替代常规的JavaScript;&lt;
-      
-    
-    </summary>
-    
-      <category term="笔记" scheme="http://www.wanglichao.top/categories/%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="前端" scheme="http://www.wanglichao.top/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="JS" scheme="http://www.wanglichao.top/tags/JS/"/>
-    
-      <category term="react" scheme="http://www.wanglichao.top/tags/react/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>React学习笔记之组件</title>
-    <link href="http://www.wanglichao.top/2018/11/13/React-component/"/>
-    <id>http://www.wanglichao.top/2018/11/13/React-component/</id>
-    <published>2018-11-12T21:28:01.000Z</published>
-    <updated>2018-11-12T18:44:37.399Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="React-组件"><a href="#React-组件" class="headerlink" title="React 组件"></a>React 组件</h2><blockquote><p>封装一个组件:<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs undefined">// 使用函数定义一个组件<br>function Message(props) &#123;<br>    return &lt;h1&gt;Hello React!&lt;/h1&gt;;<br>&#125;<br> <br>const element = &lt;Message /&gt;;<br> <br>ReactDOM.render(<br>    element,<br>    document.getElementById(&apos;example&apos;)<br>);<br></code></pre></td></tr></table></figure></p><p>也可以使用ES6 class来定义一个组件<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs undefined">class Welcome extends React.Component &#123;<br>  render() &#123;<br>    return &lt;h1&gt;Hello React!&lt;/h1&gt;;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure></p><p>const element = <hellomessage> 为用户自定义的组件。<br>注意，原生 HTML 元素名以小写字母开头，而自定义的 React 类名以大写字母开头，比如 HelloMessage 不能写成 helloMessage。除此之外还需要注意组件类只能包含一个顶层标签，否则也会报错。</hellomessage></p><p>如果需要向组件传递参数，可以使用 this.props 对象<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;script type=&quot;text/babel&quot;&gt;<br>        function HelloMessage(props) &#123;<br>            return &lt;h1&gt;Hello, &#123;props.name&#125;!&lt;/h1&gt;<br>        &#125;<br>        const element = &lt;HelloMessage name=&apos;React&apos; /&gt;;<br>        ReactDOM.render(<br>            element,<br>            document.getElementById(&apos;box&apos;)<br>        )<br>    &lt;/script&gt;<br></code></pre></td></tr></table></figure></p><p>以上实例中name属性通过proops.name来获取<br><code>注意，在添加属性时， class 属性需要写成 className ，for 属性需要写成 htmlFor ，这是因为 class 和 for 是 JavaScript 的保留字。</code></p></blockquote><h3 id="复合组件"><a href="#复合组件" class="headerlink" title="复合组件"></a>复合组件</h3><blockquote><p>我们可以通过创建多个组件来合成一个组件，即把组件的不同功能点进行分离。<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs undefined">function Name(props) &#123;<br>            return &lt;h1&gt;网站名称: &#123;props.name&#125;&lt;/h1&gt;<br>        &#125;<br>        function Url(props) &#123;<br>            return &lt;h1&gt;网站地址: &#123;props.url&#125;&lt;/h1&gt;<br>        &#125;<br>        function Nickname(props) &#123;<br>            return &lt;h1&gt;网站小名: &#123;props.nickname&#125;&lt;/h1&gt;<br>        &#125;<br>        function App() &#123;<br>            return (<br>                &lt;div&gt;<br>                    &lt;Name name=&apos;勇往直前&apos;/&gt;<br>                    &lt;Url url=&quot;http://www.wanglichao.top&quot;/&gt;<br>                    &lt;Nickname nickname=&quot;心有远方&quot;/&gt;<br>                &lt;/div&gt;<br>            )<br>        &#125;<br>        ReactDOM.render(<br>            &lt;App /&gt;,<br>            document.getElementById(&apos;box&apos;)<br>        )<br></code></pre></td></tr></table></figure></p><p>实例中 App 组件使用了 Name、Url 和 Nickname 组件来输出对应的信息。</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;React-组件&quot;&gt;&lt;a href=&quot;#React-组件&quot; class=&quot;headerlink&quot; title=&quot;React 组件&quot;&gt;&lt;/a&gt;React 组件&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;封装一个组件:&lt;br&gt;&lt;figure class=&quot;hljs hi
-      
-    
-    </summary>
-    
-      <category term="笔记" scheme="http://www.wanglichao.top/categories/%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="前端" scheme="http://www.wanglichao.top/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="JS" scheme="http://www.wanglichao.top/tags/JS/"/>
-    
-      <category term="react" scheme="http://www.wanglichao.top/tags/react/"/>
     
   </entry>
   
@@ -403,27 +356,26 @@
     
       <category term="前端" scheme="http://www.wanglichao.top/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="JS" scheme="http://www.wanglichao.top/tags/JS/"/>
-    
       <category term="react" scheme="http://www.wanglichao.top/tags/react/"/>
+    
+      <category term="JS" scheme="http://www.wanglichao.top/tags/JS/"/>
     
   </entry>
   
   <entry>
-    <title>React学习笔记之渲染</title>
-    <link href="http://www.wanglichao.top/2018/11/13/React-render/"/>
-    <id>http://www.wanglichao.top/2018/11/13/React-render/</id>
+    <title>React学习笔记之安装</title>
+    <link href="http://www.wanglichao.top/2018/11/13/React-install/"/>
+    <id>http://www.wanglichao.top/2018/11/13/React-install/</id>
     <published>2018-11-12T21:28:01.000Z</published>
-    <updated>2018-11-12T18:44:33.696Z</updated>
+    <updated>2018-11-13T14:08:41.095Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="React元素渲染"><a href="#React元素渲染" class="headerlink" title="React元素渲染"></a>React元素渲染</h2><blockquote><p>元素是构成React应用的最小单位，它用于描述屏幕上输出的内容。<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">const element = &lt;h1&gt;Hello,React!&lt;/h1&gt;;<br></code></pre></td></tr></table></figure></p><p>与浏览器的DOM元素不同，React当中的元素事实上是普通的对象， React DOM可以确保浏览器DOM的数据内容与React元素保持一致。</p></blockquote><h3 id="将元素渲染到DOM中"><a href="#将元素渲染到DOM中" class="headerlink" title="将元素渲染到DOM中"></a>将元素渲染到DOM中</h3><blockquote><p>首先，在一个html页面中添加一个id=“example”的div<br>在此div中的所有内容都将由React DOM来管理，所以我们将其称之为“根”DOM节点<br>用React开发应用时一般只会定义一个根节点，但如果是在一个已有的项目中引入React的话，可能会需要在不同部分单独定义React根节点。</p></blockquote><h3 id="更新元素渲染"><a href="#更新元素渲染" class="headerlink" title="更新元素渲染"></a>更新元素渲染</h3><blockquote><p>React 元素都是不可变的，当元素被创建之后，是无法改变其内容或属性的。<br>目前更新界面的唯一办法就是创建一个新的元素，然后将它传入React DOM.render()方法；</p></blockquote><h3 id="React-只会更新必要的部分"><a href="#React-只会更新必要的部分" class="headerlink" title="React 只会更新必要的部分"></a>React 只会更新必要的部分</h3><blockquote><p>值得注意的是，React　DOM首先会比较元素内容先后的不同，而在渲染过程中只会更新改变了的部分。</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<h2 id="React-安装"><a href="#React-安装" class="headerlink" title="React 安装"></a>React 安装</h2><h3 id="React-可以直接下载使用-也可以使用CDN"><a href="#React-可以直接下载使用-也可以使用CDN" class="headerlink" title="React 可以直接下载使用,也可以使用CDN;"></a>React 可以直接下载使用,也可以使用CDN;</h3><blockquote><p>Staticfile CDN 的 React CDN 库:</p></blockquote><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;script src=&quot;https://cdn.staticfile.org/react/16.4.0/umd/react.development.js&quot;&gt;&lt;/script&gt;<br>&lt;script src=&quot;https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js&quot;&gt;&lt;/script&gt;<br>&lt;!-- 生产环境中不建议使用 --&gt;<br>&lt;script src=&quot;https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js&quot;&gt;&lt;/script&gt;<br></code></pre></td></tr></table></figure><blockquote><p>官方提供的DCN地址:<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;script src=&quot;https://unpkg.com/react@16/umd/react.development.js&quot;&gt;&lt;/script&gt;<br>&lt;script src=&quot;https://unpkg.com/react-dom@16/umd/react-dom.development.js&quot;&gt;&lt;/script&gt;<br>&lt;!-- 生产环境中不建议使用 --&gt;<br>&lt;script src=&quot;https://unpkg.com/babel-standalone@6.15.0/babel.min.js&quot;&gt;&lt;/script&gt;<br></code></pre></td></tr></table></figure></p><p>输出Hello,React!的实例<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;!DOCTYPE html&gt;<br>&lt;html&gt;<br>&lt;head&gt;<br>&lt;meta charset=&quot;UTF-8&quot; /&gt;<br>&lt;title&gt;Hello React!&lt;/title&gt;<br>&lt;script src=&quot;https://cdn.staticfile.org/react/16.4.0/umd/react.development.js&quot;&gt;&lt;/script&gt;<br>&lt;script src=&quot;https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js&quot;&gt;&lt;/script&gt;<br>&lt;script src=&quot;https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js&quot;&gt;&lt;/script&gt;<br>&lt;/head&gt;<br>&lt;body&gt;<br> <br>&lt;div id=&quot;app&quot;&gt;&lt;/div&gt;<br>&lt;script type=&quot;text/babel&quot;&gt;<br>ReactDOM.render(<br>    &lt;h1&gt;Hello,React!&lt;/h1&gt;,<br>    document.getElementById(&apos;app&apos;)<br>);<br>&lt;/script&gt;<br> <br>&lt;/body&gt;<br>&lt;/html&gt;<br></code></pre></td></tr></table></figure></p><p>实例中需要3个库 react / react-DOM / babel</p><ul><li>react -&gt; React的核心库</li><li>react-dom -&gt; 提供与DOM相关的功能</li><li>babel -&gt;babel可以将ES6代码转为ES5代码,这就可以在不支持ES6的浏览器上执行React代码,babel内嵌了对JSX的支持<br>注意:如果需要使用JSX,则script标签的type属性需要设置为text/babel</li></ul></blockquote><h3 id="通过npm使用React"><a href="#通过npm使用React" class="headerlink" title="通过npm使用React"></a>通过npm使用React</h3><p>国内简易使用cnpm代替npm安装package;<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined">$ npm install -g cnpm --registry=https://registry.npm.taobao.org<br>$ npm config set registry https://registry.npm.taobao.org<br></code></pre></td></tr></table></figure></p><blockquote><p>这样就可以使用cnpm命令来安装模块了<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">$ cnpm install [packagename]<br></code></pre></td></tr></table></figure></p></blockquote><h3 id="使用create-react-app-快速构建React开发环境"><a href="#使用create-react-app-快速构建React开发环境" class="headerlink" title="使用create-react-app 快速构建React开发环境"></a>使用create-react-app 快速构建React开发环境</h3><blockquote><p>create-react-app 是来自于facebook，通过该命令我们无需配置就能快速构建React开发环境。<br>create-react-app 自动创建的项目是基于Webpack + ES6.<br>执行以下命令创建项目：<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs undefined">$ cnpm install -g create-react-app<br>$ create-react-app [my-app]<br>$ cd [my-app]<br>$ npm start<br></code></pre></td></tr></table></figure></p><p>在浏览器中打开<a href="http://localhost:3000，就会呈现项目页面" target="_blank" rel="noopener">http://localhost:3000，就会呈现项目页面</a></p></blockquote><p>React 代码的书写格式和以前的 JS 有很大的不同，下面通过对这段代码进行分析了解一下他。</p><p>以前使用JS 定义一个变量使用 var 现在用 const：</p><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">const div = document.createElement(&apos;div&apos;);<br></code></pre></td></tr></table></figure><p>ReactDOM.render(…) 是渲染方法，所有的 js,html 都可通过它进行渲染绘制，他又两个参数，内容和渲染目标 js 对象。</p><p>内容就是要在渲染目标中显示的东西，可以是一个React 部件，也可以是一段HTML或TEXT文本。渲染目标JS对象，就是一个DIV或TABEL,或TD 等HTML的节点对象。</p><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">ReactDOM.render(&lt;App /&gt;, div);<br></code></pre></td></tr></table></figure><p>unmountComponentAtNode() 这个方法是解除渲染挂载，作用和 render 刚好相反，也就清空一个渲染目标中的 React 部件或 html 内容。</p><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">ReactDOM.unmountComponentAtNode(div);<br></code></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;React元素渲染&quot;&gt;&lt;a href=&quot;#React元素渲染&quot; class=&quot;headerlink&quot; title=&quot;React元素渲染&quot;&gt;&lt;/a&gt;React元素渲染&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;元素是构成React应用的最小单位，它用于描述屏幕上输出的
+        &lt;h2 id=&quot;React-安装&quot;&gt;&lt;a href=&quot;#React-安装&quot; class=&quot;headerlink&quot; title=&quot;React 安装&quot;&gt;&lt;/a&gt;React 安装&lt;/h2&gt;&lt;h3 id=&quot;React-可以直接下载使用-也可以使用CDN&quot;&gt;&lt;a href=&quot;#React-
       
     
     </summary>
@@ -433,9 +385,181 @@
     
       <category term="前端" scheme="http://www.wanglichao.top/tags/%E5%89%8D%E7%AB%AF/"/>
     
+      <category term="react" scheme="http://www.wanglichao.top/tags/react/"/>
+    
       <category term="JS" scheme="http://www.wanglichao.top/tags/JS/"/>
     
+  </entry>
+  
+  <entry>
+    <title>React学习笔记之介绍</title>
+    <link href="http://www.wanglichao.top/2018/11/13/React-anzhuang/"/>
+    <id>http://www.wanglichao.top/2018/11/13/React-anzhuang/</id>
+    <published>2018-11-12T21:28:01.000Z</published>
+    <updated>2018-11-12T18:44:36.212Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="React介绍"><a href="#React介绍" class="headerlink" title="React介绍"></a>React介绍</h2><blockquote><p>React是一个 用于构建用户界面的javascript库<br>React主要用于构建UI,很多人认为React是MVC中的V(视图)<br>React起源于Facebook的内部项目,用来架设Instagram的网站,并于2013年开源<br>React拥有较高的性能,代码逻辑非常简单,越来越多的人开始关注和使用它</p></blockquote><h3 id="React特点"><a href="#React特点" class="headerlink" title="React特点"></a>React特点</h3><blockquote><p>1.声明式设计 - React采用声明范式,可以轻松描述应用<br>2.高效  - React通过对DOM的模拟,最大限度的减少与DOM的交互<br>3.灵活 - React可以与已知的库或框架很好的配合<br>4.JSX - JSX是JavaScript语法的扩展,React开发不一定使用JSX,但建议使用它<br>5.组件 - 通过React构建组件,使得代码更加容易得到复用,能够很好的应用在大项目的开发中<br>6.单向响应的数据流 - React实现了单向响应的数据流,从而减少了重复代码,这也是它为什么比传统数据绑定更简单</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;React介绍&quot;&gt;&lt;a href=&quot;#React介绍&quot; class=&quot;headerlink&quot; title=&quot;React介绍&quot;&gt;&lt;/a&gt;React介绍&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;React是一个 用于构建用户界面的javascript库&lt;br&gt;Reac
+      
+    
+    </summary>
+    
+      <category term="笔记" scheme="http://www.wanglichao.top/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="前端" scheme="http://www.wanglichao.top/tags/%E5%89%8D%E7%AB%AF/"/>
+    
       <category term="react" scheme="http://www.wanglichao.top/tags/react/"/>
+    
+      <category term="JS" scheme="http://www.wanglichao.top/tags/JS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React学习笔记之组件</title>
+    <link href="http://www.wanglichao.top/2018/11/13/React-component/"/>
+    <id>http://www.wanglichao.top/2018/11/13/React-component/</id>
+    <published>2018-11-12T21:28:01.000Z</published>
+    <updated>2018-11-12T18:44:37.399Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="React-组件"><a href="#React-组件" class="headerlink" title="React 组件"></a>React 组件</h2><blockquote><p>封装一个组件:<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs undefined">// 使用函数定义一个组件<br>function Message(props) &#123;<br>    return &lt;h1&gt;Hello React!&lt;/h1&gt;;<br>&#125;<br> <br>const element = &lt;Message /&gt;;<br> <br>ReactDOM.render(<br>    element,<br>    document.getElementById(&apos;example&apos;)<br>);<br></code></pre></td></tr></table></figure></p><p>也可以使用ES6 class来定义一个组件<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs undefined">class Welcome extends React.Component &#123;<br>  render() &#123;<br>    return &lt;h1&gt;Hello React!&lt;/h1&gt;;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure></p><p>const element = <hellomessage> 为用户自定义的组件。<br>注意，原生 HTML 元素名以小写字母开头，而自定义的 React 类名以大写字母开头，比如 HelloMessage 不能写成 helloMessage。除此之外还需要注意组件类只能包含一个顶层标签，否则也会报错。</hellomessage></p><p>如果需要向组件传递参数，可以使用 this.props 对象<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;script type=&quot;text/babel&quot;&gt;<br>        function HelloMessage(props) &#123;<br>            return &lt;h1&gt;Hello, &#123;props.name&#125;!&lt;/h1&gt;<br>        &#125;<br>        const element = &lt;HelloMessage name=&apos;React&apos; /&gt;;<br>        ReactDOM.render(<br>            element,<br>            document.getElementById(&apos;box&apos;)<br>        )<br>    &lt;/script&gt;<br></code></pre></td></tr></table></figure></p><p>以上实例中name属性通过proops.name来获取<br><code>注意，在添加属性时， class 属性需要写成 className ，for 属性需要写成 htmlFor ，这是因为 class 和 for 是 JavaScript 的保留字。</code></p></blockquote><h3 id="复合组件"><a href="#复合组件" class="headerlink" title="复合组件"></a>复合组件</h3><blockquote><p>我们可以通过创建多个组件来合成一个组件，即把组件的不同功能点进行分离。<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs undefined">function Name(props) &#123;<br>            return &lt;h1&gt;网站名称: &#123;props.name&#125;&lt;/h1&gt;<br>        &#125;<br>        function Url(props) &#123;<br>            return &lt;h1&gt;网站地址: &#123;props.url&#125;&lt;/h1&gt;<br>        &#125;<br>        function Nickname(props) &#123;<br>            return &lt;h1&gt;网站小名: &#123;props.nickname&#125;&lt;/h1&gt;<br>        &#125;<br>        function App() &#123;<br>            return (<br>                &lt;div&gt;<br>                    &lt;Name name=&apos;勇往直前&apos;/&gt;<br>                    &lt;Url url=&quot;http://www.wanglichao.top&quot;/&gt;<br>                    &lt;Nickname nickname=&quot;心有远方&quot;/&gt;<br>                &lt;/div&gt;<br>            )<br>        &#125;<br>        ReactDOM.render(<br>            &lt;App /&gt;,<br>            document.getElementById(&apos;box&apos;)<br>        )<br></code></pre></td></tr></table></figure></p><p>实例中 App 组件使用了 Name、Url 和 Nickname 组件来输出对应的信息。</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;React-组件&quot;&gt;&lt;a href=&quot;#React-组件&quot; class=&quot;headerlink&quot; title=&quot;React 组件&quot;&gt;&lt;/a&gt;React 组件&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;封装一个组件:&lt;br&gt;&lt;figure class=&quot;hljs hi
+      
+    
+    </summary>
+    
+      <category term="笔记" scheme="http://www.wanglichao.top/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="前端" scheme="http://www.wanglichao.top/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="react" scheme="http://www.wanglichao.top/tags/react/"/>
+    
+      <category term="JS" scheme="http://www.wanglichao.top/tags/JS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React学习笔记之JSX</title>
+    <link href="http://www.wanglichao.top/2018/11/13/React-JSX/"/>
+    <id>http://www.wanglichao.top/2018/11/13/React-JSX/</id>
+    <published>2018-11-12T21:28:01.000Z</published>
+    <updated>2018-11-12T18:44:41.021Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="React-JSX"><a href="#React-JSX" class="headerlink" title="React JSX"></a>React JSX</h2><blockquote><p>React 使用JSX来替代常规的JavaScript;<br>JSX是一个看起来像XML的JavaScript语法扩展;<br>我们不需要一定使用JSX,但它有以下优点:</p><ul><li>JSX执行更快,因为它在编译为JavaScript代码后进行了优化;</li><li>它是安全类型的,在编译过程中就能发现错误;</li><li>使用JSX编写模板更加简单快速</li></ul></blockquote><h3 id="使用JSX"><a href="#使用JSX" class="headerlink" title="使用JSX"></a>使用JSX</h3><blockquote><p>JSX使用起来类似HTML;<br>JSX代码可以放在一个独立的文件上,例如:创建一个js文件,然后在HTML中引入该js文件;<br> <figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs undefined"> ReactDOM.render(<br>    &lt;h1&gt;Hello React!&lt;/h1&gt;,<br>    document.getElementById(&quot;box&quot;)<br>);<br></code></pre></td></tr></table></figure></p></blockquote><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;body&gt;<br>    &lt;!--创建一个JS文件引入--&gt;<br>    &lt;div id=&quot;box&quot;&gt;&lt;/div&gt;<br>    &lt;script type=&quot;text/babel&quot; src=&quot;hello_react.js&quot;&gt;&lt;/script&gt;<br>&lt;/body&gt;<br></code></pre></td></tr></table></figure><h3 id="JavaScript表达式"><a href="#JavaScript表达式" class="headerlink" title="JavaScript表达式"></a>JavaScript表达式</h3><blockquote><p>我们可以在 JSX 中使用 JavaScript 表达式。表达式写在花括号 {} 中<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs undefined">let i = 1;<br>ReactDOM.render(<br>    &lt;h1&gt;&#123;i == 1 ? &apos;True&apos; : &apos;False&apos;&#125;&lt;/h1&gt;,<br>    document.getElementById(&quot;box&quot;)<br>);<br></code></pre></td></tr></table></figure></p><p>在 JSX 中不能使用 if else 语句，但可以使用 conditional (三元运算) 表达式来替代。以下实例中如果变量 i 等于 1 浏览器将输出 true, 如果修改 i 的值，则会输出 false.</p></blockquote><h3 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h3><blockquote><p>React 推荐使用内联样式。我们可以使用 camelCase 语法来设置内联样式. React 会在指定元素数字后自动添加 px<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs undefined">let myStyle = &#123;<br>    fontSize: 50,<br>    color: &apos;#ff0000&apos;<br>&#125;;<br><br>ReactDOM.render(<br>    &lt;h1 style=&#123;myStyle&#125;&gt;我是菜鸟&lt;/h1&gt;,<br>    document.getElementById(&quot;box&quot;)<br>);<br></code></pre></td></tr></table></figure></p></blockquote><h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><blockquote><p>注释需要写在花括号中<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs undefined">ReactDOM.render(<br>    &lt;div&gt;<br>    &lt;h1&gt;哈哈哈&lt;/h1&gt;<br>    &#123;/*注释...*/&#125;<br>     &lt;/div&gt;,<br>    document.getElementById(&apos;example&apos;)<br>);<br></code></pre></td></tr></table></figure></p></blockquote><h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p>JSX 允许在模板中插入数组，数组会自动展开所有成员：<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs undefined">let arr = [<br>    &lt;h1&gt;我是菜鸟&lt;/h1&gt;,<br>    &lt;h2&gt;正在学习&lt;/h2&gt;,<br>    &lt;h3&gt;不仅技术&lt;/h3&gt;,<br>    &lt;h4&gt;更是梦想&lt;/h4&gt;<br>];<br><br>ReactDOM.render(<br>    &lt;h1&gt;&#123;arr&#125;&lt;/h1&gt;,<br>    document.getElementById(&quot;box&quot;)<br>);<br></code></pre></td></tr></table></figure></p><h3 id="HTML标签-VS-React组件"><a href="#HTML标签-VS-React组件" class="headerlink" title="HTML标签 VS React组件"></a>HTML标签 VS React组件</h3><blockquote><p>React 可以渲染 HTML 标签 (strings) 或 React 组件 (classes)。<br>要渲染 HTML 标签，只需在 JSX 里使用小写字母的标签名。<br>React 的 JSX 使用大、小写的约定来区分本地组件的类和 HTML 标签。<br>要渲染 React 组件，只需创建一个大写字母开头的本地变量。</p><p>注意:<br>由于 JSX 就是 JavaScript，一些标识符像 class 和 for 不建议作为 XML 属性名。作为替代，React DOM 使用 className 和 htmlFor 来做对应的属性。</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;React-JSX&quot;&gt;&lt;a href=&quot;#React-JSX&quot; class=&quot;headerlink&quot; title=&quot;React JSX&quot;&gt;&lt;/a&gt;React JSX&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;React 使用JSX来替代常规的JavaScript;&lt;
+      
+    
+    </summary>
+    
+      <category term="笔记" scheme="http://www.wanglichao.top/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="前端" scheme="http://www.wanglichao.top/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="react" scheme="http://www.wanglichao.top/tags/react/"/>
+    
+      <category term="JS" scheme="http://www.wanglichao.top/tags/JS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React学习笔记之State</title>
+    <link href="http://www.wanglichao.top/2018/11/13/React-State/"/>
+    <id>http://www.wanglichao.top/2018/11/13/React-State/</id>
+    <published>2018-11-12T21:28:01.000Z</published>
+    <updated>2018-11-12T18:44:38.821Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="React-State"><a href="#React-State" class="headerlink" title="React State"></a>React State</h2><blockquote><p>React 把组件看成是一个状态机(StateMachines).通过与用户的交互,实现不同的状态,然后渲染UI,让用户界面和数据保持一致;<br>React里,只需更新组件的state,然后根据新的state重新渲染用户界面,而不需要去操作DOM;</p></blockquote><h3 id="将生命周期方法添加到类中"><a href="#将生命周期方法添加到类中" class="headerlink" title="将生命周期方法添加到类中"></a>将生命周期方法添加到类中</h3><blockquote><p>在具有许多组件的应用程序中,在销毁时释放组件所占用的资源非常重要;<br>每当组件第一次加载到DOM中的时候,在React中被称为挂载;<br>当这个组件生成的DOM被移除的时候,在React中被称为卸载;</p></blockquote><h3 id="数据自顶向下流动"><a href="#数据自顶向下流动" class="headerlink" title="数据自顶向下流动"></a>数据自顶向下流动</h3><blockquote><p>父组件或子组件都不能知道某个组件是有状态还是无状态，并且它们不应该关心某组件是被定义为一个函数还是一个类。</p><p>这就是为什么状态通常被称为局部或封装。 除了拥有并设置它的组件外，其它组件不可访问。</p><p>通常被称为自顶向下或单向数据流。 任何状态始终由某些特定组件所有，并且从该状态导出的任何数据或 UI 只能影响树中下方的组件;</p><p>在 React 应用程序中，组件是有状态还是无状态被认为是可能随时间而变化的组件的实现细节。</p><p>我们可以在有状态组件中使用无状态组件，也可以在无状态组件中使用有状态组件。</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;React-State&quot;&gt;&lt;a href=&quot;#React-State&quot; class=&quot;headerlink&quot; title=&quot;React State&quot;&gt;&lt;/a&gt;React State&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;React 把组件看成是一个状态机(Sta
+      
+    
+    </summary>
+    
+      <category term="笔记" scheme="http://www.wanglichao.top/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="前端" scheme="http://www.wanglichao.top/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="react" scheme="http://www.wanglichao.top/tags/react/"/>
+    
+      <category term="JS" scheme="http://www.wanglichao.top/tags/JS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React学习笔记之JSX</title>
+    <link href="http://www.wanglichao.top/2018/11/13/Vue-Start/"/>
+    <id>http://www.wanglichao.top/2018/11/13/Vue-Start/</id>
+    <published>2018-11-12T21:28:01.000Z</published>
+    <updated>2018-11-14T13:32:17.567Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="笔记" scheme="http://www.wanglichao.top/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="前端" scheme="http://www.wanglichao.top/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="react" scheme="http://www.wanglichao.top/tags/react/"/>
+    
+      <category term="JS" scheme="http://www.wanglichao.top/tags/JS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React学习笔记之事件处理</title>
+    <link href="http://www.wanglichao.top/2018/11/13/React-Events/"/>
+    <id>http://www.wanglichao.top/2018/11/13/React-Events/</id>
+    <published>2018-11-12T21:28:01.000Z</published>
+    <updated>2018-11-12T19:41:39.462Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="React-事件处理"><a href="#React-事件处理" class="headerlink" title="React 事件处理"></a>React 事件处理</h2><blockquote><p>React 元素的事件处理和DOM元素类似，但是语法上有有点不同；</p><ul><li>React 事件绑定属性的命名采用驼峰式写法，而不是小写；</li><li>如果采用JSX的语法你需要传入一个函数作为事件处理函数，而不是一个字符串（DOM元素的写法）；<br>HTML写法：<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;button onclick=&quot;todoSomething()&quot;&gt;button&lt;/button&gt;<br></code></pre></td></tr></table></figure></li></ul><p>React写法：<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;button onClick=&quot;todoSomething&quot;&gt;button&lt;/button&gt;<br></code></pre></td></tr></table></figure></p><p>在React中另一个不同是不能使用返回false的方式阻止默认行为，而必须<br>明确的使用preventDefault；<br>使用React的时候通常不需要使用addEventListener为一个已创建的DOM元素添加监视器，仅仅需要在这个元素渲染的时候提供一个监视器；<br>当使用ES6 class语法来定义一个组件的时候，事件处理器会成为类的一个方法。例如：Toggle组件渲染一个让用户切换开关状态的按钮：<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs undefined">class Toggle extends React.Component &#123;<br>        constructor(props) &#123;<br>            super(props);<br>            this.state = &#123;<br>                isToggle: true<br>            &#125;;<br>            this.handleClick = this.handleClick.bind(this);<br>        &#125;<br><br>        handleClick() &#123;<br>            this.setState(prevState =&gt; (&#123;<br>                isToggle: !prevState.isToggle<br>            &#125;))<br>        &#125;<br><br>        render() &#123;<br>            return (<br>                &lt;button onClick=&#123;this.handleClick&#125;&gt;<br>                    &#123;this.state.isToggle ? &apos;ON&apos; : &apos;OFF&apos;&#125;<br>                &lt;/button&gt;<br>            )<br>        &#125;<br>    &#125;<br><br>    ReactDOM.render(<br>        &lt;Toggle /&gt;,<br>        document.getElementById(&quot;example&quot;)<br>    )<br></code></pre></td></tr></table></figure></p><p>必须谨慎对待JSX回调函数中的this， 类的方法默认是不会绑定this的<br>如果忘记绑定this.handleClick并把它传入onClick，当调用这个函数的时候this的值会是undefined。<br>这不是React的特殊行为，它是函数如何在javaScript中运行的一部分。通常情况下，如果没有在方法后面添加（），例如：onClick={this.handleClick},应该为这个方法绑定this。<br>如果使用bind觉得有点烦，可以有两种解决方法：</p><ul><li><p>如果你正在使用实验性的属性初始化器语法，你可以使用属性初始化器来正确的绑定回调函数：</p><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs undefined">class LoggingButton extends React.Component &#123;<br>  // 这个语法确保了 `this` 绑定在  handleClick 中<br>  handleClick = () =&gt; &#123;<br>    console.log(&apos;this is:&apos;, this);<br>  &#125;<br> <br>  render() &#123;<br>    return (<br>      &lt;button onClick=&#123;this.handleClick&#125;&gt;<br>        Click me<br>      &lt;/button&gt;<br>    );<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure></li><li><p>如果你没有使用属性初始化器语法，你可以在回调函数中使用 箭头函数：</p><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs undefined">class LoggingButton extends React.Component &#123;<br>  handleClick() &#123;<br>    console.log(&apos;this is:&apos;, this);<br>  &#125;<br> <br>  render() &#123;<br>    //  这个语法确保了 `this` 绑定在  handleClick 中<br>    return (<br>      &lt;button onClick=&#123;(e) =&gt; this.handleClick(e)&#125;&gt;<br>        Click me<br>      &lt;/button&gt;<br>    );<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure></li></ul><p>这个语法有个问题就是么次LoggingButton渲染的时候都会创建一个不同的回调函数。在大多数情况下，这没有问题。然而如果这个回调函数作为一个属性值传入低阶组件，这些组件可能会进行额外的重新渲染。通常建议在构造函数中绑定或使用属性初始化器语法来避免这类性能问题。</p></blockquote><h3 id="向事件处理程序传递参数"><a href="#向事件处理程序传递参数" class="headerlink" title="向事件处理程序传递参数"></a>向事件处理程序传递参数</h3><blockquote><p>通常我们会为事件处理程序传递额外的参数。例如，如果是id是要删除的那一行的id，以下两种方式都可以向事件处理程序传递参数：<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;button onClick=&#123;(e) =&gt; this.deleteSome(id, e)&#125;&gt;Delete&lt;/button&gt;<br>&lt;button onClick=&#123;this.deleteSome.bind(this, id)&#125;&gt;Delete&lt;/button&gt;<br></code></pre></td></tr></table></figure></p><p>这两种方式是等价的。<br>参数e作为React事件对象将会被作为第二个参数进行传递。<br>通过箭头函数的方式，事件对象必须显式的进行传递。<br>通过bind的方式，事件对象以及更多的参数将会被隐式的进行传递。<br>值得注意的是,通过bind方式向监听函数传参，在类组件中定义的监听函数，事件对象e要排在所传递参数的后面。例如：<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs undefined">class Popper extends React.Component &#123;<br>    constructor(props) &#123;<br>        super(props);<br>        this.state = &#123;<br>            name: &apos;Hello, React&apos;<br>        &#125;<br>    &#125;<br>    preventPop(name, e) &#123;<br>        e.preventDefault();<br>        console.log(name);<br>    &#125;<br>    render() &#123;<br>        return (<br>            &lt;div&gt;<br>                &lt;p&gt;hello&lt;/p&gt;<br>                &#123;/*通过bind()方法传递参数*/&#125;<br>                &lt;a href=&quot;http://www.wanglichao.top&quot;<br>                    onClick=&#123;this.preventPop.bind(this, this.state.name)&#125;<br>                &gt;Click&lt;/a&gt;<br>            &lt;/div&gt;<br>        )<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;React-事件处理&quot;&gt;&lt;a href=&quot;#React-事件处理&quot; class=&quot;headerlink&quot; title=&quot;React 事件处理&quot;&gt;&lt;/a&gt;React 事件处理&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;React 元素的事件处理和DOM元素类似，但是语
+      
+    
+    </summary>
+    
+      <category term="笔记" scheme="http://www.wanglichao.top/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="前端" scheme="http://www.wanglichao.top/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="react" scheme="http://www.wanglichao.top/tags/react/"/>
+    
+      <category term="JS" scheme="http://www.wanglichao.top/tags/JS/"/>
     
   </entry>
   
@@ -463,153 +587,9 @@
     
       <category term="前端" scheme="http://www.wanglichao.top/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="JS" scheme="http://www.wanglichao.top/tags/JS/"/>
-    
       <category term="react" scheme="http://www.wanglichao.top/tags/react/"/>
     
-  </entry>
-  
-  <entry>
-    <title>React学习笔记之安装</title>
-    <link href="http://www.wanglichao.top/2018/11/13/React-install/"/>
-    <id>http://www.wanglichao.top/2018/11/13/React-install/</id>
-    <published>2018-11-12T21:28:01.000Z</published>
-    <updated>2018-11-13T14:08:41.095Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="React-安装"><a href="#React-安装" class="headerlink" title="React 安装"></a>React 安装</h2><h3 id="React-可以直接下载使用-也可以使用CDN"><a href="#React-可以直接下载使用-也可以使用CDN" class="headerlink" title="React 可以直接下载使用,也可以使用CDN;"></a>React 可以直接下载使用,也可以使用CDN;</h3><blockquote><p>Staticfile CDN 的 React CDN 库:</p></blockquote><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;script src=&quot;https://cdn.staticfile.org/react/16.4.0/umd/react.development.js&quot;&gt;&lt;/script&gt;<br>&lt;script src=&quot;https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js&quot;&gt;&lt;/script&gt;<br>&lt;!-- 生产环境中不建议使用 --&gt;<br>&lt;script src=&quot;https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js&quot;&gt;&lt;/script&gt;<br></code></pre></td></tr></table></figure><blockquote><p>官方提供的DCN地址:<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;script src=&quot;https://unpkg.com/react@16/umd/react.development.js&quot;&gt;&lt;/script&gt;<br>&lt;script src=&quot;https://unpkg.com/react-dom@16/umd/react-dom.development.js&quot;&gt;&lt;/script&gt;<br>&lt;!-- 生产环境中不建议使用 --&gt;<br>&lt;script src=&quot;https://unpkg.com/babel-standalone@6.15.0/babel.min.js&quot;&gt;&lt;/script&gt;<br></code></pre></td></tr></table></figure></p><p>输出Hello,React!的实例<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;!DOCTYPE html&gt;<br>&lt;html&gt;<br>&lt;head&gt;<br>&lt;meta charset=&quot;UTF-8&quot; /&gt;<br>&lt;title&gt;Hello React!&lt;/title&gt;<br>&lt;script src=&quot;https://cdn.staticfile.org/react/16.4.0/umd/react.development.js&quot;&gt;&lt;/script&gt;<br>&lt;script src=&quot;https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js&quot;&gt;&lt;/script&gt;<br>&lt;script src=&quot;https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js&quot;&gt;&lt;/script&gt;<br>&lt;/head&gt;<br>&lt;body&gt;<br> <br>&lt;div id=&quot;app&quot;&gt;&lt;/div&gt;<br>&lt;script type=&quot;text/babel&quot;&gt;<br>ReactDOM.render(<br>    &lt;h1&gt;Hello,React!&lt;/h1&gt;,<br>    document.getElementById(&apos;app&apos;)<br>);<br>&lt;/script&gt;<br> <br>&lt;/body&gt;<br>&lt;/html&gt;<br></code></pre></td></tr></table></figure></p><p>实例中需要3个库 react / react-DOM / babel</p><ul><li>react -&gt; React的核心库</li><li>react-dom -&gt; 提供与DOM相关的功能</li><li>babel -&gt;babel可以将ES6代码转为ES5代码,这就可以在不支持ES6的浏览器上执行React代码,babel内嵌了对JSX的支持<br>注意:如果需要使用JSX,则script标签的type属性需要设置为text/babel</li></ul></blockquote><h3 id="通过npm使用React"><a href="#通过npm使用React" class="headerlink" title="通过npm使用React"></a>通过npm使用React</h3><p>国内简易使用cnpm代替npm安装package;<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined">$ npm install -g cnpm --registry=https://registry.npm.taobao.org<br>$ npm config set registry https://registry.npm.taobao.org<br></code></pre></td></tr></table></figure></p><blockquote><p>这样就可以使用cnpm命令来安装模块了<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">$ cnpm install [packagename]<br></code></pre></td></tr></table></figure></p></blockquote><h3 id="使用create-react-app-快速构建React开发环境"><a href="#使用create-react-app-快速构建React开发环境" class="headerlink" title="使用create-react-app 快速构建React开发环境"></a>使用create-react-app 快速构建React开发环境</h3><blockquote><p>create-react-app 是来自于facebook，通过该命令我们无需配置就能快速构建React开发环境。<br>create-react-app 自动创建的项目是基于Webpack + ES6.<br>执行以下命令创建项目：<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs undefined">$ cnpm install -g create-react-app<br>$ create-react-app [my-app]<br>$ cd [my-app]<br>$ npm start<br></code></pre></td></tr></table></figure></p><p>在浏览器中打开<a href="http://localhost:3000，就会呈现项目页面" target="_blank" rel="noopener">http://localhost:3000，就会呈现项目页面</a></p></blockquote><p>React 代码的书写格式和以前的 JS 有很大的不同，下面通过对这段代码进行分析了解一下他。</p><p>以前使用JS 定义一个变量使用 var 现在用 const：</p><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">const div = document.createElement(&apos;div&apos;);<br></code></pre></td></tr></table></figure><p>ReactDOM.render(…) 是渲染方法，所有的 js,html 都可通过它进行渲染绘制，他又两个参数，内容和渲染目标 js 对象。</p><p>内容就是要在渲染目标中显示的东西，可以是一个React 部件，也可以是一段HTML或TEXT文本。渲染目标JS对象，就是一个DIV或TABEL,或TD 等HTML的节点对象。</p><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">ReactDOM.render(&lt;App /&gt;, div);<br></code></pre></td></tr></table></figure><p>unmountComponentAtNode() 这个方法是解除渲染挂载，作用和 render 刚好相反，也就清空一个渲染目标中的 React 部件或 html 内容。</p><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">ReactDOM.unmountComponentAtNode(div);<br></code></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;React-安装&quot;&gt;&lt;a href=&quot;#React-安装&quot; class=&quot;headerlink&quot; title=&quot;React 安装&quot;&gt;&lt;/a&gt;React 安装&lt;/h2&gt;&lt;h3 id=&quot;React-可以直接下载使用-也可以使用CDN&quot;&gt;&lt;a href=&quot;#React-
-      
-    
-    </summary>
-    
-      <category term="笔记" scheme="http://www.wanglichao.top/categories/%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="前端" scheme="http://www.wanglichao.top/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="JS" scheme="http://www.wanglichao.top/tags/JS/"/>
-    
-      <category term="react" scheme="http://www.wanglichao.top/tags/react/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于项目打包时的优化</title>
-    <link href="http://www.wanglichao.top/2018/11/11/project_webpack_optimize/"/>
-    <id>http://www.wanglichao.top/2018/11/11/project_webpack_optimize/</id>
-    <published>2018-11-10T22:37:24.000Z</published>
-    <updated>2018-11-12T18:44:44.358Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="前端-JavaScript-项目优化"><a href="#前端-JavaScript-项目优化" class="headerlink" title="前端 JavaScript 项目优化"></a>前端 JavaScript 项目优化</h2><h3 id="1-CSS抽离"><a href="#1-CSS抽离" class="headerlink" title="1.CSS抽离"></a>1.CSS抽离</h3><blockquote><p>将css文件从js文件中抽离出来;<br>分开加载,代码有改动时css/JS不用全部去加载;</p></blockquote><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 抽离css文件的插件:</span><br><span class="hljs-keyword">const</span> ExtractTextPlugin = <span class="hljs-built_in">require</span>(<span class="hljs-string">"extract-text-webpack-plugin"</span>);<br><span class="hljs-built_in">module</span>.exports = &#123;<br>    <span class="hljs-attr">module</span>: &#123;<br>        <span class="hljs-attr">rules</span>: [<br>            test: <span class="hljs-regexp">/\.css$/</span>,<br>            <span class="hljs-attr">use</span>: ExtracTextPlugin.extrac(&#123;<br>                <span class="hljs-attr">fallback</span>: <span class="hljs-string">"style-loader"</span>,<br>                <span class="hljs-attr">use</span>: <span class="hljs-string">"css-loader"</span><br>            &#125;)<br>        ]<br>    &#125;,<br>    <span class="hljs-attr">plugins</span>: [<br>        <span class="hljs-keyword">new</span> ExtractTextPlugin(<span class="hljs-string">"styles.css"</span>)<br>    ]<br>&#125;<br></code></pre></td></tr></table></figure><h3 id="2-哈希值"><a href="#2-哈希值" class="headerlink" title="2.哈希值"></a>2.哈希值</h3><blockquote><p>辨识文件是否改动;</p></blockquote><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs javascript">output: &#123;<br>   <span class="hljs-attr">path</span>: path.join(__dirname, <span class="hljs-string">'dist'</span>),<br>   <span class="hljs-comment">// js文件的哈希</span><br>   filename: <span class="hljs-string">"[name].[chunkhash:6].js"</span><br>&#125;<br></code></pre></td></tr></table></figure><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript">plugins: [<br>       <span class="hljs-comment">// css文件的哈希</span><br>       <span class="hljs-keyword">new</span> ExtractTextPlugin(<span class="hljs-string">"[name].[contenthash:6].css"</span>)<br>   ]<br></code></pre></td></tr></table></figure><h3 id="3-第三方包抽离"><a href="#3-第三方包抽离" class="headerlink" title="3.第三方包抽离"></a>3.第三方包抽离</h3><blockquote><p>辨识部分文件改动;</p></blockquote><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 此插件依赖webpack</span><br><span class="hljs-keyword">const</span> webpack = <span class="hljs-built_in">require</span>(<span class="hljs-string">'webpack'</span>);<br><span class="hljs-built_in">module</span>.exports = &#123;<br>    <span class="hljs-attr">entry</span>: &#123;<br>         <span class="hljs-attr">main</span>: <span class="hljs-string">"./src/main.js"</span>,<br>        <span class="hljs-comment">// 再加一个入口,将第三方包从main.js中分离出来</span><br>        vendors: [<span class="hljs-string">"vue"</span>,<span class="hljs-string">"vue-router"</span>,<span class="hljs-string">"moment"</span>,<span class="hljs-string">"axios"</span>,<span class="hljs-string">"vue-preview"</span>]<br>    &#125;,<br>    <span class="hljs-attr">plugins</span>: [<br>        <span class="hljs-comment">// webpack中抽离第三方包的插件:</span><br>        <span class="hljs-keyword">new</span> webpack.optimize.CommonsChunkPlugin(&#123;<br>            <span class="hljs-comment">// manifest用来记录使用者和第三方包的依赖关系</span><br>            names: [<span class="hljs-string">"vendors"</span>, <span class="hljs-string">"manifest"</span>]<br>        &#125;)<br>    ]<br>&#125;<br></code></pre></td></tr></table></figure><h3 id="4-代码压缩混淆"><a href="#4-代码压缩混淆" class="headerlink" title="4.代码压缩混淆"></a>4.代码压缩混淆</h3><blockquote><p>很大程度的压缩代码体积</p></blockquote><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 压缩混淆代码的插件,需要 npm i -D uglifyjs-webpack-plugin 下载</span><br><span class="hljs-keyword">const</span> UglifyJSPlugin = <span class="hljs-built_in">require</span>(<span class="hljs-string">"uglifyjs-webpack-plugin"</span>);<br><span class="hljs-built_in">module</span>.exports = &#123;<br>    <span class="hljs-attr">plugins</span>: [<br>        <span class="hljs-keyword">new</span> UglifyJSPlugin()<br>    ]<br>&#125;<br></code></pre></td></tr></table></figure><h3 id="5-main-ui的按需引入"><a href="#5-main-ui的按需引入" class="headerlink" title="5.main-ui的按需引入"></a>5.main-ui的按需引入</h3><blockquote><p>进一步减小代码体积</p></blockquote><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 全部引入的用法:</span><br><span class="hljs-comment">// import Mint from 'mint-ui'</span><br><span class="hljs-comment">// import 'mint-ui/lib/style.css'</span><br><span class="hljs-comment">// Vue.use(Mint);</span><br><br><span class="hljs-comment">// 按需加载的用法:</span><br><span class="hljs-keyword">import</span> Header <span class="hljs-keyword">from</span> <span class="hljs-string">'mint-ui/lib/header'</span><br><span class="hljs-keyword">import</span> Switch <span class="hljs-keyword">from</span> <span class="hljs-string">'mint-ui/lib/switch'</span><br><span class="hljs-keyword">import</span> SwitchItem <span class="hljs-keyword">from</span> <span class="hljs-string">'mint-ui/lib/switch-item'</span><br><span class="hljs-keyword">import</span> Button <span class="hljs-keyword">from</span> <span class="hljs-string">'mint-ui/lib/button'</span><br><span class="hljs-keyword">import</span> Lazyload <span class="hljs-keyword">from</span> <span class="hljs-string">'mint-ui/lib/lazyload'</span><br><span class="hljs-comment">// ...</span><br><br>Vue.component(Header.name, Header);<br>Vue.component(SwitchItem.name, SwitchItem);<br>Vue.component(Button.name, Button);<br>Vue.use(Lazyload); <span class="hljs-comment">// 注意lazyload(懒加载)仍需要use方式调用</span><br><span class="hljs-comment">// ...</span><br></code></pre></td></tr></table></figure><h3 id="6-代码文件的结构整理"><a href="#6-代码文件的结构整理" class="headerlink" title="6.代码文件的结构整理"></a>6.代码文件的结构整理</h3><blockquote><p>文件的分类整理</p><ul><li>注意: 将文件路径分类整理后,代码中的相对路径引用文件可能会发生错误,需要修正</li></ul></blockquote><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs javascript">output: &#123;<br>   <span class="hljs-attr">path</span>: path.join(__dirname, <span class="hljs-string">'dist'</span>),<br>   <span class="hljs-comment">// 修正资源请求路径</span><br>   publicPath: <span class="hljs-string">'/'</span>,   <span class="hljs-comment">// 企业中也可以是 www.xxx.com/为根路径</span><br>   <span class="hljs-comment">// js文件的路径</span><br>   filename: <span class="hljs-string">"js/[name].[chunkhash:6].js"</span><br>&#125;<br></code></pre></td></tr></table></figure><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs javascript">&#123;<br>   <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.(jpg|png|svg|ttf|woff|woff2|gif)$/</span>,<br>   <span class="hljs-attr">use</span>: [<br>       <span class="hljs-string">'url-loader'</span>,<br>       <span class="hljs-attr">options</span>: &#123;<br>           <span class="hljs-attr">limit</span>: <span class="hljs-number">4096</span>,<br>           <span class="hljs-comment">// 图片文件的路径</span><br>           name: <span class="hljs-string">'/assets/[name].[ext]'</span><br>       &#125;<br>   ]<br>&#125;<br></code></pre></td></tr></table></figure><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript">plugins: [<br>       <span class="hljs-comment">// css文件的路径</span><br>       <span class="hljs-keyword">new</span> ExtractTextPlugin(<span class="hljs-string">"css/[name].[contenthash:6].css"</span>)<br>   ]<br></code></pre></td></tr></table></figure><h3 id="7-路由的懒加载"><a href="#7-路由的懒加载" class="headerlink" title="7.路由的懒加载"></a>7.路由的懒加载</h3><blockquote><p>根据路由路径按需加载页面</p></blockquote><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">import</span> App <span class="hljs-keyword">from</span> <span class="hljs-string">'./app.vue'</span>  <span class="hljs-comment">// 公用App组件不用</span><br><br><span class="hljs-keyword">import</span> Home <span class="hljs-keyword">from</span> <span class="hljs-string">'./component/home/home.vue'</span><br><span class="hljs-keyword">import</span> News <span class="hljs-keyword">from</span> <span class="hljs-string">'./component/news/news.vue'</span><br><span class="hljs-comment">// 修改为</span><br><span class="hljs-keyword">const</span> Home = <span class="hljs-function"><span class="hljs-params">resolve</span> =&gt;</span> <span class="hljs-built_in">require</span>([<span class="hljs-string">'./component/home/home.vue'</span>, resolve]);<br><span class="hljs-keyword">const</span> News = <span class="hljs-function"><span class="hljs-params">r</span> =&gt;</span> <span class="hljs-built_in">require</span>([<span class="hljs-string">'./component/news/news.vue'</span>, r]);<br></code></pre></td></tr></table></figure><h3 id="8-去除控制台开发的提示"><a href="#8-去除控制台开发的提示" class="headerlink" title="8.去除控制台开发的提示"></a>8.去除控制台开发的提示</h3><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs javascript">plugins: [<br>    <span class="hljs-keyword">new</span> webpack.DefinePlugin(&#123;<br>        <span class="hljs-string">'process.env'</span>: &#123;<br>            <span class="hljs-attr">NODE_ENV</span>: <span class="hljs-string">'"production"'</span><br>        &#125;<br>    &#125;)<br>]<br></code></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;前端-JavaScript-项目优化&quot;&gt;&lt;a href=&quot;#前端-JavaScript-项目优化&quot; class=&quot;headerlink&quot; title=&quot;前端 JavaScript 项目优化&quot;&gt;&lt;/a&gt;前端 JavaScript 项目优化&lt;/h2&gt;&lt;h3 id=&quot;1
-      
-    
-    </summary>
-    
-      <category term="笔记" scheme="http://www.wanglichao.top/categories/%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="前端" scheme="http://www.wanglichao.top/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="node" scheme="http://www.wanglichao.top/tags/node/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>输入URL地址敲回车之后发生了什么</title>
-    <link href="http://www.wanglichao.top/2018/11/10/enter-event/"/>
-    <id>http://www.wanglichao.top/2018/11/10/enter-event/</id>
-    <published>2018-11-10T12:14:24.000Z</published>
-    <updated>2018-11-12T18:44:50.292Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="输入URL地址敲回车之后发生了什么"><a href="#输入URL地址敲回车之后发生了什么" class="headerlink" title="输入URL地址敲回车之后发生了什么"></a>输入URL地址敲回车之后发生了什么</h2><blockquote><p> 输入网址敲回车之后,<br> 浏览器开始向DNS服务器发送请求,    (request)请求<br> DNS服务器解析,<br> 找到IP地址对应的服务器,<br> 服务器根据对应的端口号找到对应的项目,<br> 将需要的数据代码编码后返回给浏览器客户端,并将数据的类型告诉浏览器(HTML/json…),     (response)响应<br> 浏览器将接收到的数据根据返回来的数据类型进行解析,</p></blockquote><ul><li><p>http事物: request请求和response响应都成功就是一个完整的HTTP事物;</p></li><li><p><a href="https://www.baidu.com:443/xx/yy/index.html?name=aa&amp;age=30#id=5" target="_blank" rel="noopener">https://www.baidu.com:443/xx/yy/index.html?name=aa&amp;age=30#id=5</a></p></li><li><p>(https) – (www.baidu.com ) – (443) – (/xx/yy/index.html) – (name=aa&amp;age=30) – (id=5)</p></li></ul><h2 id="1-HTTPS-传输协议"><a href="#1-HTTPS-传输协议" class="headerlink" title="1.(HTTPS) 传输协议"></a>1.(HTTPS) 传输协议</h2><blockquote><p>https / http  完成客户端和服务端的数据交互传输<br>https: 更加安全<br>http: 超文本传输协议<br>FTP: 往服务器上上传项目文件</p></blockquote><h2 id="2-www-baidu-com-域名"><a href="#2-www-baidu-com-域名" class="headerlink" title="2.(www.baidu.com) 域名:"></a>2.(www.baidu.com) 域名:</h2><blockquote><p>一级域名<br>二级域名<br>三级域名</p></blockquote><h2 id="3-443-端口号"><a href="#3-443-端口号" class="headerlink" title="3.(443) 端口号:"></a>3.(443) 端口号:</h2><ul><li>根据端口号找到对应的项目<blockquote><p>http: 默认端口号80<br>https: 默认端口号443<br>FTP: 默认端口号21</p></blockquote></li></ul><h2 id="4-xx-yy-index-html-项目地址"><a href="#4-xx-yy-index-html-项目地址" class="headerlink" title="4.(/xx/yy/index.html)项目地址"></a>4.(/xx/yy/index.html)项目地址</h2><ul><li>根据地址值找到项目下的具体页面文件<blockquote><p>/xx/yy/index.html 真实地址, 请求资源文件<br>/xxx  伪地址, 请求数据</p></blockquote></li></ul><h2 id="5-name-aa-amp-age-30-参数"><a href="#5-name-aa-amp-age-30-参数" class="headerlink" title="5.(name=aa&amp;age=30)参数"></a>5.(name=aa&amp;age=30)参数</h2><ul><li>参数格式是后台规定的,根据参数的值返回响应的数据</li></ul><h2 id="6-id-5-哈希值-Hash值"><a href="#6-id-5-哈希值-Hash值" class="headerlink" title="6.(id=5) 哈希值 Hash值"></a>6.(id=5) 哈希值 Hash值</h2><blockquote><p>锚点定位<br>路由</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;输入URL地址敲回车之后发生了什么&quot;&gt;&lt;a href=&quot;#输入URL地址敲回车之后发生了什么&quot; class=&quot;headerlink&quot; title=&quot;输入URL地址敲回车之后发生了什么&quot;&gt;&lt;/a&gt;输入URL地址敲回车之后发生了什么&lt;/h2&gt;&lt;blockquote&gt;
-
-      
-    
-    </summary>
-    
-      <category term="笔记" scheme="http://www.wanglichao.top/categories/%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="前端" scheme="http://www.wanglichao.top/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="http" scheme="http://www.wanglichao.top/tags/http/"/>
-    
-      <category term="url" scheme="http://www.wanglichao.top/tags/url/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>javascript学习之json常用方法</title>
-    <link href="http://www.wanglichao.top/2018/02/16/page/javascript-json/"/>
-    <id>http://www.wanglichao.top/2018/02/16/page/javascript-json/</id>
-    <published>2018-02-15T21:30:40.000Z</published>
-    <updated>2018-11-10T15:22:40.445Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="javascript中JSON语法有三种表示方法："><a href="#javascript中JSON语法有三种表示方法：" class="headerlink" title="javascript中JSON语法有三种表示方法："></a>javascript中JSON语法有三种表示方法：</h1><h3 id="简单值-“hello-json”"><a href="#简单值-“hello-json”" class="headerlink" title="简单值:      “hello json”"></a>简单值:      “hello json”</h3><h3 id="对象-“name”-”jack”"><a href="#对象-“name”-”jack”" class="headerlink" title="对象:        {“name”:”jack”}"></a>对象:        {“name”:”jack”}</h3><h3 id="数组-“aaa”-”bbb”-“ccc”-”ddd”"><a href="#数组-“aaa”-”bbb”-“ccc”-”ddd”" class="headerlink" title="数组:        [{“aaa”:”bbb”},{“ccc”:”ddd”}]"></a>数组:        [{“aaa”:”bbb”},{“ccc”:”ddd”}]</h3><h2 id="JSON常用的两个方法："><a href="#JSON常用的两个方法：" class="headerlink" title="JSON常用的两个方法："></a>JSON常用的两个方法：</h2><h2 id="stringify-和-parse"><a href="#stringify-和-parse" class="headerlink" title="stringify() 和 parse()"></a>stringify() 和 parse()</h2><h2 id="stringify用法："><a href="#stringify用法：" class="headerlink" title="*stringify用法："></a>*stringify用法：</h2><h4 id="用法一：-把javascript对象转化成JSON格式"><a href="#用法一：-把javascript对象转化成JSON格式" class="headerlink" title="用法一： 把javascript对象转化成JSON格式:"></a>用法一： 把javascript对象转化成JSON格式:</h4><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> demo = &#123;<br>  <span class="hljs-string">"name"</span>:<span class="hljs-string">"aaa"</span>,<br>  <span class="hljs-string">"type"</span>:<span class="hljs-string">"bbb"</span> <br>&#125;<br><span class="hljs-keyword">var</span> jsonDemo = <span class="hljs-built_in">JSON</span>.stringify(demo);<br><span class="hljs-built_in">console</span>.log(jsonDemo);<br></code></pre></td></tr></table></figure><ul><li>得到结果：</li></ul><figure class="hljs highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs json">&#123;<span class="hljs-attr">"name"</span>:<span class="hljs-string">"aaa"</span>,<span class="hljs-attr">"type"</span>:<span class="hljs-string">"bbb"</span>&#125;<br></code></pre></td></tr></table></figure><h4 id="用法二：把javascript对象转化成JSON格式，增加过滤，只留想要的数据"><a href="#用法二：把javascript对象转化成JSON格式，增加过滤，只留想要的数据" class="headerlink" title="用法二：把javascript对象转化成JSON格式，增加过滤，只留想要的数据"></a>用法二：把javascript对象转化成JSON格式，增加过滤，只留想要的数据</h4><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> demo = &#123;<br><span class="hljs-string">"name"</span>:<span class="hljs-string">"aaa"</span>,<br><span class="hljs-string">"sex"</span>:<span class="hljs-string">"boy"</span>,<br><span class="hljs-string">"age"</span>: <span class="hljs-number">20</span><br>&#125;<br><span class="hljs-keyword">var</span> jsonDemo = <span class="hljs-built_in">JSON</span>.stringify(demo,[<span class="hljs-string">"name"</span>]);<br><span class="hljs-built_in">console</span>.log(jsonDemo);<br></code></pre></td></tr></table></figure><ul><li>得到结果：</li></ul><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs josn">&#123;&quot;name&quot;:&quot;aaa&quot;&#125;<br></code></pre></td></tr></table></figure><h4 id="用法三：把javascript对象转化成JSON格式，并改变原有的值"><a href="#用法三：把javascript对象转化成JSON格式，并改变原有的值" class="headerlink" title="用法三：把javascript对象转化成JSON格式，并改变原有的值"></a>用法三：把javascript对象转化成JSON格式，并改变原有的值</h4><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> demo = &#123;<br><span class="hljs-string">"name"</span>:<span class="hljs-string">"aaa"</span>,<br><span class="hljs-string">"sex"</span>:<span class="hljs-string">"bbb"</span>,<br><span class="hljs-string">"type"</span>:<span class="hljs-string">"ccc"</span><br>&#125;<br><span class="hljs-keyword">var</span> jsonDemo = <span class="hljs-built_in">JSON</span>.stringify(demo,<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">key, value</span>) </span>&#123;<br><span class="hljs-keyword">switch</span>(key)&#123;<br><span class="hljs-keyword">case</span> <span class="hljs-string">"name"</span>: <span class="hljs-keyword">return</span> <span class="hljs-string">"a"</span>;<br><span class="hljs-keyword">case</span> <span class="hljs-string">"sex"</span>: <span class="hljs-keyword">return</span> <span class="hljs-string">"b"</span>;<br><span class="hljs-keyword">default</span>: <span class="hljs-keyword">return</span> value;<br>&#125;<br>&#125;);<br><span class="hljs-built_in">console</span>.log(jsonDemo);<br></code></pre></td></tr></table></figure><ul><li>得到结果：</li></ul><figure class="hljs highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs json">&#123;<span class="hljs-attr">"name"</span>:<span class="hljs-string">"a"</span>,<span class="hljs-attr">"sex"</span>:<span class="hljs-string">"b"</span>,<span class="hljs-attr">"type"</span>:<span class="hljs-string">"ccc"</span>&#125;<br></code></pre></td></tr></table></figure><h4 id="用法四：把javascript对象转化成JSON格式，并控制缩进和空白符"><a href="#用法四：把javascript对象转化成JSON格式，并控制缩进和空白符" class="headerlink" title="用法四：把javascript对象转化成JSON格式，并控制缩进和空白符"></a>用法四：把javascript对象转化成JSON格式，并控制缩进和空白符</h4><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> book = &#123;<br><span class="hljs-string">"title"</span>: <span class="hljs-string">"aaa"</span>,<br><span class="hljs-string">"type"</span>: <span class="hljs-string">"bbb"</span>,<br><span class="hljs-string">"page"</span>: <span class="hljs-number">50</span><br>&#125;<br><span class="hljs-keyword">var</span> jsonBook = <span class="hljs-built_in">JSON</span>.stringify(book,<span class="hljs-literal">null</span>,<span class="hljs-string">"$$"</span>);<br><span class="hljs-built_in">console</span>.log(jsonBook)<br></code></pre></td></tr></table></figure><ul><li>得到结果：</li><li><figure class="hljs highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs json">&#123;<br><span class="hljs-attr">"title"</span>: <span class="hljs-string">"aaa"</span>,<br><span class="hljs-attr">"type"</span>: <span class="hljs-string">"bbb"</span>,<br><span class="hljs-attr">"page"</span>: <span class="hljs-number">50</span><br>&#125;<br></code></pre></td></tr></table></figure></li></ul><p>－该方法第三个参数如果为数字，那么就是每个属性前面缩进的字符数。</p><h2 id="parse-方法"><a href="#parse-方法" class="headerlink" title="parse()方法"></a>parse()方法</h2><h4 id="用法一：把JSON转化成javascript格式-用来解析JSON字符串，构造由字符串描述的JavaScript值或对象。"><a href="#用法一：把JSON转化成javascript格式-用来解析JSON字符串，构造由字符串描述的JavaScript值或对象。" class="headerlink" title="用法一：把JSON转化成javascript格式, 用来解析JSON字符串，构造由字符串描述的JavaScript值或对象。"></a>用法一：把JSON转化成javascript格式, 用来解析JSON字符串，构造由字符串描述的JavaScript值或对象。</h4><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> book = <span class="hljs-string">'&#123;"title":"aaa", "type":"bbb", "page":"50"&#125;'</span>;<br>  <span class="hljs-keyword">var</span> demo = <span class="hljs-built_in">JSON</span>.parse(book);<br>  <span class="hljs-built_in">console</span>.log(demo);<br></code></pre></td></tr></table></figure><ul><li>得到结果：</li></ul><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">&#123;<span class="hljs-attr">title</span>: <span class="hljs-string">"aaa"</span>, <span class="hljs-attr">type</span>: <span class="hljs-string">"bbb"</span>, <span class="hljs-attr">page</span>: <span class="hljs-string">"50"</span>&#125;<br></code></pre></td></tr></table></figure><h4 id="用法二：把JSON转化为javascript过程中，改变原有的值"><a href="#用法二：把JSON转化为javascript过程中，改变原有的值" class="headerlink" title="用法二：把JSON转化为javascript过程中，改变原有的值"></a>用法二：把JSON转化为javascript过程中，改变原有的值</h4><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> book = <span class="hljs-string">'&#123;"title":"aaa", "type":"bbb", "page":50&#125;'</span>;<br>  <span class="hljs-keyword">var</span> demo = <span class="hljs-built_in">JSON</span>.stringify(book);<br>  <span class="hljs-keyword">var</span> javascriptDemo = <span class="hljs-built_in">JSON</span>.parse(demo, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">key, value</span>) </span>&#123;<br> <span class="hljs-keyword">switch</span> (key) &#123;<br><span class="hljs-keyword">case</span> <span class="hljs-string">"title"</span>: <span class="hljs-keyword">return</span> <span class="hljs-string">"bbbbbb"</span>;<br><span class="hljs-keyword">default</span>: <span class="hljs-keyword">return</span> value;<br> &#125;<br>  &#125;);<br>  <span class="hljs-built_in">console</span>.log(javascriptDemo);<br></code></pre></td></tr></table></figure><ul><li>得到结果：<figure class="hljs highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs json">&#123;<span class="hljs-attr">"title"</span>:<span class="hljs-string">"aaa"</span>, <span class="hljs-attr">"type"</span>:<span class="hljs-string">"bbb"</span>, <span class="hljs-attr">"page"</span>:<span class="hljs-number">50</span>&#125;<br></code></pre></td></tr></table></figure></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;javascript中JSON语法有三种表示方法：&quot;&gt;&lt;a href=&quot;#javascript中JSON语法有三种表示方法：&quot; class=&quot;headerlink&quot; title=&quot;javascript中JSON语法有三种表示方法：&quot;&gt;&lt;/a&gt;javascript中
-      
-    
-    </summary>
-    
-      <category term="js学习" scheme="http://www.wanglichao.top/categories/js%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="javascript" scheme="http://www.wanglichao.top/tags/javascript/"/>
-    
-      <category term="json" scheme="http://www.wanglichao.top/tags/json/"/>
-    
-      <category term="js" scheme="http://www.wanglichao.top/tags/js/"/>
-    
-      <category term="js基础" scheme="http://www.wanglichao.top/tags/js%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ajax基础知识和核心原理</title>
-    <link href="http://www.wanglichao.top/2018/02/15/ajax_base/"/>
-    <id>http://www.wanglichao.top/2018/02/15/ajax_base/</id>
-    <published>2018-02-15T02:37:24.000Z</published>
-    <updated>2018-11-12T18:44:57.075Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="ajax基础知识"><a href="#ajax基础知识" class="headerlink" title="ajax基础知识"></a>ajax基础知识</h2><h3 id="1-什么是ajax"><a href="#1-什么是ajax" class="headerlink" title="1.什么是ajax:"></a>1.什么是ajax:</h3><ul><li>Async Javascript And XML ====&gt; 异步的JS和XML;</li><li>XML:可扩展的标记语言(自定义的一些标签,包裹数据,服务器传递数据);</li></ul><figure class="hljs highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-comment">&lt;!--&lt;?xml version="1.0" encoding="UTF-8" ?&gt;--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">root</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">student</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>王二小<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">age</span>&gt;</span>33<span class="hljs-tag">&lt;/<span class="hljs-name">age</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">sex</span>&gt;</span>男<span class="hljs-tag">&lt;/<span class="hljs-name">sex</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">student</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">root</span>&gt;</span><br></code></pre></td></tr></table></figure><h2 id="2-Ajax异步的概念"><a href="#2-Ajax异步的概念" class="headerlink" title="2. Ajax异步的概念:"></a>2. Ajax异步的概念:</h2><ul><li><code>局部刷新</code>:数据传递的是json字符串,前后端分离</li><li>1).向服务器发送ajax请求;</li><li>2).将服务器返回的数据经过前端的解析处理,绑定到页面上;</li><li>3).页面只需要改变一部分,整个页面不需要重新的渲染;</li><li><code>全局刷新</code>:页面的整体刷新,当页面上数据发生改变时,向后台发送请求,后台会将页面的数据重新渲染一遍,将渲染好的页面返回给客户端呈现,这是全局刷新,也是前后端不分离。这就要求后台去套数据,一般会使用jsp来套数据;</li></ul><h2 id="前后端分离和不分离的优势和劣势"><a href="#前后端分离和不分离的优势和劣势" class="headerlink" title="前后端分离和不分离的优势和劣势"></a>前后端分离和不分离的优势和劣势</h2><h3 id="不分离的优势"><a href="#不分离的优势" class="headerlink" title="不分离的优势:"></a>不分离的优势:</h3><ul><li>1.页面上的数据都是服务器渲染好的,源代码上能看到数据,有利于SEO优化(SEO:搜索引擎的收录和抓取);</li><li>2.从服务器上获取的页面已经是渲染好的,不需要客户端在去额外的请求,所以页面加载速度比较快(前提是服务器够快),一般京东淘宝这样的页面首屏一般都是前后端不分离,直接渲染好页面给前端返回;</li><li><h4 id="不分离的劣势"><a href="#不分离的劣势" class="headerlink" title="不分离的劣势:"></a>不分离的劣势:</h4></li><li><p>1.如果页面有很多内容需要改变,需要实时获取数据,每次更新数据都要重新刷新一下页面,客户体验不好;</p></li><li>2.每次都是服务器渲染的话,对服务器的要求比较高,服务器的压力比较大,如果服务器处理不过来,就会导致加载变慢甚至服务器崩溃;所以京东淘宝等网站只有首屏才会采用服务器渲染以提高页面加载速度;</li><li>3.目前市场上前后端分离的项目占大部分;</li><li><h4 id="分离的优势"><a href="#分离的优势" class="headerlink" title="分离的优势"></a>分离的优势</h4></li><li><p>1.可以根据需求任意改变页面的某一部分的数据更新,而不用刷新整个页面(例如:实时刷新,表单提交,用户登录),用户体验好;</p></li><li>2.有利于开发,提高开发效率,开发的时候前后端互不影响,不需要考虑各自使用的技术,相当于实现了技术的分离;可以进行同时开发,项目开始的时候,只需要制定以下交互文档(API文档),规定请求的url,请求方式,参数,返回数据格式等等,前端也可以使用node模拟接口和数据,来验证和调试页面;</li></ul><h4 id="分离的弊端"><a href="#分离的弊端" class="headerlink" title="分离的弊端"></a>分离的弊端</h4><ul><li>1.不利于SEO优化(注意:后期使用JS将数据绑定到页面上,不会在源代码上体现,所以不会被SEO收录和抓取);</li><li>2.刚开始加载时,请求资源文件的时候如果请求次数过多,会影响页面的加载速度;为了防止加载速度过慢,可以进行优化处理;</li></ul><h3 id="基于原生实现ajax"><a href="#基于原生实现ajax" class="headerlink" title="基于原生实现ajax"></a>基于原生实现ajax</h3><h4 id="示例"><a href="#示例" class="headerlink" title="示例:"></a>示例:</h4><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 创建ajax对象:</span><br><span class="hljs-keyword">let</span> xhr = <span class="hljs-keyword">new</span> XMLHttpRequest();<br><span class="hljs-comment">// 定义请求方式,同步或者异步,请求路径等等:</span><br>xhr.open(<span class="hljs-string">"method"</span>, <span class="hljs-string">"URL"</span>, <span class="hljs-keyword">async</span>, user.name, user.password);<br><span class="hljs-comment">// 定义返回状态:</span><br>xhr.onreadystatechange = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> &#123;<br><span class="hljs-keyword">if</span> (xhr.readyState === <span class="hljs-number">4</span> &amp;&amp; xhr.status === <span class="hljs-number">200</span>) &#123;<br><span class="hljs-comment">// 获取响应的文本内容;</span><br><span class="hljs-keyword">let</span> res = xhr.responseText;<br>&#125;<br>&#125;<br><span class="hljs-comment">// 开始发送请求(请求主体的内容数据):</span><br>xhr.send(<span class="hljs-literal">null</span>);<br></code></pre></td></tr></table></figure><h3 id="分析open的参数"><a href="#分析open的参数" class="headerlink" title="分析open的参数:"></a>分析open的参数:</h3><h4 id="method-ajax的请求方式"><a href="#method-ajax的请求方式" class="headerlink" title="method: ajax的请求方式:"></a>method: ajax的请求方式:</h4><ul><li>1).<code>GET</code>系列方式(获取数据):</li><li>get: 从服务器获取数据;</li><li>delete: 从服务器上删除某些文件;</li><li>head: 获取响应头信息;(不要响应主体,只要响应头);</li><li><p>……</p></li><li><p>2).<code>POST</code>系列方式((推送数据):</p></li><li>post: 向服务器传递数据;</li><li>put: 向服务器添加指定的资源文件;</li><li><p>……</p></li><li><p><code>不管是哪一种方式,都可以向服务器发送数据,也可以获取数据,但是一般GET系列以获取为主,POST系列就是以发送数据为主;</code></p></li><li><code>1).想获取动态展示的数据(如:新闻列表),一般使用GET请求,因为只需要告诉服务器需要什么,服务器就返回需要的内容;</code></li><li><code>2).当页面上有大量信息需要发送给服务器(如:表单提交),服务器接收到数据只需要返回成功或失败的状态,此时合适POST请求;</code></li></ul><h3 id="第一个参数-GET和POST具体有哪些区别"><a href="#第一个参数-GET和POST具体有哪些区别" class="headerlink" title="第一个参数:GET和POST具体有哪些区别"></a>第一个参数:GET和POST具体有哪些区别</h3><h4 id="区别1-数据携带方式-GET向服务器发送请求时-发送的内容比POST少-获取的比POST多"><a href="#区别1-数据携带方式-GET向服务器发送请求时-发送的内容比POST少-获取的比POST多" class="headerlink" title="区别1:数据携带方式:  GET向服务器发送请求时,发送的内容比POST少,获取的比POST多;"></a>区别1:数据携带方式:  <code>GET</code>向服务器发送请求时,发送的内容比<code>POST</code>少,获取的比<code>POST</code>多;</h4><ul><li>1.GET请求的参数是拼接在url上的,通过url的参数形式来传递数据,但是url的大小是有限制的,只有几KB,一旦超过限制,就会被默认剪切掉,所以无法携带大量的数据;</li><li>2.<code>POST</code>发送的数据是通过请求主体实现的,理论上大小是没有限制的,但是真实项目中为了保证传输数据的速度,也会加一些限制(例如:上传资料/图片等等文件时,后台服务器做一下特殊处理);</li></ul><h4 id="区别2-缓存问题-GET请求容易走缓存-POST不会"><a href="#区别2-缓存问题-GET请求容易走缓存-POST不会" class="headerlink" title="区别2:缓存问题: GET请求容易走缓存,POST不会:"></a>区别2:缓存问题: <code>GET</code>请求容易走缓存,<code>POST</code>不会:</h4><ul><li><code>GET</code>通过url传参数的方式请求数据,当遇到实时获取数据的时候,以为url是一样的,参数也是一样的,此时浏览器就会默认读取缓存中的内容返回给页面,导致获取不到服务器最新的数据,一般都是在参数后面加一个时间戳或者随机数来防止浏览器读取缓存;</li><li><code>POST</code>请求不会走缓存,因为请求的数据在请求主体中,是不会走缓存的;</li></ul><h4 id="区别3-安全性-GET请求法师没有POST请求方式安全"><a href="#区别3-安全性-GET请求法师没有POST请求方式安全" class="headerlink" title="区别3:安全性: GET请求法师没有POST请求方式安全:"></a>区别3:安全性: <code>GET</code>请求法师没有<code>POST</code>请求方式安全:</h4><ul><li><code>GET</code>的参数在url上,一些简单的黑客技术,拦截url(url劫持),也可以把客户端传递的信息获取到,导致信息泄露;</li><li><code>POST</code>的信息都在请求主体中,相对比较安全;</li></ul><h3 id="第二个参数-URL"><a href="#第二个参数-URL" class="headerlink" title="第二个参数:URL"></a>第二个参数:URL</h3><ul><li><code>这个url地址就是后台给的地址,一般都会有一个API文档,参照文档写就成;</code></li></ul><h3 id="第三个参数-Async"><a href="#第三个参数-Async" class="headerlink" title="第三个参数: Async"></a>第三个参数: Async</h3><ul><li>async: true 不写就是默认true,===&gt;异步;</li><li>async:false ===&gt; 同步;</li></ul><h3 id="最后两个参数-用户名-密码"><a href="#最后两个参数-用户名-密码" class="headerlink" title="最后两个参数:用户名,密码"></a>最后两个参数:用户名,密码</h3><blockquote><p><code>一般不需要写,只有一些服务器不允许匿名访问,只有开通权限的才可以访问,比如一些重要机密的,银行等这样的服务器才会设置权限;</code></p></blockquote><h4 id="第三部分解析"><a href="#第三部分解析" class="headerlink" title="第三部分解析"></a>第三部分解析</h4><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">xhr.onreadystatechange = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;&#125;;<br></code></pre></td></tr></table></figure><blockquote><p>ajax请求中xhr.readyState的状态码: </p><ul><li>0: 创建一个ajax对象,默认状态是0;</li><li>1: 执行xhr.open是1;</li><li>2: 请求已发送,并接受到了响应头是2;</li><li>3: 响应主体在路上是3;</li><li>4:响应主体返回客户端是4;</li></ul><p>ajax请求中xhr.status的HTTP网络状态码:</p><ul><li>200:成功状态,一个完整的HTTP事物完成,以2开头的都是成功状态;</li><li>300:以3开头的状态码也是成功状态,只不过是服务器做了一些处理;</li><li>301:永久重定向(永久转移),一般都是域名的迁移;比如京东的www.360buy.com重定向到www.jd.com;</li><li>302:临时重定向(临时转移),在新版的HTTP中307也代表临时重定向,一般是在处理服务器的负载均衡,当一个服务器负荷太大,将内容临时迁移到另一个服务器上处理,主要是一些图片,有一些大公司一般都有专门处理图片的服务器;</li><li>304:从浏览器中读取缓存,把一些不经常更新的文件和图片缓存,减少服务器的压力,增加页面的加载速度;</li></ul><p>以4开头的都是失败的,一般都是客户端的错误;</p><ul><li>400:请求参数错误;</li><li>401:无权限访问;</li><li>404:访问的地址不存在;</li></ul><p>以5开头的一般都是服务器的错误;</p><ul><li>500:服务器未知错误;</li><li>503:服务器超负载;</li></ul></blockquote><h3 id="ajax常用的属性和方法有哪些"><a href="#ajax常用的属性和方法有哪些" class="headerlink" title="ajax常用的属性和方法有哪些"></a>ajax常用的属性和方法有哪些</h3><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> xhr = <span class="hljs-keyword">new</span> XMLHttpRequest();<br><span class="hljs-built_in">console</span>.dir(xhr);<br></code></pre></td></tr></table></figure><blockquote><p>[属性]</p><ul><li>readyState:存储的是ajax的状态码;</li><li>responseText/responseXML:返回的是响应主体的内容,只是格式不一样,使用不同的属性接收即可;<ul><li>responseText 一般都是json字符串;</li><li>responseXML是XML格式的数据字符串;</li></ul></li><li>status:记录服务器返回的HTTP状态码;</li><li>statusText:对返回状态码status的描述;</li><li>timeout:设置ajax请求的超时时间;超过设置的时间响应主体还没回来,浏览器就会把请求强制断开;</li></ul><p>[方法]</p><ul><li>abort():强制中断ajax请求;</li><li>getAllResponseHeaders();获取全部响应头的信息(获取的是一堆字符串文本);</li><li>getResponseHeader(“属性名”);获取指定的响应头;如:getResponseHeader(“date”);获取响应头中存储的服务器的时间;</li><li>open(); 略</li><li>overrideMimeType();重写MIME类型;</li><li>send(); 略</li><li>setRequestHeader(“属性名”,属性值);设置请求头;<code>注意</code>:必须写在open()之后,send()之前,内容不可以是中文,否则会报错;</li></ul><p>[事件]</p><ul><li>onabort();当ajax中断的时候触发的事件;</li><li>onreadystatechange();当ajax状态发生变化就会触发的事件;</li><li>ontimeout();当ajax超时触发的事件;</li></ul></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;ajax基础知识&quot;&gt;&lt;a href=&quot;#ajax基础知识&quot; class=&quot;headerlink&quot; title=&quot;ajax基础知识&quot;&gt;&lt;/a&gt;ajax基础知识&lt;/h2&gt;&lt;h3 id=&quot;1-什么是ajax&quot;&gt;&lt;a href=&quot;#1-什么是ajax&quot; class=&quot;he
-      
-    
-    </summary>
-    
-      <category term="笔记" scheme="http://www.wanglichao.top/categories/%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="前端" scheme="http://www.wanglichao.top/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="ajax" scheme="http://www.wanglichao.top/tags/ajax/"/>
     
   </entry>
   
